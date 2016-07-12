@@ -1,0 +1,171 @@
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+    height: 100%;
+    font: 11px/16px @font-default;
+    color: @color-navy;
+    overflow-x: hidden;
+    background: @color-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @media @tablet-sm {
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+body {
+    min-height: 100%;
+    min-width: @w-mobile-xxs;
+    position: relative;
+    overflow-x: hidden;
+    background: @color-white;
+    .nav-visible & {
+        overflow: hidden;
+    }
+}
+/* ==========================================================================
+   _TEXT STYLES
+   ========================================================================== */
+p, ul, ol, dl {
+    margin-top: @margin-sm;
+    margin-bottom: @margin-sm;
+    @media @tablet-sm {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+:focus {
+    outline: -webkit-focus-ring-color auto 0;
+}
+a {
+    color: @color-navy;
+    outline: none;
+    text-decoration: none;
+    transition: color @duration;
+    &:hover {
+        outline: none;
+        text-decoration: underline;
+    }
+}
+figure {
+    margin: @margin-md 0;
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+/*** HEADINGS ***/
+h1, .h1 {
+    margin-top: @margin-lg;
+    margin-bottom: @margin-sm;
+    font: 300 42px/54px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 80px;
+        line-height: 80px;
+    }
+}
+h2, .h2 {
+    margin-top: @margin-lg;
+    margin-bottom: @margin-sm;
+    font: 300 28px/30px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 48px;
+        line-height: 50px;
+    }
+}
+h3, .h3 {
+    margin-top: @margin-lg;
+    margin-bottom: @margin-sm;
+    font: 300 24px/26px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 38px;
+        line-height: 40px;
+    }
+}
+h4, .h4 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 18px/21px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+h5, .h5 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 14px/21px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+h6, .h6 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 12px/16px @font-default;
+    color: @color-navy;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    & + p {
+        margin-top: 0;
+    }
+}
+.h-up {
+    font-family: @font-bebas;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+}
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+.hidden {
+    display: none;
+}
+.pseudo {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+}
+.clearfix {
+    display: table;
+    content: '\0020';
+    clear: both;
+}
+.mobile-hidden-inline {
+    display: none;
+    @media @tablet-sm {
+        display: inline;
+    }
+}

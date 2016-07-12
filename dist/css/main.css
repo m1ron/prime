@@ -1,0 +1,521 @@
+/*
+ * Project: Prime Engineering
+ * File: Main styles
+ */
+.sprite {
+  background: url('../img/sprite.png') no-repeat 0 0;
+  background-size: 75px 50px;
+}
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+/*** Bebas Neue ***/
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../fonts/bebasneue-book-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-book-webfont.woff') format('woff'), url('../fonts/bebasneue-book-webfont.ttf') format('truetype'), url('../fonts/bebasneue-book-webfont.svg') format('svg');
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/bebasneue-regular-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-regular-webfont.woff') format('woff'), url('../fonts/bebasneue-regular-webfont.ttf') format('truetype'), url('../fonts/bebasneue-regular-webfont.svg') format('svg');
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/bebasneue-bold-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-bold-webfont.woff') format('woff'), url('../fonts/bebasneue-bold-webfont.ttf') format('truetype'), url('../fonts/bebasneue-bold-webfont.svg') format('svg');
+}
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+  height: 100%;
+  font: 11px/16px Helvetica, Arial, sans-serif;
+  color: #183955;
+  overflow-x: hidden;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  min-height: 100%;
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  background: #fff;
+}
+.nav-visible body {
+  overflow: hidden;
+}
+/* ==========================================================================
+   _TEXT STYLES
+   ========================================================================== */
+p,
+ul,
+ol,
+dl {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+a {
+  color: #183955;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+a:hover, a:focus {
+  outline: none;
+  text-decoration: underline;
+}
+figure {
+  margin: 30px 0;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+/*** HEADINGS ***/
+h1,
+.h1 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font: 300 42px/54px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h2,
+.h2 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font: 300 28px/30px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h3,
+.h3 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+  font: 300 24px/26px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h4,
+.h4 {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h5,
+.h5 {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 14px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h6,
+.h6 {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 12px/16px Helvetica, Arial, sans-serif;
+  color: #183955;
+}
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p,
+.h1 + p,
+.h2 + p,
+.h3 + p,
+.h4 + p,
+.h5 + p,
+.h6 + p {
+  margin-top: 0;
+}
+.h-up {
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+.hidden {
+  display: none;
+}
+.pseudo {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+}
+.clearfix {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.mobile-hidden-inline {
+  display: none;
+}
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+form,
+fieldset,
+legend {
+  padding: 0;
+  border: none;
+  margin: 0;
+  display: block;
+}
+/*** BUTTONS ***/
+[type='submit'],
+[type='reset'],
+[type='button'],
+button,
+.button {
+  padding: 10px 10px 5px;
+  border: none;
+  border-radius: 17px;
+  font: bold 18px/18px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  background: #183955;
+  border-radius: 14px;
+  -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+[type='submit']:hover,
+[type='reset']:hover,
+[type='button']:hover,
+button:hover,
+.button:hover,
+[type='submit']:focus,
+[type='reset']:focus,
+[type='button']:focus,
+button:focus,
+.button:focus,
+[type='submit']:active,
+[type='reset']:active,
+[type='button']:active,
+button:active,
+.button:active,
+[type='submit']:focus,
+[type='reset']:focus,
+[type='button']:focus,
+button:focus,
+.button:focus {
+  text-decoration: none;
+  background: #f16c00;
+  box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
+}
+[type='submit'].button-bordered-white,
+[type='reset'].button-bordered-white,
+[type='button'].button-bordered-white,
+button.button-bordered-white,
+.button.button-bordered-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+[type='submit'].button-bordered-white:hover,
+[type='reset'].button-bordered-white:hover,
+[type='button'].button-bordered-white:hover,
+button.button-bordered-white:hover,
+.button.button-bordered-white:hover,
+[type='submit'].button-bordered-white:focus,
+[type='reset'].button-bordered-white:focus,
+[type='button'].button-bordered-white:focus,
+button.button-bordered-white:focus,
+.button.button-bordered-white:focus,
+[type='submit'].button-bordered-white:active,
+[type='reset'].button-bordered-white:active,
+[type='button'].button-bordered-white:active,
+button.button-bordered-white:active,
+.button.button-bordered-white:active,
+[type='submit'].button-bordered-white:focus,
+[type='reset'].button-bordered-white:focus,
+[type='button'].button-bordered-white:focus,
+button.button-bordered-white:focus,
+.button.button-bordered-white:focus {
+  background: #fff;
+  color: #183955;
+}
+/*** FIELDS ***/
+[type='text'],
+[type='tel'],
+[type='email'],
+textarea {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #91aabf;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font: 14px/14px Helvetica, Arial, sans-serif;
+  color: #183955;
+  background: #fff;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+[type='text']:focus,
+[type='tel']:focus,
+[type='email']:focus,
+textarea:focus {
+  border-color: #183955;
+}
+.form-group [type='text'],
+.form-group [type='tel'],
+.form-group [type='email'],
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+}
+textarea {
+  max-width: 550px;
+  height: 118px;
+  resize: none;
+}
+/* noinspection CssInvalidPseudoSelector */
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #000;
+  opacity: 1;
+}
+::placeholder {
+  color: #000;
+  opacity: 1;
+}
+/*** DEFAULT ***/
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.form-group:last-child {
+  margin-bottom: 0;
+}
+.form-label {
+  display: block;
+  font: 14px/20px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  color: #91aabf;
+  letter-spacing: .1em;
+}
+/*** FORM-FEEDBACK ***/
+.form-contact .form-group:last-of-type {
+  margin-bottom: 0;
+}
+.form-contact .button {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 50%;
+  text-indent: -1000px;
+  overflow: hidden;
+  background-image: url('../img/icons/letter-white.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  float: right;
+  margin-top: -12px;
+  position: relative;
+  z-index: 2;
+}
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header {
+  display: none;
+}
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  display: none;
+}
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+.page {
+  width: 100%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+@media (min-width: 375px) {
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
+  button,
+  .button {
+    height: 35px;
+    padding-right: 26px;
+    padding-left: 26px;
+  }
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
+  button {
+    height: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 24px;
+  }
+}
+@media (min-width: 750px) {
+  html {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  p,
+  ul,
+  ol,
+  dl {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  h1,
+  .h1 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 80px;
+    line-height: 80px;
+  }
+  h2,
+  .h2 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 48px;
+    line-height: 50px;
+  }
+  h3,
+  .h3 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 38px;
+    line-height: 40px;
+  }
+  h4,
+  .h4 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  h5,
+  .h5 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  h6,
+  .h6 {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .mobile-hidden-inline {
+    display: inline;
+  }
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
+  button,
+  .button {
+    height: 62px;
+    font-size: 28px;
+    line-height: 28px;
+    padding: 18px 70px 10px;
+    border-radius: 26px;
+    border-width: 2px;
+  }
+  [type='submit'].button-bordered-white,
+  [type='reset'].button-bordered-white,
+  [type='button'].button-bordered-white,
+  button.button-bordered-white,
+  .button.button-bordered-white {
+    border-width: 3px;
+  }
+  [type='text'],
+  [type='tel'],
+  [type='email'],
+  textarea {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 18px;
+  }
+  textarea {
+    height: 180px;
+  }
+  .form-group {
+    margin-bottom: 30px;
+  }
+  .form-label {
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+  .form-contact .button {
+    width: 100px;
+    height: 100px;
+    margin: -18px 16px 0 0;
+    background-size: 44px 44px;
+    background-position: 40% 50%;
+  }
+}
+
+/*# sourceMappingURL=maps/main.css.map */

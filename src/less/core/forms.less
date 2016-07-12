@@ -1,0 +1,164 @@
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+form, fieldset, legend {
+    padding: 0;
+    border: none;
+    margin: 0;
+    display: block;
+}
+/*** BUTTONS ***/
+[type='submit'], [type='reset'], [type='button'], button, .button {
+    padding: 10px 10px 5px;
+    border: none;
+    border-radius: 17px;
+    font: bold 18px/18px @font-bebas;
+    color: @color-white;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    background: @color-navy;
+    border-radius: 14px;
+    transition: background @duration, color @duration, box-shadow @duration;
+    user-select: none;
+    appearance: none;
+    cursor: pointer;
+    &:hover, &:focus, &:active {
+        text-decoration: none;
+        background: @color-orange;
+        box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, .25);
+    }
+    &.button-bordered-white {
+        background: transparent;
+        color: @color-white;
+        border: 2px solid @color-white;
+        &:hover, &:focus, &:active {
+            background: @color-white;
+            color: @color-navy;
+        }
+    }
+    @media @mobile-xs {
+        height: 35px;
+        padding-right: 26px;
+        padding-left: 26px;
+    }
+    @media @tablet-sm {
+        height: 62px;
+        font-size: 28px;
+        line-height: 28px;
+        padding: 18px 70px 10px;
+        border-radius: 26px;
+        border-width: 2px;
+
+        &.button-bordered-white {
+            border-width: 3px;
+        }
+    }
+}
+[type='submit'], [type='reset'], [type='button'], button {
+    @media @mobile-xs {
+        height: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 24px;
+    }
+}
+/*** FIELDS ***/
+[type='text'], [type='tel'], [type='email'], textarea {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 12px;
+    border: 1px solid @color-gray;
+    border-radius: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font: 14px/14px @font-default;
+    color: @color-navy;
+    background: @color-white;
+    transition: border-color @duration;
+    appearance: none;
+    @media @tablet-sm {
+        font-size: 18px;
+        line-height: 18px;
+        padding: 18px;
+    }
+
+    &:focus {
+        border-color: @color-navy;
+    }
+
+    .form-group & {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+textarea {
+    max-width: 550px;
+    height: 118px;
+    resize: none;
+    @media @tablet-sm {
+        height: 180px;
+    }
+}
+/* noinspection CssInvalidPseudoSelector */
+::placeholder {
+    color: @color-black;
+    opacity: 1;
+}
+/*** DEFAULT ***/
+.form {
+    &-group {
+        margin-bottom: 20px;
+        &:after {
+            .clearfix;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @media @tablet-sm {
+            margin-bottom: 30px;
+        }
+    }
+    &-label {
+        display: block;
+        font: 14px/20px @font-bebas;
+        color: @color-gray;
+        letter-spacing: .1em;
+        @media @tablet-sm {
+            margin-bottom: 5px;
+            font-size: 21px;
+        }
+    }
+}
+/*** FORM-FEEDBACK ***/
+.form-contact {
+    .form-group {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    .button {
+        width: 54px;
+        height: 54px;
+        padding: 0;
+        border-radius: 50%;
+        text-indent: -1000px;
+        overflow: hidden;
+        background-image: url('@{images}/icons/letter-white.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        float: right;
+        margin-top: -12px;
+        position: relative;
+        z-index: 2;
+        @media @tablet-sm {
+            width: 100px;
+            height: 100px;
+            margin: -18px 16px 0 0;
+            background-size: 44px 44px;
+            background-position: 40% 50%;
+        }
+    }
+}
