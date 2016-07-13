@@ -32,10 +32,9 @@
       position: relative;
       color: @color-white;
       @media @tablet-sm {
-        padding-top: 34px;
-        padding-bottom: 34px;
+        padding: 34px 20px;
       }
-      @media @tablet-sm {
+      @media @desktop-sm {
         padding-top: 54px;
         padding-bottom: 54px;
       }
@@ -68,15 +67,26 @@
     }
     .title {
       margin: 0 0 24px;
-      font: 800 32px/32px @font-arno;
+      font: 800 32px/36px @font-arno;
       letter-spacing: .02em;
-      @media @mobile-xs {
+      @media @mobile-sm {
         font-size: 40px;
-        line-height: 38px;
+        line-height: 44px;
       }
       @media @tablet-sm {
         max-width: 400px;
-        margin: 0 auto 34px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media @desktop-sm {
+        max-width: 500px;
+        font-size: 46px;
+        line-height: 50px;
+      }
+    }
+    .button {
+      @media @mobile-sm {
+        min-width: 310px;
       }
     }
 }
