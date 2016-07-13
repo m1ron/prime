@@ -9,27 +9,35 @@
 /* ==========================================================================
    FONTS
    ========================================================================== */
-/*** Bebas Neue ***/
+/*** Proxima Nova ***/
 @font-face {
-  font-family: 'Bebas Neue';
-  font-weight: 300;
-  font-style: normal;
-  src: url('../fonts/bebasneue-book-webfont.eot');
-  src: local('☺'), url('../fonts/bebasneue-book-webfont.woff') format('woff'), url('../fonts/bebasneue-book-webfont.ttf') format('truetype'), url('../fonts/bebasneue-book-webfont.svg') format('svg');
-}
-@font-face {
-  font-family: 'Bebas Neue';
+  font-family: 'Proxima Nova';
+  src: url('fonts/proximanova-regular-webfont.eot');
+  src: local('☺'), url('fonts/proximanova-regular-webfont.woff') format('woff'), url('fonts/proximanova-regular-webfont.ttf') format('truetype'), url('fonts/proximanova-regular-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
-  src: url('../fonts/bebasneue-regular-webfont.eot');
-  src: local('☺'), url('../fonts/bebasneue-regular-webfont.woff') format('woff'), url('../fonts/bebasneue-regular-webfont.ttf') format('truetype'), url('../fonts/bebasneue-regular-webfont.svg') format('svg');
 }
 @font-face {
-  font-family: 'Bebas Neue';
+  font-family: 'Proxima Nova';
+  src: url('fonts/proximanova-bold-webfont.eot');
+  src: local('☺'), url('fonts/proximanova-bold-webfont.woff') format('woff'), url('fonts/proximanova-bold-webfont.ttf') format('truetype'), url('fonts/proximanova-bold-webfont.svg') format('svg');
   font-weight: bold;
   font-style: normal;
-  src: url('../fonts/bebasneue-bold-webfont.eot');
-  src: local('☺'), url('../fonts/bebasneue-bold-webfont.woff') format('woff'), url('../fonts/bebasneue-bold-webfont.ttf') format('truetype'), url('../fonts/bebasneue-bold-webfont.svg') format('svg');
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('fonts/proximanova-extrabold-webfont.eot');
+  src: local('☺'), url('fonts/proximanova-extrabold-webfont.woff') format('woff'), url('fonts/proximanova-extrabold-webfont.ttf') format('truetype'), url('fonts/proximanova-extrabold-webfont.svg') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+/*** Arno Pro ***/
+@font-face {
+  font-family: 'Arno Pro';
+  src: url('fonts/arnopro-boldcaption-webfont.eot');
+  src: local('☺'), url('fonts/arnopro-boldcaption-webfont.woff') format('woff'), url('fonts/arnopro-boldcaption-webfont.ttf') format('truetype'), url('fonts/arnopro-boldcaption-webfont.svg') format('svg');
+  font-weight: 800;
+  font-style: normal;
 }
 /* ==========================================================================
    BASE STYLES
@@ -40,8 +48,8 @@
 }
 html {
   height: 100%;
-  font: 11px/16px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 18px/32px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
   overflow-x: hidden;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -71,7 +79,7 @@ dl {
   outline: -webkit-focus-ring-color auto 0;
 }
 a {
-  color: #183955;
+  color: #000;
   outline: none;
   text-decoration: none;
   -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -100,43 +108,43 @@ h1,
 .h1 {
   margin-top: 40px;
   margin-bottom: 16px;
-  font: 300 42px/54px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 42px/54px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h2,
 .h2 {
   margin-top: 40px;
   margin-bottom: 16px;
-  font: 300 28px/30px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 28px/30px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h3,
 .h3 {
   margin-top: 40px;
   margin-bottom: 16px;
-  font: 300 24px/26px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 24px/26px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h4,
 .h4 {
   margin-top: 30px;
   margin-bottom: 0;
-  font: 300 18px/21px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 18px/21px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h5,
 .h5 {
   margin-top: 30px;
   margin-bottom: 0;
-  font: 300 14px/21px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 14px/21px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h6,
 .h6 {
   margin-top: 30px;
   margin-bottom: 0;
-  font: 300 12px/16px Helvetica, Arial, sans-serif;
-  color: #183955;
+  font: 300 12px/16px 'Proxima Nova', Arial, sans-serif;
+  color: #000;
 }
 h1 + p,
 h2 + p,
@@ -151,12 +159,6 @@ h6 + p,
 .h5 + p,
 .h6 + p {
   margin-top: 0;
-}
-.h-up {
-  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: .1em;
 }
 /* ==========================================================================
    GENERAL STYLES
@@ -197,7 +199,7 @@ button,
   padding: 10px 10px 5px;
   border: none;
   border-radius: 17px;
-  font: bold 18px/18px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  font: bold 18px/18px 'Proxima Nova', Arial, sans-serif;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -284,7 +286,7 @@ textarea {
   border-radius: 0;
   display: inline-block;
   vertical-align: middle;
-  font: 14px/14px Helvetica, Arial, sans-serif;
+  font: 14px/14px 'Proxima Nova', Arial, sans-serif;
   color: #183955;
   background: #fff;
   -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -342,7 +344,7 @@ textarea {
 }
 .form-label {
   display: block;
-  font: 14px/20px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  font: 14px/20px 'Proxima Nova', Arial, sans-serif;
   color: #91aabf;
   letter-spacing: .1em;
 }
@@ -416,10 +418,6 @@ textarea {
   }
 }
 @media (min-width: 750px) {
-  html {
-    font-size: 14px;
-    line-height: 21px;
-  }
   p,
   ul,
   ol,
