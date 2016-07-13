@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+    var pngquant = require('imagemin-pngquant');
+
     grunt.initConfig({
         config: {
             src: 'src/',
@@ -210,11 +212,15 @@ module.exports = function(grunt) {
             }
         },
         imagemin: {
+            options: {
+                optimizationLevel: 5,
+                use: [pngquant()]
+            },
             dev: {
                 files: [{
                     expand: true,
                     cwd: src.img,
-                    src: ['**/*.{png,jpg,svg,gif}'],
+                    src: ['**/*.{png,jpg,svg}'],
                     dest: dist.img
                 }]
             }
