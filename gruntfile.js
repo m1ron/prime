@@ -129,6 +129,67 @@ module.exports = function(grunt) {
                 src: src.css + 'main.css'
             }
         },
+        realFavicon: {
+            favicons: {
+                src: src.img + 'favicon/master.png',
+                dest: src.img + 'favicon/',
+                options: {
+                    iconsPath: src.img + 'favicon/',
+                    html: [],
+                    design: {
+                        ios: {
+                            pictureAspect: 'backgroundAndMargin',
+                            backgroundColor: '#2a3356',
+                            margin: '18%',
+                            assets: {
+                                ios6AndPriorIcons: false,
+                                ios7AndLaterIcons: false,
+                                precomposedIcons: false,
+                                declareOnlyDefaultIcon: true
+                            }
+                        },
+                        desktopBrowser: {},
+                        windows: {
+                            pictureAspect: 'whiteSilhouette',
+                            backgroundColor: '#2a3356',
+                            onConflict: 'override',
+                            assets: {
+                                windows80Ie10Tile: false,
+                                windows10Ie11EdgeTiles: {
+                                    small: false,
+                                    medium: true,
+                                    big: false,
+                                    rectangle: false
+                                }
+                            }
+                        },
+                        androidChrome: {
+                            pictureAspect: 'noChange',
+                            themeColor: '#2a3356',
+                            manifest: {
+                                name: 'Prime',
+                                display: 'standalone',
+                                orientation: 'notSet',
+                                onConflict: 'override',
+                                declared: true
+                            },
+                            assets: {
+                                legacyIcon: false,
+                                lowResolutionIcons: false
+                            }
+                        },
+                        safariPinnedTab: {
+                            pictureAspect: 'silhouette',
+                            themeColor: '#5bbad5'
+                        }
+                    },
+                    settings: {
+                        scalingAlgorithm: 'Mitchell',
+                        errorOnImageTooSmall: false
+                    }
+                }
+            }
+        },
         uglify: {
             dev: {
                 files: [{
@@ -167,15 +228,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-copy");
-    grunt.loadNpmTasks("grunt-contrib-rename");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-real-favicon');
     grunt.loadNpmTasks("grunt-newer");
 
     grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "watch"]);
     grunt.registerTask("process", ["less", "postcss", "newer:copy:dist"]);
+    grunt.registerTask("favicon", ["realFavicon"]);
 };
 
 /** Source paths **/
