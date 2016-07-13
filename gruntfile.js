@@ -190,6 +190,25 @@ module.exports = function(grunt) {
                 }
             }
         },
+        bump: {
+            options: {
+                files: ['package.json'],
+                updateConfigs: [],
+                commit: true,
+                commitMessage: 'Release v%VERSION%',
+                commitFiles: ['package.json'],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version %VERSION%',
+                push: true,
+                pushTo: 'origin',
+                gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+                globalReplace: false,
+                prereleaseName: false,
+                metadata: '',
+                regExp: false
+            }
+        },
         uglify: {
             dev: {
                 files: [{
@@ -233,6 +252,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-real-favicon');
+    grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks("grunt-newer");
 
     grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "watch"]);
