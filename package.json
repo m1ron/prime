@@ -1,6 +1,6 @@
 {
   "name": "prime",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Responsive markup",
   "main": "index.js",
   "dependencies": {
