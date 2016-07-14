@@ -2,5 +2,58 @@
    FOOTER
    ========================================================================== */
 .footer {
-    display: none;
+    padding: 35px 25px 35px;
+    margin-top: -25px;
+    position: relative;
+    font-size: 12px;
+    line-height: 12px;
+    color: @color-onyx;
+    background: @color-isabelline;
+    cursor: default;
+    &:after {
+        .clearfix;
+    }
+    @media @tablet-sm {
+        height: 90px;
+        padding: 30px;
+        margin-top: 0;
+        font: 16px/14px @font-heading;
+        color: @color-onyx;
+        letter-spacing: .04em;
+        background: @color-white;
+        opacity: .5;
+    }
+
+    .copyright {
+        margin: 0 0 22px;
+        @media @tablet-sm {
+            width: 50%;
+            height: 30px;
+            padding: 8px 0;
+            margin: 0;
+            float: left;
+        }
+    }
+
+    .author {
+        margin: 0;
+        @media @tablet-sm {
+            width: 50%;
+            height: 30px;
+            padding: 8px 0;
+            float: right;
+        }
+
+        a {
+            .color-onyx(.5);
+            border-bottom: 1px solid @color;
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            transition: border-color @duration;
+            &:hover {
+                border-bottom-color: transparent;;
+            }
+        }
+    }
 }

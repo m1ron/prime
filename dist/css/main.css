@@ -34,9 +34,16 @@
 /*** Arno Pro ***/
 @font-face {
   font-family: 'Arno Pro';
-  src: url('../fonts/arnopro-boldcaption-webfont.eot');
-  src: local('☺'), url('../fonts/arnopro-boldcaption-webfont.woff') format('woff'), url('../fonts/arnopro-boldcaption-webfont.ttf') format('truetype'), url('../fonts/arnopro-boldcaption-webfont.svg') format('svg');
-  font-weight: 800;
+  src: url('../fonts/arnopro-light-display-webfont.eot');
+  src: local('☺'), url('../fonts/arnopro-light-display-webfont.woff') format('woff'), url('../fonts/arnopro-light-display-webfont.ttf') format('truetype'), url('../fonts/arnopro-light-display-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Arno Pro';
+  src: url('../fonts/arnopro-bold-caption-webfont.eot');
+  src: local('☺'), url('../fonts/arnopro-bold-caption-webfont.woff') format('woff'), url('../fonts/arnopro-bold-caption-webfont.ttf') format('truetype'), url('../fonts/arnopro-bold-caption-webfont.svg') format('svg');
+  font-weight: bold;
   font-style: normal;
 }
 /* ==========================================================================
@@ -180,7 +187,7 @@ h6 + p,
   display: none;
 }
 /* ==========================================================================
-   FORMS
+   FORMS RESET
    ========================================================================== */
 form,
 fieldset,
@@ -199,14 +206,14 @@ button,
   height: 62px;
   padding: 20px;
   font: 800 15px/18px 'Proxima Nova', Arial, sans-serif;
-  color: #162a49;
+  color: #000;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
   display: inline-block;
   background: transparent;
-  border: 2px solid #162a49;
+  border: 2px solid #000;
   -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-user-select: none;
@@ -239,7 +246,7 @@ button:active,
 button:focus,
 .button:focus {
   text-decoration: none;
-  background: #162a49;
+  background: #000;
   color: #fff;
 }
 [type='submit'].button-white,
@@ -272,7 +279,7 @@ button.button-white:active,
 button.button-white:focus,
 .button.button-white:focus {
   background: #fff;
-  color: #162a49;
+  color: #000;
 }
 /*** FIELDS ***/
 [type='text'],
@@ -282,12 +289,12 @@ textarea {
   width: 100%;
   max-width: 200px;
   padding: 10px 12px;
-  border: 1px solid #91aabf;
+  border: 1px solid #000;
   border-radius: 0;
   display: inline-block;
   vertical-align: middle;
   font: 14px/14px 'Proxima Nova', Arial, sans-serif;
-  color: #183955;
+  color: #000;
   background: #fff;
   -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -299,7 +306,7 @@ textarea {
 [type='tel']:focus,
 [type='email']:focus,
 textarea:focus {
-  border-color: #183955;
+  border-color: #000;
 }
 .form-group [type='text'],
 .form-group [type='tel'],
@@ -330,7 +337,9 @@ textarea {
   color: #000;
   opacity: 1;
 }
-/*** DEFAULT ***/
+/* ==========================================================================
+   DEFAULT FORM
+   ========================================================================== */
 .form-group {
   margin-bottom: 20px;
 }
@@ -345,28 +354,8 @@ textarea {
 .form-label {
   display: block;
   font: 14px/20px 'Proxima Nova', Arial, sans-serif;
-  color: #91aabf;
+  color: #000;
   letter-spacing: .1em;
-}
-/*** FORM-FEEDBACK ***/
-.form-contact .form-group:last-of-type {
-  margin-bottom: 0;
-}
-.form-contact .button {
-  width: 54px;
-  height: 54px;
-  padding: 0;
-  border-radius: 50%;
-  text-indent: -1000px;
-  overflow: hidden;
-  background-image: url('../img/icons/letter-white.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 24px 24px;
-  float: right;
-  margin-top: -12px;
-  position: relative;
-  z-index: 2;
 }
 /* ==========================================================================
    HEADER
@@ -375,14 +364,116 @@ textarea {
   display: none;
 }
 /* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav {
+  display: none;
+}
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 .footer {
+  padding: 35px 25px 35px;
+  margin-top: -25px;
+  position: relative;
+  font-size: 12px;
+  line-height: 12px;
+  color: #393939;
+  background: #f3f2ef;
+  cursor: default;
+}
+.footer:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.footer .copyright {
+  margin: 0 0 22px;
+}
+.footer .author {
+  margin: 0;
+}
+.footer .author a {
+  border-bottom: 1px solid rgba(57, 57, 57, 0.5);
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.footer .author a:hover, .footer .author a:focus {
+  border-bottom-color: transparent;
+}
+/* ==========================================================================
+   CONTACTS
+   ========================================================================== */
+.contacts {
+  padding: 35px 25px;
+  position: relative;
+  font-size: 12px;
+  line-height: 20px;
+  color: #393939;
+  background: #f3f2ef;
+  cursor: default;
+}
+.contacts:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.contacts .col {
+  margin-bottom: 37px;
+}
+.contacts .col:last-child {
+  margin-bottom: 0;
+}
+.contacts .title {
+  margin: 0 0 16px 0;
+  font-size: 11px;
+  font-weight: 800;
+  color: #162a49;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.contacts .list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 18px;
+}
+.contacts .list li {
+  margin-top: 14px;
+}
+.contacts .list li:first-child {
+  margin-top: 0;
+}
+.contacts .list a {
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.contacts .list a:hover, .contacts .list a:focus {
+  border-bottom-color: rgba(57, 57, 57, 0.5);
+}
+.contacts .list a[href^='tel:'] {
+  cursor: default;
+  border-bottom: none;
+}
+.contacts .address {
+  margin: 0;
+}
+.contacts .feedback-tablet {
   display: none;
 }
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
+.sections {
+  display: none;
+}
 .sections:after {
   display: table;
   content: '\0020';
@@ -419,8 +510,8 @@ textarea {
   content: '\0020';
   overflow: hidden;
   height: 394px;
-  background: -webkit-linear-gradient(top, rgba(52, 59, 69, 0) 0%, #343b45 100%);
-  background: linear-gradient(to bottom, rgba(52, 59, 69, 0) 0%, #343b45 100%);
+  background: -webkit-linear-gradient(top, rgba(57, 57, 57, 0) 0%, #393939 100%);
+  background: linear-gradient(to bottom, rgba(57, 57, 57, 0) 0%, #393939 100%);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -473,6 +564,22 @@ textarea {
   }
 }
 @media (min-width: 750px) {
+  body {
+    padding-left: 64px;
+  }
+  body:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 64px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    background: #162a49;
+    box-shadow: 0 0 15px rgba(22, 42, 73, 0.25);
+  }
   p,
   ul,
   ol,
@@ -536,12 +643,58 @@ textarea {
     margin-bottom: 5px;
     font-size: 21px;
   }
-  .form-contact .button {
-    width: 100px;
-    height: 100px;
-    margin: -18px 16px 0 0;
-    background-size: 44px 44px;
-    background-position: 40% 50%;
+  .footer {
+    height: 90px;
+    padding: 30px;
+    margin-top: 0;
+    font: 16px/14px 'Arno Pro', serif;
+    color: #393939;
+    letter-spacing: .04em;
+    background: #fff;
+    opacity: .5;
+  }
+  .footer .copyright {
+    width: 50%;
+    height: 30px;
+    padding: 8px 0;
+    margin: 0;
+    float: left;
+  }
+  .footer .author {
+    width: 50%;
+    height: 30px;
+    padding: 8px 0;
+    float: right;
+  }
+  .contacts {
+    padding: 30px;
+    font: 20px/26px 'Arno Pro', serif;
+  }
+  .contacts .col {
+    width: 50%;
+    margin-bottom: 77px;
+    float: left;
+  }
+  .contacts .col:nth-child(even) {
+    clear: left;
+  }
+  .contacts .title {
+    display: none;
+  }
+  .contacts .list li {
+    margin-top: 34px;
+  }
+  .contacts .list li:first-child {
+    margin-top: 4px;
+  }
+  .contacts .list-links li {
+    margin-top: 17px;
+  }
+  .contacts .feedback-mobile {
+    display: none;
+  }
+  .contacts .feedback-tablet {
+    display: block;
   }
   .sections .item {
     width: 50%;

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FORMS
+   FORMS RESET
    ========================================================================== */
 form, fieldset, legend {
     padding: 0;
@@ -12,21 +12,21 @@ form, fieldset, legend {
     height: 62px;
     padding: 20px;
     font: 800 15px/18px @font-default;
-    color: @color-midnight;
+    color: @color-black;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
     display: inline-block;
     background: transparent;
-    border: 2px solid @color-midnight;
+    border: 2px solid @color-black;
     transition: background @duration, color @duration;
     user-select: none;
     appearance: none;
     cursor: pointer;
     &:hover, &:focus, &:active {
         text-decoration: none;
-        background: @color-midnight;
+        background: @color-black;
         color: @color-white;
     }
     &.button-white {
@@ -35,7 +35,7 @@ form, fieldset, legend {
         border-color: @color-white;
         &:hover, &:focus, &:active {
             background: @color-white;
-            color: @color-midnight;
+            color: @color-black;
         }
     }
 }
@@ -44,12 +44,12 @@ form, fieldset, legend {
     width: 100%;
     max-width: 200px;
     padding: 10px 12px;
-    border: 1px solid @color-gray;
+    border: 1px solid @color-black;
     border-radius: 0;
     display: inline-block;
     vertical-align: middle;
     font: 14px/14px @font-default;
-    color: @color-navy;
+    color: @color-black;
     background: @color-white;
     transition: border-color @duration;
     appearance: none;
@@ -60,7 +60,7 @@ form, fieldset, legend {
     }
 
     &:focus {
-        border-color: @color-navy;
+        border-color: @color-black;
     }
 
     .form-group & {
@@ -81,7 +81,9 @@ textarea {
     color: @color-black;
     opacity: 1;
 }
-/*** DEFAULT ***/
+/* ==========================================================================
+   DEFAULT FORM
+   ========================================================================== */
 .form {
     &-group {
         margin-bottom: 20px;
@@ -98,42 +100,11 @@ textarea {
     &-label {
         display: block;
         font: 14px/20px @font-default;
-        color: @color-gray;
+        color: @color-black;
         letter-spacing: .1em;
         @media @tablet-sm {
             margin-bottom: 5px;
             font-size: 21px;
-        }
-    }
-}
-/*** FORM-FEEDBACK ***/
-.form-contact {
-    .form-group {
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-    .button {
-        width: 54px;
-        height: 54px;
-        padding: 0;
-        border-radius: 50%;
-        text-indent: -1000px;
-        overflow: hidden;
-        background-image: url('@{images}/icons/letter-white.png');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 24px 24px;
-        float: right;
-        margin-top: -12px;
-        position: relative;
-        z-index: 2;
-        @media @tablet-sm {
-            width: 100px;
-            height: 100px;
-            margin: -18px 16px 0 0;
-            background-size: 44px 44px;
-            background-position: 40% 50%;
         }
     }
 }
