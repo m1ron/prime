@@ -1,0 +1,67 @@
+/* ==========================================================================
+   SCHEME
+   ========================================================================== */
+.scheme {
+  padding: 0;
+  counter-reset: my-badass-counter;
+  list-style: none;
+  font: 800 28px/30px @font-heading;
+  text-align: center;
+  &:after {
+    .clearfix;
+  }
+    li {
+      width: 50%;
+      height: 288px;
+      padding: 20px;
+      float: left;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end; 
+      .color-blue-light(.5);
+      background: @color;
+      position: relative;
+      &:before {
+        .pseudo;
+        width: 50px;
+        height: 50px;
+        padding: 10px 5px;
+        content: counter(my-badass-counter);
+	      counter-increment: my-badass-counter;
+        font-size: 40px;
+        line-height: 40px;
+        color: @color-white;
+        background: @color-midnight;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+      }
+      &:first-of-type {
+        .color-blue-light(.3);
+        background: @color;
+      }
+      &:nth-child(2) {
+        .color-blue-light(.7);
+        background: @color;
+      }
+      &:nth-child(3) {
+        width: 100%;
+        .color-blue-light(.3);
+        background: @color;
+      }
+      &:nth-child(4) {
+        height: 800px;
+      }
+      &:nth-child(6) {
+        .color-blue-light(.7);
+        background: @color;
+      }
+    }
+    .icon {
+      width: 170px;
+      height: 170px;
+      margin: 0 auto;
+      display: block;
+    }
+}
