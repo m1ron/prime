@@ -423,9 +423,14 @@ textarea {
 }
 .contacts .col {
   margin-bottom: 37px;
+  position: relative;
+  z-index: 5;
 }
 .contacts .col:last-child {
   margin-bottom: 0;
+}
+.contacts .col-feedback {
+  display: none;
 }
 .contacts .title {
   margin: 0 0 16px 0;
@@ -462,11 +467,8 @@ textarea {
   cursor: default;
   border-bottom: none;
 }
-.contacts .address {
+.contacts .icon-address {
   margin: 0;
-}
-.contacts .feedback-tablet {
-  display: none;
 }
 /* ==========================================================================
    SECTIONS
@@ -546,6 +548,7 @@ textarea {
    SCHEME
    ========================================================================== */
 .scheme {
+  display: none;
   padding: 0;
   counter-reset: my-badass-counter;
   list-style: none;
@@ -738,12 +741,24 @@ textarea {
   .footer .author {
     width: 50%;
     height: 30px;
-    padding: 8px 0;
+    padding: 8px 0 8px 35px;
     float: right;
   }
   .contacts {
-    padding: 30px;
+    padding: 25px 30px;
     font: 20px/26px 'Arno Pro', serif;
+  }
+  .contacts:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 1px;
+    margin-left: 10px;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    bottom: 20px;
+    background: #e2e0de;
   }
   .contacts .col {
     width: 50%;
@@ -752,6 +767,13 @@ textarea {
   }
   .contacts .col:nth-child(even) {
     clear: left;
+  }
+  .contacts .col:nth-child(odd) {
+    padding-left: 35px;
+  }
+  .contacts .col-feedback {
+    margin-bottom: 0;
+    display: block;
   }
   .contacts .title {
     display: none;
@@ -765,11 +787,50 @@ textarea {
   .contacts .list-links li {
     margin-top: 17px;
   }
-  .contacts .feedback-mobile {
+  .contacts .icon-feedback a,
+  .contacts .icon-phone a,
+  .contacts .icon-mail a,
+  .contacts .icon-address {
+    margin-left: 40px;
+    display: inline-block;
+    position: relative;
+  }
+  .contacts .icon-feedback a:before,
+  .contacts .icon-phone a:before,
+  .contacts .icon-mail a:before,
+  .contacts .icon-address:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 40px 40px;
+  }
+  .contacts .icon-feedback a:before {
+    top: -13px;
+    left: -46px;
+    background-image: url('../img/sprite/feedback.png');
+  }
+  .contacts .icon-feedback-mobile {
     display: none;
   }
-  .contacts .feedback-tablet {
-    display: block;
+  .contacts .icon-phone a:before {
+    top: -14px;
+    left: -47px;
+    background-image: url('../img/sprite/phone.png');
+  }
+  .contacts .icon-mail a:before {
+    top: -10px;
+    left: -47px;
+    background-image: url('../img/sprite/mail.png');
+  }
+  .contacts .icon-address:before {
+    top: -13px;
+    left: -49px;
+    background-image: url('../img/sprite/address.png');
   }
   .sections li {
     width: 50%;
@@ -787,6 +848,84 @@ textarea {
   }
 }
 @media (min-width: 1170px) {
+  .footer .copyright {
+    width: auto;
+    height: auto;
+    padding: 12px 0;
+  }
+  .footer .author {
+    width: auto;
+    height: auto;
+    padding: 12px 40px 12px 0;
+  }
+  .contacts {
+    padding: 45px 0 55px;
+    overflow: hidden;
+  }
+  .contacts:before,
+  .contacts:after {
+    margin-left: 0;
+    top: 45px;
+    bottom: 55px;
+    z-index: 0;
+  }
+  .contacts:after {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    border-left: 1px solid #e2e0de;
+    border-right: 1px solid #e2e0de;
+    position: absolute;
+    right: 25%;
+    left: 25%;
+  }
+  .contacts .col {
+    width: 25%;
+    padding: 40px 30px 20px;
+    margin-bottom: 0;
+  }
+  .contacts .col:nth-child(even) {
+    clear: none;
+  }
+  .contacts .col:nth-child(odd) {
+    padding-left: 30px;
+  }
+  .contacts .list li {
+    margin-top: 38px;
+  }
+  .contacts .list li:first-child {
+    margin-top: 6px;
+  }
+  .contacts .list-links {
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .contacts .list-links li {
+    margin-top: 21px;
+  }
+  .contacts .icon-phone a {
+    margin-left: 37px;
+  }
+  .contacts .icon-phone a:before {
+    top: -18px;
+    left: -41px;
+  }
+  .contacts .icon-mail a {
+    margin-left: 37px;
+  }
+  .contacts .icon-mail a:before {
+    top: -12px;
+    left: -44px;
+  }
+  .contacts .icon-address {
+    margin-left: 28px;
+  }
+  .contacts .icon-address:before {
+    top: -12px;
+    left: -45px;
+  }
   .sections li {
     height: 700px;
   }

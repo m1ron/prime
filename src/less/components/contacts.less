@@ -2,7 +2,7 @@
    CONTACTS
    ========================================================================== */
 .contacts {
-    //font-family: @font-heading;
+    @color-border: #e2e0de;
     padding: 35px 25px;
     position: relative;
     font-size: 12px;
@@ -13,22 +13,76 @@
     &:after {
         .clearfix;
     }
+
     @media @tablet-sm {
-        padding: 30px;
+        padding: 25px 30px;
         font: 20px/26px @font-heading;
+        &:before {
+            .pseudo;
+            width: 1px;
+            margin-left: 10px;
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            bottom: 20px;
+            background: @color-border;
+        }
+    }
+    @media @desktop-sm {
+        padding: 45px 0 55px;
+        overflow: hidden;
+        &:before, &:after {
+            margin-left: 0;
+            top: 45px;
+            bottom: 55px;
+            z-index: 0;
+        }
+        &:after {
+            .pseudo;
+            border-left: 1px solid @color-border;
+            border-right: 1px solid @color-border;
+            position: absolute;
+            right: 25%;
+            left: 25%;
+        }
     }
 
     .col {
         margin-bottom: 37px;
+        position: relative;
+        z-index: 5;
         &:last-child {
             margin-bottom: 0;
         }
+
         @media @tablet-sm {
             width: 50%;
             margin-bottom: 77px;
             float: left;
             &:nth-child(even) {
                 clear: left;
+            }
+            &:nth-child(odd) {
+                padding-left: 35px;
+            }
+        }
+        @media @desktop-sm {
+            width: 25%;
+            padding: 40px 30px 20px;
+            margin-bottom: 0;
+            &:nth-child(even) {
+                clear: none;
+            }
+            &:nth-child(odd) {
+                padding-left: 30px;
+            }
+        }
+
+        &-feedback {
+            display: none;
+            @media @tablet-sm {
+                margin-bottom: 0;
+                display: block;
             }
         }
     }
@@ -72,6 +126,24 @@
             }
         }
 
+        @media @desktop-sm {
+            li {
+                margin-top: 38px;
+                &:first-child {
+                    margin-top: 6px;
+                }
+            }
+            &-links {
+                font-size: 14px;
+                line-height: 14px;
+                text-transform: uppercase;
+                letter-spacing: .06em;
+                li {
+                    margin-top: 21px;
+                }
+            }
+        }
+
         a {
             border-bottom: 1px solid transparent;
             display: inline-block;
@@ -90,21 +162,88 @@
         }
     }
 
-    .address {
-        margin: 0;
-    }
-
-
-    .feedback {
-        &-mobile {
-            @media @tablet-sm {
-                display: none;
+    .icon {
+        &-address {
+            margin: 0;
+        }
+        @media @tablet-sm {
+            &-feedback a, &-phone a, &-mail a, &-address {
+                margin-left: 40px;
+                display: inline-block;
+                position: relative;
+                &:before {
+                    .pseudo;
+                    width: 50px;
+                    height: 40px;
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    background-size: 40px 40px;
+                }
+            }
+            &-feedback {
+                a {
+                    &:before {
+                        top: -13px;
+                        left: -46px;
+                        background-image: url('@{images}/sprite/feedback.png');
+                    }
+                }
+                &-mobile {
+                    display: none;
+                }
+            }
+            &-phone {
+                a {
+                    &:before {
+                        top: -14px;
+                        left: -47px;
+                        background-image: url('@{images}/sprite/phone.png');
+                    }
+                }
+            }
+            &-mail {
+                a {
+                    &:before {
+                        top: -10px;
+                        left: -47px;
+                        background-image: url('@{images}/sprite/mail.png');
+                    }
+                }
+            }
+            &-address {
+                &:before {
+                    top: -13px;
+                    left: -49px;
+                    background-image: url('@{images}/sprite/address.png');
+                }
             }
         }
-        &-tablet {
-            display: none;
-            @media @tablet-sm {
-                display: block;
+        @media @desktop-sm {
+            &-phone {
+                a {
+                    margin-left: 37px;
+                    &:before {
+                        top: -18px;
+                        left: -41px;
+                    }
+                }
+            }
+            &-mail {
+                a {
+                    margin-left: 37px;
+                    &:before {
+                        top: -12px;
+                        left: -44px;
+                    }
+                }
+            }
+            &-address {
+                margin-left: 28px;
+                &:before {
+                    top: -12px;
+                    left: -45px;
+                }
             }
         }
     }
