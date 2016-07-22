@@ -2,13 +2,13 @@
    FOOTER
    ========================================================================== */
 .footer {
-    padding: 35px 25px 35px;
+    padding: 45px 35px;
     margin-top: -25px;
     position: relative;
-    font-size: 12px;
-    line-height: 12px;
+    font: 16px/14px @font-heading;
+    letter-spacing: .04em;
     color: @color-onyx;
-    background: @color-isabelline;
+    background: @color-white;
     cursor: default;
     &:after {
         .clearfix;
@@ -17,15 +17,12 @@
         height: 90px;
         padding: 30px;
         margin-top: 0;
-        font: 16px/14px @font-heading;
-        color: @color-onyx;
-        letter-spacing: .04em;
-        background: @color-white;
         opacity: .5;
     }
 
     .copyright {
-        margin: 0 0 22px;
+        margin: 0 0 18px;
+        white-space: nowrap;
         @media @tablet-sm {
             width: 50%;
             height: 30px;
@@ -42,6 +39,7 @@
 
     .author {
         margin: 0;
+        white-space: nowrap;
         @media @tablet-sm {
             width: 50%;
             height: 30px;

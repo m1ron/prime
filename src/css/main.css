@@ -65,6 +65,7 @@ html {
 body {
   min-height: 100%;
   min-width: 320px;
+  padding-top: 84px;
   position: relative;
   overflow-x: hidden;
   background: #fff;
@@ -361,7 +362,121 @@ textarea {
    HEADER
    ========================================================================== */
 .header {
+  min-width: 320px;
+  height: 84px;
+  padding-left: 64px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(22, 42, 73, 0.15);
+}
+.header .logo {
+  height: 51px;
+  padding: 10px;
+  margin: auto;
+  position: absolute;
+  top: -1px;
+  left: 75px;
+  bottom: 0;
+}
+.header .logo a {
+  padding: 10px;
+  margin: -10px;
+  display: block;
+}
+.header .logo img {
+  width: 211px;
+  height: 31px;
+  display: block;
+}
+.header .phone {
+  height: 36px;
   display: none;
+  position: absolute;
+  right: 22px;
+  top: 23px;
+  font-size: 16px;
+  line-height: 42px;
+  font-weight: bold;
+}
+.header .phone a {
+  padding-right: 51px;
+  position: relative;
+  display: block;
+  color: #162a49;
+}
+.header .phone a:hover, .header .phone a:focus {
+  text-decoration: none;
+}
+.header .phone a:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  margin: auto;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  right: 0;
+  bottom: 0;
+  background: #162a49 url('../img/sprite/tel.png') no-repeat 7px 9px;
+  background-size: 20px 20px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.header .toggle {
+  width: 64px;
+  margin: auto;
+  overflow: hidden;
+  text-indent: -1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #2c3e5a;
+  box-shadow: 0 0 10px rgba(22, 42, 73, 0.15);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.header .toggle:before,
+.header .toggle:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 26px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+}
+.header .toggle:before {
+  height: 17px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav-visible .header .toggle:before {
+  border-color: #fff;
+}
+.header .toggle:after {
+  height: 3px;
+  background: #fff;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav-visible .header .toggle:after {
+  background-color: #fff;
+}
+.header .menu {
+  display: none;
+  cursor: default;
 }
 /* ==========================================================================
    NAV
@@ -373,13 +488,13 @@ textarea {
    FOOTER
    ========================================================================== */
 .footer {
-  padding: 35px 25px 35px;
+  padding: 45px 35px;
   margin-top: -25px;
   position: relative;
-  font-size: 12px;
-  line-height: 12px;
+  font: 16px/14px 'Arno Pro', serif;
+  letter-spacing: .04em;
   color: #393939;
-  background: #f3f2ef;
+  background: #fff;
   cursor: default;
 }
 .footer:after {
@@ -388,10 +503,12 @@ textarea {
   clear: both;
 }
 .footer .copyright {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
+  white-space: nowrap;
 }
 .footer .author {
   margin: 0;
+  white-space: nowrap;
 }
 .footer .author a {
   border-bottom: 1px solid rgba(57, 57, 57, 0.5);
@@ -408,10 +525,9 @@ textarea {
    CONTACTS
    ========================================================================== */
 .contacts {
-  padding: 35px 25px;
+  padding: 40px 30px 60px;
   position: relative;
-  font-size: 12px;
-  line-height: 20px;
+  font: 20px/26px 'Arno Pro', serif;
   color: #393939;
   background: #f3f2ef;
   cursor: default;
@@ -422,35 +538,33 @@ textarea {
   clear: both;
 }
 .contacts .col {
-  margin-bottom: 37px;
+  margin-bottom: 55px;
   position: relative;
   z-index: 5;
 }
 .contacts .col:last-child {
   margin-bottom: 0;
 }
-.contacts .col-feedback {
-  display: none;
+.contacts .col:nth-child(3) {
+  margin-bottom: 90px;
 }
-.contacts .title {
-  margin: 0 0 16px 0;
-  font-size: 11px;
-  font-weight: 800;
-  color: #162a49;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+.contacts .col:nth-child(4) {
+  margin-bottom: 65px;
 }
 .contacts .list {
   padding: 0;
   margin: 0;
   list-style: none;
-  line-height: 18px;
+  line-height: 14px;
 }
 .contacts .list li {
-  margin-top: 14px;
+  margin-top: 38px;
 }
 .contacts .list li:first-child {
   margin-top: 0;
+}
+.contacts .list-links li {
+  margin-top: 21px;
 }
 .contacts .list a {
   border-bottom: 1px solid transparent;
@@ -469,6 +583,48 @@ textarea {
 }
 .contacts .icon-address {
   margin: 0;
+}
+.contacts .icon-feedback a,
+.contacts .icon-phone a,
+.contacts .icon-mail a,
+.contacts .icon-address {
+  margin-left: 44px;
+  display: inline-block;
+  position: relative;
+}
+.contacts .icon-feedback a:before,
+.contacts .icon-phone a:before,
+.contacts .icon-mail a:before,
+.contacts .icon-address:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 40px 40px;
+}
+.contacts .icon-feedback a:before {
+  top: -14px;
+  left: -49px;
+  background-image: url('../img/sprite/feedback.png');
+}
+.contacts .icon-phone a:before {
+  top: -16px;
+  left: -50px;
+  background-image: url('../img/sprite/phone.png');
+}
+.contacts .icon-mail a:before {
+  top: -13px;
+  left: -50px;
+  background-image: url('../img/sprite/mail.png');
+}
+.contacts .icon-address:before {
+  top: -13px;
+  left: -49px;
+  background-image: url('../img/sprite/address.png');
 }
 /* ==========================================================================
    SECTIONS
@@ -549,72 +705,109 @@ textarea {
    ========================================================================== */
 .scheme {
   display: none;
-  padding: 0;
-  counter-reset: my-badass-counter;
-  list-style: none;
-  font: 800 28px/30px 'Arno Pro', serif;
-  text-align: center;
 }
-.scheme:after {
+.scheme .list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: my-counter;
+  font: 800 21px/23px 'Arno Pro', serif;
+  text-align: center;
+  cursor: default;
+}
+.scheme .list:after {
   display: table;
   content: '\0020';
   clear: both;
 }
-.scheme li {
+.scheme .list li {
   width: 50%;
-  height: 288px;
-  padding: 20px;
+  height: 220px;
+  padding: 10px 0;
   float: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  background: rgba(177, 219, 237, 0.5);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
+  background-color: rgba(177, 219, 237, 0.5);
+  background-repeat: no-repeat;
+  background-size: 1px 1px;
+  background-position: -100px -100px;
 }
-.scheme li:before {
+.scheme .list li:before {
+  content: '\0020';
+  overflow: hidden;
+  width: 100%;
+  height: 130px;
+  display: block;
+  content: '';
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 100%;
+}
+.scheme .list li:after {
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 50px;
-  height: 50px;
-  padding: 10px 5px;
-  content: counter(my-badass-counter);
-  counter-increment: my-badass-counter;
-  font-size: 40px;
-  line-height: 40px;
+  width: 38px;
+  height: 38px;
+  padding: 5px;
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  font-size: 28px;
+  line-height: 34px;
   color: #fff;
   background: #162a49;
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-.scheme li:first-of-type {
-  background: rgba(177, 219, 237, 0.3);
-}
-.scheme li:nth-child(2) {
-  background: rgba(177, 219, 237, 0.7);
-}
-.scheme li:nth-child(3) {
+.scheme .list li .title {
   width: 100%;
-  background: rgba(177, 219, 237, 0.3);
+  padding: 3px 10px 0;
 }
-.scheme li:nth-child(4) {
-  height: 800px;
+.scheme .list li:nth-child(1) {
+  background-color: rgba(177, 219, 237, 0.3);
 }
-.scheme li:nth-child(6) {
-  background: rgba(177, 219, 237, 0.7);
+.scheme .list li:nth-child(2) {
+  background-color: rgba(177, 219, 237, 0.7);
 }
-.scheme .icon {
+.scheme .list li:nth-child(3) {
+  width: 100%;
+  clear: left;
+  background-color: rgba(177, 219, 237, 0.5);
+}
+.scheme .list li:nth-child(4) {
+  height: 440px;
+  background-color: rgba(177, 219, 237, 0.3);
+}
+.scheme .list li:nth-child(5) {
+  background-color: rgba(177, 219, 237, 0.5);
+}
+.scheme .list li:nth-child(6) {
+  background-color: rgba(177, 219, 237, 0.7);
+}
+.scheme .list .icon {
   width: 170px;
   height: 170px;
   margin: 0 auto;
-  display: block;
+  display: none;
 }
 /* ==========================================================================
    PAGE
@@ -643,6 +836,7 @@ textarea {
 }
 @media (min-width: 750px) {
   body {
+    padding-top: 84px;
     padding-left: 64px;
   }
   body:before {
@@ -721,14 +915,13 @@ textarea {
     margin-bottom: 5px;
     font-size: 21px;
   }
+  .header .phone {
+    display: block;
+  }
   .footer {
     height: 90px;
     padding: 30px;
     margin-top: 0;
-    font: 16px/14px 'Arno Pro', serif;
-    color: #393939;
-    letter-spacing: .04em;
-    background: #fff;
     opacity: .5;
   }
   .footer .copyright {
@@ -745,25 +938,28 @@ textarea {
     float: right;
   }
   .contacts {
-    padding: 25px 30px;
-    font: 20px/26px 'Arno Pro', serif;
+    padding-bottom: 25px;
   }
   .contacts:before {
     display: block;
     content: '\0020';
     overflow: hidden;
     width: 1px;
-    margin-left: 10px;
+    margin-left: 6px;
     position: absolute;
     left: 50%;
-    top: 20px;
-    bottom: 20px;
+    top: 30px;
+    bottom: 25px;
     background: #e2e0de;
   }
   .contacts .col {
     width: 50%;
-    margin-bottom: 77px;
+    margin-bottom: 80px !important;
     float: left;
+  }
+  .contacts .col:nth-child(4),
+  .contacts .col:nth-child(5) {
+    margin-bottom: 0 !important;
   }
   .contacts .col:nth-child(even) {
     clear: left;
@@ -771,66 +967,8 @@ textarea {
   .contacts .col:nth-child(odd) {
     padding-left: 35px;
   }
-  .contacts .col-feedback {
-    margin-bottom: 0;
-    display: block;
-  }
-  .contacts .title {
-    display: none;
-  }
-  .contacts .list li {
-    margin-top: 34px;
-  }
   .contacts .list li:first-child {
-    margin-top: 4px;
-  }
-  .contacts .list-links li {
-    margin-top: 17px;
-  }
-  .contacts .icon-feedback a,
-  .contacts .icon-phone a,
-  .contacts .icon-mail a,
-  .contacts .icon-address {
-    margin-left: 40px;
-    display: inline-block;
-    position: relative;
-  }
-  .contacts .icon-feedback a:before,
-  .contacts .icon-phone a:before,
-  .contacts .icon-mail a:before,
-  .contacts .icon-address:before {
-    display: block;
-    content: '\0020';
-    overflow: hidden;
-    width: 50px;
-    height: 40px;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 40px 40px;
-  }
-  .contacts .icon-feedback a:before {
-    top: -13px;
-    left: -46px;
-    background-image: url('../img/sprite/feedback.png');
-  }
-  .contacts .icon-feedback-mobile {
-    display: none;
-  }
-  .contacts .icon-phone a:before {
-    top: -14px;
-    left: -47px;
-    background-image: url('../img/sprite/phone.png');
-  }
-  .contacts .icon-mail a:before {
-    top: -10px;
-    left: -47px;
-    background-image: url('../img/sprite/mail.png');
-  }
-  .contacts .icon-address:before {
-    top: -13px;
-    left: -49px;
-    background-image: url('../img/sprite/address.png');
+    margin-top: 2px;
   }
   .sections li {
     width: 50%;
@@ -848,6 +986,63 @@ textarea {
   }
 }
 @media (min-width: 1170px) {
+  .header .phone {
+    right: 31px;
+  }
+  .header .menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 325px;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: bold;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .header .menu li {
+    float: left;
+    position: relative;
+  }
+  .header .menu li:before {
+    display: block;
+    content: '\0020';
+    display: none;
+    height: 3px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: #009ee3;
+  }
+  .header .menu li a {
+    padding: 33px 21px 27px;
+    display: block;
+    position: relative;
+    z-index: 5;
+    -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .header .menu li a:hover, .header .menu li a:focus {
+    color: #009ee3;
+    text-decoration: none;
+  }
+  .header .menu li.active {
+    cursor: default;
+  }
+  .header .menu li.active:before {
+    display: block;
+  }
+  .header .menu li.active a {
+    color: #009ee3;
+    cursor: default;
+  }
   .footer .copyright {
     width: auto;
     height: auto;
@@ -859,13 +1054,13 @@ textarea {
     padding: 12px 40px 12px 0;
   }
   .contacts {
-    padding: 45px 0 55px;
+    padding: 35px 0 55px;
     overflow: hidden;
   }
   .contacts:before,
   .contacts:after {
     margin-left: 0;
-    top: 45px;
+    top: 35px;
     bottom: 55px;
     z-index: 0;
   }
@@ -882,7 +1077,7 @@ textarea {
   .contacts .col {
     width: 25%;
     padding: 40px 30px 20px;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
   .contacts .col:nth-child(even) {
     clear: none;
@@ -891,19 +1086,19 @@ textarea {
     padding-left: 30px;
   }
   .contacts .list li {
-    margin-top: 38px;
+    margin-top: 44px;
   }
   .contacts .list li:first-child {
-    margin-top: 6px;
+    margin-top: 5px;
+  }
+  .contacts .list-links li {
+    margin-top: 21px;
   }
   .contacts .list-links {
     font-size: 14px;
     line-height: 14px;
     text-transform: uppercase;
     letter-spacing: .06em;
-  }
-  .contacts .list-links li {
-    margin-top: 21px;
   }
   .contacts .icon-phone a {
     margin-left: 37px;
@@ -916,7 +1111,7 @@ textarea {
     margin-left: 37px;
   }
   .contacts .icon-mail a:before {
-    top: -12px;
+    top: -14px;
     left: -44px;
   }
   .contacts .icon-address {

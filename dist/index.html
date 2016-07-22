@@ -13,15 +13,15 @@
 	<link rel="stylesheet" href="css/plugins.css">
 	<link rel="stylesheet" href="css/main.css">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="src/img/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="src/img/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="src/img/favicon/manifest.json">
-	<link rel="mask-icon" href="src/img/favicon/safari-pinned-tab.svg" color="#2a3356">
-	<link rel="shortcut icon" href="src/img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="img/favicon/manifest.json">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#2a3356">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico">
 	<meta name="msapplication-TileColor" content="#2a3356">
-	<meta name="msapplication-TileImage" content="src/img/favicon/mstile-144x144.png">
-	<meta name="msapplication-config" content="src/img/favicon/browserconfig.xml">
+	<meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#2a3356">
 
 	<!--[if lte IE 9]>
@@ -34,6 +34,14 @@
 	<!-- Header -->
 	<header class="header">
 		<h1 class="hidden">Prime Engineering</h1>
+		<div class="logo"><img src="img/logo.svg" width="211" height="31" alt="Prime Engineering"></div>
+		<div class="phone"><a href="tel:+7-812-470-60-00">+7 812 470-60-00</a></div>
+		<ul class="menu">
+			<li class="active"><a href="private.html">Частным заказчикам</a></li>
+			<li><a href="construction.html">Строительным заказчикам</a></li>
+			<li><a href="business.html">Предложения для бизнеса</a></li>
+		</ul>
+		<a href="#nav" class="toggle">Navigation</a>
 	</header>
 	<!-- /Header -->
 
@@ -75,21 +83,22 @@
 		<!-- Sections -->
 
 		<!-- Scheme -->
-		<ol class="scheme">
-			<li><img src="img/icons/measurement.png" width="215" height="215" alt="" class="icon"> Выезд замерщика</li>
-			<li><img src="img/icons/contract.png" width="215" height="215" alt="" class="icon"> Подписание договор</li>
-			<li><img src="img/icons/project.png" width="215" height="215" alt="" class="icon"> Составление задания на проект</li>
-			<li><img src="img/icons/delivery.png" width="215" height="215" alt="" class="icon"> Поставка оборудования</li>
-			<li><img src="img/icons/montage.png" width="215" height="215" alt="" class="icon"> Работа монтажной бригады</li>
-			<li><img src="img/icons/payment.png" width="215" height="215" alt="" class="icon"> Оплата</li>
-		</ol>
+		<section class="scheme">
+			<ol class="list">
+				<li style="background-image:url(img/icons/measurement.png);"><span class="title">Выезд замерщика</span></li>
+				<li style="background-image:url(img/icons/contract.png);"><span class="title">Подписание договора</span></li>
+				<li style="background-image:url(img/icons/project.png);"><span class="title">Составление задания на проект</span></li>
+				<li style="background-image:url(img/icons/delivery.png);"><span class="title">Поставка оборудования</span></li>
+				<li style="background-image:url(img/icons/montage.png);"><span class="title">Работа монтажной бригады</span></li>
+				<li style="background-image:url(img/icons/payment.png);"><span class="title">Оплата</span></li>
+			</ol>
+		</section>
 		<!-- Scheme -->
 
-
+		<!-- Contacts -->
 		<aside class="contacts">
 			<h2 class="hidden">Контакты</h2>
 			<div class="col">
-				<p class="title"><strong>Предложения</strong></p>
 				<ul class="list list-links">
 					<li><a href="#">Частным заказчикам</a></li>
 					<li><a href="#">Предложения для бизнеса</a></li>
@@ -97,20 +106,17 @@
 				</ul>
 			</div>
 			<div class="col">
-				<p class="title"><strong>Как с нами связаться</strong></p>
 				<ul class="list">
 					<li class="icon-phone"><a href="tel:+7-812-470-60-00">(812) 470-60-00</a></li>
 					<li class="icon-mail"><a href="mailto:info@primen.ru">info@primen.ru</a></li>
-					<li class="icon-feedback-mobile"><a href="#">Обратная связь</a></li>
 				</ul>
 			</div>
-			<div class="col col-feedback">
+			<div class="col">
 				<ul class="list">
 					<li class="icon-feedback"><a href="#">Обратная связь</a></li>
 				</ul>
 			</div>
 			<div class="col">
-				<p class="title"><strong>Адрес офиса</strong></p>
 				<p class="icon-address">
 					Санкт-Петербург
 					<br> Пироговская набережная
@@ -118,6 +124,7 @@
 				</p>
 			</div>
 		</aside>
+		<!-- /Contacts -->
 	</main>
 	<!-- /Main -->
 
