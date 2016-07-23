@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                         src.vendor + 'jquery/dist/jquery.min.map',
                         src.vendor + 'fastclick/lib/fastclick.js',
                         src.vendor + 'slick-carousel/slick/slick.min.js',
-                        src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js'
+                        src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js',
+                        src.vendor + 'jquery-mask-plugin/dist/jquery.mask.min.js'
                     ],
                     dest: src.js + 'vendor'
                 }, {
@@ -60,7 +61,7 @@ module.exports = function(grunt) {
         },
         concat: {
             options: {
-                separator: '\n\n'
+                separator: '\n\n\n'
             },
             dist: {
                 files: [{
@@ -68,7 +69,8 @@ module.exports = function(grunt) {
                         src.js + 'custom.js',
                         src.js + 'vendor/fastclick.min.js',
                         src.js + 'vendor/slick.min.js',
-                        src.js + 'vendor/jquery.magnific-popup.min.js'
+                        src.js + 'vendor/jquery.magnific-popup.min.js',
+                        src.js + 'vendor/jquery.mask.min.js'
                     ],
                     dest: src.js + 'plugins.js'
                 }, {
@@ -226,6 +228,9 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
+            options: {
+                preserveComments: false
+            },
             dev: {
                 files: [{
                     expand: true,
