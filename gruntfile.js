@@ -277,7 +277,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks("grunt-newer");
 
-    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "watch"]);
+    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "images", "watch"]);
     grunt.registerTask("process", ["less", "postcss", "newer:copy:dist"]);
     grunt.registerTask("favicon", ["realFavicon"]);
     grunt.registerTask("images", ["imagemin"]);
