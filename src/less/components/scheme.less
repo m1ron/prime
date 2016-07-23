@@ -2,56 +2,80 @@
    SCHEME
    ========================================================================== */
 .scheme {
-    display: none;
     .list {
         padding: 0;
         margin: 0;
         list-style: none;
         counter-reset: my-counter;
-        font: 800 21px/23px @font-heading;
+        font: 800 17px/16px @font-heading;
         text-align: center;
         cursor: default;
         &:after {
             .clearfix;
         }
+        @media @tablet-sm {
+            font-size: 24px;
+            line-height: 24px;
+        }
+        @media @desktop-sm {
+            font-size: 32px;
+            line-height: 32px;
+        }
 
         li {
             width: 50%;
-            height: 220px;
+            height: 149px;
             padding: 10px 0;
             float: left;
             display: flex;
-            flex-direction: column;
             justify-content: center;
+            align-content: center;
             align-items: center;
+            flex-wrap: wrap;
             position: relative;
             .color-blue-light(.5);
             background-color: @color;
             background-repeat: no-repeat;
             background-size: 1px 1px;
             background-position: -100px -100px;
+            @media @tablet-sm {
+                width: 33.3%;
+                height: 218px;
+                padding-top: 17px;
+            }
+            @media @desktop-sm {
+                width: 25%;
+                height: 287px;
+                padding-top: 20px;
+            }
 
             &:before {
                 .pseudo;
                 width: 100%;
-                height: 130px;
+                height: 74px;
                 display: block;
                 content: '';
                 background-image: inherit;
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: auto 100%;
+                @media @tablet-sm {
+                    height: 108px;
+                }
+                @media @desktop-sm {
+                    height: 140px;
+                }
             }
 
             &:after {
                 .pseudo;
-                width: 38px;
-                height: 38px;
+                width: 26px;
+                height: 26px;
                 padding: 5px;
                 content: counter(my-counter);
                 counter-increment: my-counter;
-                font-size: 28px;
-                line-height: 34px;
+                font-size: 20px;
+                line-height: 22px;
                 color: @color-white;
                 background: @color-midnight;
                 position: absolute;
@@ -59,39 +83,133 @@
                 left: 0;
                 box-sizing: border-box;
                 user-select: none;
+                @media @tablet-sm {
+                    width: 38px;
+                    height: 38px;
+                    font-size: 27px;
+                    line-height: 36px;
+                }
+                @media @desktop-sm {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 36px;
+                    line-height: 48px;
+                }
             }
 
             .title {
-                width: 100%;
-                padding: 3px 10px 0;
+                width: 130px;
+                padding-top: 10px;
+                margin: 0 auto;
+                @media @tablet-sm {
+                    width: 180px;
+                    padding-top: 12px;
+                }
+                @media @desktop-sm {
+                    width: auto;
+                    padding: 15px 30px 0;
+                }
             }
 
             &:nth-child(1) {
-                .color-blue-light(.3);
+                .color-blue-light(.7);
                 background-color: @color;
+                @media @tablet-sm {
+                    .color-blue-light(.5);
+                    background-color: @color;
+                }
             }
             &:nth-child(2) {
-                .color-blue-light(.7);
+                .color-blue-light(.3);
                 background-color: @color;
             }
             &:nth-child(3) {
-                width: 100%;
-                clear: left;
-                .color-blue-light(.5);
-                background-color: @color;
-            }
-            &:nth-child(4) {
-                height: 440px;
                 .color-blue-light(.3);
                 background-color: @color;
+                @media @tablet-sm {
+                    height: 436px;
+                    margin-bottom: -218px;
+                    padding-bottom: 25px;
+                    .color-blue-light(.5);
+                    background-color: @color;
+                    align-content: flex-end;
+                }
+                @media @desktop-sm {
+                    width: 50%;
+                    height: 287px;
+                    margin-bottom: 0;
+                }
             }
-            &:nth-child(5) {
-                .color-blue-light(.5);
-                background-color: @color;
-            }
-            &:nth-child(6) {
+            &:nth-child(4) {
                 .color-blue-light(.7);
                 background-color: @color;
+                @media @tablet-sm {
+                    clear: left;
+                    .color-blue-light(.3);
+                    background-color: @color;
+                }
+            }
+            &:nth-child(5) {
+                .color-blue-light(.57);
+                background-color: @color;
+                @media @tablet-sm {
+                    .color-blue-light(.7);
+                    background-color: @color;
+                }
+            }
+            &:nth-child(6) {
+                .color-blue-light(.3);
+                background-color: @color;
+                @media @tablet-sm {
+                    clear: left;
+                    .color-blue-light(.7);
+                    background-color: @color;
+                }
+                @media @desktop-sm {
+                    clear: none;
+                    .color-blue-light(.3);
+                    background-color: @color;
+                }
+            }
+            &:nth-child(7) {
+                .color-blue-light(.3);
+                background-color: @color;
+                @media @tablet-sm {
+                    width: 66.6%;
+                }
+                @media @desktop-sm {
+                    width: 25%;
+                    height: 574px;
+                    padding-bottom: 25px;
+                    margin-bottom: -287px;
+                    .color-blue-light(.7);
+                    background-color: @color;
+                    align-content: flex-end;
+                }
+            }
+            &:nth-child(8) {
+                .color-blue-light(.5);
+                background-color: @color;
+                @media @desktop-sm {
+                    clear: left;
+                    .color-blue-light(.7);
+                    background-color: @color;
+                }
+            }
+            &:nth-child(9) {
+                width: 100%;
+                clear: left;
+                .color-blue-light(.7);
+                background-color: @color;
+                @media @tablet-sm {
+                    width: 66.6%;
+                    clear: none;
+                }
+                @media @desktop-sm {
+                    width: 50%;
+                    .color-blue-light(.5);
+                    background-color: @color;
+                }
             }
         }
 

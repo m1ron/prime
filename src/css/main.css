@@ -703,15 +703,12 @@ textarea {
 /* ==========================================================================
    SCHEME
    ========================================================================== */
-.scheme {
-  display: none;
-}
 .scheme .list {
   padding: 0;
   margin: 0;
   list-style: none;
   counter-reset: my-counter;
-  font: 800 21px/23px 'Arno Pro', serif;
+  font: 800 17px/16px 'Arno Pro', serif;
   text-align: center;
   cursor: default;
 }
@@ -722,22 +719,22 @@ textarea {
 }
 .scheme .list li {
   width: 50%;
-  height: 220px;
+  height: 149px;
   padding: 10px 0;
   float: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
   background-color: rgba(177, 219, 237, 0.5);
   background-repeat: no-repeat;
@@ -748,7 +745,7 @@ textarea {
   content: '\0020';
   overflow: hidden;
   width: 100%;
-  height: 130px;
+  height: 74px;
   display: block;
   content: '';
   background-image: inherit;
@@ -760,13 +757,13 @@ textarea {
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 38px;
-  height: 38px;
+  width: 26px;
+  height: 26px;
   padding: 5px;
   content: counter(my-counter);
   counter-increment: my-counter;
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 20px;
+  line-height: 22px;
   color: #fff;
   background: #162a49;
   position: absolute;
@@ -779,28 +776,37 @@ textarea {
           user-select: none;
 }
 .scheme .list li .title {
-  width: 100%;
-  padding: 3px 10px 0;
+  width: 130px;
+  padding-top: 10px;
+  margin: 0 auto;
 }
 .scheme .list li:nth-child(1) {
-  background-color: rgba(177, 219, 237, 0.3);
-}
-.scheme .list li:nth-child(2) {
   background-color: rgba(177, 219, 237, 0.7);
 }
-.scheme .list li:nth-child(3) {
-  width: 100%;
-  clear: left;
-  background-color: rgba(177, 219, 237, 0.5);
-}
-.scheme .list li:nth-child(4) {
-  height: 440px;
+.scheme .list li:nth-child(2) {
   background-color: rgba(177, 219, 237, 0.3);
 }
+.scheme .list li:nth-child(3) {
+  background-color: rgba(177, 219, 237, 0.3);
+}
+.scheme .list li:nth-child(4) {
+  background-color: rgba(177, 219, 237, 0.7);
+}
 .scheme .list li:nth-child(5) {
-  background-color: rgba(177, 219, 237, 0.5);
+  background-color: rgba(177, 219, 237, 0.57);
 }
 .scheme .list li:nth-child(6) {
+  background-color: rgba(177, 219, 237, 0.3);
+}
+.scheme .list li:nth-child(7) {
+  background-color: rgba(177, 219, 237, 0.3);
+}
+.scheme .list li:nth-child(8) {
+  background-color: rgba(177, 219, 237, 0.5);
+}
+.scheme .list li:nth-child(9) {
+  width: 100%;
+  clear: left;
   background-color: rgba(177, 219, 237, 0.7);
 }
 .scheme .list .icon {
@@ -984,6 +990,57 @@ textarea {
     margin-left: auto;
     margin-right: auto;
   }
+  .scheme .list {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .scheme .list li {
+    width: 33.3%;
+    height: 218px;
+    padding-top: 17px;
+  }
+  .scheme .list li:before {
+    height: 108px;
+  }
+  .scheme .list li:after {
+    width: 38px;
+    height: 38px;
+    font-size: 27px;
+    line-height: 36px;
+  }
+  .scheme .list li .title {
+    width: 180px;
+    padding-top: 12px;
+  }
+  .scheme .list li:nth-child(1) {
+    background-color: rgba(177, 219, 237, 0.5);
+  }
+  .scheme .list li:nth-child(3) {
+    height: 436px;
+    margin-bottom: -218px;
+    padding-bottom: 25px;
+    background-color: rgba(177, 219, 237, 0.5);
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+  }
+  .scheme .list li:nth-child(4) {
+    clear: left;
+    background-color: rgba(177, 219, 237, 0.3);
+  }
+  .scheme .list li:nth-child(5) {
+    background-color: rgba(177, 219, 237, 0.7);
+  }
+  .scheme .list li:nth-child(6) {
+    clear: left;
+    background-color: rgba(177, 219, 237, 0.7);
+  }
+  .scheme .list li:nth-child(7) {
+    width: 66.6%;
+  }
+  .scheme .list li:nth-child(9) {
+    width: 66.6%;
+    clear: none;
+  }
 }
 @media (min-width: 1170px) {
   .header .phone {
@@ -1132,6 +1189,54 @@ textarea {
     max-width: 500px;
     font-size: 46px;
     line-height: 50px;
+  }
+  .scheme .list {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .scheme .list li {
+    width: 25%;
+    height: 287px;
+    padding-top: 20px;
+  }
+  .scheme .list li:before {
+    height: 140px;
+  }
+  .scheme .list li:after {
+    width: 50px;
+    height: 50px;
+    font-size: 36px;
+    line-height: 48px;
+  }
+  .scheme .list li .title {
+    width: auto;
+    padding: 15px 30px 0;
+  }
+  .scheme .list li:nth-child(3) {
+    width: 50%;
+    height: 287px;
+    margin-bottom: 0;
+  }
+  .scheme .list li:nth-child(6) {
+    clear: none;
+    background-color: rgba(177, 219, 237, 0.3);
+  }
+  .scheme .list li:nth-child(7) {
+    width: 25%;
+    height: 574px;
+    padding-bottom: 25px;
+    margin-bottom: -287px;
+    background-color: rgba(177, 219, 237, 0.7);
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+  }
+  .scheme .list li:nth-child(8) {
+    clear: left;
+    background-color: rgba(177, 219, 237, 0.7);
+  }
+  .scheme .list li:nth-child(9) {
+    width: 50%;
+    background-color: rgba(177, 219, 237, 0.5);
   }
 }
 
