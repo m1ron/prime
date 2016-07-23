@@ -7,61 +7,19 @@ form, fieldset, legend {
     margin: 0;
     display: block;
 }
-/*** BUTTONS ***/
-[type='submit'], [type='reset'], [type='button'], button, .button {
-    height: 62px;
-    padding: 20px;
-    font: 800 15px/18px @font-default;
-    color: @color-black;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-    display: inline-block;
-    background: transparent;
-    border: 2px solid @color-black;
-    transition: background @duration, color @duration;
-    user-select: none;
-    appearance: none;
-    cursor: pointer;
-    &:hover, &:focus, &:active {
-        text-decoration: none;
-        background: @color-black;
-        color: @color-white;
-    }
-    &.button-white {
-        background: transparent;
-        color: @color-white;
-        border-color: @color-white;
-        &:hover, &:focus, &:active {
-            background: @color-white;
-            color: @color-black;
-        }
-    }
-}
 /*** FIELDS ***/
 [type='text'], [type='tel'], [type='email'], textarea {
     width: 100%;
-    max-width: 200px;
-    padding: 10px 12px;
-    border: 1px solid @color-black;
+    padding: 12px 10px 6px;
+    border: 2px solid @color-midnight;
     border-radius: 0;
     display: inline-block;
     vertical-align: middle;
-    font: 14px/14px @font-default;
-    color: @color-black;
+    font: bold 28px @font-heading;
+    color: @color-midnight;
     background: @color-white;
     transition: border-color @duration;
     appearance: none;
-    @media @tablet-sm {
-        font-size: 18px;
-        line-height: 18px;
-        padding: 18px;
-    }
-
-    &:focus {
-        border-color: @color-black;
-    }
 
     .form-group & {
         width: 100%;
@@ -78,8 +36,30 @@ textarea {
 }
 /* noinspection CssInvalidPseudoSelector */
 ::placeholder {
-    color: @color-black;
+    color: @color-midnight;
     opacity: 1;
+}
+/*** BUTTONS ***/
+[type='submit'], [type='reset'], [type='button'], button, .button {
+    padding: 18px;
+    border: 2px solid @color-midnight;
+    display: inline-block;
+    font: 800 15px/18px @font-default;
+    color: @color-midnight;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    background: @color-white;
+    transition: background-color @duration, color @duration;
+    user-select: none;
+    appearance: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+        color: @color-white;
+        background: @color-midnight;
+    }
 }
 /* ==========================================================================
    DEFAULT FORM
