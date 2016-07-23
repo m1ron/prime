@@ -26,4 +26,21 @@ $.extend(true, $.magnificPopup.defaults, {
 /** On document ready */
 $(document).ready(function() {
 
+    /** Gallery */
+    $('.gallery').each(function() {
+        $('.carousel', this).slick({
+            infinite: true,
+            adaptiveHeight: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<span class="prev"></span>',
+            nextArrow: '<span class="next"></span>',
+            dots: true,
+            customPaging: function(slider, i) {
+                return '<span class="dot"></span>';
+            }
+        });
+    });
+
 });
