@@ -1209,6 +1209,177 @@ button:focus,
   font-weight: 800;
 }
 /* ==========================================================================
+   PAGER
+   ========================================================================== */
+.pager {
+  margin: 50px -50vw 56px;
+}
+.pager ul {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 35px 0 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  font-size: 16px;
+  line-height: 16px;
+  position: relative;
+  left: -32px;
+}
+.pager ul li {
+  margin: 0 4px;
+}
+.pager ul li a {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #162a49;
+  text-decoration: none;
+}
+.pager ul li a:hover, .pager ul li a:focus {
+  color: #009ee3;
+}
+.pager ul li.active a {
+  background: #009ee3;
+  color: #fff;
+  font-weight: bold;
+}
+.pager ul li.prev,
+.pager ul li.next {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.pager ul li.prev a,
+.pager ul li.next a {
+  width: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+}
+.pager ul li.prev a .arrow,
+.pager ul li.next a .arrow {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.pager ul li.prev a .arrow:before,
+.pager ul li.next a .arrow:before,
+.pager ul li.prev a .arrow:after,
+.pager ul li.next a .arrow:after,
+.pager ul li.prev a .arrow span:before,
+.pager ul li.next a .arrow span:before,
+.pager ul li.prev a .arrow span:after,
+.pager ul li.next a .arrow span:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 9px;
+  height: 3px;
+  border-radius: 3px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #162a49;
+  -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.pager ul li.prev a .arrow:before,
+.pager ul li.next a .arrow:before,
+.pager ul li.prev a .arrow span:before,
+.pager ul li.next a .arrow span:before {
+  left: -5px;
+  -webkit-transform: rotate(50deg);
+      -ms-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+.pager ul li.prev a .arrow:after,
+.pager ul li.next a .arrow:after,
+.pager ul li.prev a .arrow span:after,
+.pager ul li.next a .arrow span:after {
+  right: -5px;
+  -webkit-transform: rotate(-50deg);
+      -ms-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+.pager ul li.prev a .arrow:before,
+.pager ul li.next a .arrow:before,
+.pager ul li.prev a .arrow:after,
+.pager ul li.next a .arrow:after {
+  top: -6px;
+}
+.pager ul li.prev a .arrow span:before,
+.pager ul li.next a .arrow span:before,
+.pager ul li.prev a .arrow span:after,
+.pager ul li.next a .arrow span:after {
+  bottom: -8px;
+}
+.pager ul li.prev a:hover:before,
+.pager ul li.next a:hover:before,
+.pager ul li.prev a:hover:after,
+.pager ul li.next a:hover:after,
+.pager ul li.prev a:hover span:before,
+.pager ul li.next a:hover span:before,
+.pager ul li.prev a:hover span:after,
+.pager ul li.next a:hover span:after,
+.pager ul li.prev a:focus:before,
+.pager ul li.next a:focus:before,
+.pager ul li.prev a:focus:after,
+.pager ul li.next a:focus:after,
+.pager ul li.prev a:focus span:before,
+.pager ul li.next a:focus span:before,
+.pager ul li.prev a:focus span:after,
+.pager ul li.next a:focus span:after {
+  background: #009ee3;
+}
+.pager ul li.prev {
+  margin-left: 0;
+}
+.pager ul li.prev a {
+  padding-left: 26px;
+}
+.pager ul li.prev a .arrow {
+  left: 0;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.pager ul li.next {
+  margin-right: 0;
+  text-align: right;
+}
+.pager ul li.next a {
+  padding-right: 26px;
+}
+.pager ul li.next a .arrow {
+  right: 0;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+/* ==========================================================================
    PAGE
    ========================================================================== */
 .page {

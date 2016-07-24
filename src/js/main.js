@@ -90,4 +90,9 @@ $(document).ready(function() {
         }, 100);
     });
 
+    $('.pager').each(function(){
+      var t = $('ul li', this).filter('.prev, .next').find('a');
+      $('<span class="arrow"><span></span></span>').appendTo(t);
+    });
+
 });
