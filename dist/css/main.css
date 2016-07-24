@@ -118,7 +118,7 @@ video {
 h1,
 .h1 {
   margin-top: 40px;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
   font: 800 42px/54px 'Arno Pro', serif;
   color: #162a49;
 }
@@ -191,15 +191,15 @@ h6 + p,
   display: none;
 }
 .text-large {
-  margin-bottom: 52px;
-  font: 28px/38px 'Arno Pro', serif;
+  margin-bottom: 30px;
+  font: 22px/30px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
 /* ==========================================================================
    CONTAINERS
    ========================================================================== */
 .content {
-  padding: 0 35px;
+  padding: 0 15px;
 }
 .wrapper {
   max-width: 820px;
@@ -1282,11 +1282,11 @@ button:focus,
    ========================================================================== */
 .breadcrumbs {
   margin: 0;
-  padding: 35px 35px 22px;
+  padding: 15px;
   list-style: none;
   font-size: 14px;
   line-height: 20px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #eee;
 }
 .breadcrumbs li {
   letter-spacing: .02em;
@@ -1324,7 +1324,6 @@ button:focus,
    NEWS
    ========================================================================== */
 .news {
-  margin: 0 -25px;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.02em;
@@ -1334,13 +1333,8 @@ button:focus,
   content: '\0020';
   clear: both;
 }
-.news .col {
-  width: 50%;
-  float: left;
-}
 .news .item {
-  padding: 0 25px;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 .news .item p:last-of-type {
   margin-bottom: 0;
@@ -1358,12 +1352,11 @@ button:focus,
    PAGER
    ========================================================================== */
 .pager {
-  margin: 50px -50vw 56px;
+  margin: 25px 0;
 }
 .pager ul {
-  width: 100vw;
   margin: 0 auto;
-  padding: 0 35px 0 99px;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1377,14 +1370,10 @@ button:focus,
   font-size: 16px;
   line-height: 16px;
   position: relative;
-  left: -32px;
-}
-.pager ul li {
-  margin: 0 4px;
 }
 .pager ul li a {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1405,12 +1394,6 @@ button:focus,
   color: #fff;
   font-weight: bold;
 }
-.pager ul li.prev,
-.pager ul li.next {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
 .pager ul li.prev a,
 .pager ul li.next a {
   width: auto;
@@ -1418,6 +1401,8 @@ button:focus,
   display: -ms-inline-flexbox;
   display: inline-flex;
   position: relative;
+  text-indent: -1000px;
+  overflow: hidden;
 }
 .pager ul li.prev a .arrow,
 .pager ul li.next a .arrow {
@@ -1541,6 +1526,12 @@ button:focus,
 /* ==========================================================================
    MEDIA QUERIES
    ========================================================================== */
+@media (min-width: 375px) {
+  .pager ul li a {
+    width: 40px;
+    height: 40px;
+  }
+}
 @media (min-width: 414px) {
   .sections .title {
     font-size: 40px;
@@ -1548,6 +1539,14 @@ button:focus,
   }
   .sections .button {
     min-width: 310px;
+  }
+}
+@media (min-width: 667px) {
+  .pager ul li.prev,
+  .pager ul li.next {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
   }
 }
 @media (min-width: 750px) {
@@ -1578,7 +1577,6 @@ button:focus,
   h1,
   .h1 {
     margin-top: 46px;
-    margin-bottom: 6px;
     font-size: 80px;
     line-height: 80px;
   }
@@ -1612,6 +1610,14 @@ button:focus,
   }
   .mobile-hidden-inline {
     display: inline;
+  }
+  .text-large {
+    margin-bottom: 52px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .content {
+    padding: 0 35px;
   }
   textarea {
     height: 180px;
@@ -1782,6 +1788,36 @@ button:focus,
     height: 30px;
     padding: 8px 0 8px 35px;
     float: right;
+  }
+  .breadcrumbs {
+    padding: 35px 35px 22px;
+  }
+  .news {
+    margin: 0 -25px;
+  }
+  .news .col {
+    width: 50%;
+    float: left;
+  }
+  .news .item {
+    margin-bottom: 45px;
+    padding: 0 25px;
+  }
+  .pager {
+    margin: 50px -50vw 56px;
+  }
+  .pager ul {
+    width: 100vw;
+    padding: 0 35px 0 99px;
+    left: -32px;
+  }
+  .pager ul li {
+    margin: 0 4px;
+  }
+  .pager ul li.prev a,
+  .pager ul li.next a {
+    text-indent: 0;
+    overflow: visible;
   }
 }
 @media (min-width: 1170px) {

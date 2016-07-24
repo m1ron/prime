@@ -3,11 +3,14 @@
    ========================================================================== */
 .breadcrumbs {
     margin: 0;
-    padding: 35px 35px 22px;
+    padding: 15px;
     list-style: none;
     font-size: 14px;
     line-height: 20px;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid @color-light;
+    @media @tablet-sm {
+      padding: 35px 35px 22px;
+    }
     li {
         letter-spacing: .02em;
         display: inline-block;
@@ -25,7 +28,7 @@
             &:after {
                 .pseudo;
                 height: 1px;
-                background: #d4d4d4;
+                background: @color-gray-light;
                 position: absolute;
                 left: 0;
                 right: 0;
