@@ -2,113 +2,133 @@
    PAGER
    ========================================================================== */
 .pager {
-    margin: 50px -50vw 56px;
+  margin: 25px 0;
+    @media @tablet-sm {
+        margin: 50px -50vw 56px;
+    }
     ul {
-      width: 100vw;
-      margin: 0 auto;
-      padding: 0 35px 0 99px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      font-size: 16px;
-      line-height: 16px;
-      position: relative;
-      left: -32px;
-      li {
-        margin: 0 4px;
-          a {
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: @color-midnight;
-              text-decoration: none;
-              &:hover {
-                color: @color-cerulean;
-              }
-          }
-          &.active {
-              a {
-                  background: @color-cerulean;
-                  color: @color-white;
-                  font-weight: bold;
-              }
-          }
-          &.prev, &.next {
-            flex-grow: 1;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        font-size: 16px;
+        line-height: 16px;
+        position: relative;
+        @media @tablet-sm {
+            width: 100vw;
+            padding: 0 35px 0 99px;
+            left: -32px;
+        }
+        li {
+            @media @tablet-sm {
+                margin: 0 4px;
+            }
             a {
-              width: auto;
-              display: inline-flex;
-              position: relative;
-              .arrow {
-                  width: 20px;
-                  height: 20px;
-                  margin: auto;
-                  position: absolute;
-                  top: 0;
-                  bottom: 0;
-
-                  &:before, &:after, span:before, span:after {
-                      .pseudo;
-                      width: 9px;
-                      height: 3px;
-                      border-radius: 3px;
-                      margin: auto;
-                      position: absolute;
-                      top: 0;
-                      right: 0;
-                      bottom: 0;
-                      left: 0;
-                      background: @color-midnight;
-                      transition: background @duration;
-                  }
-                  &:before, span:before {
-                      left: -5px;
-                      transform: rotate(50deg);
-                  }
-                  &:after, span:after {
-                      right: -5px;
-                      transform: rotate(-50deg);
-                  }
-                  &:before, &:after {
-                      top: -6px;
-                  }
-                  span {
-                      &:before, &:after {
-                          bottom: -8px;
-                      }
-                  }
-              }
-              &:hover {
-                &:before, &:after, span:before, span:after {
-                  background: @color-cerulean;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: @color-midnight;
+                text-decoration: none;
+                &:hover {
+                    color: @color-cerulean;
                 }
-              }
+                @media @mobile-xs {
+                  width: 40px;
+                  height: 40px;
+                }
             }
-          }
-          &.prev {
-            margin-left: 0;
-            a {
-              padding-left: 26px;
-              .arrow {
-                left: 0;
-                transform: rotate(90deg);
-              }
+            &.active {
+                a {
+                    background: @color-cerulean;
+                    color: @color-white;
+                    font-weight: bold;
+                }
             }
-          }
-          &.next {
-            margin-right: 0;
-            text-align: right;
-            a {
-              padding-right: 26px;
-              .arrow {
-                right: 0;
-                transform: rotate(-90deg);
-              }
+            &.prev, &.next {
+                @media @mobile-lg {
+                    flex-grow: 1;
+                }
+                a {
+                    width: auto;
+                    display: inline-flex;
+                    position: relative;
+                    text-indent: -1000px;
+                    overflow: hidden;
+                    @media @tablet-sm {
+                        text-indent: 0;
+                        overflow: visible;
+                    }
+                    .arrow {
+                        width: 20px;
+                        height: 20px;
+                        margin: auto;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+
+                        &:before, &:after, span:before, span:after {
+                            .pseudo;
+                            width: 9px;
+                            height: 3px;
+                            border-radius: 3px;
+                            margin: auto;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            background: @color-midnight;
+                            transition: background @duration;
+                        }
+                        &:before, span:before {
+                            left: -5px;
+                            transform: rotate(50deg);
+                        }
+                        &:after, span:after {
+                            right: -5px;
+                            transform: rotate(-50deg);
+                        }
+                        &:before, &:after {
+                            top: -6px;
+                        }
+                        span {
+                            &:before, &:after {
+                                bottom: -8px;
+                            }
+                        }
+                    }
+                    &:hover {
+                        &:before, &:after, span:before, span:after {
+                            background: @color-cerulean;
+                        }
+                    }
+                }
             }
-          }
-      }
+            &.prev {
+                margin-left: 0;
+                a {
+                    padding-left: 26px;
+                    .arrow {
+                        left: 0;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            &.next {
+                margin-right: 0;
+                text-align: right;
+                a {
+                    padding-right: 26px;
+                    .arrow {
+                        right: 0;
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+        }
     }
 }

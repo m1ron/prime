@@ -2,18 +2,25 @@
    NEWS
    ========================================================================== */
 .news {
-  margin: 0 -25px;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.02em;
   &:after {.clearfix;}
+  @media @tablet-sm {
+    margin: 0 -25px;
+  }
     .col {
-      width: 50%;
-      float: left;
+      @media @tablet-sm {
+        width: 50%;
+        float: left;
+      }
     }
     .item {
-      padding: 0 25px;
-      margin-bottom: 45px;
+      margin-bottom: 25px;
+      @media @tablet-sm {
+        margin-bottom: 45px;
+        padding: 0 25px;
+      }
       p {
         &:last-of-type {
           margin-bottom: 0;
