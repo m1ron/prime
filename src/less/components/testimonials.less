@@ -1,0 +1,87 @@
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonials {
+    @media @tablet-sm {
+        margin: 0 -50vw;
+    }
+    .list {
+        margin: 0 -20px;
+        padding: 20px;
+        &:after {
+            .clearfix;
+        }
+        text-align: center;
+        background: @color-white-smoke;
+
+        @media @mobile-sm {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        @media @tablet-sm {
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 45px 25px 35px 89px;
+            left: -32px;
+            position: relative;
+        }
+
+        @media @tablet-md {
+            padding-left: 74px;
+            padding-right: 20px;
+        }
+
+        .item {
+            max-width: 212px;
+            margin: 26px auto;
+            @media @mobile-sm {
+                width: 50%;
+                max-width: none;
+                float: left;
+                padding: 0 10px;
+                &:nth-of-type(2n+1) {
+                    clear: left;
+                }
+            }
+            @media @mobile-lg {
+                width: 33.3%;
+                &:nth-of-type(2n+1) {
+                    clear: none;
+                }
+                &:nth-of-type(3n+1) {
+                    clear: left;
+                }
+            }
+            @media @tablet-md {
+                width: 25%;
+                padding: 0 35px;
+                &:nth-of-type(3n+1) {
+                    clear: none;
+                }
+                &:nth-of-type(4n+1) {
+                    clear: left;
+                }
+            }
+            @media @desktop-sm {
+                padding: 0 45px;
+            }
+        }
+        .image {
+            width: 212px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 24px;
+            display: block;
+            .color-black(.4);
+            box-shadow: 0 0 10px 0 @color;
+        }
+        .title {
+            margin: 0;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: bold;
+        }
+    }
+}
