@@ -1,15 +1,59 @@
 module.exports = function(grunt) {
     var pngquant = require('imagemin-pngquant');
 
+    /** Source paths **/
+    var components = 'bower_components/';
+    var src = {
+        root: 'src/',
+        html: 'src/',
+        css: 'src/css/',
+        less: 'src/less/',
+        js: 'src/js/',
+        img: 'src/img/',
+        svg: 'src/svg/',
+        favicon: 'src/favicon/',
+        fonts: 'src/fonts/',
+        video: 'src/video/'
+    };
+
+    /** Temp paths **/
+    var temp = {
+        root: '.temp/',
+        html: '.temp/',
+        css: '.temp/css/',
+        js: '.temp/js/',
+        img: '.temp/img/',
+        svg: '.temp/svg/',
+        favicon: 'temp/favicon/',
+        fonts: '.temp/fonts/',
+        video: '.temp/video/'
+    };
+
+    /** Destination paths **/
+    var dist = {
+        root: 'dist/',
+        html: 'dist/',
+        css: 'dist/css/',
+        js: 'dist/js/',
+        img: 'dist/img/',
+        svg: 'dist/svg/',
+        favicon: 'dist/favicon/',
+        fonts: 'dist/fonts/',
+        video: 'dist/video/'
+    };
+
     grunt.initConfig({
         config: {
             src: 'src/',
-            dest: 'dist/'
+            temp: '.temp/',
+            dist: 'dist/'
         },
         clean: {
             pre: [dist.root, src.css, src.js + 'vendor'],
             after: [src.js + 'vendor/fastclick.js', src.css + 'content'],
-            dist: [dist.js + 'custom.js']
+            dist: [dist.js + 'custom.js'],
+
+            svg: [temp.svg, dist.svg]
         },
         copy: {
             dev: {
@@ -17,28 +61,28 @@ module.exports = function(grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        src.vendor + 'html5shiv/dist/html5shiv.min.js',
-                        src.vendor + 'jquery/dist/jquery.min.js',
-                        src.vendor + 'jquery/dist/jquery.min.map',
-                        src.vendor + 'fastclick/lib/fastclick.js',
-                        src.vendor + 'slick-carousel/slick/slick.min.js',
-                        src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js',
-                        src.vendor + 'jquery-mask-plugin/dist/jquery.mask.min.js'
+                        components + 'html5shiv/dist/html5shiv.min.js',
+                        components + 'jquery/dist/jquery.min.js',
+                        components + 'jquery/dist/jquery.min.map',
+                        components + 'fastclick/lib/fastclick.js',
+                        components + 'slick-carousel/slick/slick.min.js',
+                        components + 'magnific-popup/dist/jquery.magnific-popup.min.js',
+                        components + 'jquery-mask-plugin/dist/jquery.mask.min.js'
                     ],
                     dest: src.js + 'vendor'
                 }, {
                     expand: true,
                     flatten: true,
                     src: [
-                        src.vendor + 'slick-carousel/slick/slick.css',
-                        src.vendor + 'magnific-popup/dist/magnific-popup.css'
+                        components + 'slick-carousel/slick/slick.css',
+                        components + 'magnific-popup/dist/magnific-popup.css'
                     ],
                     dest: src.css + 'content'
                 }, {
                     expand: true,
                     flatten: true,
                     src: [
-                        src.vendor + 'normalize-css/normalize.css'
+                        components + 'normalize-css/normalize.css'
                     ],
                     dest: src.css
                 }]
@@ -47,17 +91,26 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= config.src %>',
-                    dest: '<%= config.dest %>',
+                    dest: '<%= config.dist %>',
                     src: [
                         'css/{,*/}*.*',
                         'img/**/*',
+                        'svg/**/*',
                         'js/{,*/}*.*',
                         'fonts/{,*/}*.*',
                         'video/{,*/}*.*',
                         '{,*/}*.html'
                     ]
                 }]
-            }
+            },
+            svg: {
+                files: [{
+                    expand: true,
+                    cwd: temp.svg,
+                    src: ['**/*.svg'],
+                    dest: dist.svg
+                }]
+            },
         },
         concat: {
             options: {
@@ -133,6 +186,41 @@ module.exports = function(grunt) {
                 src: src.css + 'main.css'
             }
         },
+
+        bump: {
+            options: {
+                files: ['package.json'],
+                updateConfigs: [],
+                commit: true,
+                commitMessage: 'Release v%VERSION%',
+                commitFiles: ['package.json'],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version %VERSION%',
+                push: true,
+                pushTo: 'origin',
+                gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+                globalReplace: false,
+                prereleaseName: false,
+                metadata: '',
+                regExp: false
+            }
+        },
+        imagemin: {
+            options: {
+                optimizationLevel: 5,
+                use: [pngquant()]
+            },
+            dev: {
+                files: [{
+                    expand: true,
+                    cwd: src.img,
+                    src: ['**/*.{png,jpg,svg}'],
+                    dest: dist.img
+                }]
+            }
+        },
+
         realFavicon: {
             favicons: {
                 src: src.img + 'favicon/master.png',
@@ -194,39 +282,33 @@ module.exports = function(grunt) {
                 }
             }
         },
-        bump: {
-            options: {
-                files: ['package.json'],
-                updateConfigs: [],
-                commit: true,
-                commitMessage: 'Release v%VERSION%',
-                commitFiles: ['package.json'],
-                createTag: true,
-                tagName: 'v%VERSION%',
-                tagMessage: 'Version %VERSION%',
-                push: true,
-                pushTo: 'origin',
-                gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
-                globalReplace: false,
-                prereleaseName: false,
-                metadata: '',
-                regExp: false
-            }
-        },
-        imagemin: {
-            options: {
-                optimizationLevel: 5,
-                use: [pngquant()]
-            },
-            dev: {
+        svgo: {
+            default: {
                 files: [{
                     expand: true,
-                    cwd: src.img,
-                    src: ['**/*.{png,jpg,svg}'],
-                    dest: dist.img
+                    cwd: src.svg,
+                    src: ['**/*.svg'],
+                    dest: temp.svg
                 }]
             }
         },
+        svgstore: {
+            options: {
+                cleanup: true,
+                includeTitleElement: false,
+                formatting: {
+                    indent_size: 2,
+                    wrap_line_length: 0,
+                    end_with_newline: true
+                }
+            },
+            default: {
+                files: {
+                    '<%= config.temp %>svg/sprite.svg': ['<%= config.temp %>svg/sprite/*.svg']
+                }
+            },
+        },
+
         uglify: {
             options: {
                 preserveComments: false
@@ -260,6 +342,10 @@ module.exports = function(grunt) {
             images: {
                 files: [src.img + "**/*.*"],
                 tasks: ["process"]
+            },
+            svg: {
+                files: [src.svg + "**/*.svg"],
+                tasks: ["svg"]
             }
         }
     });
@@ -274,36 +360,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-real-favicon');
+    grunt.loadNpmTasks('grunt-svgo');
+    grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-bump');
     grunt.loadNpmTasks("grunt-newer");
 
-    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "images", "watch"]);
+    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "img", "svg", "watch"]);
     grunt.registerTask("process", ["less", "postcss", "newer:copy:dist"]);
+
     grunt.registerTask("favicon", ["realFavicon"]);
-    grunt.registerTask("images", ["imagemin"]);
-};
 
-/** Source paths **/
-var src = {
-    root: 'src/',
-    html: 'src/',
-    css: 'src/css/',
-    less: 'src/less/',
-    js: 'src/js/',
-    vendor: 'bower_components/',
-    img: 'src/img/',
-    svg: 'src/img/svg/',
-    fonts: 'src/fonts/',
-    video: 'src/video/'
-};
-
-/** Destination paths **/
-var dist = {
-    root: 'dist/',
-    html: 'dist/',
-    css: 'dist/css/',
-    js: 'dist/js/',
-    img: 'dist/img/',
-    fonts: 'dist/fonts/',
-    video: 'dist/video/'
+    grunt.registerTask("img", ["imagemin"]);
+    grunt.registerTask("svg", ["clean:svg", "svgo", "svgstore", "copy:svg"]);
 };

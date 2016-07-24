@@ -39,7 +39,7 @@
             top: 26px;
             left: 85px;
             z-index: 0;
-            background: url('@{images}/logo-inverse.svg') no-repeat 0 0;
+            background: url('@{svg}/logo-inverse.svg') no-repeat 0 0;
             background-size: 211px 31px;
             backface-visibility: hidden;
         }
@@ -89,20 +89,18 @@
         }
 
         &:before {
-            top: -20px;
+            transform: translate3d(0, -10px, 0);
             .nav-open & {
                 width: 30px;
-                top: 0;
-                transform: rotate(-45deg);
+                transform: translate3d(0, 0, 0) rotate(-45deg);
             }
         }
 
         &:after {
-            bottom: -16px;
+            transform: translate3d(0, 10px, 0);
             .nav-open & {
                 width: 30px;
-                bottom: 3px;
-                transform: rotate(45deg);
+                transform: translate3d(0, 0, 0) rotate(45deg);
             }
         }
     }
@@ -217,24 +215,24 @@
             padding: 44px 30px 44px 82px;
             display: block;
             position: relative;
+            z-index: 5;
             color: @color-white;
             transition: color @duration;
             &:hover {
-                color: @color-blue;
                 text-decoration: none;
             }
-            &:before {
-                .pseudo;
-                width: 37px;
-                height: 52px;
-                margin: auto;
-                position: absolute;
-                top: -6px;
-                left: 32px;
-                bottom: 0;
-                background: url('@{images}/sprite/price.svg') no-repeat 0 0;
-                background-size: 37px 52px;
-            }
+        }
+
+        .icon {
+            width: 37px;
+            height: 52px;
+            margin: auto;
+            display: inline-block;
+            position: absolute;
+            top: -6px;
+            left: 32px;
+            bottom: 0;
+            z-index: 1;
         }
     }
 }

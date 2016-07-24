@@ -37,6 +37,7 @@
 
     .phone {
         height: 36px;
+        margin: 0;
         display: none;
         position: absolute;
         right: 22px;
@@ -54,24 +55,38 @@
         a {
             padding-right: 51px;
             position: relative;
+            z-index: 5;
             display: block;
             color: @color-midnight;
             &:hover {
                 text-decoration: none;
             }
-            &:before {
-                .pseudo;
-                width: 36px;
-                height: 36px;
+        }
+
+        .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background: @color-midnight;
+            backface-visibility: hidden;
+
+            svg {
+                width: 16px;
+                height: 16px;
                 margin: auto;
-                border-radius: 50%;
+                display: block;
                 position: absolute;
-                top: -6px;
-                right: 0;
+                top: 1px;
+                right: 2px;
                 bottom: 0;
-                background: @color-midnight url('@{images}/sprite/tel.png') no-repeat 7px 9px;
-                background-size: 20px 20px;
-                backface-visibility: hidden;
+                left: 0;
             }
         }
     }

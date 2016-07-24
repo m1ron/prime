@@ -22,6 +22,8 @@
     "grunt-newer": "^1.1.1",
     "grunt-postcss": "^0.8.0",
     "grunt-real-favicon": "^0.1.6",
+    "grunt-svgo": "^0.1.0",
+    "grunt-svgstore": "^1.0.0",
     "imagemin-pngquant": "^4.2.2",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-focus": "^1.0.0"

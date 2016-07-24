@@ -1,6 +1,40 @@
 /*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true, node: true */
 /*global window, console, document, $, jQuery, google */
 
+/** Load SVG sprite */
+(function(window, document) {
+    var file = 'svg/sprite.svg';
+
+    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
+        return true;
+    }
+
+    var data,
+        insertIT = function() {
+            var newDiv = document.createElement('div');
+            newDiv.className = "sprite-holder";
+            newDiv.insertAdjacentHTML('beforeend', data);
+            console.log(newDiv);
+            document.body.appendChild(newDiv);
+        },
+        insert = function() {
+            if (document.body) insertIT();
+            else document.addEventListener('DOMContentLoaded', insertIT);
+        };
+
+    try {
+        request = new XMLHttpRequest();
+        request.open('GET', file, true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                data = request.responseText;
+                insert();
+            }
+        }
+        request.send();
+    } catch (e) {}
+}(window, document));
+
 
 /** Remove tap delay on touch devices */
 FastClick.attach(document.body);
@@ -22,6 +56,7 @@ $.extend(true, $.magnificPopup.defaults, {
     fixedContentPos: true,
     fixedBgPos: true
 });
+
 
 /** On document ready */
 $(document).ready(function() {
@@ -148,9 +183,9 @@ $(document).ready(function() {
         }, 100);
     });
 
-    $('.pager').each(function(){
-      var t = $('ul li', this).filter('.prev, .next').find('a');
-      $('<span class="arrow"><span></span></span>').appendTo(t);
+    $('.pager').each(function() {
+        var t = $('ul li', this).filter('.prev, .next').find('a');
+        $('<span class="arrow"><span></span></span>').appendTo(t);
     });
 
 });
