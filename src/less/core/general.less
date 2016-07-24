@@ -176,26 +176,27 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }
 }
 .text-large {
-  margin-bottom: @margin-md;
-  font: 22px/30px @font-heading;
-  letter-spacing: .02em;
-  @media @tablet-sm {
-    margin-bottom: 52px;
-    font-size: 28px;
-    line-height: 38px;
-  }
+    margin-bottom: @margin-md;
+    font: 22px/30px @font-heading;
+    letter-spacing: .02em;
+    @media @tablet-sm {
+        margin-bottom: 52px;
+        font-size: 28px;
+        line-height: 38px;
+    }
 }
 /* ==========================================================================
    CONTAINERS
    ========================================================================== */
-   .content {
-     padding: 0 15px;
-     @media @tablet-sm {
-       padding: 0 35px;
-     }
-   }
-   .wrapper {
-     max-width: 820px;
-     margin: 0 auto;
-     &:after {.clearfix;}
-   }
+.wrapper {
+    max-width: 890px;
+    margin: 0 auto;
+    padding: 0 20px;
+    &:after {
+        .clearfix;
+    }
+
+    @media @tablet-sm {
+        padding: 0 35px;
+    }
+}
