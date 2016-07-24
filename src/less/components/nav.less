@@ -27,6 +27,7 @@
         left: -320px;
         z-index: 90;
         transition: left @duration-l;
+        background: @color-midnight;
         backface-visibility: hidden;
         clip: rect(0, auto, auto, 0);
 
@@ -56,8 +57,8 @@
         z-index: 100;
         background: @color-charcoal;
         transition: background-color @duration, box-shadow @duration;
-        .color-midnight(.15);
-        box-shadow: 0 0 10px @color;
+        .color-midnight(.25);
+        box-shadow: 0 0 15px @color;
         &:hover {
             background: @color-midnight;
         }
@@ -77,7 +78,8 @@
             bottom: 3px;
             left: 0;
             background: @color-white;
-            transition: width @duration, opacity @duration, top @duration, bottom @duration, transform @duration;
+            transition: all .3s;
+            backface-visibility: hidden;
         }
 
         span {
@@ -144,7 +146,7 @@
         @media @tablet-sm {
             background: @color-midnight;
             .color-midnight(.5);
-            box-shadow: 0 0 10px @color;
+            box-shadow: 0 0 15px @color;
         }
 
         .nav-open & {
@@ -173,7 +175,7 @@
     }
 
     .menu {
-        padding: 0;
+        padding: 17px 0;
         border-bottom: 1px solid @color-charcoal;
         margin: 0;
         list-style: none;
@@ -182,7 +184,7 @@
 
         > li {
             > a {
-                padding: 20px 30px;
+                padding: 15px 33px;
                 display: block;
                 color: @color-white;
                 transition: color @duration;
@@ -190,6 +192,48 @@
                     color: @color-blue;
                     text-decoration: none;
                 }
+            }
+        }
+
+        &-main {
+            padding-top: 22px;
+            padding-bottom: 16px;
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 21px;
+        }
+    }
+
+    .calculate {
+        border-bottom: 1px solid @color-charcoal;
+        margin: 0;
+        position: relative;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 800;
+        letter-spacing: .035em;
+
+        a {
+            padding: 44px 30px 44px 82px;
+            display: block;
+            position: relative;
+            color: @color-white;
+            transition: color @duration;
+            &:hover {
+                color: @color-blue;
+                text-decoration: none;
+            }
+            &:before {
+                .pseudo;
+                width: 37px;
+                height: 52px;
+                margin: auto;
+                position: absolute;
+                top: -6px;
+                left: 32px;
+                bottom: 0;
+                background: url('@{images}/sprite/price.svg') no-repeat 0 0;
+                background-size: 37px 52px;
             }
         }
     }

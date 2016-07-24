@@ -68,6 +68,7 @@ $(document).ready(function() {
             } else {
                 open();
             }
+            $(this).blur();
             return false;
         }
 
