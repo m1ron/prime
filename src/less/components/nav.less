@@ -2,5 +2,195 @@
    NAV
    ========================================================================== */
 .nav {
-    display: none;
+    width: 64px;
+    height: 84px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+
+    .nav-visible & {
+        width: auto;
+        height: auto;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        backface-visibility: hidden;
+    }
+
+    .logo {
+        width: 320px;
+        height: 84px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: -320px;
+        z-index: 90;
+        transition: left @duration-l;
+        backface-visibility: hidden;
+        clip: rect(0, auto, auto, 0);
+
+        &:before {
+            .pseudo;
+            width: 211px;
+            height: 31px;
+            position: fixed;
+            top: 26px;
+            left: 85px;
+            z-index: 0;
+            background: url('@{images}/logo-inverse.svg') no-repeat 0 0;
+            background-size: 211px 31px;
+            backface-visibility: hidden;
+        }
+        .nav-open & {
+            left: 0;
+        }
+    }
+
+    .toggle {
+        width: 64px;
+        height: 84px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: @color-charcoal;
+        transition: background-color @duration, box-shadow @duration;
+        .color-midnight(.15);
+        box-shadow: 0 0 10px @color;
+        &:hover {
+            background: @color-midnight;
+        }
+        .nav-open & {
+            background: @color-midnight;
+            box-shadow: none;
+        }
+
+        span, &:before, &:after {
+            .pseudo;
+            width: 26px;
+            height: 3px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 3px;
+            left: 0;
+            background: @color-white;
+            transition: width @duration, opacity @duration, top @duration, bottom @duration, transform @duration;
+        }
+
+        span {
+            .nav-open & {
+                opacity: 0;
+            }
+        }
+
+        &:before {
+            top: -20px;
+            .nav-open & {
+                width: 30px;
+                top: 0;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:after {
+            bottom: -16px;
+            .nav-open & {
+                width: 30px;
+                bottom: 3px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background: @color-midnight;
+        transition: opacity @duration-l;
+        backface-visibility: hidden;
+        opacity: 0;
+
+        .nav-visible & {
+            display: block;
+        }
+        .nav-open & {
+            opacity: .4;
+        }
+    }
+
+    .area {
+        width: 320px;
+        height: 100%;
+        padding: 84px 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        .color-midnight(.97);
+        background: @color;
+        transition: transform @duration-l;
+        transform: translate3d(-320px,0 ,0);
+        backface-visibility: hidden;
+
+        @media @tablet-sm {
+            background: @color-midnight;
+            .color-midnight(.5);
+            box-shadow: 0 0 10px @color;
+        }
+
+        .nav-open & {
+            transform: translate3d(0,0 ,0);
+        }
+
+        &:after {
+            .pseudo;
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            top: 84px;
+            left: 0;
+            right: 0;
+            z-index: 101;
+            background: @color-charcoal;
+        }
+
+        .scroll {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    }
+
+    .menu {
+        padding: 0;
+        border-bottom: 1px solid @color-charcoal;
+        margin: 0;
+        list-style: none;
+        font-size: 16px;
+        line-height: 19px;
+
+        > li {
+            > a {
+                padding: 20px 30px;
+                display: block;
+                color: @color-white;
+                transition: color @duration;
+                &:hover {
+                    color: @color-blue;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }

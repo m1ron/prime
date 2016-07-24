@@ -13,6 +13,10 @@ html {
     background: @color-white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &.nav-visible {
+        overflow: hidden;
+    }
 }
 body {
     min-height: 100%;
@@ -21,12 +25,10 @@ body {
     position: relative;
     overflow-x: hidden;
     background: @color-white;
-    .nav-visible & {
-        overflow: hidden;
-    }
     @media @tablet-sm {
         padding-top: 84px;
         padding-left: 64px;
+
         &:before {
             .pseudo;
             width: 64px;
@@ -39,6 +41,10 @@ body {
             .color-midnight(.25);
             box-shadow: 0 0 15px @color;
         }
+    }
+
+    .nav-visible & {
+        overflow: hidden;
     }
 }
 /* ==========================================================================

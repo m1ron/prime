@@ -19,9 +19,8 @@
         padding: 10px;
         margin: auto;
         position: absolute;
-        top: -1px;
+        top: 16px;
         left: 75px;
-        bottom: 0;
 
         a {
             padding: 10px;
@@ -73,49 +72,6 @@
                 background: @color-midnight url('@{images}/sprite/tel.png') no-repeat 7px 9px;
                 background-size: 20px 20px;
                 backface-visibility: hidden;
-            }
-        }
-    }
-
-    .toggle {
-        width: 64px;
-        margin: auto;
-        overflow: hidden;
-        text-indent: -1000px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        background: @color-charcoal;
-        .color-midnight(.15);
-        box-shadow: 0 0 10px @color;
-        transition: background-color @duration;
-
-        &:before, &:after {
-            .pseudo;
-            width: 26px;
-            margin: auto;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 3px;
-            left: 0;
-        }
-        &:before {
-            height: 17px;
-            border-top: 3px solid @color-white;
-            border-bottom: 3px solid @color-white;
-            transition: border-color @duration;
-            .nav-visible & {
-                border-color: @color-white;
-            }
-        }
-        &:after {
-            height: 3px;
-            background: @color-white;
-            transition: background-color @duration;
-            .nav-visible & {
-                background-color: @color-white;
             }
         }
     }

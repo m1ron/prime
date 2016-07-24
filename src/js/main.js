@@ -26,6 +26,63 @@ $.extend(true, $.magnificPopup.defaults, {
 /** On document ready */
 $(document).ready(function() {
 
+    /** Nav */
+    $('.nav').each(function() {
+        function toggleNav() {
+            function keyhandler(e) {
+                if (e.which == 27) {
+                    close();
+                }
+            }
+
+            function clickhandler(e) {
+                if (!flag) {
+                    flag = true;
+                    setTimeout(function() {
+                        flag = false;
+                    }, 200);
+                    if (($(e.target).closest('.nav').length <= 0) && ($(e.target).closest('.toggle').length <= 0)) {
+                        close();
+                    }
+                }
+            }
+
+            function open() {
+                html.on('keydown', keyhandler).addClass('nav-visible');
+                body.on('click touchstart', clickhandler);
+                setTimeout(function() {
+                    html.addClass('nav-open');
+                }, 10);
+            }
+
+            function close() {
+                html.off('keydown', keyhandler).removeClass('nav-open');
+                body.off('click touchstart', clickhandler);
+                setTimeout(function() {
+                    html.removeClass('nav-visible');
+                }, 420);
+            }
+
+            if (html.hasClass('nav-open')) {
+                close();
+            } else {
+                open();
+            }
+            return false;
+        }
+
+        var body = $('body'),
+            html = $('html'),
+            toggle = $('.toggle', this),
+            ul = $('ul', this),
+            flag = false;
+        var overlay = $('<div class="overlay"/>');
+        overlay.appendTo(this);
+        $('<div class="logo"/>').appendTo(this);
+        $('.area', this).wrapInner('<div class="scroll"/>');
+        toggle.add(overlay).on('click', toggleNav);
+    });
+
     /** Gallery */
     $('.gallery').each(function() {
         $('.carousel', this).slick({
