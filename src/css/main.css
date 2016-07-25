@@ -1561,39 +1561,43 @@ button:focus,
           transform: rotate(-90deg);
 }
 /* ==========================================================================
-   TESTIMONIALS
+   CERTIFICATES
    ========================================================================== */
-.testimonials {
+.certificates {
   text-align: center;
 }
-.testimonials .list {
-  margin: 0 -20px;
-  padding: 20px;
+.certificates .list {
+  margin: 0 -20px 20px;
+  padding: 0 20px;
   text-align: center;
-  background: #f9f8f7;
 }
-.testimonials .list:after {
+.certificates .list:after {
   display: table;
   content: '\0020';
   clear: both;
 }
-.testimonials .list .item {
+.certificates .list-color {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f9f8f7;
+}
+.certificates .list .item {
   margin: 26px auto;
 }
-.testimonials .list .link {
+.certificates .list .link {
   width: 212px;
   max-width: 100%;
   margin: 0 auto;
   display: block;
   text-decoration: none;
 }
-.testimonials .list .image {
+.certificates .list .image {
   margin: 0 auto 24px;
   display: block;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   position: relative;
 }
-.testimonials .list .image:before {
+.certificates .list .image:before {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -1609,12 +1613,12 @@ button:focus,
   right: 0;
   z-index: 10;
 }
-.testimonials .list .image img {
+.certificates .list .image img {
   width: 100%;
   height: auto;
   display: block;
 }
-.testimonials .list .title {
+.certificates .list .title {
   margin: 0;
   font-size: 16px;
   line-height: 18px;
@@ -1774,11 +1778,11 @@ button:focus,
     -ms-flex-positive: 1;
     flex-grow: 1;
   }
-  .testimonials .list .item {
+  .certificates .list .item {
     width: 50%;
     float: left;
   }
-  .testimonials .list .item:nth-of-type(2n+1) {
+  .certificates .list .item:nth-of-type(2n+1) {
     clear: left;
   }
 }
@@ -2058,16 +2062,21 @@ button:focus,
     text-indent: 0;
     overflow: visible;
   }
-  .testimonials .space {
+  .certificates .space {
     margin: 0 -50vw;
   }
-  .testimonials .list {
+  .certificates .list {
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    padding: 45px 20px 35px 84px;
+    padding: 0 20px 0 84px;
     left: -32px;
     position: relative;
+  }
+  .certificates .list-color {
+    margin-bottom: 0;
+    padding-top: 45px;
+    padding-bottom: 35px;
   }
   .brands .space {
     margin: 0 -50vw;
@@ -2084,20 +2093,24 @@ button:focus,
   }
 }
 @media (min-width: 990px) {
-  .testimonials {
+  .certificates {
     text-align: left;
   }
-  .testimonials .list {
+  .certificates .list {
+    margin-bottom: 70px;
     padding-left: 99px;
     padding-right: 35px;
   }
-  .testimonials .list .item {
+  .certificates .list-color {
+    margin-bottom: 0;
+  }
+  .certificates .list .item {
     width: 33.3%;
   }
-  .testimonials .list .item:nth-of-type(2n+1) {
+  .certificates .list .item:nth-of-type(2n+1) {
     clear: none;
   }
-  .testimonials .list .item:nth-of-type(3n+1) {
+  .certificates .list .item:nth-of-type(3n+1) {
     clear: left;
   }
   .brands ul li {
@@ -2334,14 +2347,14 @@ button:focus,
     height: auto;
     padding: 12px 40px 12px 0;
   }
-  .testimonials .list .item {
+  .certificates .list .item {
     width: 25%;
     padding: 0 45px;
   }
-  .testimonials .list .item:nth-of-type(3n+1) {
+  .certificates .list .item:nth-of-type(3n+1) {
     clear: none;
   }
-  .testimonials .list .item:nth-of-type(4n+1) {
+  .certificates .list .item:nth-of-type(4n+1) {
     clear: left;
   }
   .brands ul li {

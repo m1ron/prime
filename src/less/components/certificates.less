@@ -1,7 +1,7 @@
 /* ==========================================================================
-   TESTIMONIALS
+   CERTIFICATES
    ========================================================================== */
-.testimonials {
+.certificates {
     text-align: center;
     @media @tablet-md {
         text-align: left;
@@ -12,26 +12,42 @@
         }
     }
     .list {
-        margin: 0 -20px;
-        padding: 20px;
+        margin: 0 -20px 20px;
+        padding: 0 20px;
+        text-align: center;
         &:after {
             .clearfix;
         }
-        text-align: center;
-        background: @color-white-smoke;
+
+        &-color {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          background: @color-white-smoke;
+        }
 
         @media @tablet-sm {
             width: 100vw;
             margin-left: auto;
             margin-right: auto;
-            padding: 45px 20px 35px 84px;
+            padding: 0 20px 0 84px;
             left: -32px;
             position: relative;
+
+            &-color {
+              margin-bottom: 0;
+              padding-top: 45px;
+              padding-bottom: 35px;
+            }
         }
 
         @media @tablet-md {
+            margin-bottom: 70px;
             padding-left: 99px;
             padding-right: 35px;
+
+            &-color {
+              margin-bottom: 0;
+            }
         }
 
         .item {
