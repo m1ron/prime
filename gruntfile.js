@@ -16,15 +16,15 @@ module.exports = function(grunt) {
 
     /** Temp paths **/
     var temp = {
-        root: '.temp/',
-        html: '.temp/',
-        css: '.temp/css/',
-        js: '.temp/js/',
-        img: '.temp/img/',
-        svg: '.temp/svg/',
+        root: 'temp/',
+        html: 'temp/',
+        css: 'temp/css/',
+        js: 'temp/js/',
+        img: 'temp/img/',
+        svg: 'temp/svg/',
         favicon: 'temp/favicon/',
-        fonts: '.temp/fonts/',
-        video: '.temp/video/'
+        fonts: 'temp/fonts/',
+        video: 'temp/video/'
     };
 
     /** Destination paths **/
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         config: {
             src: 'src/',
-            temp: '.temp/',
+            temp: 'temp/',
             dist: 'dist/'
         },
         clean: {
@@ -51,9 +51,10 @@ module.exports = function(grunt) {
             after: [src.js + 'vendor/fastclick.js', src.css + 'content'],
             dist: [dist.js + 'custom.js'],
 
+            temp: [temp.root],
             img: [temp.img, dist.img],
             svg: [temp.svg, dist.svg],
-            favicon: [src.favicon + '**/*.*', '!<%= config.src %>/favicon/master.png', temp.favicon, dist.favicon]
+            favicon: [src.favicon + '**/*.*', '!<%= config.src %>/favicon/master.png', dist.favicon]
         },
         copy: {
             dev: {
@@ -87,13 +88,12 @@ module.exports = function(grunt) {
                     dest: src.css
                 }]
             },
-            dist: {
+            static: {
                 files: [{
                     expand: true,
                     cwd: '<%= config.src %>',
                     dest: '<%= config.dist %>',
                     src: [
-                        'css/{,*/}*.*',
                         'js/{,*/}*.*',
                         'fonts/{,*/}*.*',
                         'video/{,*/}*.*',
@@ -133,19 +133,11 @@ module.exports = function(grunt) {
                     dest: dist.svg
                 }]
             },
-            favicon_temp: {
-                files: [{
-                    expand: true,
-                    cwd: src.favicon,
-                    src: ['**/*.*'],
-                    dest: temp.favicon
-                }]
-            },
             favicon_dist: {
                 files: [{
                     expand: true,
-                    cwd: temp.favicon,
-                    src: ['**/*.*'],
+                    cwd: src.favicon,
+                    src: ['**/*.*', '!master.png'],
                     dest: dist.favicon
                 }]
             },
@@ -312,6 +304,14 @@ module.exports = function(grunt) {
                     src: ['**/*.png'],
                     dest: temp.img
                 }]
+            },
+            favicon: {
+                files: [{
+                    expand: true,
+                    cwd: src.favicon,
+                    src: ['**/*.png', '!master.png'],
+                    dest: src.favicon
+                }]
             }
         },
 
@@ -402,10 +402,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgo');
     grunt.loadNpmTasks('grunt-svgstore');
 
-
-
-    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:dist", "clean:dist", "img", "svg", "watch"]);
-    grunt.registerTask("process", ["less", "postcss", "newer:copy:dist"]);
+    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:static", "copy:favicon_dist", "img", "svg", "clean:dist", "clean:temp", "watch"]);
+    grunt.registerTask("process", ["less", "postcss", "newer:copy:static"]);
 
     grunt.registerTask("images", ["img", "svg"]);
 
@@ -415,5 +413,5 @@ module.exports = function(grunt) {
     grunt.registerTask("svg", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
     grunt.registerTask("svg:process", ["newer:svgo:default", "newer:copy:svg"]);
 
-    grunt.registerTask("favicon", ["clean:favicon", "realFavicon"]);
+    grunt.registerTask("favicon", ["clean:favicon", "realFavicon", "svgo:favicon", "pngquant:favicon", "copy:favicon_dist"]);
 };
