@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "html5shiv": "~3.7.3",
     "normalize-css": "normalize.css#^4.2.0",
     "fastclick": "~1.0.6",
     "jquery": "~2.1.4",
