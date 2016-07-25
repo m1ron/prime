@@ -1,0 +1,94 @@
+/* ==========================================================================
+   STAFF
+   ========================================================================== */
+.staff {
+    .staff-block {
+        margin: 0 -20px;
+        font: 20px/24px @font-heading;
+
+        @media @tablet-sm {
+            margin: 0 -50vw;
+            font-size: 24px;
+            line-height: 34px;
+        }
+        @media @desktop-sm {
+            font-size: 28px;
+            line-height: 38px;
+        }
+        .space {
+            @media @mobile-lg {
+                width: 100vw;
+                margin: 0 auto;
+                padding-left: 64px;
+                display: flex;
+                position: relative;
+                left: -32px;
+            }
+        }
+        .photo {
+            position: relative;
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .button {
+                max-width: 280px;
+                margin: 0 auto;
+                background: transparent;
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                &:hover {
+                  background: @color-midnight;
+                }
+            }
+            @media @mobile-lg {
+                width: 50%;
+                flex-basis: 50%;
+                overflow: hidden;
+                img {
+                    width: auto;
+                    height: 103%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                }
+                .button {
+                    bottom: 30px;
+                }
+            }
+        }
+        .text {
+            padding: 30px 20px;
+            background: @color-glitter;
+            text-align: center;
+            &:before {
+                .pseudo;
+                width: 66px;
+                height: 3px;
+                margin: 0 auto 20px;
+                background: @color-cerulean;
+            }
+            @media @mobile-lg {
+                width: 50%;
+                flex-basis: 50%;
+            }
+            @media @tablet-sm {
+              padding: 60px;
+              &:before {
+                margin-bottom: 50px;
+              }
+            }
+        }
+        .name {
+            margin: 30px 0 0 0;
+            font-weight: bold;
+            @media @desktop-sm {
+                font-size: 26px;
+            }
+        }
+    }
+}
