@@ -4,25 +4,20 @@
 .staff {
     .staff-block {
         margin: 0 -20px;
-        font: 20px/24px @font-heading;
 
-        @media @tablet-sm {
+        @media @mobile-lg {
             margin: 0 -50vw;
-            font-size: 24px;
-            line-height: 34px;
-        }
-        @media @desktop-sm {
-            font-size: 28px;
-            line-height: 38px;
         }
         .space {
             @media @mobile-lg {
                 width: 100vw;
                 margin: 0 auto;
-                padding-left: 64px;
                 display: flex;
                 position: relative;
-                left: -32px;
+            }
+            @media @tablet-sm {
+              padding-left: 64px;
+              left: -32px;
             }
         }
         .photo {
@@ -33,7 +28,7 @@
                 display: block;
             }
             .button {
-                max-width: 280px;
+                max-width: 230px;
                 margin: 0 auto;
                 background: transparent;
                 position: absolute;
@@ -46,18 +41,40 @@
             }
             @media @mobile-lg {
                 width: 50%;
+                padding: 40px 20px;
                 flex-basis: 50%;
                 overflow: hidden;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
                 img {
-                    width: auto;
-                    height: 103%;
+                    width: 103%;
+                    height: auto;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate3d(-50%, -50%, 0);
                 }
+                &.portrait {
+                  img {
+                    width: auto;
+                    height: 103%;
+                  }
+                }
                 .button {
-                    bottom: 30px;
+                    max-width: none;
+                    position: relative;
+                    bottom: auto;
+                    left: auto;
+                    right: auto;
+                }
+            }
+            @media @tablet-md {
+              padding-bottom: 65px;
+                .button {
+                  min-width: 260px;
+                  padding-top: 24px;
+                  padding-bottom: 24px;
                 }
             }
         }
@@ -65,6 +82,8 @@
             padding: 30px 20px;
             background: @color-glitter;
             text-align: center;
+            font: 20px/24px @font-heading;
+            letter-spacing: .02em;
             &:before {
                 .pseudo;
                 width: 66px;
@@ -77,18 +96,31 @@
                 flex-basis: 50%;
             }
             @media @tablet-sm {
-              padding: 60px;
+              font-size: 24px;
+              line-height: 34px;
+            }
+            @media @tablet-md {
+              padding: 60px 44px 44px;
               &:before {
                 margin-bottom: 50px;
               }
             }
-        }
-        .name {
-            margin: 30px 0 0 0;
-            font-weight: bold;
             @media @desktop-sm {
-                font-size: 26px;
+                font-size: 28px;
+                line-height: 38px;
+            }
+            p {
+              margin: 12px 0;
+            }
+            .name {
+                margin: 30px 0 0 0;
+                font-weight: bold;
+                @media @desktop-sm {
+                  margin: 70px 0 0 0;
+                    font-size: 24px;
+                }
             }
         }
+
     }
 }
