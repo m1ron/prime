@@ -68,14 +68,35 @@
                 padding: 0 45px;
             }
         }
+        .link {
+            display: block;
+        }
         .image {
-            width: 212px;
-            max-width: 100%;
-            height: auto;
             margin: 0 auto 24px;
             display: block;
             .color-black(.4);
             box-shadow: 0 0 10px 0 @color;
+            position: relative;
+            &:before {
+                .pseudo;
+                width: 70px;
+                height: 70px;
+                margin: auto auto;
+                background: url('@{images}/icons/loupe.png') 0 0 no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+            }
+            img {
+              width: 212px;
+              max-width: 100%;
+              height: auto;
+              display: block;
+            }
         }
         .title {
             margin: 0;
