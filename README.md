@@ -4,19 +4,19 @@ _Responsive markup_
 
 ## Technologies
 
-- Jade/HTML
-- Less/CSS
-- CoffeeScript/JavaScript
+- Jade/HTML5
+- LESS/CSS
+- CoffeeScript/JavaScript/jQuery
 - PostCSS/Autoprefixer
 - Grunt/Bower/npm
 
 ## Components
 
 - [normalize.css](https://github.com/necolas/normalize.css/)
-- [html5shiv](https://github.com/aFarkas/html5shiv)
-- [FastClick](https://github.com/ftlabs/fastclick)
+- [Fastclick](https://github.com/ftlabs/fastclick)
 - [jQuery](https://github.com/jquery/jquery)
 - [Slick](https://github.com/kenwheeler/slick/)
+- [jQuery Mask Plugin](https://github.com/igorescobar/jQuery-Mask-Plugin)
 - [Magnific Popup](https://github.com/dimsemenov/Magnific-Popup)
 
 ## Installation

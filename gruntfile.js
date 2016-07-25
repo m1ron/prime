@@ -3,14 +3,12 @@ module.exports = function(grunt) {
     var components = 'bower_components/';
     var src = {
         root: 'src/',
-        css: 'src/css/',
         less: 'src/less/',
         js: 'src/js/',
         img: 'src/img/',
         svg: 'src/svg/',
         favicon: 'src/favicon/',
         fonts: 'src/fonts/',
-        video: 'src/video/'
     };
 
     /** Temp paths **/
@@ -21,8 +19,6 @@ module.exports = function(grunt) {
         img: 'temp/img/',
         svg: 'temp/svg/',
         favicon: 'temp/favicon/',
-        fonts: 'temp/fonts/',
-        video: 'temp/video/'
     };
 
     /** Destination paths **/
@@ -34,15 +30,18 @@ module.exports = function(grunt) {
         svg: 'dist/svg/',
         favicon: 'dist/favicon/',
         fonts: 'dist/fonts/',
-        video: 'dist/video/'
     };
 
     grunt.initConfig({
+
+        // Config
         config: {
             src: 'src/',
             temp: 'temp/',
             dist: 'dist/'
         },
+
+        // Delete files
         clean: {
             all: ['**/.DS_Store', temp.root, dist.root],
             temp: [temp.root],
@@ -52,6 +51,8 @@ module.exports = function(grunt) {
             svg: [temp.svg, dist.svg],
             favicon: [src.favicon + '**/*.*', '!<%= config.src %>/favicon/master.png', dist.favicon]
         },
+
+        // Copy files
         copy: {
             static: {
                 files: [{
@@ -115,7 +116,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: temp.css + 'plugins.css',
+                    src: [temp.css + 'normalize.css', temp.css + 'plugins.css'],
                     dest: dist.css
                 }, {
                     expand: true,
@@ -432,7 +433,6 @@ module.exports = function(grunt) {
 
     // Grunt tasks
     grunt.registerTask("default", ["clean:all", "start", "watch"]);
-
     grunt.registerTask("start", ["static:start", "css:start", "js:start", "img:start", "svg:start", "clean:temp"]);
 
     grunt.registerTask("static", ["static:start"]);
