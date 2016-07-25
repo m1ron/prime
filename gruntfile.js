@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+
     /** Source paths **/
     var components = 'bower_components/';
     var src = {
@@ -31,6 +32,7 @@ module.exports = function(grunt) {
         favicon: 'dist/favicon/',
         fonts: 'dist/fonts/',
     };
+
 
     grunt.initConfig({
 
@@ -433,7 +435,7 @@ module.exports = function(grunt) {
 
     // Grunt tasks
     grunt.registerTask("default", ["clean:all", "start", "watch"]);
-    grunt.registerTask("start", ["static:start", "css:start", "js:start", "img:start", "svg:start", "clean:temp"]);
+    grunt.registerTask("start", ["static:start", "css:start", "js:start", "img:start", "svg:start", "favicon:process", "clean:temp"]);
 
     grunt.registerTask("static", ["static:start"]);
     grunt.registerTask("static:start", ["copy:static"]);
@@ -457,4 +459,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask("favicon", ["favicon:start"]);
     grunt.registerTask("favicon:start", ["clean:favicon", "realFavicon", "svgo:favicon", "pngquant:favicon", "copy:favicon"]);
+    grunt.registerTask("favicon:process", ["copy:favicon"]);
 };
