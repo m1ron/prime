@@ -14,7 +14,6 @@
             var newDiv = document.createElement('div');
             newDiv.className = "sprite-holder";
             newDiv.insertAdjacentHTML('beforeend', data);
-            console.log(newDiv);
             document.body.appendChild(newDiv);
         },
         insert = function() {

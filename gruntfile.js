@@ -3,7 +3,6 @@ module.exports = function(grunt) {
     var components = 'bower_components/';
     var src = {
         root: 'src/',
-        html: 'src/',
         css: 'src/css/',
         less: 'src/less/',
         js: 'src/js/',
@@ -17,7 +16,6 @@ module.exports = function(grunt) {
     /** Temp paths **/
     var temp = {
         root: 'temp/',
-        html: 'temp/',
         css: 'temp/css/',
         js: 'temp/js/',
         img: 'temp/img/',
@@ -30,7 +28,6 @@ module.exports = function(grunt) {
     /** Destination paths **/
     var dist = {
         root: 'dist/',
-        html: 'dist/',
         css: 'dist/css/',
         js: 'dist/js/',
         img: 'dist/img/',
@@ -47,22 +44,38 @@ module.exports = function(grunt) {
             dist: 'dist/'
         },
         clean: {
-            pre: ['**/.DS_Store', dist.root, src.css, src.js + 'vendor'],
-            after: [src.js + 'vendor/fastclick.js', src.css + 'content'],
-            dist: [dist.js + 'custom.js'],
-
+            all: ['**/.DS_Store', temp.root, dist.root],
             temp: [temp.root],
+            js: [temp.js, dist.js],
+            css: [temp.css, dist.css],
             img: [temp.img, dist.img],
             svg: [temp.svg, dist.svg],
             favicon: [src.favicon + '**/*.*', '!<%= config.src %>/favicon/master.png', dist.favicon]
         },
         copy: {
-            dev: {
+            static: {
                 files: [{
+                    expand: true,
+                    cwd: src.root,
+                    dest: dist.root,
+                    src: [
+                        'fonts/{,*/}*.*',
+                        'audio/{,*/}*.*',
+                        'video/{,*/}*.*',
+                        '{,*/}*.html'
+                    ]
+                }]
+            },
+            js_temp: {
+                files: [{
+                    expand: true,
+                    cwd: src.js,
+                    src: 'main.js',
+                    dest: temp.js
+                }, {
                     expand: true,
                     flatten: true,
                     src: [
-                        components + 'html5shiv/dist/html5shiv.min.js',
                         components + 'jquery/dist/jquery.min.js',
                         components + 'jquery/dist/jquery.min.map',
                         components + 'fastclick/lib/fastclick.js',
@@ -70,35 +83,45 @@ module.exports = function(grunt) {
                         components + 'magnific-popup/dist/jquery.magnific-popup.min.js',
                         components + 'jquery-mask-plugin/dist/jquery.mask.min.js'
                     ],
-                    dest: src.js + 'vendor'
+                    dest: temp.js + 'vendor'
+                }]
+            },
+            js_dist: {
+                files: [{
+                    expand: true,
+                    cwd: temp.js,
+                    src: '*.js',
+                    dest: dist.js
                 }, {
+                    expand: true,
+                    cwd: temp.js + 'vendor',
+                    src: '*.min.*',
+                    dest: dist.js + 'vendor',
+                }]
+            },
+            css_temp: {
+                files: [{
                     expand: true,
                     flatten: true,
                     src: [
+                        components + 'normalize-css/normalize.css',
                         components + 'slick-carousel/slick/slick.css',
                         components + 'magnific-popup/dist/magnific-popup.css'
                     ],
-                    dest: src.css + 'content'
+                    dest: temp.css + 'vendor'
+                }]
+            },
+            css_dist: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: temp.css + 'plugins.css',
+                    dest: dist.css
                 }, {
                     expand: true,
                     flatten: true,
-                    src: [
-                        components + 'normalize-css/normalize.css'
-                    ],
-                    dest: src.css
-                }]
-            },
-            static: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.src %>',
-                    dest: '<%= config.dist %>',
-                    src: [
-                        'js/{,*/}*.*',
-                        'fonts/{,*/}*.*',
-                        'video/{,*/}*.*',
-                        '{,*/}*.html'
-                    ]
+                    src: temp.css + 'vendor/*.min.css',
+                    dest: dist.css + 'vendor'
                 }]
             },
             img_temp: {
@@ -133,7 +156,7 @@ module.exports = function(grunt) {
                     dest: dist.svg
                 }]
             },
-            favicon_dist: {
+            favicon: {
                 files: [{
                     expand: true,
                     cwd: src.favicon,
@@ -142,64 +165,84 @@ module.exports = function(grunt) {
                 }]
             },
         },
-        concat: {
-            options: {
-                separator: '\n\n\n'
-            },
-            dist: {
-                files: [{
-                    src: [
-                        src.js + 'custom.js',
-                        src.js + 'vendor/fastclick.min.js',
-                        src.js + 'vendor/slick.min.js',
-                        src.js + 'vendor/jquery.magnific-popup.min.js',
-                        src.js + 'vendor/jquery.mask.min.js'
-                    ],
-                    dest: src.js + 'plugins.js'
-                }, {
-                    src: [
-                        src.css + 'vendor/*.min.css'
-                    ],
-                    dest: src.css + 'plugins.css'
-                }]
-            }
-        },
+
+        // Minify CSS
         cssmin: {
-            dist: {
+            default: {
                 files: [{
                     expand: true,
-                    flatten: true,
-                    src: src.css + 'content/*.css',
-                    dest: src.css + 'vendor',
+                    cwd: temp.css + 'vendor',
+                    src: ['*.css', '!normalize.css'],
+                    dest: temp.css + 'vendor',
                     ext: '.min.css'
                 }, {
                     expand: true,
-                    flatten: true,
-                    src: src.css + 'normalize.css',
-                    dest: src.css,
+                    cwd: temp.css + 'vendor',
+                    src: 'normalize.css',
+                    dest: temp.css,
                     ext: '.css'
                 }]
             }
         },
+
+        // Minify JS
+        uglify: {
+            options: {
+                preserveComments: false
+            },
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: temp.js + 'vendor',
+                    src: ['*.js', '!*.min.js'],
+                    dest: temp.js + 'vendor',
+                    ext: '.min.js'
+                }]
+            }
+        },
+
+        // Concat files
+        concat: {
+            options: {
+                separator: '\n\n'
+            },
+            css: {
+                files: [{
+                    src: temp.css + 'vendor/*.min.css',
+                    dest: temp.css + 'plugins.css'
+                }]
+            },
+            js: {
+                files: [{
+                    src: [
+                        src.js + 'plugins.js',
+                        temp.js + 'vendor/*.min.js',
+                        '!' + temp.js + 'vendor/jquery.min.js'
+                    ],
+                    dest: temp.js + 'plugins.js'
+                }]
+            }
+        },
+
+        // Parse LESS
         less: {
-            dev: {
-                options: {
-                    paths: [src.less]
-                },
+            default: {
                 files: [{
                     expand: true,
                     cwd: src.less,
-                    src: ['main.less', 'ie.less'],
-                    dest: src.css,
+                    src: ['main.less'],
+                    dest: temp.css,
                     ext: ".css"
                 }]
             }
         },
+
+        // Post CSS
         postcss: {
             options: {
                 map: {
                     inline: false,
-                    annotation: src.css + '/maps/'
+                    annotation: dist.css + '/maps/'
                 },
                 processors: [
                     require('postcss-focus'),
@@ -212,11 +255,76 @@ module.exports = function(grunt) {
                     })
                 ]
             },
-            dist: {
-                src: src.css + 'main.css'
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: temp.css,
+                    src: ['main.css'],
+                    dest: dist.css
+                }]
             }
         },
 
+        // Compress PNG (PNGquant)
+        pngquant: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: temp.img,
+                    src: ['**/*.png'],
+                    dest: temp.img
+                }]
+            },
+            favicon: {
+                files: [{
+                    expand: true,
+                    cwd: src.favicon,
+                    src: ['**/*.png', '!master.png'],
+                    dest: src.favicon
+                }]
+            }
+        },
+
+        // Compress SVG (SVGO)
+        svgo: {
+            default: {
+                files: [{
+                    expand: true,
+                    cwd: temp.svg,
+                    src: ['**/*.svg'],
+                    dest: temp.svg
+                }]
+            },
+            favicon: {
+                files: [{
+                    expand: true,
+                    cwd: src.favicon,
+                    src: ['**/*.svg'],
+                    dest: src.favicon
+                }]
+            }
+        },
+
+        // Generate SVG sprite
+        svgstore: {
+            options: {
+                inheritviewbox: true,
+                cleanup: true,
+                includeTitleElement: false,
+                formatting: {
+                    indent_size: 4,
+                    wrap_line_length: 0,
+                    end_with_newline: true
+                }
+            },
+            default: {
+                files: {
+                    '<%= config.temp %>svg/sprite.svg': ['<%= config.temp %>svg/sprite/*.svg']
+                }
+            },
+        },
+
+        // Generate Favicon
         realFavicon: {
             favicons: {
                 src: src.favicon + 'master.png',
@@ -279,97 +387,22 @@ module.exports = function(grunt) {
             }
         },
 
-        uglify: {
-            options: {
-                preserveComments: false
-            },
-            dev: {
-                files: [{
-                    expand: true,
-                    cwd: src.js + 'vendor',
-                    src: 'fastclick.js',
-                    dest: src.js + 'vendor',
-                    ext: '.min.js'
-                }]
-            }
-        },
-
-
-        // Compress PNG (PNGquant)
-        pngquant: {
-            default: {
-                files: [{
-                    expand: true,
-                    cwd: temp.img,
-                    src: ['**/*.png'],
-                    dest: temp.img
-                }]
-            },
-            favicon: {
-                files: [{
-                    expand: true,
-                    cwd: src.favicon,
-                    src: ['**/*.png', '!master.png'],
-                    dest: src.favicon
-                }]
-            }
-        },
-
-        // Compress SVG (SVGO)
-        svgo: {
-            default: {
-                files: [{
-                    expand: true,
-                    cwd: temp.svg,
-                    src: ['**/*.svg'],
-                    dest: temp.svg
-                }]
-            },
-            favicon: {
-                files: [{
-                    expand: true,
-                    cwd: src.favicon,
-                    src: ['**/*.svg'],
-                    dest: src.favicon
-                }]
-            }
-        },
-
-        // Generate SVG sprite
-        svgstore: {
-            options: {
-                inheritviewbox: true,
-                cleanup: true,
-                includeTitleElement: false,
-                formatting: {
-                    indent_size: 4,
-                    wrap_line_length: 0,
-                    end_with_newline: true
-                }
-            },
-            default: {
-                files: {
-                    '<%= config.temp %>svg/sprite.svg': ['<%= config.temp %>svg/sprite/*.svg']
-                }
-            },
-        },
-
         // Watch for changed files
         watch: {
             options: {
                 livereload: true
             },
-            scripts: {
-                files: [src.js + "*.js"],
-                tasks: ["process"]
+            static: {
+                files: [src.root + "*.html"],
+                tasks: ["static:process"]
             },
-            styles: {
+            css: {
                 files: [src.less + "**/*.less"],
-                tasks: ["process"]
+                tasks: ["css:process"]
             },
-            html: {
-                files: [src.html + "*.html"],
-                tasks: ["process"]
+            js: {
+                files: [src.js + "main.js"],
+                tasks: ["js:process"]
             },
             img: {
                 files: [src.img + "**/*.{png,jpg,gif}"],
@@ -382,36 +415,46 @@ module.exports = function(grunt) {
         }
     });
 
+    // npm tasks
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-concat");
-
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks("grunt-contrib-cssmin");
-
     grunt.loadNpmTasks("grunt-contrib-uglify");
-
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-newer");
-
-    grunt.loadNpmTasks('grunt-real-favicon');
-
     grunt.loadNpmTasks('grunt-pngquant');
-
     grunt.loadNpmTasks('grunt-svgo');
     grunt.loadNpmTasks('grunt-svgstore');
+    grunt.loadNpmTasks('grunt-real-favicon');
 
-    grunt.registerTask("default", ["clean:pre", "less", "postcss", "copy:dev", "uglify:dev", "cssmin", "concat", "clean:after", "copy:static", "copy:favicon_dist", "img", "svg", "clean:dist", "clean:temp", "watch"]);
-    grunt.registerTask("process", ["less", "postcss", "newer:copy:static"]);
+    // Grunt tasks
+    grunt.registerTask("default", ["clean:all", "start", "watch"]);
 
-    grunt.registerTask("images", ["img", "svg"]);
+    grunt.registerTask("start", ["static:start", "css:start", "js:start", "img:start", "svg:start", "clean:temp"]);
 
-    grunt.registerTask("img", ["clean:img", "copy:img_temp", "pngquant:default", "copy:img_dist"]);
-    grunt.registerTask("img:process", ["newer:pngquant:default", "newer:copy:img"]);
+    grunt.registerTask("static", ["static:start"]);
+    grunt.registerTask("static:start", ["copy:static"]);
+    grunt.registerTask("static:process", ["newer:copy:static"]);
 
-    grunt.registerTask("svg", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
-    grunt.registerTask("svg:process", ["newer:svgo:default", "newer:copy:svg"]);
+    grunt.registerTask("css", ["css:start"]);
+    grunt.registerTask("css:start", ["clean:css", "copy:css_temp", "css:process", "cssmin:default", "concat:css", "copy:css_dist"]);
+    grunt.registerTask("css:process", ["less:default", "postcss:default"]);
 
-    grunt.registerTask("favicon", ["clean:favicon", "realFavicon", "svgo:favicon", "pngquant:favicon", "copy:favicon_dist"]);
+    grunt.registerTask("js", ["js:start"]);
+    grunt.registerTask("js:start", ["clean:js", "copy:js_temp", "uglify:default", "concat:js", "copy:js_dist"]);
+    grunt.registerTask("js:process", ["newer:copy:js_temp", "newer:copy:js_dist"]);
+
+    grunt.registerTask("img", ["img:start"]);
+    grunt.registerTask("img:start", ["clean:img", "copy:img_temp", "pngquant:default", "copy:img_dist"]);
+    grunt.registerTask("img:process", ["newer:copy:img_temp", "newer:pngquant:default", "newer:copy:img_dist"]);
+
+    grunt.registerTask("svg", ["svg:start"]);
+    grunt.registerTask("svg:start", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
+    grunt.registerTask("svg:process", ["newer:copy:svg_temp", "newer:svgo:default", "newer:copy:svg_dist"]);
+
+    grunt.registerTask("favicon", ["favicon:start"]);
+    grunt.registerTask("favicon:start", ["clean:favicon", "realFavicon", "svgo:favicon", "pngquant:favicon", "copy:favicon"]);
 };
