@@ -14,38 +14,30 @@
         text-align: center;
         background: @color-white-smoke;
 
-        @media @mobile-sm {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
         @media @tablet-sm {
             width: 100vw;
             margin-left: auto;
             margin-right: auto;
-            padding: 45px 25px 35px 89px;
+            padding: 45px 20px 35px 84px;
             left: -32px;
             position: relative;
         }
 
         @media @tablet-md {
             padding-left: 74px;
-            padding-right: 20px;
+            padding-right: 10px;
         }
 
         .item {
-            max-width: 212px;
             margin: 26px auto;
-            @media @mobile-sm {
+            @media @mobile-lg {
                 width: 50%;
-                max-width: none;
                 float: left;
-                padding: 0 10px;
                 &:nth-of-type(2n+1) {
                     clear: left;
                 }
             }
-            @media @mobile-lg {
+            @media @tablet-md {
                 width: 33.3%;
                 &:nth-of-type(2n+1) {
                     clear: none;
@@ -54,9 +46,9 @@
                     clear: left;
                 }
             }
-            @media @tablet-md {
+            @media @desktop-sm {
                 width: 25%;
-                padding: 0 35px;
+                padding: 0 45px;
                 &:nth-of-type(3n+1) {
                     clear: none;
                 }
@@ -64,12 +56,13 @@
                     clear: left;
                 }
             }
-            @media @desktop-sm {
-                padding: 0 45px;
-            }
         }
         .link {
+            width: 212px;
+            max-width: 100%;
+            margin: 0 auto;
             display: block;
+            text-decoration: none;
         }
         .image {
             margin: 0 auto 24px;
@@ -86,16 +79,15 @@
                 background-size: cover;
                 position: absolute;
                 top: 0;
-                bottom: 0;
+                bottom: 15px;
                 left: 0;
                 right: 0;
                 z-index: 10;
             }
             img {
-              width: 212px;
-              max-width: 100%;
-              height: auto;
-              display: block;
+                width: 100%;
+                height: auto;
+                display: block;
             }
         }
         .title {

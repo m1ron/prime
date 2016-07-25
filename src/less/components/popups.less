@@ -1,0 +1,75 @@
+/* ==========================================================================
+   POPUPS
+   ========================================================================== */
+.mfp-arrow {
+    cursor: pointer;
+    &:active {
+        margin-top: -55px !important;
+    }
+    &:before, &:after {
+        .pseudo;
+        width: 26px;
+        height: 4px;
+        border-radius: 3px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: @color-white;
+        border: none;
+        transition: background @duration;
+        opacity: 1;
+    }
+    &:before {
+        left: -5px;
+        transform: rotate(45deg);
+        top: 0;
+    }
+    &:after {
+        right: 3px;
+        transform: rotate(-45deg);
+        top: 34px;
+    }
+
+    &.mfp-arrow-left {
+        &:before {
+            top: 34px;
+        }
+        &:after {
+            top: 0;
+        }
+    }
+}
+.mfp-close {
+    width: 44px !important;
+    right: -40px !important;
+    &:active {
+        top: 0;
+    }
+    &:before, &:after {
+        .pseudo;
+        width: 30px;
+        height: 4px;
+        border-radius: 3px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: @color-white;
+        border: none;
+        transition: background @duration;
+        opacity: 1;
+    }
+    &:before {
+        left: -3px;
+        transform: rotate(45deg);
+    }
+    &:after {
+        right: 3px;
+        transform: rotate(-45deg);
+    }
+}

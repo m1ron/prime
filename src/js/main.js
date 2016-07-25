@@ -183,9 +183,46 @@ $(document).ready(function() {
         }, 100);
     });
 
+    /* Pager */
     $('.pager').each(function() {
         var t = $('ul li', this).filter('.prev, .next').find('a');
         $('<span class="arrow"><span></span></span>').appendTo(t);
     });
 
+    /* Gallery popup */
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: true
+        },
+        gallery: {
+    			enabled: true,
+    			navigateByImgClick: true,
+    			preload: [0,1]
+    		}
+    });
+
+});
+
+/*
+ * Magnific Popup default settings
+ */
+$.extend(true, $.magnificPopup.defaults, {
+	closeMarkup: '<span title="%title%" class="mfp-close"></span>',
+	gallery: {
+		arrowMarkup: '<div title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>',
+		cursor: null
+	},
+	image: {
+		cursor: null
+	},
+	midClick: true,
+	settings: {
+		cache: false
+	},
+	mainClass: 'mfp-fade',
+	removalDelay: 300
 });
