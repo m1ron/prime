@@ -124,10 +124,10 @@ h1,
 }
 h2,
 .h2 {
-  margin-top: 40px;
-  margin-bottom: 16px;
-  font: 800 55px/55px 'Arno Pro', serif;
-  color: #000;
+  margin-top: 28px;
+  margin-bottom: 4px;
+  font: 800 34px/34px 'Arno Pro', serif;
+  color: #162a49;
 }
 h3,
 .h3 {
@@ -195,7 +195,7 @@ h6 + p,
 }
 .text-large {
   margin-bottom: 30px;
-  font: 22px/30px 'Arno Pro', serif;
+  font: 20px/24px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
 /* ==========================================================================
@@ -1563,6 +1563,9 @@ button:focus,
 /* ==========================================================================
    TESTIMONIALS
    ========================================================================== */
+.testimonials {
+  text-align: center;
+}
 .testimonials .list {
   margin: 0 -20px;
   padding: 20px;
@@ -1706,6 +1709,34 @@ button:focus,
           transform: rotate(-45deg);
 }
 /* ==========================================================================
+   BRANDS
+   ========================================================================== */
+.brands {
+  text-align: center;
+}
+.brands ul {
+  margin: 45px -20px 0;
+  padding: 0;
+  list-style: none;
+}
+.brands ul:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.brands ul li {
+  width: 50%;
+  margin-bottom: 84px;
+  padding: 0 20px;
+  float: left;
+}
+.brands ul .logo {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+/* ==========================================================================
    PAGE
    ========================================================================== */
 .page {
@@ -1782,6 +1813,12 @@ button:focus,
     font-size: 80px;
     line-height: 80px;
   }
+  h2,
+  .h2 {
+    margin-top: 46px;
+    font-size: 46px;
+    line-height: 46px;
+  }
   h3,
   .h3 {
     margin-top: 46px;
@@ -1815,8 +1852,8 @@ button:focus,
   }
   .text-large {
     margin-bottom: 44px;
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 24px;
+    line-height: 34px;
   }
   .wrapper {
     padding: 0 35px;
@@ -2021,7 +2058,7 @@ button:focus,
     text-indent: 0;
     overflow: visible;
   }
-  .testimonials {
+  .testimonials .space {
     margin: 0 -50vw;
   }
   .testimonials .list {
@@ -2032,11 +2069,27 @@ button:focus,
     left: -32px;
     position: relative;
   }
+  .brands .space {
+    margin: 0 -50vw;
+  }
+  .brands ul {
+    width: 100vw;
+    margin: 64px auto -36px;
+    padding: 0 20px 0 84px;
+    left: -32px;
+    position: relative;
+  }
+  .brands ul li {
+    margin-bottom: 108px;
+  }
 }
 @media (min-width: 990px) {
+  .testimonials {
+    text-align: left;
+  }
   .testimonials .list {
-    padding-left: 74px;
-    padding-right: 10px;
+    padding-left: 99px;
+    padding-right: 35px;
   }
   .testimonials .list .item {
     width: 33.3%;
@@ -2047,8 +2100,20 @@ button:focus,
   .testimonials .list .item:nth-of-type(3n+1) {
     clear: left;
   }
+  .brands ul li {
+    width: 33.3%;
+  }
 }
 @media (min-width: 1170px) {
+  h2,
+  .h2 {
+    font-size: 55px;
+    line-height: 55px;
+  }
+  .text-large {
+    font-size: 28px;
+    line-height: 38px;
+  }
   .header .phone {
     right: 31px;
   }
@@ -2278,6 +2343,9 @@ button:focus,
   }
   .testimonials .list .item:nth-of-type(4n+1) {
     clear: left;
+  }
+  .brands ul li {
+    width: 25%;
   }
 }
 @media (max-width: 600px) {

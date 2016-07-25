@@ -1,0 +1,47 @@
+/* ==========================================================================
+   BRANDS
+   ========================================================================== */
+.brands {
+    text-align: center;
+    .space {
+        @media @tablet-sm {
+            margin: 0 -50vw;
+        }
+    }
+    ul {
+        margin: 45px -20px 0;
+        padding: 0;
+        list-style: none;
+        &:after {
+            .clearfix;
+        }
+        @media @tablet-sm {
+            width: 100vw;
+            margin: 64px auto -36px;
+            padding: 0 20px 0 84px;
+            left: -32px;
+            position: relative;
+        }
+        li {
+            width: 50%;
+            margin-bottom: 84px;
+            padding: 0 20px;
+            float: left;
+            @media @tablet-sm {
+              margin-bottom: 108px;
+            }
+            @media @tablet-md {
+              width: 33.3%;
+            }
+            @media @desktop-sm {
+              width: 25%;
+            }
+        }
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}

@@ -95,10 +95,19 @@ h1, .h1 {
     }
 }
 h2, .h2 {
-    margin-top: @margin-lg;
-    margin-bottom: @margin-sm;
-    font: 800 55px/55px @font-heading;
-    color: @color-black;
+    margin-top: 28px;
+    margin-bottom: 4px;
+    font: 800 34px/34px @font-heading;
+    color: @color-midnight;
+    @media @tablet-sm {
+        margin-top: 46px;
+        font-size: 46px;
+        line-height: 46px;
+    }
+    @media @desktop-sm {
+        font-size: 55px;
+        line-height: 55px;
+    }
 }
 h3, .h3 {
     margin-top: @margin-lg;
@@ -180,10 +189,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .text-large {
     margin-bottom: @margin-md;
-    font: 22px/30px @font-heading;
+    font: 20px/24px @font-heading;
     letter-spacing: .02em;
     @media @tablet-sm {
         margin-bottom: 44px;
+        font-size: 24px;
+        line-height: 34px;
+    }
+    @media @desktop-sm {
         font-size: 28px;
         line-height: 38px;
     }
