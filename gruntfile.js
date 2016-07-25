@@ -94,7 +94,6 @@ module.exports = function(grunt) {
                     dest: '<%= config.dist %>',
                     src: [
                         'css/{,*/}*.*',
-                        'img/**/*',
                         'js/{,*/}*.*',
                         'fonts/{,*/}*.*',
                         'video/{,*/}*.*',
@@ -416,5 +415,5 @@ module.exports = function(grunt) {
     grunt.registerTask("svg", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
     grunt.registerTask("svg:process", ["newer:svgo:default", "newer:copy:svg"]);
 
-    grunt.registerTask("favicon", ["clean:favicon", "realFavicon", "svgo:favicon"]);
+    grunt.registerTask("favicon", ["clean:favicon", "realFavicon"]);
 };
