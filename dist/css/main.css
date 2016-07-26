@@ -193,22 +193,6 @@ h6 + p,
 .mobile-hidden-inline {
   display: none;
 }
-.text-large {
-  margin-bottom: 30px;
-  font: 24px/32px 'Arno Pro', serif;
-  letter-spacing: .02em;
-}
-.text-large + p {
-  margin-top: -22px;
-}
-.text-medium {
-  margin-bottom: 30px;
-  font: 22px/30px 'Arno Pro', serif;
-  letter-spacing: .02em;
-}
-.text-center {
-  text-align: center;
-}
 /* ==========================================================================
    CONTAINERS
    ========================================================================== */
@@ -2204,16 +2188,6 @@ button:focus,
   .mobile-hidden-inline {
     display: inline;
   }
-  .text-large {
-    margin-bottom: 44px;
-  }
-  .text-large + p {
-    margin-top: -36px;
-  }
-  .text-medium {
-    font-size: 24px;
-    line-height: 38px;
-  }
   .wrapper {
     padding: 0 35px;
   }
@@ -2528,10 +2502,6 @@ button:focus,
   .h2 {
     font-size: 55px;
     line-height: 55px;
-  }
-  .text-large {
-    font-size: 28px;
-    line-height: 38px;
   }
   .header .phone {
     right: 31px;
