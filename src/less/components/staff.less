@@ -2,23 +2,22 @@
    STAFF
    ========================================================================== */
 .staff {
-    .staff-block {
-        margin: 0 -20px;
-
+    .space {
         @media @mobile-lg {
             margin: 0 -50vw;
         }
-        .space {
-            @media @mobile-lg {
-                width: 100vw;
-                margin: 0 auto;
-                display: flex;
-                position: relative;
-            }
-            @media @tablet-sm {
-              padding-left: 64px;
-              left: -32px;
-            }
+    }
+    .staff-block {
+        margin: 0 -20px;
+        @media @mobile-lg {
+            width: 100vw;
+            margin: 0 auto;
+            display: flex;
+            position: relative;
+        }
+        @media @tablet-sm {
+            padding-left: 64px;
+            left: -32px;
         }
         .photo {
             position: relative;
@@ -36,7 +35,7 @@
                 left: 0;
                 right: 0;
                 &:hover {
-                  background: @color-midnight;
+                    background: @color-midnight;
                 }
             }
             @media @mobile-lg {
@@ -56,10 +55,10 @@
                     transform: translate3d(-50%, -50%, 0);
                 }
                 &.portrait {
-                  img {
-                    width: auto;
-                    height: 103%;
-                  }
+                    img {
+                        width: auto;
+                        height: 103%;
+                    }
                 }
                 .button {
                     max-width: none;
@@ -70,11 +69,11 @@
                 }
             }
             @media @tablet-md {
-              padding-bottom: 65px;
+                padding-bottom: 65px;
                 .button {
-                  min-width: 260px;
-                  padding-top: 24px;
-                  padding-bottom: 24px;
+                    min-width: 260px;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
                 }
             }
         }
@@ -96,31 +95,118 @@
                 flex-basis: 50%;
             }
             @media @tablet-sm {
-              font-size: 24px;
-              line-height: 34px;
+                font-size: 24px;
+                line-height: 34px;
             }
             @media @tablet-md {
-              padding: 60px 44px 44px;
-              &:before {
-                margin-bottom: 50px;
-              }
+                padding: 60px 44px 44px;
+                &:before {
+                    margin-bottom: 50px;
+                }
             }
             @media @desktop-sm {
                 font-size: 28px;
                 line-height: 38px;
             }
             p {
-              margin: 12px 0;
+                margin: 12px 0;
             }
             .name {
                 margin: 30px 0 0 0;
                 font-weight: bold;
                 @media @desktop-sm {
-                  margin: 70px 0 0 0;
+                    margin: 70px 0 0 0;
                     font-size: 24px;
                 }
             }
         }
-
+    }
+    .list {
+        margin-top: 30px;
+        font-size: 14px;
+        line-height: 20px;
+        @media @mobile-lg {
+            width: 100vw;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        @media @tablet-sm {
+          margin-top: 84px;
+          padding-left: 64px;
+          left: -32px;
+        }
+        &:after {
+            .clearfix;
+        }
+        .item {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            padding: 0 10px;
+            text-align: center;
+            p {
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+            @media @mobile-lg {
+                width: 50%;
+                max-width: none;
+                padding: 0 20px;
+                float: left;
+            }
+            @media @tablet-sm {
+                margin-bottom: 68px;
+            }
+            @media @tablet-md {
+                width: 33.3%;
+            }
+            @media @desktop-sm {
+                width: 25%;
+            }
+        }
+        .photo {
+            width: 227px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 25px;
+            display: block;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+        .name {
+            margin: 0 0 5px;
+            font: bold 20px/24px @font-heading;
+            color: @color-midnight;
+            &:after {
+                .pseudo;
+                width: 105px;
+                height: 2px;
+                margin: 5px auto 0;
+                background: @color-midnight;
+            }
+            @media @tablet-sm {
+                font-size: 24px;
+                line-height: 28px;
+            }
+            @media @desktop-sm {
+                font-size: 28px;
+                line-height: 34px;
+                span {
+                    display: block;
+                }
+            }
+        }
+        .position {
+            margin: 0 0 5px;
+            font: 18px/22px @font-heading;
+            @media @tablet-sm {
+                font-size: 22px;
+                line-height: 28px;
+            }
+        }
     }
 }
