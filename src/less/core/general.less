@@ -189,15 +189,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .text-large {
     margin-bottom: @margin-md;
-    font: 20px/24px @font-heading;
+    font: 24px/32px @font-heading;
     letter-spacing: .02em;
     + p {
-        margin-top: -36px;
+        margin-top: -22px;
     }
     @media @tablet-sm {
         margin-bottom: 44px;
-        font-size: 24px;
-        line-height: 34px;
+        + p {
+            margin-top: -36px;
+        }
     }
     @media @desktop-sm {
         font-size: 28px;
@@ -206,7 +207,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .text-medium {
   margin-bottom: @margin-md;
-  font-family: @font-heading;
+  font: 22px/30px @font-heading;
   letter-spacing: .02em;
   @media @tablet-sm {
     font-size: 24px;

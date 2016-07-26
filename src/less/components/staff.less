@@ -88,7 +88,7 @@
             padding: 30px 20px;
             background: @color-glitter;
             text-align: center;
-            font: 20px/24px @font-heading;
+            font: 24px/34px @font-heading;
             letter-spacing: .02em;
             &:before {
                 .pseudo;
@@ -101,10 +101,6 @@
             @media @mobile-lg {
                 width: 50%;
                 flex-basis: 50%;
-            }
-            @media @tablet-sm {
-                font-size: 24px;
-                line-height: 34px;
             }
             @media @tablet-md {
                 padding: 60px 44px 44px;
@@ -123,6 +119,7 @@
             .name {
                 margin: 30px 0 0 0;
                 font-weight: bold;
+                font-size: 22px;
                 @media @desktop-sm {
                     margin: 70px 0 0 0;
                     font-size: 24px;
@@ -193,7 +190,7 @@
         }
         .name {
             margin: 0 0 5px;
-            font: bold 20px/24px @font-heading;
+            font: bold 28px/34px @font-heading;
             color: @color-midnight;
             &:after {
                 .pseudo;
@@ -202,14 +199,7 @@
                 margin: 5px auto 0;
                 background: @color-midnight;
             }
-
-            @media @tablet-sm {
-                font-size: 24px;
-                line-height: 28px;
-            }
             @media @desktop-sm {
-                font-size: 28px;
-                line-height: 34px;
                 span {
                     display: block;
                 }
@@ -218,12 +208,7 @@
         }
         .position {
             margin: 0 0 5px;
-            font: 18px/22px @font-heading;
-
-            @media @tablet-sm {
-                font-size: 22px;
-                line-height: 28px;
-            }
+            font: 22px/28px @font-heading;
         }
     }
 }

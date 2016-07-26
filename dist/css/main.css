@@ -195,15 +195,15 @@ h6 + p,
 }
 .text-large {
   margin-bottom: 30px;
-  font: 20px/24px 'Arno Pro', serif;
+  font: 24px/32px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
 .text-large + p {
-  margin-top: -36px;
+  margin-top: -22px;
 }
 .text-medium {
   margin-bottom: 30px;
-  font-family: 'Arno Pro', serif;
+  font: 22px/30px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
 .text-center {
@@ -624,6 +624,7 @@ button:focus,
    ========================================================================== */
 .gallery {
   width: 100%;
+  text-align: center;
 }
 .gallery .heading {
   margin-top: 0;
@@ -1795,7 +1796,7 @@ button:focus,
   padding: 30px 20px;
   background: #e8f0f7;
   text-align: center;
-  font: 20px/24px 'Arno Pro', serif;
+  font: 24px/34px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
 .staff .staff-block .text:before {
@@ -1813,6 +1814,7 @@ button:focus,
 .staff .staff-block .text .name {
   margin: 30px 0 0 0;
   font-weight: bold;
+  font-size: 22px;
 }
 .staff .list {
   margin-top: 30px;
@@ -1847,7 +1849,7 @@ button:focus,
 }
 .staff .list .name {
   margin: 0 0 5px;
-  font: bold 20px/24px 'Arno Pro', serif;
+  font: bold 28px/34px 'Arno Pro', serif;
   color: #162a49;
 }
 .staff .list .name:after {
@@ -1861,7 +1863,7 @@ button:focus,
 }
 .staff .list .position {
   margin: 0 0 5px;
-  font: 18px/22px 'Arno Pro', serif;
+  font: 22px/28px 'Arno Pro', serif;
 }
 /* ==========================================================================
    TESTIMONIALS
@@ -1869,6 +1871,9 @@ button:focus,
 .testimonials {
   margin-bottom: 30px;
   text-align: center;
+}
+.testimonials .list {
+  margin-bottom: 30px;
 }
 .testimonials .list:before {
   display: block;
@@ -1904,13 +1909,13 @@ button:focus,
    NUMBERS
    ========================================================================== */
 .numbers {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 .numbers ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font: 20px/26px 'Arno Pro', serif;
+  font: 24px/30px 'Arno Pro', serif;
   text-align: center;
 }
 .numbers ul:after {
@@ -1920,6 +1925,9 @@ button:focus,
 }
 .numbers ul li {
   margin: 0 0 30px;
+}
+.numbers ul li:last-child {
+  margin-bottom: 0;
 }
 .numbers ul .number {
   margin-bottom: 11px;
@@ -1949,6 +1957,22 @@ button:focus,
   display: table;
   content: '\0020';
   clear: both;
+}
+.text-large {
+  margin-bottom: 30px;
+  font: 24px/32px 'Arno Pro', serif;
+  letter-spacing: .02em;
+}
+.text-large + p {
+  margin-top: -22px;
+}
+.text-medium {
+  margin-bottom: 30px;
+  font: 22px/30px 'Arno Pro', serif;
+  letter-spacing: .02em;
+}
+.text-center {
+  text-align: center;
 }
 /* ==========================================================================
    MEDIA QUERIES
@@ -2182,8 +2206,9 @@ button:focus,
   }
   .text-large {
     margin-bottom: 44px;
-    font-size: 24px;
-    line-height: 34px;
+  }
+  .text-large + p {
+    margin-top: -36px;
   }
   .text-medium {
     font-size: 24px;
@@ -2391,10 +2416,6 @@ button:focus,
     padding-left: 64px;
     left: -32px;
   }
-  .staff .staff-block .text {
-    font-size: 24px;
-    line-height: 34px;
-  }
   .staff .list {
     margin-top: 84px;
     padding-left: 64px;
@@ -2402,14 +2423,6 @@ button:focus,
   }
   .staff .list .item {
     margin-bottom: 68px;
-  }
-  .staff .list .name {
-    font-size: 24px;
-    line-height: 28px;
-  }
-  .staff .list .position {
-    font-size: 22px;
-    line-height: 28px;
   }
   .testimonials {
     margin-bottom: 50px;
@@ -2456,6 +2469,16 @@ button:focus,
   .numbers ul .number {
     font-size: 100px;
     line-height: 90px;
+  }
+  .text-large {
+    margin-bottom: 44px;
+  }
+  .text-large + p {
+    margin-top: -36px;
+  }
+  .text-medium {
+    font-size: 24px;
+    line-height: 38px;
   }
 }
 @media (min-width: 990px) {
@@ -2758,14 +2781,14 @@ button:focus,
   .staff .list .item {
     width: 25%;
   }
-  .staff .list .name {
-    font-size: 28px;
-    line-height: 34px;
-  }
   .staff .list .name span {
     display: block;
   }
   .testimonials .list .text {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .text-large {
     font-size: 28px;
     line-height: 38px;
   }
