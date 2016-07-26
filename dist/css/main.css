@@ -1843,24 +1843,32 @@ button:focus,
    TESTIMONIALS
    ========================================================================== */
 .testimonials {
+  margin-bottom: 30px;
   text-align: center;
+}
+.testimonials .list:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 146px;
+  height: 3px;
+  margin: 0 auto 30px;
+  background: #162a49;
 }
 .testimonials .list .image {
   width: 232px;
-  margin: 0;
-  float: left;
+  margin: 0 auto 30px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 .testimonials .list .image img {
   width: 100%;
+  height: auto;
 }
 .testimonials .list .text {
-  margin-left: 278px;
-  font: 20px/24px 'Arno Pro', serif;
-  text-align: left;
+  font: 24px/34px 'Arno Pro', serif;
 }
 .testimonials .list .name {
-  margin: 35px 0;
+  margin: 25px 0 0 0;
   font: bold 18px/20px 'Proxima Nova', Arial, sans-serif;
 }
 /* ==========================================================================
@@ -1971,6 +1979,13 @@ button:focus,
     max-width: none;
     padding: 0 20px;
     float: left;
+  }
+  .testimonials .list .image {
+    float: left;
+  }
+  .testimonials .list .text {
+    margin-left: 255px;
+    text-align: left;
   }
 }
 @media (min-width: 750px) {
@@ -2320,9 +2335,14 @@ button:focus,
     font-size: 22px;
     line-height: 28px;
   }
+  .testimonials .list:before {
+    width: 246px;
+  }
   .testimonials .list .text {
-    font-size: 24px;
-    line-height: 34px;
+    margin-left: 278px;
+  }
+  .testimonials .list .name {
+    margin-top: 35px;
   }
 }
 @media (min-width: 990px) {
