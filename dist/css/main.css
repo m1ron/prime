@@ -1801,7 +1801,7 @@ button:focus,
   font-size: 22px;
 }
 .staff .list {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 14px;
   line-height: 20px;
 }
@@ -1812,8 +1812,8 @@ button:focus,
 }
 .staff .list .item {
   max-width: 300px;
-  margin: 0 auto 30px;
-  padding: 0 5px;
+  margin: 0 auto;
+  padding: 5px;
   text-align: center;
 }
 .staff .list .item p:last-of-type {
@@ -2630,12 +2630,10 @@ button:focus,
     left: -32px;
   }
   .staff .list {
-    margin-top: 84px;
+    margin-top: 55px;
+    margin-bottom: 15px;
     padding-left: 64px;
     left: -32px;
-  }
-  .staff .list .item {
-    margin-bottom: 68px;
   }
   .testimonials {
     margin-bottom: 50px;
