@@ -51,24 +51,6 @@
 
             &:before {
                 .pseudo;
-                width: 100%;
-                height: 74px;
-                display: block;
-                content: '';
-                background-image: inherit;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: auto 100%;
-                @media @tablet-sm {
-                    height: 108px;
-                }
-                @media @desktop-sm {
-                    height: 140px;
-                }
-            }
-
-            &:after {
-                .pseudo;
                 width: 26px;
                 height: 26px;
                 padding: 5px;
@@ -94,6 +76,26 @@
                     height: 50px;
                     font-size: 36px;
                     line-height: 48px;
+                }
+            }
+
+            .icon {
+                width: 100%;
+                height: 74px;
+                margin: 0 auto;
+                display: block;
+                @media @tablet-sm {
+                    height: 108px;
+                }
+                @media @desktop-sm {
+                    height: 140px;
+                }
+
+                img {
+                    width: auto;
+                    height: 100%;
+                    margin: 0 auto;
+                    display: block;
                 }
             }
 

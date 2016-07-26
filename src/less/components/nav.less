@@ -30,6 +30,9 @@
         background: @color-midnight;
         backface-visibility: hidden;
         clip: rect(0, auto, auto, 0);
+        @media @tablet-sm {
+            background: none;
+        }
 
         &:before {
             .pseudo;

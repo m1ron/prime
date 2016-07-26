@@ -531,18 +531,6 @@ button:focus,
   background-position: -100px -100px;
 }
 .scheme .list li:before {
-  content: '\0020';
-  overflow: hidden;
-  width: 100%;
-  height: 74px;
-  display: block;
-  content: '';
-  background-image: inherit;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: auto 100%;
-}
-.scheme .list li:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -563,6 +551,18 @@ button:focus,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.scheme .list li .icon {
+  width: 100%;
+  height: 74px;
+  margin: 0 auto;
+  display: block;
+}
+.scheme .list li .icon img {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
 }
 .scheme .list li .title {
   width: 130px;
@@ -853,8 +853,8 @@ button:focus,
   background: #fff;
   opacity: .7;
   box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, 0.2);
-  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
 }
 .map .title:hover:before, .map .title:focus:before {
   opacity: .5;
@@ -930,6 +930,8 @@ button:focus,
 }
 .map.open .title:before {
   opacity: 0;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .map.open .arrow {
   -webkit-transform: rotate(180deg);
@@ -2061,13 +2063,13 @@ button:focus,
     padding-top: 17px;
   }
   .scheme .list li:before {
-    height: 108px;
-  }
-  .scheme .list li:after {
     width: 38px;
     height: 38px;
     font-size: 27px;
     line-height: 36px;
+  }
+  .scheme .list li .icon {
+    height: 108px;
   }
   .scheme .list li .title {
     width: 180px;
@@ -2170,6 +2172,9 @@ button:focus,
   }
   .contacts .list li:first-child {
     margin-top: 2px;
+  }
+  .nav .logo {
+    background: none;
   }
   .nav .area {
     background: #162a49;
@@ -2409,13 +2414,13 @@ button:focus,
     padding-top: 20px;
   }
   .scheme .list li:before {
-    height: 140px;
-  }
-  .scheme .list li:after {
     width: 50px;
     height: 50px;
     font-size: 36px;
     line-height: 48px;
+  }
+  .scheme .list li .icon {
+    height: 140px;
   }
   .scheme .list li .title {
     width: auto;
