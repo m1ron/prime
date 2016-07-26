@@ -3,7 +3,7 @@
    ========================================================================== */
 .contacts {
     @color-border: #e2e0de;
-    padding: 40px 30px 60px;
+    padding: 0 30px 60px;
     position: relative;
     font: 20px/26px @font-heading;
     color: @color-onyx;
@@ -26,7 +26,7 @@
         }
     }
     @media @desktop-sm {
-        padding: 35px 0 55px;
+        padding: 0 0 55px;
         overflow: hidden;
         &:before, &:after {
             margin-left: 0;
@@ -44,6 +44,133 @@
         }
     }
 
+    .map {
+        height: 117px;
+        margin: 0 -30px;
+        border-bottom: 40px solid @color-isabelline;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+        background: @color-isabelline;
+        transition: height @duration-l;
+        @media @desktop-sm {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .title {
+            width: 100%;
+            height: 77px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 5;
+            font: 800 14px/24px @font-default;
+            color: @color-midnight;
+            text-transform: uppercase;
+
+            &:before {
+                .pseudo;
+                height: 77px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                background: @color-white;
+                opacity: .5;
+                .color-black(.2);
+                box-shadow: inset 0 30px 30px -30px @color;
+                transition: opacity @duration .4s;
+            }
+
+            a {
+                width: 100%;
+                height: 77px;
+                padding: 30px;
+                display: block;
+                position: relative;
+                z-index: 5;
+                color: @color-midnight;
+                text-decoration: none;
+            }
+
+            .arrow {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 20px;
+                bottom: 0;
+                z-index: 5;
+                transition: transform @duration-l;
+
+                &:before, &:after, span:before, span:after {
+                    .pseudo;
+                    width: 10px;
+                    height: 3px;
+                    border-radius: 3px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: @color-midnight;
+                    backface-visibility: hidden;
+                }
+                &:before, span:before {
+                    left: -7px;
+                    transform: rotate(35deg);
+                }
+                &:after, span:after {
+                    right: -7px;
+                    transform: rotate(-35deg);
+                }
+                &:before, &:after {
+                    top: -6px;
+                }
+                span {
+                    &:before, &:after {
+                        bottom: -7px;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            height: 437px;
+            .title:before {
+                opacity: 0;
+                transition-delay: 0s;
+            }
+            .arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        .gmap {
+            width: 100%;
+            height: 397px;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            background: @color-isabelline;
+
+            a[href^='https://maps.google.com/maps'] {
+                display: none !important;
+            }
+            .gm-style-cc {
+                display: none !important;
+            }
+        }
+    }
+
     .col {
         margin-bottom: 55px;
         position: relative;
@@ -57,7 +184,6 @@
         &:nth-child(4) {
             margin-bottom: 65px;
         }
-
         @media @mobile-md {
             width: 50%;
             margin-bottom: 80px !important;

@@ -814,18 +814,33 @@ button:focus,
   z-index: 3;
 }
 /* ==========================================================================
-   MAP
+   CONTACTS
    ========================================================================== */
-.map {
-  width: 100%;
-  height: 77px;
+.contacts {
+  padding: 0 30px 60px;
+  position: relative;
+  font: 20px/26px 'Arno Pro', serif;
+  color: #393939;
+  background: #f3f2ef;
+  cursor: default;
+}
+.contacts:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.contacts .map {
+  height: 117px;
+  margin: 0 -30px;
+  border-bottom: 40px solid #f3f2ef;
   overflow: hidden;
   position: relative;
+  z-index: 5;
   background: #f3f2ef;
   -webkit-transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.map .title {
+.contacts .map .title {
   width: 100%;
   height: 77px;
   display: block;
@@ -838,7 +853,7 @@ button:focus,
   color: #162a49;
   text-transform: uppercase;
 }
-.map .title:before {
+.contacts .map .title:before {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -855,7 +870,7 @@ button:focus,
   -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
   transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
 }
-.map .title a {
+.contacts .map .title a {
   width: 100%;
   height: 77px;
   padding: 30px;
@@ -865,7 +880,7 @@ button:focus,
   color: #162a49;
   text-decoration: none;
 }
-.map .title .arrow {
+.contacts .map .title .arrow {
   width: 20px;
   height: 20px;
   margin: auto;
@@ -879,10 +894,10 @@ button:focus,
   transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.map .title .arrow:before,
-.map .title .arrow:after,
-.map .title .arrow span:before,
-.map .title .arrow span:after {
+.contacts .map .title .arrow:before,
+.contacts .map .title .arrow:after,
+.contacts .map .title .arrow span:before,
+.contacts .map .title .arrow span:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -899,42 +914,42 @@ button:focus,
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.map .title .arrow:before,
-.map .title .arrow span:before {
+.contacts .map .title .arrow:before,
+.contacts .map .title .arrow span:before {
   left: -7px;
   -webkit-transform: rotate(35deg);
       -ms-transform: rotate(35deg);
           transform: rotate(35deg);
 }
-.map .title .arrow:after,
-.map .title .arrow span:after {
+.contacts .map .title .arrow:after,
+.contacts .map .title .arrow span:after {
   right: -7px;
   -webkit-transform: rotate(-35deg);
       -ms-transform: rotate(-35deg);
           transform: rotate(-35deg);
 }
-.map .title .arrow:before,
-.map .title .arrow:after {
+.contacts .map .title .arrow:before,
+.contacts .map .title .arrow:after {
   top: -6px;
 }
-.map .title .arrow span:before,
-.map .title .arrow span:after {
+.contacts .map .title .arrow span:before,
+.contacts .map .title .arrow span:after {
   bottom: -7px;
 }
-.map.open {
-  height: 397px;
+.contacts .map.open {
+  height: 437px;
 }
-.map.open .title:before {
+.contacts .map.open .title:before {
   opacity: 0;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
-.map.open .arrow {
+.contacts .map.open .arrow {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.map .gmap {
+.contacts .map .gmap {
   width: 100%;
   height: 397px;
   padding: 0;
@@ -943,27 +958,11 @@ button:focus,
   z-index: 1;
   background: #f3f2ef;
 }
-.map .gmap a[href^='https://maps.google.com/maps'] {
+.contacts .map .gmap a[href^='https://maps.google.com/maps'] {
   display: none !important;
 }
-.map .gmap .gm-style-cc {
+.contacts .map .gmap .gm-style-cc {
   display: none !important;
-}
-/* ==========================================================================
-   CONTACTS
-   ========================================================================== */
-.contacts {
-  padding: 40px 30px 60px;
-  position: relative;
-  font: 20px/26px 'Arno Pro', serif;
-  color: #393939;
-  background: #f3f2ef;
-  cursor: default;
-}
-.contacts:after {
-  display: table;
-  content: '\0020';
-  clear: both;
 }
 .contacts .col {
   margin-bottom: 55px;
@@ -2536,7 +2535,7 @@ button:focus,
     padding: 20px;
   }
   .contacts {
-    padding: 35px 0 55px;
+    padding: 0 0 55px;
     overflow: hidden;
   }
   .contacts:before,
@@ -2555,6 +2554,10 @@ button:focus,
     position: absolute;
     right: 25%;
     left: 25%;
+  }
+  .contacts .map {
+    margin-left: 0;
+    margin-right: 0;
   }
   .contacts .col {
     width: 25%;
