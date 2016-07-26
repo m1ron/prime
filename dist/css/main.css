@@ -557,6 +557,10 @@ button:focus,
   height: 74px;
   margin: 0 auto;
   display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .scheme .list li .icon img {
   width: auto;
