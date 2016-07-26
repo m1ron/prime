@@ -2,27 +2,46 @@
    TESTIMONIALS
    ========================================================================== */
 .testimonials {
+  margin-bottom: 30px;
   text-align: center;
+
     .list {
+      &:before {
+        .pseudo;
+        width: 146px;
+        height: 3px;
+        margin: 0 auto 30px;
+        background: @color-midnight;
+      }
+
+      @media @tablet-sm {
+        &:before {
+          width: 246px;
+        }
+      }
         .image {
             width: 232px;
-            margin: 0;
-            float: left;
+            margin: 0 auto 30px;
             .color-black(.4);
             box-shadow: 0 0 10px 0 @color;
             img {
               width: 100%;
               height: auto;
             }
+
+            @media @mobile-lg {
+              float: left;
+            }
         }
         .text {
-          margin-left: 278px;
-          font: 20px/24px @font-heading;
-          text-align: left;
+          font: 24px/34px @font-heading;
 
+          @media @mobile-lg {
+              margin-left: 255px;
+              text-align: left;
+          }
           @media @tablet-sm {
-              font-size: 24px;
-              line-height: 34px;
+              margin-left: 278px;
           }
           @media @desktop-sm {
               font-size: 28px;
@@ -30,8 +49,11 @@
           }
         }
         .name {
-          margin: 35px 0;
+          margin: 25px 0 0 0;
           font: bold 18px/20px @font-default;
+          @media @tablet-sm {
+            margin-top: 35px;
+          }
         }
     }
 }
