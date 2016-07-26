@@ -2,38 +2,39 @@
    NEWS
    ========================================================================== */
 .news {
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
-  &:after {.clearfix;}
-  @media @tablet-sm {
-    margin: 0 -25px;
-  }
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: .02em;
+    &:after {
+        .clearfix;
+    }
+
+    @media @tablet-sm {
+        margin: 0 -25px;
+    }
+    
     .col {
-      @media @tablet-sm {
-        width: 50%;
-        float: left;
-      }
+        @media @tablet-sm {
+            width: 50%;
+            float: left;
+        }
     }
     .item {
-      margin-bottom: 25px;
-      @media @tablet-sm {
-        margin-bottom: 45px;
-        padding: 0 25px;
-      }
-      p {
-        &:last-of-type {
-          margin-bottom: 0;
+        margin-bottom: 25px;
+        @media @tablet-sm {
+            margin-bottom: 45px;
+            padding: 0 25px;
         }
-      }
-    }
-    .link {
-      text-decoration: none;
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
     .title {
-      margin: 6px 0 12px;
-      font-size: 20px;
-      line-height: 30px;
-      font-weight: 800;
+        margin: 6px 0 12px;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 800;
     }
 }

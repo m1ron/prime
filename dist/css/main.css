@@ -1377,7 +1377,7 @@ button:focus,
 .news {
   font-size: 16px;
   line-height: 26px;
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
 }
 .news:after {
   display: table;
@@ -1389,9 +1389,6 @@ button:focus,
 }
 .news .item p:last-of-type {
   margin-bottom: 0;
-}
-.news .link {
-  text-decoration: none;
 }
 .news .title {
   margin: 6px 0 12px;
