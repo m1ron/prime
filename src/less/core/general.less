@@ -191,6 +191,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: @margin-md;
     font: 20px/24px @font-heading;
     letter-spacing: .02em;
+    + p {
+        margin-top: -36px;
+    }
     @media @tablet-sm {
         margin-bottom: 44px;
         font-size: 24px;
@@ -200,6 +203,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         font-size: 28px;
         line-height: 38px;
     }
+}
+.text-medium {
+  margin-bottom: @margin-md;
+  font-family: @font-heading;
+  letter-spacing: .02em;
+  @media @tablet-sm {
+    font-size: 24px;
+    line-height: 38px;
+  }
+}
+.text-center {
+  text-align: center;
 }
 /* ==========================================================================
    CONTAINERS

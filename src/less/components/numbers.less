@@ -1,0 +1,62 @@
+/* ==========================================================================
+   NUMBERS
+   ========================================================================== */
+.numbers {
+  margin: 20px 0;
+  @media @tablet-sm {
+    margin: 84px -50vw 94px;
+  }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font: 20px/26px @font-heading;
+      text-align: center;
+      &:after {
+        .clearfix;
+      }
+
+      @media @tablet-sm {
+        width: 100vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 64px;
+        position: relative;
+        left: -32px;
+        font-size: 30px;
+        line-height: 36px;
+        .text {
+          display: block;
+        }
+      }
+      li {
+        margin: 0 0 30px;
+        @media @mobile-lg {
+          width: 33.3%;
+          float: left
+        }
+        @media @tablet-sm {
+          margin-bottom: 0;
+        }
+      }
+      .number {
+        margin-bottom: 11px;
+        display: block;
+        font-size: 60px;
+        line-height: 50px;
+        font-weight: bold;
+        &:after {
+          .pseudo;
+          width: 100px;
+          height: 2px;
+          margin: 0 auto;
+          background: @color-cerulean;
+        }
+
+        @media @tablet-sm {
+          font-size: 100px;
+          line-height: 90px;
+        }
+      }
+    }
+}

@@ -198,6 +198,17 @@ h6 + p,
   font: 20px/24px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
+.text-large + p {
+  margin-top: -36px;
+}
+.text-medium {
+  margin-bottom: 30px;
+  font-family: 'Arno Pro', serif;
+  letter-spacing: .02em;
+}
+.text-center {
+  text-align: center;
+}
 /* ==========================================================================
    CONTAINERS
    ========================================================================== */
@@ -613,6 +624,9 @@ button:focus,
    ========================================================================== */
 .gallery {
   width: 100%;
+}
+.gallery .heading {
+  margin-top: 0;
 }
 .gallery .space {
   margin-left: -20px;
@@ -1568,13 +1582,22 @@ button:focus,
    CERTIFICATES
    ========================================================================== */
 .certificates {
+  margin: 0 0 20px 0;
   text-align: center;
+}
+.certificates-color .space {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f9f8f7;
 }
 .certificates .space {
   margin: 0 -20px;
 }
+.certificates .space .heading {
+  margin-top: 0;
+}
 .certificates .list {
-  margin: 0 0 20px;
+  margin: 0 auto;
   padding: 0 20px;
   text-align: center;
 }
@@ -1582,11 +1605,6 @@ button:focus,
   display: table;
   content: '\0020';
   clear: both;
-}
-.certificates .list-color {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #f9f8f7;
 }
 .certificates .list .item {
   margin: 26px auto;
@@ -1861,6 +1879,11 @@ button:focus,
   margin: 0 auto 30px;
   background: #162a49;
 }
+.testimonials .list:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
 .testimonials .list .image {
   width: 232px;
   margin: 0 auto 30px;
@@ -1876,6 +1899,43 @@ button:focus,
 .testimonials .list .name {
   margin: 25px 0 0 0;
   font: bold 18px/20px 'Proxima Nova', Arial, sans-serif;
+}
+/* ==========================================================================
+   NUMBERS
+   ========================================================================== */
+.numbers {
+  margin: 20px 0;
+}
+.numbers ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 20px/26px 'Arno Pro', serif;
+  text-align: center;
+}
+.numbers ul:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.numbers ul li {
+  margin: 0 0 30px;
+}
+.numbers ul .number {
+  margin-bottom: 11px;
+  display: block;
+  font-size: 60px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.numbers ul .number:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 100px;
+  height: 2px;
+  margin: 0 auto;
+  background: #009ee3;
 }
 /* ==========================================================================
    PAGE
@@ -2047,6 +2107,10 @@ button:focus,
     margin-left: 255px;
     text-align: left;
   }
+  .numbers ul li {
+    width: 33.3%;
+    float: left;
+  }
 }
 @media (min-width: 750px) {
   body {
@@ -2120,6 +2184,10 @@ button:focus,
     margin-bottom: 44px;
     font-size: 24px;
     line-height: 34px;
+  }
+  .text-medium {
+    font-size: 24px;
+    line-height: 38px;
   }
   .wrapper {
     padding: 0 35px;
@@ -2290,21 +2358,21 @@ button:focus,
     text-indent: 0;
     overflow: visible;
   }
+  .certificates-color .space {
+    padding-top: 45px;
+    padding-bottom: 35px;
+  }
+  .certificates-color .space .list {
+    margin-bottom: 0;
+  }
   .certificates .space {
     margin: 0 -50vw;
   }
   .certificates .list {
     width: 100vw;
-    margin-left: auto;
-    margin-right: auto;
     padding: 0 20px 0 84px;
     left: -32px;
     position: relative;
-  }
-  .certificates .list-color {
-    margin-bottom: 0;
-    padding-top: 45px;
-    padding-bottom: 35px;
   }
   .brands .space {
     margin: 0 -50vw;
@@ -2343,8 +2411,18 @@ button:focus,
     font-size: 22px;
     line-height: 28px;
   }
+  .testimonials {
+    margin-bottom: 50px;
+  }
+  .testimonials .list {
+    margin-bottom: 78px;
+  }
   .testimonials .list:before {
     width: 246px;
+    margin-bottom: 36px;
+  }
+  .testimonials .list .image {
+    margin-bottom: 0;
   }
   .testimonials .list .text {
     margin-left: 278px;
@@ -2352,18 +2430,45 @@ button:focus,
   .testimonials .list .name {
     margin-top: 35px;
   }
+  .testimonials .button {
+    min-width: 380px;
+    padding: 32px;
+  }
+  .numbers {
+    margin: 84px -50vw 94px;
+  }
+  .numbers ul {
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 64px;
+    position: relative;
+    left: -32px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .numbers ul .text {
+    display: block;
+  }
+  .numbers ul li {
+    margin-bottom: 0;
+  }
+  .numbers ul .number {
+    font-size: 100px;
+    line-height: 90px;
+  }
 }
 @media (min-width: 990px) {
   .certificates {
+    margin-bottom: 70px;
     text-align: left;
   }
+  .certificates-color {
+    margin-bottom: 0;
+  }
   .certificates .list {
-    margin-bottom: 70px;
     padding-left: 99px;
     padding-right: 35px;
-  }
-  .certificates .list-color {
-    margin-bottom: 0;
   }
   .certificates .list .item {
     width: 33.3%;

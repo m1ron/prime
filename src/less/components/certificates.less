@@ -2,53 +2,66 @@
    CERTIFICATES
    ========================================================================== */
 .certificates {
+    margin: 0 0 20px 0;
     text-align: center;
-    @media @tablet-md {
-        text-align: left;
+
+    &-color {
+        .space {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background: @color-white-smoke;
+        }
     }
+
+    @media @tablet-sm {
+        &-color {
+            .space {
+                padding-top: 45px;
+                padding-bottom: 35px;
+                .list {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @media @tablet-md {
+        margin-bottom: 70px;
+        text-align: left;
+        &-color {
+          margin-bottom: 0;
+        }
+    }
+
     .space {
-      margin: 0 -20px;
+        margin: 0 -20px;
+        .heading {
+          margin-top: 0;
+        }
+
         @media @tablet-sm {
             margin: 0 -50vw;
         }
     }
+
     .list {
-        margin: 0 0 20px;
+        margin: 0 auto;
         padding: 0 20px;
         text-align: center;
         &:after {
             .clearfix;
         }
 
-        &-color {
-          padding-top: 20px;
-          padding-bottom: 20px;
-          background: @color-white-smoke;
-        }
-
         @media @tablet-sm {
             width: 100vw;
-            margin-left: auto;
-            margin-right: auto;
             padding: 0 20px 0 84px;
             left: -32px;
             position: relative;
-
-            &-color {
-              margin-bottom: 0;
-              padding-top: 45px;
-              padding-bottom: 35px;
-            }
         }
 
         @media @tablet-md {
-            margin-bottom: 70px;
             padding-left: 99px;
             padding-right: 35px;
-
-            &-color {
-              margin-bottom: 0;
-            }
         }
 
         .item {
