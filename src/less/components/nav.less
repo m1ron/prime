@@ -18,46 +18,13 @@
         backface-visibility: hidden;
     }
 
-    .logo {
-        width: 320px;
-        height: 84px;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: -320px;
-        z-index: 90;
-        transition: left @duration-l;
-        background: @color-midnight;
-        backface-visibility: hidden;
-        clip: rect(0, auto, auto, 0);
-        @media @tablet-sm {
-            background: none;
-        }
-
-        &:before {
-            .pseudo;
-            width: 211px;
-            height: 31px;
-            position: fixed;
-            top: 26px;
-            left: 85px;
-            z-index: 0;
-            background: url('@{svg}/logo-inverse.svg') no-repeat 0 0;
-            background-size: 211px 31px;
-            backface-visibility: hidden;
-        }
-        .nav-open & {
-            left: 0;
-        }
-    }
-
     .toggle {
         width: 64px;
         height: 84px;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 100;
+        z-index: 105;
         background: @color-charcoal;
         transition: background-color @duration, box-shadow @duration;
         .color-midnight(.25);
@@ -117,7 +84,8 @@
         left: 0;
         z-index: 1;
         background: @color-midnight;
-        transition: opacity @duration-l;
+        transform: translate3d(0, 0, 0);
+        transition: opacity @duration-l, transform @duration-l;
         backface-visibility: hidden;
         opacity: 0;
 
@@ -154,6 +122,22 @@
             transform: translate3d(0,0 ,0);
         }
 
+        &:before {
+            .pseudo;
+            width: 320px;
+            height: 84px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 15;
+            background: @color-midnight url('@{svg}/logo-inverse.svg') no-repeat 85px 26px;
+            background-size: 211px 31px;
+            @media @tablet-sm {
+                background-color: none;
+            }
+        }
+
         &:after {
             .pseudo;
             height: 1px;
@@ -162,7 +146,7 @@
             top: 84px;
             left: 0;
             right: 0;
-            z-index: 101;
+            z-index: 10;
             background: @color-charcoal;
         }
 

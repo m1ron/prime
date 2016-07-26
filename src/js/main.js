@@ -1,5 +1,4 @@
-/*jslint nomen: true, regexp: true, unparam: true, sloppy: true, white: true, node: true */
-/*global window, console, document, $, jQuery, google */
+/*global window, document, $, google, mapCenter, FastClick */
 
 /** Load SVG sprite */
 (function(window, document) {
@@ -22,14 +21,14 @@
         };
 
     try {
-        request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
         request.open('GET', file, true);
         request.onload = function() {
             if (request.status >= 200 && request.status < 400) {
                 data = request.responseText;
                 insert();
             }
-        }
+        };
         request.send();
     } catch (e) {}
 }(window, document));
@@ -109,11 +108,9 @@ $(document).ready(function() {
         var body = $('body'),
             html = $('html'),
             toggle = $('.toggle', this),
-            ul = $('ul', this),
             flag = false;
         var overlay = $('<div class="overlay"/>');
         overlay.appendTo(this);
-        $('<div class="logo"/>').appendTo(this);
         $('.area', this).wrapInner('<div class="scroll"/>');
         toggle.add(overlay).on('click', toggleNav);
     });
@@ -158,7 +155,7 @@ $(document).ready(function() {
                     disableDefaultUI: true,
                     backgroundColor: "#f3f2ef"
                 });
-                var marker = new google.maps.Marker({
+                new google.maps.Marker({
                     position: pos,
                     map: map
                 });
@@ -198,24 +195,24 @@ $(document).ready(function() {
             verticalFit: true
         },
         gallery: {
-    			enabled: true,
-    			navigateByImgClick: true,
-    			preload: [0,1]
-    		}
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        }
     });
 
     /* Staff-block photos type */
-  	$('.staff').each(function () {
-  		$('.staff-block', this).each(function(){
-        $('.photo', this).each(function () {
-    			if ($(this).width() * 0.8 >= $(this).height()) {
-    				$(this).addClass('landscape');
-    			} else {
-    				$(this).addClass('portrait');
-    			}
-    		});
-      });
-  	});
+    $('.staff').each(function() {
+        $('.staff-block', this).each(function() {
+            $('.photo', this).each(function() {
+                if ($(this).width() * 0.8 >= $(this).height()) {
+                    $(this).addClass('landscape');
+                } else {
+                    $(this).addClass('portrait');
+                }
+            });
+        });
+    });
 
 });
 
@@ -223,18 +220,18 @@ $(document).ready(function() {
  * Magnific Popup default settings
  */
 $.extend(true, $.magnificPopup.defaults, {
-	closeMarkup: '<span title="%title%" class="mfp-close"></span>',
-	gallery: {
-		arrowMarkup: '<div title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>',
-		cursor: null
-	},
-	image: {
-		cursor: null
-	},
-	midClick: true,
-	settings: {
-		cache: false
-	},
-	mainClass: 'mfp-fade',
-	removalDelay: 300
+    closeMarkup: '<span title="%title%" class="mfp-close"></span>',
+    gallery: {
+        arrowMarkup: '<div title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>',
+        cursor: null
+    },
+    image: {
+        cursor: null
+    },
+    midClick: true,
+    settings: {
+        cache: false
+    },
+    mainClass: 'mfp-fade',
+    removalDelay: 300
 });

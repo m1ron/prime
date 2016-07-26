@@ -845,8 +845,37 @@ button:focus,
   position: relative;
   z-index: 5;
   background: #f3f2ef;
-  -webkit-transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.contacts .map:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 77px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+  opacity: .5;
+  box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s, -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
 }
 .contacts .map .title {
   width: 100%;
@@ -860,23 +889,8 @@ button:focus,
   font: 800 14px/24px 'Proxima Nova', Arial, sans-serif;
   color: #162a49;
   text-transform: uppercase;
-}
-.contacts .map .title:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  height: 77px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  background: #fff;
-  opacity: .5;
-  box-shadow: inset 0 30px 30px -30px rgba(0, 0, 0, 0.2);
-  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .contacts .map .title a {
   width: 100%;
@@ -946,8 +960,10 @@ button:focus,
 }
 .contacts .map.open {
   height: 437px;
+  -webkit-transform: translate3d(0, 0, 1px);
+          transform: translate3d(0, 0, 1px);
 }
-.contacts .map.open .title:before {
+.contacts .map.open:before {
   opacity: 0;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
@@ -965,6 +981,8 @@ button:focus,
   position: relative;
   z-index: 1;
   background: #f3f2ef;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .contacts .map .gmap a[href^='https://maps.google.com/maps'] {
   display: none !important;
@@ -1081,46 +1099,13 @@ button:focus,
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.nav .logo {
-  width: 320px;
-  height: 84px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: -320px;
-  z-index: 90;
-  -webkit-transition: left 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: left 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background: #162a49;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  clip: rect(0, auto, auto, 0);
-}
-.nav .logo:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  width: 211px;
-  height: 31px;
-  position: fixed;
-  top: 26px;
-  left: 85px;
-  z-index: 0;
-  background: url('../svg/logo-inverse.svg') no-repeat 0 0;
-  background-size: 211px 31px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.nav-open .nav .logo {
-  left: 0;
-}
 .nav .toggle {
   width: 64px;
   height: 84px;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 105;
   background: #2c3e5a;
   -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -1183,8 +1168,12 @@ button:focus,
   left: 0;
   z-index: 1;
   background: #162a49;
-  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   opacity: 0;
@@ -1218,6 +1207,19 @@ button:focus,
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
+.nav .area:before {
+  display: block;
+  content: '\0020';
+  width: 320px;
+  height: 84px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background: #162a49 url('../svg/logo-inverse.svg') no-repeat 85px 26px;
+  background-size: 211px 31px;
+}
 .nav .area:after {
   display: block;
   content: '\0020';
@@ -1227,7 +1229,7 @@ button:focus,
   top: 84px;
   left: 0;
   right: 0;
-  z-index: 101;
+  z-index: 10;
   background: #2c3e5a;
 }
 .nav .area .scroll {
@@ -2251,12 +2253,12 @@ button:focus,
     display: inline-block;
     vertical-align: top;
   }
-  .nav .logo {
-    background: none;
-  }
   .nav .area {
     background: #162a49;
     box-shadow: 0 0 15px rgba(22, 42, 73, 0.5);
+  }
+  .nav .area:before {
+    background-color: none;
   }
   .breadcrumbs {
     padding: 35px 35px 22px;

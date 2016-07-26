@@ -52,10 +52,30 @@
         position: relative;
         z-index: 5;
         background: @color-isabelline;
-        transition: height @duration-l;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        transition: transform @duration-l, height @duration-l;
         @media @desktop-sm {
             margin-left: 0;
             margin-right: 0;
+        }
+
+        &:before {
+            .pseudo;
+            height: 77px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
+            background: @color-white;
+            opacity: .5;
+            .color-black(.2);
+            box-shadow: inset 0 30px 30px -30px @color;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            transition: opacity @duration .4s, transform @duration .4s;
         }
 
         .title {
@@ -70,22 +90,7 @@
             font: 800 14px/24px @font-default;
             color: @color-midnight;
             text-transform: uppercase;
-
-            &:before {
-                .pseudo;
-                height: 77px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-                background: @color-white;
-                opacity: .5;
-                .color-black(.2);
-                box-shadow: inset 0 30px 30px -30px @color;
-                transition: opacity @duration .4s;
-            }
+            backface-visibility: hidden;
 
             a {
                 width: 100%;
@@ -144,7 +149,8 @@
 
         &.open {
             height: 437px;
-            .title:before {
+            transform: translate3d(0, 0, 1px);
+            &:before {
                 opacity: 0;
                 transition-delay: 0s;
             }
@@ -161,6 +167,7 @@
             position: relative;
             z-index: 1;
             background: @color-isabelline;
+            backface-visibility: hidden;
 
             a[href^='https://maps.google.com/maps'] {
                 display: none !important;

@@ -14,7 +14,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-newer": "^1.1.1",
     "grunt-pngquant": "^0.1.8",
@@ -22,7 +22,7 @@
     "grunt-real-favicon": "^0.1.6",
     "grunt-svgo": "^0.1.0",
     "grunt-svgstore": "^1.0.0",
-    "imagemin-pngquant": "^4.2.2",
+    "imagemin-pngquant": "^5.0.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-focus": "^1.0.0"
   },
