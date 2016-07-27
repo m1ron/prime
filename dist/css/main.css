@@ -1382,22 +1382,28 @@ button:focus,
   font-size: 14px;
   line-height: 20px;
   border-bottom: 1px solid #eee;
+  cursor: default;
 }
 .breadcrumbs li {
-  letter-spacing: .02em;
-  display: inline-block;
-  font-weight: 800;
-}
-.breadcrumbs li a {
   margin-right: 8px;
-  text-decoration: none;
+  display: inline-block;
   position: relative;
-  font-weight: normal;
+  font-weight: 800;
+  letter-spacing: .02em;
 }
-.breadcrumbs li a:before {
+.breadcrumbs li:before {
   content: '/';
   position: absolute;
   right: -8px;
+  font-weight: normal;
+}
+.breadcrumbs li:last-child:before {
+  display: none;
+}
+.breadcrumbs li a {
+  position: relative;
+  font-weight: normal;
+  text-decoration: none;
 }
 .breadcrumbs li a:after {
   display: block;
@@ -1439,6 +1445,15 @@ button:focus,
   font-size: 20px;
   line-height: 30px;
   font-weight: 800;
+}
+.news .title a {
+  display: block;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.news .title a:hover, .news .title a:focus {
+  color: #009ee3;
+  text-decoration: none;
 }
 /* ==========================================================================
    PAGER

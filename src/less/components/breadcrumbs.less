@@ -8,23 +8,33 @@
     font-size: 14px;
     line-height: 20px;
     border-bottom: 1px solid @color-light;
+    cursor: default;
     @media @tablet-sm {
-      padding: 35px 35px 22px;
+        padding: 35px 35px 22px;
     }
+
     li {
-        letter-spacing: .02em;
+        margin-right: 8px;
         display: inline-block;
+        position: relative;
         font-weight: 800;
+        letter-spacing: .02em;
+
+        &:before {
+            content: '/';
+            position: absolute;
+            right: -8px;
+            font-weight: normal;
+        }
+        &:last-child:before {
+            display: none;
+        }
+
         a {
-            margin-right: 8px;
-            text-decoration: none;
             position: relative;
             font-weight: normal;
-            &:before {
-                content: '/';
-                position: absolute;
-                right: -8px;
-            }
+            text-decoration: none;
+
             &:after {
                 .pseudo;
                 height: 1px;
