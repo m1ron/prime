@@ -88,3 +88,35 @@ textarea {
         }
     }
 }
+/*** FORM-FEEDBACK ***/
+.form-feedback {
+    .form-group {
+        margin-bottom: 18px;
+    }
+    ::placeholder {
+        color: @color-space;
+    }
+    input:not([type='submit']), textarea {
+        padding-top: 20px;
+        padding-bottom: 16px;
+        .color-onyx(.2);
+        font: 20px/20px @font-default;
+        color: @color-midnight;
+        border-color: @color;
+        border-width: 1px;
+        background: transparent;
+
+        &:focus {
+            border-color: @color-midnight;
+        }
+    }
+    .button {
+      width: 100%;
+      background: @color-midnight;
+      color: @color-white;
+      &:hover {
+        background: transparent;
+        color: @color-midnight;
+      }
+    }
+}

@@ -1,0 +1,87 @@
+/* ==========================================================================
+   CONTACT-US
+   ========================================================================== */
+.contact-us {
+    display: flex;
+    .col {
+        padding: 66px;
+        flex-basis: 50%;
+        background: @color-glitter;
+        &:nth-of-type(2) {
+            background: @color-azureish-white;
+        }
+    }
+
+    .title {
+        .h3;
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .list, .form-feedback {
+        width: 340px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .list {
+        ul {
+          margin: 34px 0;
+          padding: 0;
+          list-style: none;
+          font-size: 20px;
+          line-height: 24px;
+            li {
+                margin-bottom: 50px;
+            }
+
+            .icon {
+                &-feedback a, &-phone a, &-address {
+                    margin-left: 40px;
+                    display: inline-block;
+                    position: relative;
+                    &:before {
+                        .pseudo;
+                        width: 50px;
+                        height: 40px;
+                        position: absolute;
+                        background-repeat: no-repeat;
+                        background-position: 0 0;
+                        background-size: 40px 40px;
+                    }
+                }
+                &-feedback {
+                    a {
+                        &:before {
+                            top: -9px;
+                            left: -46px;
+                            background-image: url('@{images}/sprite/feedback.png');
+                        }
+                    }
+                }
+                &-phone {
+                    a {
+                        &:before {
+                            top: -5px;
+                            left: -44px;
+                            background-image: url('@{images}/sprite/phone.png');
+                        }
+                    }
+                }
+                &-address {
+                    &:before {
+                        top: -12px;
+                        left: -45px;
+                        background-image: url('@{images}/sprite/address.png');
+                    }
+                }
+            }
+        }
+        .link {
+            position: absolute;
+            bottom: 66px;
+            font-size: 20px;
+        }
+    }
+}
