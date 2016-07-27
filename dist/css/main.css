@@ -133,7 +133,7 @@ h3,
 .h3 {
   margin-top: 40px;
   margin-bottom: 16px;
-  font: bold 24px/26px 'Arno Pro', serif;
+  font: bold 30px/34px 'Arno Pro', serif;
   color: #162a49;
 }
 h4,
@@ -2195,15 +2195,8 @@ button:focus,
 /* ==========================================================================
    CONTACT-US
    ========================================================================== */
-.contact-us {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
 .contact-us .col {
-  padding: 66px;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  padding: 20px;
   background: #e8f0f7;
 }
 .contact-us .col:nth-of-type(2) {
@@ -2212,7 +2205,7 @@ button:focus,
 .contact-us .title {
   margin-top: 40px;
   margin-bottom: 16px;
-  font: bold 24px/26px 'Arno Pro', serif;
+  font: bold 30px/34px 'Arno Pro', serif;
   color: #162a49;
   margin-top: 0 !important;
   margin-bottom: 20px !important;
@@ -2222,7 +2215,7 @@ button:focus,
 }
 .contact-us .list,
 .contact-us .form-feedback {
-  width: 340px;
+  max-width: 340px;
   height: 100%;
   margin: 0 auto;
   position: relative;
@@ -2231,11 +2224,9 @@ button:focus,
   margin: 34px 0;
   padding: 0;
   list-style: none;
-  font-size: 20px;
-  line-height: 24px;
 }
 .contact-us .list ul li {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .contact-us .list ul .icon-feedback a,
 .contact-us .list ul .icon-phone a,
@@ -2256,26 +2247,24 @@ button:focus,
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 40px 40px;
+  top: -5px;
+  left: -44px;
 }
 .contact-us .list ul .icon-feedback a:before {
-  top: -9px;
-  left: -46px;
   background-image: url('../img/sprite/feedback.png');
 }
 .contact-us .list ul .icon-phone a:before {
-  top: -5px;
-  left: -44px;
   background-image: url('../img/sprite/phone.png');
 }
 .contact-us .list ul .icon-address:before {
-  top: -12px;
-  left: -45px;
   background-image: url('../img/sprite/address.png');
 }
 .contact-us .list .link {
-  position: absolute;
-  bottom: 66px;
-  font-size: 20px;
+  border-bottom: 1px solid rgba(57, 57, 57, 0.2);
+}
+.contact-us .list .link:hover, .contact-us .list .link:focus {
+  text-decoration: none;
+  border-bottom-color: transparent;
 }
 /* ==========================================================================
    PAGE-HEADER
@@ -2848,11 +2837,39 @@ button:focus,
     font-size: 100px;
     line-height: 90px;
   }
+  .contact-us {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contact-us .col {
+    padding: 66px;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
   .contact-us .title {
     margin-top: 46px;
     margin-bottom: 30px;
     font-size: 34px;
     line-height: 36px;
+  }
+  .contact-us .list ul {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .contact-us .list ul li {
+    margin-bottom: 50px;
+  }
+  .contact-us .list ul .icon-address:before {
+    top: -12px;
+  }
+  .contact-us .list ul .icon-feedback:before {
+    top: -9px;
+  }
+  .contact-us .list .link {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
   }
   .text-large {
     margin-bottom: 44px;

@@ -2,13 +2,18 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
-    display: flex;
+    @media @tablet-sm {
+        display: flex;
+    }
     .col {
-        padding: 66px;
-        flex-basis: 50%;
+        padding: 20px;
         background: @color-glitter;
         &:nth-of-type(2) {
             background: @color-azureish-white;
+        }
+        @media @tablet-sm {
+            padding: 66px;
+            flex-basis: 50%;
         }
     }
 
@@ -19,7 +24,7 @@
     }
 
     .list, .form-feedback {
-        width: 340px;
+        max-width: 340px;
         height: 100%;
         margin: 0 auto;
         position: relative;
@@ -27,13 +32,20 @@
 
     .list {
         ul {
-          margin: 34px 0;
-          padding: 0;
-          list-style: none;
-          font-size: 20px;
-          line-height: 24px;
+            margin: 34px 0;
+            padding: 0;
+            list-style: none;
+
+            @media @tablet-sm {
+              font-size: 20px;
+              line-height: 24px;
+            }
+
             li {
-                margin-bottom: 50px;
+                margin-bottom: 20px;
+                @media @tablet-sm {
+                  margin-bottom: 50px;
+                }
             }
 
             .icon {
@@ -49,13 +61,13 @@
                         background-repeat: no-repeat;
                         background-position: 0 0;
                         background-size: 40px 40px;
+                        top: -5px;
+                        left: -44px;
                     }
                 }
                 &-feedback {
                     a {
                         &:before {
-                            top: -9px;
-                            left: -46px;
                             background-image: url('@{images}/sprite/feedback.png');
                         }
                     }
@@ -63,25 +75,41 @@
                 &-phone {
                     a {
                         &:before {
-                            top: -5px;
-                            left: -44px;
                             background-image: url('@{images}/sprite/phone.png');
                         }
                     }
                 }
                 &-address {
                     &:before {
-                        top: -12px;
-                        left: -45px;
                         background-image: url('@{images}/sprite/address.png');
                     }
+                }
+                @media @tablet-sm {
+                  &-address {
+                    &:before {
+                      top: -12px;
+                    }
+                  }
+                  &-feedback {
+                    &:before {
+                      top: -9px;
+                    }
+                  }
                 }
             }
         }
         .link {
-            position: absolute;
-            bottom: 66px;
-            font-size: 20px;
+            .color-onyx(.2);
+            border-bottom: 1px solid @color;
+            &:hover {
+                text-decoration: none;
+                border-bottom-color: transparent;
+            }
+            @media @tablet-sm {
+                position: absolute;
+                bottom: 0;
+                font-size: 20px;
+            }
         }
     }
 }
