@@ -2,18 +2,26 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
-    @media @tablet-sm {
+
+    @media @mobile-lg {
         display: flex;
     }
+
     .col {
-        padding: 20px;
+        padding: 40px 20px;
         background: @color-glitter;
         &:nth-of-type(2) {
             background: @color-azureish-white;
         }
-        @media @tablet-sm {
-            padding: 66px;
+
+        @media @mobile-lg {
             flex-basis: 50%;
+        }
+        @media @tablet-sm {
+            padding: 40px;
+        }
+        @media @tablet-md {
+            padding: 66px;
         }
     }
 
@@ -32,19 +40,20 @@
 
     .list {
         ul {
-            margin: 34px 0;
+            margin: 20px 0;
             padding: 0;
             list-style: none;
 
             @media @tablet-sm {
-              font-size: 20px;
-              line-height: 24px;
+                margin: 34px 0;
+                font-size: 20px;
+                line-height: 24px;
             }
 
             li {
                 margin-bottom: 20px;
                 @media @tablet-sm {
-                  margin-bottom: 50px;
+                    margin-bottom: 50px;
                 }
             }
 
@@ -84,30 +93,35 @@
                         background-image: url('@{images}/sprite/address.png');
                     }
                 }
+
                 @media @tablet-sm {
-                  &-address {
-                    &:before {
-                      top: -12px;
+                    &-address {
+                        &:before {
+                            top: -12px;
+                        }
                     }
-                  }
-                  &-feedback {
-                    &:before {
-                      top: -9px;
+                    &-feedback {
+                        &:before {
+                            top: -9px;
+                        }
                     }
-                  }
                 }
             }
         }
         .link {
+            display: inline;
             .color-onyx(.2);
             border-bottom: 1px solid @color;
             &:hover {
                 text-decoration: none;
                 border-bottom-color: transparent;
             }
-            @media @tablet-sm {
+            
+            @media @mobile-lg {
                 position: absolute;
                 bottom: 0;
+            }
+            @media @tablet-sm {
                 font-size: 20px;
             }
         }

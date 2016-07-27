@@ -2196,7 +2196,7 @@ button:focus,
    CONTACT-US
    ========================================================================== */
 .contact-us .col {
-  padding: 20px;
+  padding: 40px 20px;
   background: #e8f0f7;
 }
 .contact-us .col:nth-of-type(2) {
@@ -2221,7 +2221,7 @@ button:focus,
   position: relative;
 }
 .contact-us .list ul {
-  margin: 34px 0;
+  margin: 20px 0;
   padding: 0;
   list-style: none;
 }
@@ -2260,6 +2260,7 @@ button:focus,
   background-image: url('../img/sprite/address.png');
 }
 .contact-us .list .link {
+  display: inline;
   border-bottom: 1px solid rgba(57, 57, 57, 0.2);
 }
 .contact-us .list .link:hover, .contact-us .list .link:focus {
@@ -2270,9 +2271,9 @@ button:focus,
    PAGE-HEADER
    ========================================================================== */
 .page-header {
-  height: 516px;
+  height: 216px;
   margin: 0;
-  padding: 60px 0;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2513,6 +2514,19 @@ button:focus,
     padding: 10px;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+  }
+  .contact-us {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contact-us .col {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+  .contact-us .list .link {
+    position: absolute;
+    bottom: 0;
   }
 }
 @media (min-width: 750px) {
@@ -2837,15 +2851,8 @@ button:focus,
     font-size: 100px;
     line-height: 90px;
   }
-  .contact-us {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
   .contact-us .col {
-    padding: 66px;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
+    padding: 40px;
   }
   .contact-us .title {
     margin-top: 46px;
@@ -2854,6 +2861,7 @@ button:focus,
     line-height: 36px;
   }
   .contact-us .list ul {
+    margin: 34px 0;
     font-size: 20px;
     line-height: 24px;
   }
@@ -2867,9 +2875,11 @@ button:focus,
     top: -9px;
   }
   .contact-us .list .link {
-    position: absolute;
-    bottom: 0;
     font-size: 20px;
+  }
+  .page-header {
+    height: 516px;
+    padding: 60px 0;
   }
   .text-large {
     margin-bottom: 44px;
@@ -2922,6 +2932,9 @@ button:focus,
   }
   .staff .list .item {
     width: 33.3%;
+  }
+  .contact-us .col {
+    padding: 66px;
   }
 }
 @media (min-width: 1170px) {

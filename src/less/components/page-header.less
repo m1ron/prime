@@ -2,9 +2,9 @@
    PAGE-HEADER
    ========================================================================== */
 .page-header {
-  height: 516px;
+  height: 216px;
   margin: 0;
-  padding: 60px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -13,6 +13,11 @@
   background-repeat: no-repeat;
   color: @color-white;
   position: relative;
+
+  @media @tablet-sm {
+    height: 516px;
+    padding: 60px 0;
+  }
 
     &.page-contacts {
       background-image: url('@{images}/page-header/contacts.jpg');
