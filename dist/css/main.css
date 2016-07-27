@@ -147,7 +147,7 @@ h5,
 .h5 {
   margin-top: 30px;
   margin-bottom: 0;
-  font: 300 14px/21px 'Proxima Nova', Arial, sans-serif;
+  font: bold 14px/21px 'Proxima Nova', Arial, sans-serif;
   color: #000;
 }
 h6,
@@ -453,23 +453,23 @@ button:focus,
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
-.sections {
+.sections ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.sections:after {
+.sections ul:after {
   display: table;
   content: '\0020';
   clear: both;
 }
-.sections li {
+.sections ul li {
   max-width: 450px;
   margin: 0 auto;
   height: 570px;
   overflow: hidden;
 }
-.sections li a {
+.sections ul li a {
   width: 100%;
   height: 100%;
   padding: 40px 15px;
@@ -489,7 +489,7 @@ button:focus,
   position: relative;
   color: #fff;
 }
-.sections li a:before {
+.sections ul li a:before {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -503,11 +503,11 @@ button:focus,
   opacity: .8;
   z-index: 1;
 }
-.sections li a > * {
+.sections ul li a > * {
   position: relative;
   z-index: 2;
 }
-.sections .image {
+.sections ul .image {
   width: auto !important;
   height: 105% !important;
   position: absolute;
@@ -517,11 +517,15 @@ button:focus,
   bottom: 0;
   z-index: 0;
 }
-.sections .title {
+.sections ul .title {
   margin: 0 0 24px;
   font: 800 32px/36px 'Arno Pro', serif;
   letter-spacing: .02em;
   display: block;
+}
+.wrapper .sections .space {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 /* ==========================================================================
    SCHEME
@@ -651,10 +655,6 @@ button:focus,
 }
 .gallery .heading {
   margin-top: 30px;
-}
-.gallery .space {
-  margin-left: -20px;
-  margin-right: -20px;
 }
 .gallery .carousel {
   padding: 0;
@@ -789,6 +789,10 @@ button:focus,
 }
 .gallery .slick-dots li.slick-active .dot:before {
   background: #34bffc;
+}
+.wrapper .gallery .space {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 /* ==========================================================================
    CALLBACK
@@ -2364,11 +2368,11 @@ button:focus,
   }
 }
 @media (min-width: 414px) {
-  .sections .title {
+  .sections ul .title {
     font-size: 40px;
     line-height: 44px;
   }
-  .sections .button {
+  .sections ul .button {
     min-width: 310px;
   }
 }
@@ -2628,19 +2632,31 @@ button:focus,
   .header .phone {
     display: block;
   }
-  .sections li {
+  .sections ul li {
     width: 50%;
     max-width: none;
     height: 650px;
     float: left;
   }
-  .sections li a {
+  .sections ul li a {
     padding: 34px 20px;
   }
-  .sections .title {
+  .sections ul .title {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .wrapper .sections .space {
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .wrapper .sections .space ul {
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 64px;
+    position: relative;
+    left: -32px;
   }
   .scheme .list {
     font-size: 24px;
@@ -2693,11 +2709,17 @@ button:focus,
     width: 66.6%;
     clear: none;
   }
-  .gallery .space {
+  .gallery .slick-arrow.prev {
+    left: 15px;
+  }
+  .gallery .slick-arrow.next {
+    right: 15px;
+  }
+  .wrapper .gallery .space {
     margin-left: -50vw;
     margin-right: -50vw;
   }
-  .gallery .space .carousel {
+  .wrapper .gallery .space .carousel {
     width: 100vw;
     margin-left: auto;
     margin-right: auto;
@@ -2705,14 +2727,8 @@ button:focus,
     position: relative;
     left: -32px;
   }
-  .gallery .space .carousel .slick-arrow.prev {
+  .wrapper .gallery .space .carousel .slick-arrow.prev {
     left: 79px;
-  }
-  .gallery .slick-arrow.prev {
-    left: 15px;
-  }
-  .gallery .slick-arrow.next {
-    right: 15px;
   }
   .callback {
     padding-top: 85px;
@@ -3015,14 +3031,14 @@ button:focus,
     color: #009ee3;
     cursor: default;
   }
-  .sections li {
+  .sections ul li {
     height: 700px;
   }
-  .sections li a {
+  .sections ul li a {
     padding-top: 54px;
     padding-bottom: 54px;
   }
-  .sections .title {
+  .sections ul .title {
     max-width: 500px;
     font-size: 46px;
     line-height: 50px;
