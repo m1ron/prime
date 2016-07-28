@@ -41,6 +41,13 @@
 }
 @font-face {
   font-family: 'Arno Pro';
+  src: url('../fonts/arnopro-light-italic-display-webfont.eot');
+  src: local('☺'), url('../fonts/arnopro-light-italic-display-webfont.woff') format('woff'), url('../fonts/arnopro-light-italic-display-webfont.ttf') format('truetype'), url('../fonts/arnopro-light-italic-display-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Arno Pro';
   src: url('../fonts/arnopro-bold-caption-webfont.eot');
   src: local('☺'), url('../fonts/arnopro-bold-caption-webfont.woff') format('woff'), url('../fonts/arnopro-bold-caption-webfont.ttf') format('truetype'), url('../fonts/arnopro-bold-caption-webfont.svg') format('svg');
   font-weight: bold;
@@ -147,7 +154,7 @@ h5,
 .h5 {
   margin-top: 30px;
   margin-bottom: 0;
-  font: bold 14px/21px 'Proxima Nova', Arial, sans-serif;
+  font: bold 20px/26px 'Proxima Nova', Arial, sans-serif;
   color: #000;
 }
 h6,
@@ -503,6 +510,15 @@ button:focus,
   letter-spacing: .02em;
   display: block;
 }
+.sections ul .info {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 800;
+}
 .wrapper .sections .space {
   margin-left: -20px;
   margin-right: -20px;
@@ -782,6 +798,10 @@ button:focus,
   text-align: center;
   color: #162a49;
   cursor: default;
+}
+.wrapper .callback {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 .callback .call-us {
   margin: 36px 0 0;
@@ -2412,6 +2432,52 @@ button:focus,
 .bordered:hover, .bordered:focus {
   border-bottom-color: transparent;
   text-decoration: none;
+}
+/*** FIGURE ***/
+.figure {
+  margin-bottom: 8px;
+  font: italic 20px/24px 'Arno Pro', serif;
+  color: rgba(0, 0, 0, 0.6);
+}
+.figure img {
+  margin-bottom: 14px;
+}
+.figure + p {
+  margin-top: 0;
+}
+/*** LIST-CHECKED ***/
+.list-checked {
+  padding: 0;
+  list-style: none;
+}
+.list-checked li {
+  margin-bottom: 15px;
+  padding-left: 40px;
+  position: relative;
+}
+.list-checked li:before,
+.list-checked li:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 3px;
+  height: 14px;
+  background: #162a49;
+  border-radius: 3px;
+  -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+.list-checked li:after {
+  height: 8px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 14px;
+  left: 9px;
 }
 /* ==========================================================================
    MEDIA QUERIES
