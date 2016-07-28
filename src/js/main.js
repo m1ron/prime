@@ -201,9 +201,9 @@ $(document).ready(function() {
         }
     });
 
-    /* Staff-block photos type */
+    /* Staff  photos type */
     $('.staff').each(function() {
-        $('.staff-block', this).each(function() {
+        $('.head', this).each(function() {
             $('.photo', this).each(function() {
                 if ($(this).width() * 0.8 >= $(this).height()) {
                     $(this).addClass('landscape');

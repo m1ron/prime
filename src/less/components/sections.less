@@ -159,6 +159,8 @@
                         position: relative;
                         z-index: 5;
                         @media @mobile-xs {
+                            padding-right: 5px;
+                            padding-left: 5px;
                             font-size: 28px;
                         }
                         @media @tablet-md {
@@ -168,6 +170,7 @@
                         }
                         @media @desktop-sm {
                             max-width: 500px;
+                            padding: 0;
                             font-size: 46px;
                             line-height: 50px;
                         }
@@ -180,7 +183,7 @@
                         margin: 0 auto;
                         position: relative;
                         overflow: hidden;
-                        transition: max-height .5s @easing, transform @duration-l;
+                        transition: max-height @duration-l, transform @duration-l;
                         transform: translate3d(0, 0, 0);
                         backface-visibility: hidden;
                         flex-grow: 1;
