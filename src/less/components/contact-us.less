@@ -55,6 +55,20 @@
                 @media @tablet-sm {
                     margin-bottom: 50px;
                 }
+
+                a {
+                  border-bottom: 1px solid transparent;
+                  text-decoration: none;
+                  transition: border-color @duration;
+                  &[href^="tel"] {
+                    cursor: default;
+                    border-bottom: none;
+                  }
+                  &:hover {
+                      .color-onyx(.5);
+                      border-bottom-color: @color;
+                  }
+                }
             }
 
             .icon {
@@ -112,11 +126,12 @@
             display: inline;
             .color-onyx(.2);
             border-bottom: 1px solid @color;
+            transition: border-color @duration;
             &:hover {
                 text-decoration: none;
                 border-bottom-color: transparent;
             }
-            
+
             @media @mobile-lg {
                 position: absolute;
                 bottom: 0;

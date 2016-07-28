@@ -223,19 +223,25 @@ legend {
 [type='email'],
 textarea {
   width: 100%;
-  padding: 12px 10px 6px;
-  border: 2px solid #162a49;
+  padding: 20px 10px 16px;
+  border: 1px solid rgba(57, 57, 57, 0.2);
   border-radius: 0;
   display: inline-block;
   vertical-align: middle;
-  font: bold 28px 'Arno Pro', serif;
+  font: 20px/20px 'Proxima Nova', Arial, sans-serif;
   color: #162a49;
-  background: #fff;
+  background: transparent;
   -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+[type='text']:focus,
+[type='tel']:focus,
+[type='email']:focus,
+textarea:focus {
+  border-color: #162a49;
 }
 .form-group [type='text'],
 .form-group [type='tel'],
@@ -251,19 +257,19 @@ textarea {
 }
 /* noinspection CssInvalidPseudoSelector */
 ::-webkit-input-placeholder {
-  color: #162a49;
+  color: #4f5c71;
   opacity: 1;
 }
 ::-moz-placeholder {
-  color: #162a49;
+  color: #4f5c71;
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: #162a49;
+  color: #4f5c71;
   opacity: 1;
 }
 ::placeholder {
-  color: #162a49;
+  color: #4f5c71;
   opacity: 1;
 }
 /*** BUTTONS ***/
@@ -330,32 +336,6 @@ button:focus,
 /*** FORM-FEEDBACK ***/
 .form-feedback .form-group {
   margin-bottom: 18px;
-}
-.form-feedback ::-webkit-input-placeholder {
-  color: #4f5c71;
-}
-.form-feedback ::-moz-placeholder {
-  color: #4f5c71;
-}
-.form-feedback :-ms-input-placeholder {
-  color: #4f5c71;
-}
-.form-feedback ::placeholder {
-  color: #4f5c71;
-}
-.form-feedback input:not([type='submit']),
-.form-feedback textarea {
-  padding-top: 20px;
-  padding-bottom: 16px;
-  font: 20px/20px 'Proxima Nova', Arial, sans-serif;
-  color: #162a49;
-  border-color: rgba(57, 57, 57, 0.2);
-  border-width: 1px;
-  background: transparent;
-}
-.form-feedback input:not([type='submit']):focus,
-.form-feedback textarea:focus {
-  border-color: #162a49;
 }
 .form-feedback .button {
   width: 100%;
@@ -812,6 +792,37 @@ button:focus,
   text-decoration: none;
   white-space: nowrap;
   cursor: default;
+}
+.callback-color {
+  background: #f9f8f7;
+}
+.callback-color .form-callback {
+  /* noinspection CssInvalidPseudoSelector */
+}
+.callback-color .form-callback ::-webkit-input-placeholder {
+  color: #e1e1e1;
+  opacity: 1;
+}
+.callback-color .form-callback ::-moz-placeholder {
+  color: #e1e1e1;
+  opacity: 1;
+}
+.callback-color .form-callback :-ms-input-placeholder {
+  color: #e1e1e1;
+  opacity: 1;
+}
+.callback-color .form-callback ::placeholder {
+  color: #e1e1e1;
+  opacity: 1;
+}
+.callback-color .form-callback input {
+  border-color: #e1e1e1;
+}
+.callback-color .form-callback .submit {
+  background: transparent;
+}
+.callback-color .form-callback .submit:hover, .callback-color .form-callback .submit:focus {
+  background: #162a49;
 }
 .form-callback {
   max-width: 350px;
@@ -2050,6 +2061,26 @@ button:focus,
   width: 100%;
   height: auto;
 }
+.testimonials .list .image a {
+  display: block;
+  position: relative;
+}
+.testimonials .list .image a:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin: auto auto;
+  background: url('../svg/icons/zoom.svg') no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
 .testimonials .list .text {
   font: 24px/34px 'Arno Pro', serif;
 }
@@ -2247,6 +2278,19 @@ button:focus,
 .contact-us .list ul li {
   margin-bottom: 20px;
 }
+.contact-us .list ul li a {
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.contact-us .list ul li a[href^="tel"] {
+  cursor: default;
+  border-bottom: none;
+}
+.contact-us .list ul li a:hover, .contact-us .list ul li a:focus {
+  border-bottom-color: rgba(57, 57, 57, 0.5);
+}
 .contact-us .list ul .icon-feedback a,
 .contact-us .list ul .icon-phone a,
 .contact-us .list ul .icon-address {
@@ -2281,6 +2325,8 @@ button:focus,
 .contact-us .list .link {
   display: inline;
   border-bottom: 1px solid rgba(57, 57, 57, 0.2);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .contact-us .list .link:hover, .contact-us .list .link:focus {
   text-decoration: none;
@@ -2357,6 +2403,15 @@ button:focus,
 }
 .text-center {
   text-align: center;
+}
+.bordered {
+  border-bottom: 1px solid #000;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.bordered:hover, .bordered:focus {
+  border-bottom-color: transparent;
+  text-decoration: none;
 }
 /* ==========================================================================
    MEDIA QUERIES
@@ -2733,6 +2788,12 @@ button:focus,
   .callback {
     padding-top: 85px;
     padding-bottom: 70px;
+  }
+  .wrapper .callback {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
   }
   .callback .call-us {
     margin-top: 40px;

@@ -10,16 +10,21 @@ form, fieldset, legend {
 /*** FIELDS ***/
 [type='text'], [type='tel'], [type='email'], textarea {
     width: 100%;
-    padding: 12px 10px 6px;
-    border: 2px solid @color-midnight;
+    padding: 20px 10px 16px;
+    .color-onyx(.2);
+    border: 1px solid @color;
     border-radius: 0;
     display: inline-block;
     vertical-align: middle;
-    font: bold 28px @font-heading;
+    font: 20px/20px @font-default;
     color: @color-midnight;
-    background: @color-white;
+    background: transparent;
     transition: border-color @duration;
     appearance: none;
+
+    &:focus {
+        border-color: @color-midnight;
+    }
 
     .form-group & {
         width: 100%;
@@ -36,7 +41,7 @@ textarea {
 }
 /* noinspection CssInvalidPseudoSelector */
 ::placeholder {
-    color: @color-midnight;
+    color: @color-space;
     opacity: 1;
 }
 /*** BUTTONS ***/
@@ -92,23 +97,6 @@ textarea {
 .form-feedback {
     .form-group {
         margin-bottom: 18px;
-    }
-    ::placeholder {
-        color: @color-space;
-    }
-    input:not([type='submit']), textarea {
-        padding-top: 20px;
-        padding-bottom: 16px;
-        .color-onyx(.2);
-        font: 20px/20px @font-default;
-        color: @color-midnight;
-        border-color: @color;
-        border-width: 1px;
-        background: transparent;
-
-        &:focus {
-            border-color: @color-midnight;
-        }
     }
     .button {
       width: 100%;

@@ -39,3 +39,11 @@
 .text-center {
   text-align: center;
 }
+.bordered {
+  border-bottom: 1px solid @color-black;
+  transition: border-color @duration;
+  &:hover {
+    border-bottom-color: transparent;
+    text-decoration: none;
+  }
+}

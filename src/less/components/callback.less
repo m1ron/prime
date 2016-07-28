@@ -9,6 +9,12 @@
     @media @tablet-sm {
         padding-top: 85px;
         padding-bottom: 70px;
+        .wrapper & {
+          margin-left: -50vw;
+          margin-right: -50vw;
+          padding-left: 50vw;
+          padding-right: 50vw;
+        }
     }
     @media @desktop-sm {
         padding-top: 105px;
@@ -36,6 +42,29 @@
             white-space: nowrap;
             cursor: default;
         }
+    }
+
+    &-color {
+      background: @color-white-smoke;
+
+      .form-callback {
+
+        /* noinspection CssInvalidPseudoSelector */
+        ::placeholder {
+            color: @color-platinum;
+            opacity: 1;
+        }
+
+        input {
+          border-color: @color-platinum;
+        }
+        .submit {
+          background: transparent;
+          &:hover {
+            background: @color-midnight;
+          }
+        }
+      }
     }
 }
 
