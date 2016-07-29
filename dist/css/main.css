@@ -517,7 +517,9 @@ button:focus,
 }
 .sections .list .item .link .area {
   height: 100%;
+  max-width: 650px;
   padding: 5px 5px 42px;
+  margin: 0 auto;
   position: relative;
   z-index: 5;
   display: -webkit-box;
@@ -1575,10 +1577,21 @@ button:focus,
   margin: 0;
   padding: 15px;
   list-style: none;
+  position: relative;
   font-size: 14px;
   line-height: 20px;
-  border-bottom: 1px solid #eee;
   cursor: default;
+}
+.breadcrumbs:before {
+  display: block;
+  content: '\0020';
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  right: -50vw;
+  bottom: 0;
+  left: 0;
+  background: #eee;
 }
 .breadcrumbs li {
   margin-right: 8px;
@@ -2567,8 +2580,7 @@ button:focus,
    ========================================================================== */
 .page {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 1920px;
 }
 .page:after {
   display: table;
@@ -3363,7 +3375,7 @@ button:focus,
   }
   .sections .list .item .link .area .description:before {
     width: 125px;
-    margin: 40px auto;
+    margin: 32px auto;
   }
   .sections .list .item .link .area .button {
     width: 310px;

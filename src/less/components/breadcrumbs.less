@@ -5,12 +5,23 @@
     margin: 0;
     padding: 15px;
     list-style: none;
+    position: relative;
     font-size: 14px;
     line-height: 20px;
-    border-bottom: 1px solid @color-light;
     cursor: default;
     @media @tablet-sm {
         padding: 35px 35px 22px;
+    }
+
+    &:before {
+        .pseudo;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        right: -50vw;
+        bottom: 0;
+        left: 0;
+        background: @color-light;
     }
 
     li {
