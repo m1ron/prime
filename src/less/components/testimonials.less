@@ -2,70 +2,79 @@
    TESTIMONIALS
    ========================================================================== */
 .testimonials {
-    margin-bottom: 30px;
+    max-width: 850px;
+    margin: 0 auto 30px;
     text-align: center;
     @media @tablet-sm {
-      margin-bottom: 50px;
+        margin-bottom: 50px;
     }
 
     .list {
-      margin-bottom: 30px;
+        margin-bottom: 30px;
+        @media @tablet-sm {
+            margin-bottom: 60px;
+        }
+
         &:before {
             .pseudo;
             width: 146px;
             height: 3px;
             margin: 0 auto 30px;
             background: @color-midnight;
+            @media @tablet-sm {
+                width: 246px;
+                margin-bottom: 36px;
+            }
         }
         &:after {
             .clearfix;
         }
 
-        @media @tablet-sm {
-            margin-bottom: 78px;
-            &:before {
-                width: 246px;
-                margin-bottom: 36px;
-            }
+        .entry {
+            min-height: 330px;
+            padding: 0 30px;
         }
+
         .image {
             width: 232px;
             margin: 0 auto 30px;
             .color-black(.4);
             box-shadow: 0 0 10px 0 @color;
-            img {
-                width: 100%;
-                height: auto;
-            }
-            a {
-              display: block;
-              position: relative;
-              &:before {
-                  .pseudo;
-                  width: 70px;
-                  height: 70px;
-                  margin: auto auto;
-                  background: url('@{svg}/icons/zoom.svg') no-repeat;
-                  background-size: cover;
-                  position: absolute;
-                  top: 0;
-                  bottom: 15px;
-                  left: 0;
-                  right: 0;
-                  z-index: 10;
-              }
-            }
-
             @media @mobile-lg {
                 float: left;
             }
             @media @tablet-sm {
                 margin-bottom: 0;
             }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            a {
+                display: block;
+                position: relative;
+
+                &:before {
+                    .pseudo;
+                    width: 70px;
+                    height: 70px;
+                    margin: auto auto;
+                    background: url('@{svg}/icons/zoom.svg') no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: 0;
+                    bottom: 15px;
+                    left: 0;
+                    right: 0;
+                    z-index: 10;
+                }
+            }
         }
+
         .text {
             font: 24px/34px @font-heading;
-
             @media @mobile-lg {
                 margin-left: 255px;
                 text-align: left;
@@ -78,10 +87,10 @@
                 line-height: 38px;
             }
         }
+
         .name {
             margin: 25px 0 0 0;
             font: bold 18px/20px @font-default;
-
             @media @tablet-sm {
                 margin-top: 35px;
             }
@@ -89,9 +98,9 @@
     }
 
     .button {
-      @media @tablet-sm {
-        min-width: 380px;
-        padding: 32px;
-      }
+        @media @tablet-sm {
+            min-width: 380px;
+            padding: 32px;
+        }
     }
 }

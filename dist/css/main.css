@@ -1830,7 +1830,8 @@ button:focus,
    CERTIFICATES
    ========================================================================== */
 .certificates {
-  margin: 0 0 20px 0;
+  padding-top: 30px;
+  margin: 0 0 30px;
   text-align: center;
 }
 .certificates-color .space {
@@ -2064,7 +2065,7 @@ button:focus,
   font-size: 22px;
 }
 .staff .list {
-  margin-top: 25px;
+  margin: 25px -5px 0;
   font-size: 14px;
   line-height: 20px;
 }
@@ -2232,7 +2233,8 @@ button:focus,
    TESTIMONIALS
    ========================================================================== */
 .testimonials {
-  margin-bottom: 30px;
+  max-width: 850px;
+  margin: 0 auto 30px;
   text-align: center;
 }
 .testimonials .list {
@@ -2251,6 +2253,10 @@ button:focus,
   display: table;
   content: '\0020';
   clear: both;
+}
+.testimonials .list .entry {
+  min-height: 330px;
+  padding: 0 30px;
 }
 .testimonials .list .image {
   width: 232px;
@@ -3148,7 +3154,7 @@ button:focus,
     margin-bottom: 50px;
   }
   .testimonials .list {
-    margin-bottom: 78px;
+    margin-bottom: 60px;
   }
   .testimonials .list:before {
     width: 246px;
