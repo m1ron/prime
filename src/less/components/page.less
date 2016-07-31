@@ -7,6 +7,20 @@
     &:after {
         .clearfix;
     }
+    .wide {
+      @media @tablet-sm {
+        width: auto;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        .space {
+          width: 100vw;
+          margin: 0 auto;
+          padding-left: 64px;
+          position: relative;
+          left: -32px;
+        }
+      }
+    }
 }
 .text-large {
     margin-bottom: @margin-md;

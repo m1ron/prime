@@ -3,11 +3,6 @@
    ========================================================================== */
 .brands {
     text-align: center;
-    .space {
-        @media @tablet-sm {
-            margin: 0 -50vw;
-        }
-    }
     ul {
         margin: 45px -20px 0;
         padding: 0;
@@ -16,11 +11,12 @@
             .clearfix;
         }
         @media @tablet-sm {
-            width: 100vw;
             margin: 64px auto -36px;
-            padding: 0 20px 0 84px;
-            left: -32px;
-            position: relative;
+            padding: 0 20px;
+        }
+        @media @tablet-md {
+            padding-left: 35px;
+            padding-right: 35px;
         }
         li {
             width: 50%;
