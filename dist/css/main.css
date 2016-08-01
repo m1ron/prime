@@ -2665,6 +2665,11 @@ button:focus,
   font-size: 14px;
   line-height: 26px;
 }
+.helpful .list:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
 .helpful .list li {
   padding-left: 42px;
   position: relative;
@@ -2687,6 +2692,7 @@ button:focus,
   top: 0;
 }
 .helpful .list .title {
+  margin-top: 0;
   font-size: 20px;
   line-height: 24px;
   font-weight: 800;
@@ -3387,6 +3393,27 @@ button:focus,
   .special .text {
     max-width: 600px;
   }
+  .helpful .list {
+    margin-left: -15px;
+    margin-right: -15px;
+    font-size: 16px;
+  }
+  .helpful .list li {
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 57px;
+    float: left;
+  }
+  .helpful .list li:before {
+    left: 20px;
+  }
+  .helpful .list .title {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+  .helpful .list .title + p {
+    margin-top: 0;
+  }
   .page .wide {
     width: auto;
     margin-left: -50vw;
@@ -3776,6 +3803,9 @@ button:focus,
   }
   .jobs .list .button {
     max-width: 265px;
+  }
+  .helpful .list li {
+    width: 33.3%;
   }
   .text-large {
     font-size: 28px;
