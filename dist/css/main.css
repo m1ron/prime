@@ -959,6 +959,10 @@ button:focus,
   cursor: default;
   background: #f9f8f7;
 }
+.wrapper .callback {
+  margin-left: -20px;
+  margin-right: -20px;
+}
 .callback .call-us {
   margin: 36px 0 0;
   font: 22px/26px 'Arno Pro', serif;
@@ -2659,11 +2663,16 @@ button:focus,
 /* ==========================================================================
    HELPFUL
    ========================================================================== */
+.helpful {
+  text-align: center;
+}
 .helpful .list {
+  margin: 38px 0;
   padding: 0;
   list-style: none;
   font-size: 14px;
   line-height: 26px;
+  text-align: left;
 }
 .helpful .list:after {
   display: table;
@@ -2671,8 +2680,12 @@ button:focus,
   clear: both;
 }
 .helpful .list li {
-  padding-left: 42px;
+  margin-bottom: 30px;
+  padding-left: 38px;
   position: relative;
+}
+.helpful .list li:last-child {
+  margin-bottom: 0;
 }
 .helpful .list li:before {
   display: block;
@@ -2688,7 +2701,7 @@ button:focus,
   font-weight: 800;
   text-align: center;
   position: absolute;
-  left: 5px;
+  left: 0;
   top: 0;
 }
 .helpful .list .title {
@@ -2697,6 +2710,10 @@ button:focus,
   line-height: 24px;
   font-weight: 800;
   color: #162a49;
+}
+.helpful .text {
+  margin-top: 8px;
+  font: 20px/26px 'Arno Pro', serif;
 }
 /* ==========================================================================
    PAGE
@@ -3192,6 +3209,10 @@ button:focus,
     padding-top: 85px;
     padding-bottom: 70px;
   }
+  .wrapper .callback {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .callback .call-us {
     margin-top: 40px;
   }
@@ -3394,25 +3415,28 @@ button:focus,
     max-width: 600px;
   }
   .helpful .list {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin: 52px 0;
+    padding-left: 35px;
+    padding-right: 35px;
     font-size: 16px;
   }
   .helpful .list li {
     width: 50%;
     padding-right: 15px;
-    padding-left: 57px;
     float: left;
-  }
-  .helpful .list li:before {
-    left: 20px;
   }
   .helpful .list .title {
     margin-bottom: 12px;
     font-size: 22px;
+    line-height: 26px;
   }
   .helpful .list .title + p {
     margin-top: 0;
+  }
+  .helpful .text {
+    margin-top: 0;
+    font-size: 28px;
+    line-height: 34px;
   }
   .page .wide {
     width: auto;
@@ -3803,6 +3827,9 @@ button:focus,
   }
   .jobs .list .button {
     max-width: 265px;
+  }
+  .helpful .list {
+    margin-top: 62px;
   }
   .helpful .list li {
     width: 33.3%;
