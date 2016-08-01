@@ -1,0 +1,64 @@
+/* ==========================================================================
+   PROJECT-CARD
+   ========================================================================== */
+.project-card {
+  margin: 26px 0;
+    padding: 20px;
+
+    .area {
+      margin-left: 20px;
+      margin-right: 20px;
+      .color-black(.15);
+      box-shadow: 0 0 7px 0 @color;
+      @media @mobile-lg {
+        display: flex;
+      }
+      @media @tablet-sm {
+        margin: 0 35px;
+      }
+    }
+
+    .col {
+        &:after {
+            .pseudo;
+            width: 100%;
+            height: 1px;
+            margin: 20px auto;
+            background: @color-isabelline;
+        }
+        &:last-of-type {
+          &:after {display: none;}
+        }
+        @media @mobile-lg {
+          flex-basis: 33.3%;
+          &:after {
+            width: 1px;
+            height: 100%;
+          }
+          &:nth-of-type(1) {
+            order: 30;
+          }
+        }
+    }
+
+    .list {
+      margin: 0;
+        dt {
+            font-weight: 800;
+            + dt {
+                margin-top: 20px;
+            }
+        }
+        dd {
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+    }
+
+    .logo {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+}

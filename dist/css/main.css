@@ -944,10 +944,6 @@ button:focus,
 .gallery .slick-dots li.slick-active .dot:before {
   background: #34bffc;
 }
-.wrapper .gallery .space {
-  margin-left: -20px;
-  margin-right: -20px;
-}
 /* ==========================================================================
    CALLBACK
    ========================================================================== */
@@ -956,10 +952,7 @@ button:focus,
   text-align: center;
   color: #162a49;
   cursor: default;
-}
-.wrapper .callback {
-  margin-left: -20px;
-  margin-right: -20px;
+  background: #f9f8f7;
 }
 .callback .call-us {
   margin: 36px 0 0;
@@ -970,37 +963,6 @@ button:focus,
   text-decoration: none;
   white-space: nowrap;
   cursor: default;
-}
-.callback-color {
-  background: #f9f8f7;
-}
-.callback-color .form-callback {
-  /* noinspection CssInvalidPseudoSelector */
-}
-.callback-color .form-callback ::-webkit-input-placeholder {
-  color: #e1e1e1;
-  opacity: 1;
-}
-.callback-color .form-callback ::-moz-placeholder {
-  color: #e1e1e1;
-  opacity: 1;
-}
-.callback-color .form-callback :-ms-input-placeholder {
-  color: #e1e1e1;
-  opacity: 1;
-}
-.callback-color .form-callback ::placeholder {
-  color: #e1e1e1;
-  opacity: 1;
-}
-.callback-color .form-callback input {
-  border-color: #e1e1e1;
-}
-.callback-color .form-callback .submit {
-  background: transparent;
-}
-.callback-color .form-callback .submit:hover, .callback-color .form-callback .submit:focus {
-  background: #162a49;
 }
 .form-callback {
   max-width: 350px;
@@ -1019,7 +981,7 @@ button:focus,
   height: 58px;
   max-width: none;
   padding: 12px 10px 6px;
-  border: 2px solid #eee;
+  border: 2px solid #e1e1e1;
   margin-bottom: 15px;
   display: block;
   font: bold 28px 'Arno Pro', serif;
@@ -1030,27 +992,31 @@ button:focus,
   border-color: #162a49;
 }
 .form-callback ::-webkit-input-placeholder {
-  color: #eee;
+  color: #e1e1e1;
   opacity: 1;
 }
 .form-callback ::-moz-placeholder {
-  color: #eee;
+  color: #e1e1e1;
   opacity: 1;
 }
 .form-callback :-ms-input-placeholder {
-  color: #eee;
+  color: #e1e1e1;
   opacity: 1;
 }
 .form-callback ::placeholder {
-  color: #eee;
+  color: #e1e1e1;
   opacity: 1;
 }
 .form-callback .submit {
   width: 100%;
   height: 58px;
   display: block;
+  background: transparent;
   position: relative;
   z-index: 3;
+}
+.form-callback .submit:hover, .form-callback .submit:focus {
+  background: #162a49;
 }
 /* ==========================================================================
    CONTACTS
@@ -1834,19 +1800,11 @@ button:focus,
   margin: 0 0 30px;
   text-align: center;
 }
-.certificates-color .space {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #f9f8f7;
-}
-.certificates .space {
-  margin: 0 -20px;
-}
-.certificates .space .heading {
+.certificates .heading {
   margin-top: 0;
 }
 .certificates .list {
-  margin: 0 auto;
+  margin: 0 -20px;
   padding: 0 20px;
   text-align: center;
 }
@@ -1897,6 +1855,12 @@ button:focus,
   font-size: 16px;
   line-height: 18px;
   font-weight: bold;
+}
+.certificates-color,
+.certificates .list-color {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f9f8f7;
 }
 /* ==========================================================================
    POPUPS
@@ -2582,6 +2546,49 @@ button:focus,
   z-index: 1;
 }
 /* ==========================================================================
+   PROJECT-CARD
+   ========================================================================== */
+.project-card {
+  margin: 26px 0;
+  padding: 20px;
+}
+.project-card .area {
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+.project-card .col:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 100%;
+  height: 1px;
+  margin: 20px auto;
+  background: #f3f2ef;
+}
+.project-card .col:last-of-type:after {
+  display: none;
+}
+.project-card .list {
+  margin: 0;
+}
+.project-card .list dt {
+  font-weight: 800;
+}
+.project-card .list dt + dt {
+  margin-top: 20px;
+}
+.project-card .list dd {
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+.project-card .logo {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+/* ==========================================================================
    PAGE
    ========================================================================== */
 .page {
@@ -2760,16 +2767,11 @@ button:focus,
   .certificates .list .item:nth-of-type(2n+1) {
     clear: left;
   }
-  .staff .space {
-    margin: 0 -50vw;
-  }
   .staff .head {
-    width: 100vw;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
   }
   .staff .head .photo {
     width: 50%;
@@ -2813,10 +2815,8 @@ button:focus,
     flex-basis: 50%;
   }
   .staff .list {
-    width: 100vw;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
   }
   .staff .list .person {
     width: 50%;
@@ -2862,6 +2862,24 @@ button:focus,
   .contact-us .list .link {
     position: absolute;
     bottom: 0;
+  }
+  .project-card .area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .project-card .col {
+    -ms-flex-preferred-size: 33.3%;
+    flex-basis: 33.3%;
+  }
+  .project-card .col:after {
+    width: 1px;
+    height: 100%;
+  }
+  .project-card .col:nth-of-type(1) {
+    -webkit-box-ordinal-group: 31;
+    -ms-flex-order: 30;
+    order: 30;
   }
 }
 @media (min-width: 750px) {
@@ -3023,30 +3041,9 @@ button:focus,
   .gallery .slick-arrow.next {
     right: 15px;
   }
-  .wrapper .gallery .space {
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-  .wrapper .gallery .space .carousel {
-    width: 100vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 64px;
-    position: relative;
-    left: -32px;
-  }
-  .wrapper .gallery .space .carousel .slick-arrow.prev {
-    left: 79px;
-  }
   .callback {
     padding-top: 85px;
     padding-bottom: 70px;
-  }
-  .wrapper .callback {
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding-left: 50vw;
-    padding-right: 50vw;
   }
   .callback .call-us {
     margin-top: 40px;
@@ -3096,12 +3093,10 @@ button:focus,
     padding: 0 25px;
   }
   .pager {
-    margin: 50px -50vw 56px;
+    margin: 50px 0 56px;
   }
   .pager ul {
-    width: 100vw;
-    padding: 0 35px 0 99px;
-    left: -32px;
+    padding: 0 35px;
   }
   .pager ul li {
     margin: 0 4px;
@@ -3111,44 +3106,25 @@ button:focus,
     text-indent: 0;
     overflow: visible;
   }
-  .certificates-color .space {
+  .certificates .list {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .certificates-color,
+  .certificates .list-color {
     padding-top: 45px;
     padding-bottom: 35px;
   }
-  .certificates-color .space .list {
-    margin-bottom: 0;
-  }
-  .certificates .space {
-    margin: 0 -50vw;
-  }
-  .certificates .list {
-    width: 100vw;
-    padding: 0 20px 0 84px;
-    left: -32px;
-    position: relative;
-  }
-  .brands .space {
-    margin: 0 -50vw;
-  }
   .brands ul {
-    width: 100vw;
     margin: 64px auto -36px;
-    padding: 0 20px 0 84px;
-    left: -32px;
-    position: relative;
+    padding: 0 20px;
   }
   .brands ul li {
     margin-bottom: 108px;
   }
-  .staff .head {
-    padding-left: 64px;
-    left: -32px;
-  }
   .staff .list {
     margin-top: 55px;
     margin-bottom: 15px;
-    padding-left: 64px;
-    left: -32px;
   }
   .testimonials {
     margin-bottom: 50px;
@@ -3226,6 +3202,21 @@ button:focus,
     height: 516px;
     padding: 60px 0;
   }
+  .project-card .area {
+    margin: 0 35px;
+  }
+  .page .wide {
+    width: auto;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .page .wide .space {
+    width: 100vw;
+    margin: 0 auto;
+    padding-left: 64px;
+    position: relative;
+    left: -32px;
+  }
   .text-large {
     margin-bottom: 44px;
   }
@@ -3248,14 +3239,11 @@ button:focus,
     letter-spacing: .02em;
   }
   .certificates {
-    margin-bottom: 70px;
+    margin-bottom: 48px;
     text-align: left;
   }
-  .certificates-color {
-    margin-bottom: 0;
-  }
   .certificates .list {
-    padding-left: 99px;
+    padding-left: 35px;
     padding-right: 35px;
   }
   .certificates .list .item {
@@ -3266,6 +3254,14 @@ button:focus,
   }
   .certificates .list .item:nth-of-type(3n+1) {
     clear: left;
+  }
+  .certificates-color,
+  .certificates .list-color {
+    margin-bottom: 0;
+  }
+  .brands ul {
+    padding-left: 35px;
+    padding-right: 35px;
   }
   .brands ul li {
     width: 33.3%;
