@@ -214,6 +214,11 @@ $(document).ready(function() {
         });
     });
 
+    /* Wide */
+    $('.wide').each(function(){
+        $(this).wrapInner('<div class="space"></div>');
+    });
+
 });
 
 /*

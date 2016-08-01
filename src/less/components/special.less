@@ -1,0 +1,49 @@
+/* ==========================================================================
+   SPECIAL
+   ========================================================================== */
+.special {
+  padding: 60px 0;
+    text-align: center;
+    color: @color-white;
+    position: relative;
+    overflow: hidden;
+    &:before {
+      .pseudo;
+      background: @color-midnight;
+      opacity: .3;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    .title {
+      color: @color-white;
+    }
+
+    .image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 1;
+    }
+
+    &.wide {
+      padding: 0;
+      .space {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      &:before, .image {
+        left: 64px;
+      }
+    }
+}

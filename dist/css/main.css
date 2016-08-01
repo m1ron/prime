@@ -2549,12 +2549,13 @@ button:focus,
    ========================================================================== */
 .project-card {
   margin: 26px 0;
-  padding: 20px;
 }
 .project-card .area {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+.project-card .col {
+  position: relative;
 }
 .project-card .col:after {
   display: block;
@@ -2581,11 +2582,63 @@ button:focus,
   margin-bottom: 20px;
   margin-left: 0;
 }
+.project-card .list dd:last-of-type {
+  margin-bottom: 0;
+}
 .project-card .logo {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
   display: block;
+}
+/* ==========================================================================
+   SPECIAL
+   ========================================================================== */
+.special {
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.special:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #162a49;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.special > * {
+  position: relative;
+  z-index: 3;
+}
+.special .title {
+  color: #fff;
+}
+.special .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+.special.wide {
+  padding: 0;
+}
+.special.wide .space {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.special.wide:before,
+.special.wide .image {
+  left: 64px;
 }
 /* ==========================================================================
    PAGE
@@ -2874,11 +2927,30 @@ button:focus,
   .project-card .col:after {
     width: 1px;
     height: 100%;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   .project-card .col:nth-of-type(1) {
     -webkit-box-ordinal-group: 31;
     -ms-flex-order: 30;
     order: 30;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .project-card .col:nth-of-type(1):after {
+    display: none;
+  }
+  .project-card .col:last-of-type:after {
+    display: block;
   }
 }
 @media (min-width: 750px) {
@@ -3201,8 +3273,31 @@ button:focus,
     height: 516px;
     padding: 60px 0;
   }
+  .project-card {
+    margin: 32px 0 38px;
+  }
+  .project-card .space {
+    padding-left: 99px !important;
+    padding-right: 35px !important;
+  }
   .project-card .area {
-    margin: 0 35px;
+    padding: 50px 8px;
+  }
+  .project-card .col {
+    padding: 0 38px;
+  }
+  .project-card .list {
+    line-height: 22px;
+  }
+  .project-card .list dt {
+    margin: 2px 0;
+  }
+  .project-card .list dt + dt {
+    margin-top: 40px;
+  }
+  .project-card .list dd {
+    margin-bottom: 40px;
+    margin-top: 4px;
   }
   .page .wide {
     width: auto;
