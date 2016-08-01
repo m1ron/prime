@@ -2657,6 +2657,42 @@ button:focus,
   z-index: 1;
 }
 /* ==========================================================================
+   HELPFUL
+   ========================================================================== */
+.helpful .list {
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 26px;
+}
+.helpful .list li {
+  padding-left: 42px;
+  position: relative;
+}
+.helpful .list li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  content: '\0003F';
+  width: 22px;
+  height: 22px;
+  border: 2px solid #162a49;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  text-align: center;
+  position: absolute;
+  left: 5px;
+  top: 0;
+}
+.helpful .list .title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #162a49;
+}
+/* ==========================================================================
    PAGE
    ========================================================================== */
 .page {
