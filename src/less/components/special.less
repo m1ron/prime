@@ -19,6 +19,9 @@
         padding: 34px 20px 20px;
         position: relative;
         overflow: hidden;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         &:before {
             .pseudo;
             background: @color-midnight;
@@ -28,7 +31,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            z-index: 2;
+            z-index: 0;
         }
         > * {
             position: relative;
@@ -68,15 +71,5 @@
       @media @tablet-sm {
         max-width: 600px;
       }
-    }
-
-    .image {
-        width: auto;
-        height: 105%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        z-index: 1;
     }
 }
