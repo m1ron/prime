@@ -4,6 +4,18 @@
 .gallery {
     width: 100%;
     text-align: center;
+    .wrapper & {
+      width: auto;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    @media @tablet-sm {
+      margin-bottom: 60px;
+      .wrapper & {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
 
     .heading {
       margin-top: 30px;

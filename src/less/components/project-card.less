@@ -2,9 +2,7 @@
    PROJECT-CARD
    ========================================================================== */
 .project-card {
-    margin: 26px 0;
     @media @tablet-sm {
-        margin: 32px 0 38px;
         .space {
           padding-left: 99px !important;
           padding-right: 35px !important;
@@ -12,6 +10,7 @@
     }
 
     .area {
+      margin: 26px 0;
       padding: 20px;
         .color-black(.15);
         box-shadow: 0 0 7px 0 @color;
@@ -19,6 +18,7 @@
             display: flex;
         }
         @media @tablet-sm {
+          margin: 32px 0 38px;
             padding: 50px 8px;
         }
     }
@@ -38,6 +38,7 @@
             }
         }
         @media @mobile-lg {
+          padding: 0 10px;
             flex-basis: 33.3%;
             &:after {
                 width: 1px;
@@ -63,6 +64,9 @@
             }
         }
         @media @tablet-sm {
+            padding: 0 20px;
+        }
+        @media @tablet-md {
             padding: 0 38px;
         }
     }

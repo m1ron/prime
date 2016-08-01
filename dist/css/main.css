@@ -806,6 +806,11 @@ button:focus,
   width: 100%;
   text-align: center;
 }
+.wrapper .gallery {
+  width: auto;
+  margin-left: -20px;
+  margin-right: -20px;
+}
 .gallery .heading {
   margin-top: 30px;
 }
@@ -2547,10 +2552,8 @@ button:focus,
 /* ==========================================================================
    PROJECT-CARD
    ========================================================================== */
-.project-card {
-  margin: 26px 0;
-}
 .project-card .area {
+  margin: 26px 0;
   padding: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
 }
@@ -2595,18 +2598,23 @@ button:focus,
    SPECIAL
    ========================================================================== */
 .special {
-  padding: 60px 0;
+  margin: 20px 0;
   text-align: center;
   color: #fff;
+  font: 24px/34px 'Arno Pro', serif;
+}
+.special .area {
+  margin: 0 -20px;
+  padding: 34px 20px 20px;
   position: relative;
   overflow: hidden;
 }
-.special:before {
+.special .area:before {
   display: block;
   content: '\0020';
   overflow: hidden;
   background: #162a49;
-  opacity: .3;
+  opacity: .7;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2614,31 +2622,39 @@ button:focus,
   right: 0;
   z-index: 2;
 }
-.special > * {
+.special .area > * {
   position: relative;
   z-index: 3;
 }
 .special .title {
+  margin: 0 0 20px;
+  font-size: 34px;
+  line-height: 34px;
   color: #fff;
 }
+.special .title:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 170px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: #fff;
+}
+.special .text {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .special .image {
+  width: auto;
+  height: 105%;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0);
   z-index: 1;
-}
-.special.wide {
-  padding: 0;
-}
-.special.wide .space {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-.special.wide:before,
-.special.wide .image {
-  left: 64px;
 }
 /* ==========================================================================
    PAGE
@@ -2676,6 +2692,16 @@ button:focus,
 .bordered:hover, .bordered:focus {
   border-bottom-color: transparent;
   text-decoration: none;
+}
+.no-margin {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.mobile-hidden {
+  display: none;
+}
+.mobile-hidden-inline {
+  display: none;
 }
 /*** FIGURE ***/
 .figure {
@@ -2921,6 +2947,7 @@ button:focus,
     display: flex;
   }
   .project-card .col {
+    padding: 0 10px;
     -ms-flex-preferred-size: 33.3%;
     flex-basis: 33.3%;
   }
@@ -3106,6 +3133,13 @@ button:focus,
     width: 66.6%;
     clear: none;
   }
+  .gallery {
+    margin-bottom: 60px;
+  }
+  .wrapper .gallery {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .gallery .slick-arrow.prev {
     left: 15px;
   }
@@ -3273,18 +3307,16 @@ button:focus,
     height: 516px;
     padding: 60px 0;
   }
-  .project-card {
-    margin: 32px 0 38px;
-  }
   .project-card .space {
     padding-left: 99px !important;
     padding-right: 35px !important;
   }
   .project-card .area {
+    margin: 32px 0 38px;
     padding: 50px 8px;
   }
   .project-card .col {
-    padding: 0 38px;
+    padding: 0 20px;
   }
   .project-card .list {
     line-height: 22px;
@@ -3298,6 +3330,26 @@ button:focus,
   .project-card .list dd {
     margin-bottom: 40px;
     margin-top: 4px;
+  }
+  .special {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .special .area {
+    padding-top: 54px;
+  }
+  .special .title {
+    margin-bottom: 30px;
+    font-size: 70px;
+    line-height: 60px;
+  }
+  .special .title:after {
+    margin-top: 26px;
+  }
+  .special .text {
+    max-width: 600px;
   }
   .page .wide {
     width: auto;
@@ -3320,6 +3372,12 @@ button:focus,
   .text-medium {
     font-size: 24px;
     line-height: 38px;
+  }
+  .mobile-hidden {
+    display: block;
+  }
+  .mobile-hidden-inline {
+    display: inline;
   }
 }
 @media (min-width: 990px) {
@@ -3379,6 +3437,9 @@ button:focus,
   }
   .contact-us .col {
     padding: 66px;
+  }
+  .project-card .col {
+    padding: 0 38px;
   }
 }
 @media (min-width: 1170px) {
