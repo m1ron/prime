@@ -1,36 +1,45 @@
 module.exports = function(grunt) {
 
+    /** Default paths **/
+    var d = {
+        bower: 'bower_components/',
+        src: 'src/',
+        temp: '.temp/',
+        dist: 'dist/'
+    };
+
     /** Source paths **/
-    var components = 'bower_components/';
     var src = {
-        root: 'src/',
-        less: 'src/less/',
-        js: 'src/js/',
-        img: 'src/img/',
-        svg: 'src/svg/',
-        favicon: 'src/favicon/',
-        fonts: 'src/fonts/',
+        root: d.src,
+        less: d.src + 'less/',
+        scss: d.src + 'scss/',
+        sass: d.src + 'sass/',
+        js: d.src + 'js/',
+        img: d.src + 'img/',
+        svg: d.src + 'svg/',
+        favicon: d.src + 'favicon/',
+        fonts: d.src + 'fonts/'
     };
 
     /** Temp paths **/
     var temp = {
-        root: 'temp/',
-        css: 'temp/css/',
-        js: 'temp/js/',
-        img: 'temp/img/',
-        svg: 'temp/svg/',
-        favicon: 'temp/favicon/',
+        root: d.temp,
+        css: d.temp + 'css/',
+        js: d.temp + 'js/',
+        img: d.temp + 'img/',
+        svg: d.temp + 'svg/',
+        favicon: d.temp + 'favicon/',
     };
 
     /** Destination paths **/
     var dist = {
-        root: 'dist/',
-        css: 'dist/css/',
-        js: 'dist/js/',
-        img: 'dist/img/',
-        svg: 'dist/svg/',
-        favicon: 'dist/favicon/',
-        fonts: 'dist/fonts/',
+        root: d.dist,
+        css: d.dist + 'css/',
+        js: d.dist + 'js/',
+        img: d.dist + 'img/',
+        svg: d.dist + 'svg/',
+        favicon: d.dist + 'favicon/',
+        fonts: d.dist + 'fonts/',
     };
 
 
@@ -38,9 +47,9 @@ module.exports = function(grunt) {
 
         // Config
         config: {
-            src: 'src/',
-            temp: 'temp/',
-            dist: 'dist/'
+            src: d.src,
+            temp: d.temp,
+            dist: d.dist
         },
 
         // Delete files
@@ -80,12 +89,12 @@ module.exports = function(grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        components + 'jquery/dist/jquery.min.js',
-                        components + 'jquery/dist/jquery.min.map',
-                        components + 'fastclick/lib/fastclick.js',
-                        components + 'slick-carousel/slick/slick.min.js',
-                        components + 'magnific-popup/dist/jquery.magnific-popup.min.js',
-                        components + 'jquery-mask-plugin/dist/jquery.mask.min.js'
+                        d.bower + 'jquery/dist/jquery.min.js',
+                        d.bower + 'jquery/dist/jquery.min.map',
+                        d.bower + 'fastclick/lib/fastclick.js',
+                        d.bower + 'slick-carousel/slick/slick.min.js',
+                        d.bower + 'magnific-popup/dist/jquery.magnific-popup.min.js',
+                        d.bower + 'jquery-mask-plugin/dist/jquery.mask.min.js'
                     ],
                     dest: temp.js + 'vendor'
                 }]
@@ -108,9 +117,9 @@ module.exports = function(grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        components + 'normalize-css/normalize.css',
-                        components + 'slick-carousel/slick/slick.css',
-                        components + 'magnific-popup/dist/magnific-popup.css'
+                        d.bower + 'normalize-css/normalize.css',
+                        d.bower + 'slick-carousel/slick/slick.css',
+                        d.bower + 'magnific-popup/dist/magnific-popup.css'
                     ],
                     dest: temp.css + 'vendor'
                 }]
@@ -257,7 +266,7 @@ module.exports = function(grunt) {
                     require('postcss-focus'),
                     require('postcss-flexbugs-fixes'),
                     require('autoprefixer')({
-                        browsers: ['> 1%', 'last 2 versions', 'ie > 7']
+                        browsers: ['> 0.75%', 'last 5 versions', 'ie > 7']
                     }),
                     require('css-mqpacker')({
                         sort: true

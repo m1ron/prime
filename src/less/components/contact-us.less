@@ -78,12 +78,7 @@
                     position: relative;
                     &:before {
                         .pseudo;
-                        width: 50px;
-                        height: 40px;
                         position: absolute;
-                        background-repeat: no-repeat;
-                        background-position: 0 0;
-                        background-size: 40px 40px;
                         top: -5px;
                         left: -44px;
                     }
@@ -91,20 +86,23 @@
                 &-feedback {
                     a {
                         &:before {
-                            background-image: url('@{images}/sprite/feedback.png');
+                            .svg-feedback-dims;
+                            .svg-feedback;
                         }
                     }
                 }
                 &-phone {
                     a {
                         &:before {
-                            background-image: url('@{images}/sprite/phone.png');
+                            .svg-phone-dims;
+                            .svg-phone;
                         }
                     }
                 }
                 &-address {
                     &:before {
-                        background-image: url('@{images}/sprite/address.png');
+                        .svg-address-dims;
+                        .svg-address;
                     }
                 }
 

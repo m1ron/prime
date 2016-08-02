@@ -69,6 +69,13 @@
                     left: 0;
                     right: 0;
                     z-index: 10;
+                    transition: transform @duration;
+                }
+
+                &:hover {
+                    &:before {
+                        transform: scale(1.15);
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 .idea
+.temp
 psd
 bower_components
 node_modules
-temp
+dist/maps
 *.css.map
