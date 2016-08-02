@@ -2,7 +2,13 @@
    HELPFUL
    ========================================================================== */
 .helpful {
+  margin-top: 20px;
     text-align: center;
+
+    @media @tablet-sm {
+      margin-top: 75px;
+      margin-bottom: 15px;
+    }
 
     .list {
         margin: 38px 0;
@@ -13,13 +19,13 @@
         text-align: left;
         &:after {.clearfix;}
         @media @tablet-sm {
-          margin: 52px 0;
-          padding-left: 35px;
-          padding-right: 35px;
+          margin: 52px 0 0;
+          padding-left: 18px;
+          padding-right: 18px;
           font-size: 16px;
         }
         @media @desktop-sm {
-          margin-top: 62px;
+          margin-top: 64px;
         }
 
         li {
@@ -51,6 +57,7 @@
             }
             @media @desktop-sm {
               width: 33.3%;
+              padding-right: 38px;
             }
         }
 
@@ -69,6 +76,12 @@
               }
             }
         }
+    }
+
+    .heading {
+      @media @tablet-sm {
+        margin-bottom: 0;
+      }
     }
 
     .text {

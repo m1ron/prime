@@ -155,7 +155,7 @@ h5,
   margin-top: 30px;
   margin-bottom: 0;
   font: bold 20px/26px 'Proxima Nova', Arial, sans-serif;
-  color: #000;
+  color: #162a49;
 }
 h6,
 .h6 {
@@ -2657,6 +2657,7 @@ button:focus,
    HELPFUL
    ========================================================================== */
 .helpful {
+  margin-top: 20px;
   text-align: center;
 }
 .helpful .list {
@@ -2714,7 +2715,7 @@ button:focus,
 .page-heading {
   height: 216px;
   margin: 0;
-  padding: 20px 0;
+  padding: 10px 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3150,14 +3151,14 @@ button:focus,
   h5,
   .h5 {
     margin-top: 46px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     font-size: 24px;
     line-height: 28px;
   }
   h6,
   .h6 {
     margin-top: 46px;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     font-size: 18px;
     line-height: 21px;
   }
@@ -3263,6 +3264,8 @@ button:focus,
     right: 15px;
   }
   .callback {
+    margin-top: 60px;
+    margin-bottom: 60px;
     padding-top: 85px;
     padding-bottom: 70px;
   }
@@ -3471,10 +3474,14 @@ button:focus,
   .special .text {
     max-width: 600px;
   }
+  .helpful {
+    margin-top: 75px;
+    margin-bottom: 15px;
+  }
   .helpful .list {
-    margin: 52px 0;
-    padding-left: 35px;
-    padding-right: 35px;
+    margin: 52px 0 0;
+    padding-left: 18px;
+    padding-right: 18px;
     font-size: 16px;
   }
   .helpful .list li {
@@ -3490,6 +3497,9 @@ button:focus,
   .helpful .list .title + p {
     margin-top: 0;
   }
+  .helpful .heading {
+    margin-bottom: 0;
+  }
   .helpful .text {
     margin-top: 0;
     font-size: 28px;
@@ -3498,7 +3508,7 @@ button:focus,
   .page-heading {
     height: 700px;
     margin-bottom: 60px;
-    padding: 140px 0;
+    padding: 15px 0 60px;
   }
   .page-heading .text {
     font-size: 46px;
@@ -3895,10 +3905,11 @@ button:focus,
     max-width: 265px;
   }
   .helpful .list {
-    margin-top: 62px;
+    margin-top: 64px;
   }
   .helpful .list li {
     width: 33.3%;
+    padding-right: 38px;
   }
   .text-large {
     font-size: 28px;
