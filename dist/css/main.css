@@ -3228,6 +3228,13 @@ button:focus,
     margin-bottom: 5px;
     font-size: 21px;
   }
+  .form-file {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .form-file:before {
+    top: 18px;
+  }
   .header .phone {
     display: block;
   }
@@ -3348,6 +3355,20 @@ button:focus,
     width: 242px;
     display: inline-block;
     vertical-align: top;
+  }
+  .form-callback.form-offer .heading {
+    margin-bottom: 6px;
+  }
+  .form-callback.form-offer .form-group {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-callback.form-offer input.tel {
+    width: 100%;
+  }
+  .form-callback.form-offer .submit {
+    width: 340px;
   }
   .nav .area {
     background: #162a49;

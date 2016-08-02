@@ -135,6 +135,12 @@
 
     &.form-offer {
 
+      .heading {
+        @media @tablet-sm {
+          margin-bottom: 6px;
+        }
+      }
+
       .info {
         margin: 0 0 22px;
         font: 28px/34px @font-heading;
@@ -142,6 +148,11 @@
 
       .form-group {
         margin-bottom: 18px;
+        @media @tablet-sm {
+          max-width: 340px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
 
       input {
@@ -155,6 +166,9 @@
         &.tel {
           height: 62px;
           font: 20px/20px @font-default;
+          @media @tablet-sm {
+            width: 100%;
+          }
         }
       }
 
@@ -164,6 +178,9 @@
         &:hover {
           background: transparent;
           color: @color-midnight;
+        }
+        @media @tablet-sm {
+          width: 340px;
         }
       }
     }

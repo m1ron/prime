@@ -93,24 +93,32 @@ textarea {
         }
     }
     &-file {
-      min-height: 38px;
-      padding-left: 40px;
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      font-size: 20px;
-      &:before {
-        .pseudo;
-        width: 26px;
-        height: 26px;
-        background: url('@{images}/sprite/upload.png') 0 0 no-repeat;
-        background-size: 26px 26px;
-        position: absolute;
-        left: 0;
-        top: 3px;
-      }
+        min-height: 38px;
+        padding-left: 40px;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 20px;
+        &:before {
+            .pseudo;
+            width: 26px;
+            height: 26px;
+            background: url('@{images}/sprite/upload.png') 0 0 no-repeat;
+            background-size: 26px 26px;
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
         input[type='file'] {
             display: none;
+        }
+
+        @media @tablet-sm {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            &:before {
+              top: 18px;
+            }
         }
     }
 }
