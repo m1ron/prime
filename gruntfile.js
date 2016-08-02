@@ -51,6 +51,7 @@ module.exports = function(grunt) {
             css: [temp.css, dist.css],
             img: [temp.img, dist.img],
             svg: [temp.svg, dist.svg],
+            svg_sprite: [src.less + 'core/@{svg}'],
             favicon: [src.favicon + '**/*.*', '!<%= config.src %>/favicon/master.png', dist.favicon]
         },
 
@@ -157,6 +158,11 @@ module.exports = function(grunt) {
                     cwd: temp.svg,
                     src: ['**/*.svg', '!sprite/*.svg'],
                     dest: dist.svg
+                }, {
+                    expand: true,
+                    cwd: src.less + 'core/@{svg}',
+                    src: ['**/*.svg'],
+                    dest: src.svg
                 }]
             },
             favicon: {
@@ -309,22 +315,25 @@ module.exports = function(grunt) {
         },
 
         // Generate SVG sprite
-        svgstore: {
-            options: {
-                inheritviewbox: true,
-                cleanup: true,
-                includeTitleElement: false,
-                formatting: {
-                    indent_size: 4,
-                    wrap_line_length: 0,
-                    end_with_newline: true
-                }
-            },
+        svg_sprite: {
             default: {
-                files: {
-                    '<%= config.temp %>svg/sprite.svg': ['<%= config.temp %>svg/sprite/*.svg']
+                expand: true,
+                cwd: temp.svg + 'sprite',
+                src: ['**/*.svg'],
+                dest: '.',
+                options: {
+                    mode: {
+                        css: {
+                            dest: src.less + 'core',
+                            sprite: '@{svg}/sprite',
+                            bust: false,
+                            render: {
+                                less: true
+                            }
+                        }
+                    }
                 }
-            },
+            }
         },
 
         // Generate Favicon
@@ -429,13 +438,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-newer");
     grunt.loadNpmTasks('grunt-pngquant');
+    grunt.loadNpmTasks('grunt-svg-sprite');
     grunt.loadNpmTasks('grunt-svgo');
-    grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-real-favicon');
 
     // Grunt tasks
     grunt.registerTask("default", ["clean:all", "start", "watch"]);
-    grunt.registerTask("start", ["static:start", "css:start", "js:start", "img:start", "svg:start", "favicon:process", "clean:temp"]);
+    grunt.registerTask("start", ["static:start", "img:start", "svg:start", "css:start", "js:start", "favicon:process", "clean:temp"]);
 
     grunt.registerTask("static", ["static:start"]);
     grunt.registerTask("static:start", ["copy:static"]);
@@ -454,7 +463,7 @@ module.exports = function(grunt) {
     grunt.registerTask("img:process", ["newer:copy:img_temp", "newer:pngquant:default", "newer:copy:img_dist"]);
 
     grunt.registerTask("svg", ["svg:start"]);
-    grunt.registerTask("svg:start", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
+    grunt.registerTask("svg:start", ["clean:svg", "copy:svg_temp", "svgo:default", "svg_sprite:default", "copy:svg_dist", "clean:svg_sprite"]);
     grunt.registerTask("svg:process", ["newer:copy:svg_temp", "newer:svgo:default", "newer:copy:svg_dist"]);
 
     grunt.registerTask("favicon", ["favicon:start"]);

@@ -376,6 +376,54 @@ button:focus,
   background: transparent;
   color: #162a49;
 }
+.svg-address {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 48.05194805194805% 0;
+}
+.svg-address-dims {
+  width: 40px;
+  height: 40px;
+}
+.svg-calculate {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 0 0;
+}
+.svg-calculate-dims {
+  width: 37px;
+  height: 52px;
+}
+.svg-feedback {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 100% 0;
+}
+.svg-feedback-dims {
+  width: 40px;
+  height: 40px;
+}
+.svg-mail {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 0 100%;
+}
+.svg-mail-dims {
+  width: 40px;
+  height: 40px;
+}
+.svg-phone {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 51.94805194805195% 100%;
+}
+.svg-phone-dims {
+  width: 40px;
+  height: 40px;
+}
+.svg-tel {
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 79.20792079207921% 68.42105263157895%;
+}
+.svg-tel-dims {
+  width: 16px;
+  height: 16px;
+}
 /* ==========================================================================
    HEADER
    ========================================================================== */
@@ -445,11 +493,15 @@ button:focus,
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.header .phone .icon svg {
+.header .phone .icon:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
   width: 16px;
   height: 16px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 79.20792079207921% 68.42105263157895%;
   margin: auto;
-  display: block;
   position: absolute;
   top: 1px;
   right: 2px;
@@ -1313,32 +1365,41 @@ button:focus,
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 50px;
+  width: 40px;
   height: 40px;
   position: absolute;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 40px 40px;
 }
 .contacts .icon-feedback a:before {
+  width: 40px;
+  height: 40px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 100% 0;
   top: -14px;
   left: -49px;
-  background-image: url('../img/sprite/feedback.png');
 }
 .contacts .icon-phone a:before {
+  width: 40px;
+  height: 40px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 51.94805194805195% 100%;
   top: -16px;
   left: -50px;
-  background-image: url('../img/sprite/phone.png');
 }
 .contacts .icon-mail a:before {
+  width: 40px;
+  height: 40px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 0 100%;
   top: -13px;
   left: -50px;
-  background-image: url('../img/sprite/mail.png');
 }
 .contacts .icon-address:before {
+  width: 40px;
+  height: 40px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 48.05194805194805% 0;
   top: -13px;
   left: -49px;
-  background-image: url('../img/sprite/address.png');
 }
 /* ==========================================================================
    NAV
@@ -1527,6 +1588,7 @@ button:focus,
   line-height: 21px;
 }
 .nav .calculate {
+  display: none;
   border-bottom: 1px solid #2c3e5a;
   margin: 0;
   position: relative;
@@ -1547,9 +1609,14 @@ button:focus,
 .nav .calculate a:hover, .nav .calculate a:focus {
   text-decoration: none;
 }
-.nav .calculate .icon {
+.nav .calculate:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
   width: 37px;
   height: 52px;
+  background: url("../svg/sprite.svg") no-repeat;
+  background-position: 0 0;
   margin: auto;
   display: inline-block;
   position: absolute;
@@ -1894,7 +1961,7 @@ button:focus,
   width: 70px;
   height: 70px;
   margin: auto auto;
-  background: url('../svg/icons/zoom.svg') no-repeat;
+  background: url('../svg/zoom.svg') no-repeat;
   background-size: cover;
   position: absolute;
   top: 0;
@@ -2300,7 +2367,7 @@ button:focus,
   width: 70px;
   height: 70px;
   margin: auto auto;
-  background: url('../svg/icons/zoom.svg') no-repeat;
+  background: url('../svg/zoom.svg') no-repeat;
   background-size: cover;
   position: absolute;
   top: 0;

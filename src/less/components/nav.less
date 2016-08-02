@@ -190,6 +190,7 @@
     }
 
     .calculate {
+        display: none;
         border-bottom: 1px solid @color-charcoal;
         margin: 0;
         position: relative;
@@ -210,9 +211,10 @@
             }
         }
 
-        .icon {
-            width: 37px;
-            height: 52px;
+        &:before {
+            .pseudo;
+            .svg-calculate-dims;
+            .svg-calculate;
             margin: auto;
             display: inline-block;
             position: absolute;

@@ -290,46 +290,47 @@
             position: relative;
             &:before {
                 .pseudo;
-                width: 50px;
+                width: 40px;
                 height: 40px;
                 position: absolute;
-                background-repeat: no-repeat;
-                background-position: 0 0;
-                background-size: 40px 40px;
             }
         }
         &-feedback {
             a {
                 &:before {
+                    .svg-feedback-dims;
+                    .svg-feedback;
                     top: -14px;
                     left: -49px;
-                    background-image: url('@{images}/sprite/feedback.png');
                 }
             }
         }
         &-phone {
             a {
                 &:before {
+                    .svg-phone-dims;
+                    .svg-phone;
                     top: -16px;
                     left: -50px;
-                    background-image: url('@{images}/sprite/phone.png');
                 }
             }
         }
         &-mail {
             a {
                 &:before {
+                    .svg-mail-dims;
+                    .svg-mail;
                     top: -13px;
                     left: -50px;
-                    background-image: url('@{images}/sprite/mail.png');
                 }
             }
         }
         &-address {
             &:before {
+                .svg-address-dims;
+                .svg-address;
                 top: -13px;
                 left: -49px;
-                background-image: url('@{images}/sprite/address.png');
             }
         }
         @media @desktop-sm {
