@@ -132,4 +132,39 @@
             padding: 20px;
         }
     }
+
+    &.form-offer {
+
+      .info {
+        margin: 0 0 22px;
+        font: 28px/34px @font-heading;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      input {
+        padding-top: 18px;
+        padding-bottom: 16px;
+        border: 2px solid @color-platinum;
+        &:focus {
+            border-color: @color-midnight;
+        }
+
+        &.tel {
+          height: 62px;
+          font: 20px/20px @font-default;
+        }
+      }
+
+      .submit {
+        background: @color-midnight;
+        color: @color-white;
+        &:hover {
+          background: transparent;
+          color: @color-midnight;
+        }
+      }
+    }
 }

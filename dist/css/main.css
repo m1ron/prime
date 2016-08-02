@@ -340,6 +340,29 @@ button:focus,
   color: #000;
   letter-spacing: .1em;
 }
+.form-file {
+  min-height: 38px;
+  padding-left: 40px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 20px;
+}
+.form-file:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 26px;
+  height: 26px;
+  background: url('../img/sprite/upload.png') 0 0 no-repeat;
+  background-size: 26px 26px;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+.form-file input[type='file'] {
+  display: none;
+}
 /*** FORM-FEEDBACK ***/
 .form-feedback .form-group {
   margin-bottom: 18px;
@@ -1026,6 +1049,33 @@ button:focus,
 }
 .form-callback .submit:hover, .form-callback .submit:focus {
   background: #162a49;
+}
+.form-callback.form-offer .info {
+  margin: 0 0 22px;
+  font: 28px/34px 'Arno Pro', serif;
+}
+.form-callback.form-offer .form-group {
+  margin-bottom: 18px;
+}
+.form-callback.form-offer input {
+  padding-top: 18px;
+  padding-bottom: 16px;
+  border: 2px solid #e1e1e1;
+}
+.form-callback.form-offer input:focus {
+  border-color: #162a49;
+}
+.form-callback.form-offer input.tel {
+  height: 62px;
+  font: 20px/20px 'Proxima Nova', Arial, sans-serif;
+}
+.form-callback.form-offer .submit {
+  background: #162a49;
+  color: #fff;
+}
+.form-callback.form-offer .submit:hover, .form-callback.form-offer .submit:focus {
+  background: transparent;
+  color: #162a49;
 }
 /* ==========================================================================
    CONTACTS
