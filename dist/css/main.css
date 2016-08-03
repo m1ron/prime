@@ -125,7 +125,7 @@ h1,
 .h1 {
   margin-top: 40px;
   margin-bottom: 5px;
-  font: 800 42px/54px 'Arno Pro', serif;
+  font: 800 32px 'Arno Pro', serif;
   color: #162a49;
 }
 h2,
@@ -878,8 +878,10 @@ button:focus,
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
+.sections {
+  margin-top: -40px;
+}
 .sections .list {
-  background: #b1dbed;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -965,7 +967,7 @@ button:focus,
 .sections .list .item .link .area {
   height: 100%;
   max-width: 650px;
-  padding: 5px 5px 42px;
+  padding: 21px 5px 42px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
@@ -1016,6 +1018,7 @@ button:focus,
           transform: scale(1, 0);
 }
 .sections .list .item .link .area .price {
+  margin-top: 0;
   margin-bottom: 15px;
   display: block;
   font-weight: bold;
@@ -2840,17 +2843,265 @@ button:focus,
   background: transparent;
 }
 /* ==========================================================================
-   PROJECT-CARD
+   PORTFOLIO
    ========================================================================== */
-.project-card .area {
-  margin: 26px 0;
+.portfolio .list {
+  margin-top: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.portfolio .list:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.portfolio .list .item {
+  width: 100%;
+  height: 385px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-position: -1000px -1000px;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+}
+.portfolio .list .item:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: 1;
+  background-image: inherit;
+  background-size: cover;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .item:hover:before, .portfolio .list .item:focus:before {
+  -webkit-transform: scale(1.025);
+      -ms-transform: scale(1.025);
+          transform: scale(1.025);
+}
+.portfolio .list .item:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 400px;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  opacity: .8;
+  z-index: 3;
+  background: -webkit-linear-gradient(top, rgba(51, 59, 69, 0) 0%, rgba(51, 59, 69, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(51, 59, 69, 0) 0%, rgba(51, 59, 69, 0.8) 100%);
+}
+.portfolio .list .link {
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  display: block;
+  position: relative;
+  z-index: 5;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.portfolio .list .link:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: #162a49;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .link .area {
+  height: 100%;
+  max-width: 650px;
+  padding: 25px 15px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.portfolio .list .link .area:before,
+.portfolio .list .link .area:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .link .area:before {
+  border-top: 2px solid #34bffc;
+  border-bottom: 2px solid #34bffc;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+}
+.portfolio .list .link .area:after {
+  border-left: 2px solid #34bffc;
+  border-right: 2px solid #34bffc;
+  -webkit-transform: scale(1, 0);
+      -ms-transform: scale(1, 0);
+          transform: scale(1, 0);
+}
+.portfolio .list .link .area .top,
+.portfolio .list .link .area .small {
+  margin: 0 -10px;
+  display: block;
+  font-size: 12px;
+  line-height: normal;
+  font-weight: bold;
+  letter-spacing: .03em;
+  white-space: nowrap;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .link .area .top {
+  margin: 0 0 15px;
+  opacity: 0;
+}
+.portfolio .list .link .area .title {
+  max-width: 400px;
+  min-height: 2em;
+  margin: 0 auto 22px;
+  display: block;
+  font: 800 27px/30px 'Arno Pro', serif;
+  letter-spacing: .02em;
+  color: #fff;
+  position: relative;
+  z-index: 5;
+  -webkit-transition: margin-bottom 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: margin-bottom 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .link .area .description {
+  max-width: 250px;
+  max-height: 0;
+  margin: -6px auto 0;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: .02em;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: max-height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: max-height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: max-height 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.portfolio .list .link .area .description:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 75px;
+  height: 2px;
+  margin: 0 auto 30px;
+  background: #34bffc;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  opacity: 0;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.portfolio .list .link:hover:before, .portfolio .list .link:focus:before {
+  opacity: .5;
+}
+.portfolio .list .link:hover .area:before,
+.portfolio .list .link:hover .area:after,
+.portfolio .list .link:focus .area:before,
+.portfolio .list .link:focus .area:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.portfolio .list .link:hover .area .top, .portfolio .list .link:focus .area .top {
+  opacity: 1;
+}
+.portfolio .list .link:hover .area .title, .portfolio .list .link:focus .area .title {
+  margin-bottom: 0;
+}
+.portfolio .list .link:hover .area .small, .portfolio .list .link:focus .area .small {
+  opacity: 0;
+}
+.portfolio .list .link:hover .area .description, .portfolio .list .link:focus .area .description {
+  max-height: 230px;
+}
+.portfolio .list .link:hover .area .description:before, .portfolio .list .link:focus .area .description:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.portfolio .list .info {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 800;
+}
+/* ==========================================================================
+   PROJECT
+   ========================================================================== */
+.project .area {
+  margin: 26px 20px;
   padding: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
 }
-.project-card .col {
+.project .col {
   position: relative;
 }
-.project-card .col:after {
+.project .col:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -2859,26 +3110,26 @@ button:focus,
   margin: 20px auto;
   background: #f3f2ef;
 }
-.project-card .col:last-of-type:after {
+.project .col:last-of-type:after {
   display: none;
 }
-.project-card .list {
+.project .list {
   margin: 0;
 }
-.project-card .list dt {
+.project .list dt {
   font-weight: 800;
 }
-.project-card .list dt + dt {
+.project .list dt + dt {
   margin-top: 20px;
 }
-.project-card .list dd {
+.project .list dd {
   margin-bottom: 20px;
   margin-left: 0;
 }
-.project-card .list dd:last-of-type {
+.project .list dd:last-of-type {
   margin-bottom: 0;
 }
-.project-card .logo {
+.project .logo {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -3168,10 +3419,23 @@ button:focus,
     width: 40px;
     height: 40px;
   }
+  .portfolio .list .link .area .top,
+  .portfolio .list .link .area .small {
+    font-size: 13px;
+  }
+  .portfolio .list .link .area .title {
+    font-size: 28px;
+  }
+  .portfolio .list .link:hover .area .description, .portfolio .list .link:focus .area .description {
+    max-height: 300px;
+  }
 }
 @media (min-width: 414px) {
   .sections .list .item .link {
     padding: 40px 30px 60px;
+  }
+  .portfolio .list .link {
+    padding: 20px;
   }
 }
 @media (min-width: 568px) {
@@ -3350,19 +3614,19 @@ button:focus,
     bottom: -8px;
     left: 5px;
   }
-  .project-card .area {
+  .project .area {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  .project-card .col {
+  .project .col {
     padding: 0 10px;
     -webkit-flex-basis: 33.3%;
     -ms-flex-preferred-size: 33.3%;
     flex-basis: 33.3%;
   }
-  .project-card .col:after {
+  .project .col:after {
     width: 1px;
     height: 100%;
     margin: 0;
@@ -3370,7 +3634,7 @@ button:focus,
     right: 0;
     top: 0;
   }
-  .project-card .col:nth-of-type(1) {
+  .project .col:nth-of-type(1) {
     -webkit-box-ordinal-group: 31;
     -webkit-order: 30;
     -ms-flex-order: 30;
@@ -3388,10 +3652,10 @@ button:focus,
     -ms-flex-align: center;
     align-items: center;
   }
-  .project-card .col:nth-of-type(1):after {
+  .project .col:nth-of-type(1):after {
     display: none;
   }
-  .project-card .col:last-of-type:after {
+  .project .col:last-of-type:after {
     display: block;
   }
 }
@@ -3406,8 +3670,7 @@ button:focus,
   h1,
   .h1 {
     margin-top: 50px;
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 64px;
   }
   h2,
   .h2 {
@@ -3791,27 +4054,56 @@ button:focus,
     margin-bottom: 10px;
     left: 3px;
   }
-  .project-card .space {
-    padding-left: 99px !important;
-    padding-right: 35px !important;
+  .portfolio .list .item {
+    width: 33.33%;
+    height: 350px;
+    max-width: none;
+    float: left;
   }
-  .project-card .area {
-    margin: 32px 0 38px;
-    padding: 50px 8px;
+  .portfolio .list .link {
+    padding: 15px;
   }
-  .project-card .col {
+  .portfolio .list .link .area {
+    padding: 15px;
+  }
+  .portfolio .list .link .area .top,
+  .portfolio .list .link .area .small {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .portfolio .list .link .area .top {
+    margin-bottom: 20px;
+  }
+  .portfolio .list .link .area .title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .portfolio .list .link .area .description {
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .portfolio .list .link .area .description:before {
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
+  .project .area {
+    padding: 50px 10px;
+    margin: 30px 30px 40px;
+  }
+  .project .col {
     padding: 0 20px;
   }
-  .project-card .list {
+  .project .list {
     line-height: 22px;
   }
-  .project-card .list dt {
+  .project .list dt {
     margin: 2px 0;
   }
-  .project-card .list dt + dt {
+  .project .list dt + dt {
     margin-top: 40px;
   }
-  .project-card .list dd {
+  .project .list dd {
     margin-bottom: 40px;
     margin-top: 4px;
   }
@@ -3924,11 +4216,40 @@ button:focus,
   .contact-us .col {
     padding: 65px;
   }
-  .project-card .col {
+  .portfolio .list .item {
+    height: 400px;
+  }
+  .portfolio .list .link {
+    padding: 20px;
+  }
+  .portfolio .list .link .area {
+    padding: 20px;
+  }
+  .portfolio .list .link .area .top,
+  .portfolio .list .link .area .small {
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .portfolio .list .link .area .title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .portfolio .list .link .area .description {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .project .col {
     padding: 0 38px;
   }
 }
 @media (min-width: 1170px) {
+  h1,
+  .h1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
   h2,
   .h2 {
     font-size: 55px;
@@ -4012,7 +4333,7 @@ button:focus,
     padding: 80px 70px;
   }
   .sections .list .item .link .area {
-    padding: 13px 10px 60px;
+    padding: 28px 10px 60px;
     font-size: 16px;
     line-height: 26px;
   }
@@ -4246,6 +4567,37 @@ button:focus,
   .jobs .list .button {
     max-width: 265px;
   }
+  .portfolio .list .item {
+    height: 495px;
+  }
+  .portfolio .list .link {
+    padding: 30px;
+  }
+  .portfolio .list .link .area {
+    padding: 27px 20px 3px;
+  }
+  .portfolio .list .link .area .top,
+  .portfolio .list .link .area .small {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .portfolio .list .link .area .top {
+    margin-bottom: 37px;
+  }
+  .portfolio .list .link .area .title {
+    max-width: 400px;
+    font-size: 34px;
+    line-height: 36px;
+  }
+  .portfolio .list .link .area .description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .portfolio .list .link .area .description:before {
+    width: 125px;
+    margin-top: 5px;
+    margin-bottom: 68px;
+  }
   .helpful .list {
     margin-top: 64px;
   }
@@ -4261,7 +4613,7 @@ button:focus,
   .sections .list .item:first-child {
     height: 100vh;
     padding-top: 84px;
-    margin-top: -84px;
+    margin-top: -124px;
   }
   .sections .list .item:first-child:before {
     top: 84px;

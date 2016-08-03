@@ -2,8 +2,8 @@
    SECTIONS
    ========================================================================== */
 .sections {
+    margin-top: -40px;
     .list {
-        background: @color-blue-light;
         user-select: none;
         &:after {
             .clearfix;
@@ -21,8 +21,8 @@
             @media (max-width: @w-mobile-sm) {
                 &:first-child {
                     height: 100vh;
-                    padding-top: 84px;
-                    margin-top: -84px;
+                    padding-top: 84px;;
+                    margin-top: -124px;
                     &:before {
                         top: 84px;
                     }
@@ -101,7 +101,7 @@
                 .area {
                     height: 100%;
                     max-width: 650px;
-                    padding: 5px 5px 42px;
+                    padding: 21px 5px 42px;
                     margin: 0 auto;
                     position: relative;
                     z-index: 5;
@@ -118,7 +118,7 @@
                         line-height: 20px;
                     }
                     @media @desktop-sm {
-                        padding: 13px 10px 60px;
+                        padding: 28px 10px 60px;
                         font-size: 16px;
                         line-height: 26px;
                     }
@@ -145,6 +145,7 @@
                     }
 
                     .price {
+                        margin-top: 0;
                         margin-bottom: 15px;
                         display: block;
                         font-weight: bold;
@@ -160,7 +161,7 @@
                         max-width: 400px;
                         margin: 0 auto;
                         display: block;
-                        font: 800 27px/30px 'Arno Pro', serif;
+                        font: 800 27px/30px @font-heading;
                         color: @color-white;
                         position: relative;
                         z-index: 5;

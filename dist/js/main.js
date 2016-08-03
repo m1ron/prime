@@ -86,6 +86,12 @@ $(document).ready(function() {
         });
     });
 
+    $('.portfolio').each(function() {
+        $('.item', this).each(function() {
+            $('.top', this).clone().removeClass('top').addClass('small').insertAfter($('.title', this));
+        });
+    });
+
     /** Google Map */
     $('.map').each(function() {
         var that = $(this),
