@@ -915,9 +915,9 @@ button:focus,
   transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .sections .list .item:hover:before, .sections .list .item:focus:before {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+      -ms-transform: scale(1.025);
+          transform: scale(1.025);
 }
 .sections .list .item:after {
   display: block;
@@ -1403,7 +1403,7 @@ button:focus,
    CALLBACK
    ========================================================================== */
 .callback {
-  padding: 35px 20px 55px;
+  padding: 35px 20px 45px;
   text-align: center;
   color: #162a49;
   cursor: default;
@@ -1414,7 +1414,7 @@ button:focus,
   margin-right: -20px;
 }
 .callback .call-us {
-  margin: 36px 0 0;
+  margin: 36px 0 10px;
   font: 22px/26px 'Arno Pro', serif;
 }
 .callback .call-us a[href^='tel:'] {
@@ -3586,8 +3586,8 @@ button:focus,
     right: 15px;
   }
   .callback {
-    padding-top: 85px;
-    padding-bottom: 70px;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
   .wrapper .callback {
     margin-left: auto;
@@ -4092,7 +4092,7 @@ button:focus,
   }
   .callback {
     padding-top: 105px;
-    padding-bottom: 115px;
+    padding-bottom: 105px;
   }
   .callback .call-us {
     margin-top: 44px;
