@@ -2,19 +2,9 @@
    GALLERY
    ========================================================================== */
 .gallery {
-    width: 100%;
     text-align: center;
-    .wrapper & {
-        width: auto;
-        margin-left: -20px;
-        margin-right: -20px;
-    }
     @media @tablet-sm {
         margin-bottom: 60px;
-        .wrapper & {
-            margin-left: auto;
-            margin-right: auto;
-        }
     }
 
     .heading {
@@ -55,121 +45,123 @@
         }
     }
 
-    .slick-list {
-        position: relative;
-        z-index: 1;
-    }
-
-    .slick-arrow {
-        width: 70px;
-        height: 70px;
-        margin: auto;
-        display: block;
-        position: absolute;
-        top: -20px;
-        bottom: 0;
-        z-index: 3;
-        cursor: pointer;
-
-        &:before {
-            .pseudo;
-            width: 48px;
-            height: 2px;
-            margin: auto;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: @color-white;
-        }
-        &:after {
-            .pseudo;
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid @color-white;
-            border-left: 2px solid @color-white;
-            margin: auto;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+    .slick {
+        &-list {
+            position: relative;
+            z-index: 1;
         }
 
-        &.prev {
-            left: 0;
-            @media @tablet-sm {
-                left: 15px;
+        &-arrow {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            display: block;
+            position: absolute;
+            top: -20px;
+            bottom: 0;
+            z-index: 3;
+            cursor: pointer;
+
+            &:before {
+                .pseudo;
+                width: 48px;
+                height: 2px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: @color-white;
             }
             &:after {
-                left: -20px;
-                transform: rotate(-45deg);
-            }
-        }
-        &.next {
-            right: 0;
-            @media @tablet-sm {
-                right: 15px;
-            }
-            &:after {
-                right: -20px;
-                transform: rotate(135deg);
-            }
-        }
-    }
-
-    .slick-dots {
-        height: 20px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 20px;
-        z-index: 3;
-        text-align: center;
-
-        li {
-            height: 20px;
-            margin: 0 3px;
-            display: inline-block;
-
-            .dot {
+                .pseudo;
                 width: 20px;
                 height: 20px;
-                display: block;
-                position: relative;
-                cursor: pointer;
-
-                &:before {
-                    .pseudo;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    margin: auto;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    background: @color-white;
-                    transition: background-color @duration, transform @duration;
-                    backface-visibility: hidden;
-                }
-
-                &:hover {
-                    &:before {
-                        transform: scale(1.15);
-                    }
-                }
+                border-top: 2px solid @color-white;
+                border-left: 2px solid @color-white;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
             }
 
-            &.slick-active {
-                .dot:before {
-                    background: @color-blue;
+            &.prev {
+                left: 0;
+                @media @tablet-sm {
+                    left: 15px;
+                }
+                &:after {
+                    left: -20px;
+                    transform: rotate(-45deg);
+                }
+            }
+            &.next {
+                right: 0;
+                @media @tablet-sm {
+                    right: 15px;
+                }
+                &:after {
+                    right: -20px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+
+        &-dots {
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            z-index: 3;
+            text-align: center;
+
+            li {
+                height: 20px;
+                margin: 0 3px;
+                display: inline-block;
+
+                .dot {
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+
+                    &:before {
+                        .pseudo;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        margin: auto;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: @color-white;
+                        transition: background-color @duration, transform @duration;
+                        backface-visibility: hidden;
+                    }
+
+                    &:hover {
+                        &:before {
+                            transform: scale(1.15);
+                        }
+                    }
+                }
+
+                &.slick-active {
+                    .dot:before {
+                        background: @color-blue;
+                    }
                 }
             }
         }

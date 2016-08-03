@@ -2,7 +2,8 @@
    FOOTER
    ========================================================================== */
 .footer {
-    padding: 45px 35px;
+    max-width: @max-width;
+    padding: 45px 30px;
     margin-top: -25px;
     position: relative;
     font: 16px/14px @font-heading;
@@ -14,8 +15,9 @@
         .clearfix;
     }
     @media @mobile-md {
-        height: 90px;
-        padding: 30px;
+        padding-top: 30px;
+        padding-left: 94px;
+        padding-bottom: 30px;
         margin-top: 0;
         opacity: .5;
     }
@@ -49,7 +51,7 @@
         @media @desktop-sm {
             width: auto;
             height: auto;
-            padding: 12px 40px 12px 0;
+            padding: 12px 0;
         }
 
         a {

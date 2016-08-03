@@ -21,27 +21,9 @@ html {
 body {
     min-height: 100%;
     min-width: @w-mobile-xxs;
-    padding-top: 84px;
     position: relative;
     overflow-x: hidden;
     background: @color-white;
-    @media @tablet-sm {
-        padding-top: 84px;
-        padding-left: 64px;
-
-        &:before {
-            .pseudo;
-            width: 64px;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 30;
-            background: @color-midnight;
-            .color-midnight(.25);
-            box-shadow: 0 0 15px @color;
-        }
-    }
 
     .nav-visible & {
         overflow: hidden;
@@ -85,11 +67,11 @@ audio, canvas, img, video {
 /*** HEADINGS ***/
 h1, .h1 {
     margin-top: @margin-lg;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font: 800 42px/54px @font-heading;
     color: @color-midnight;
     @media @tablet-sm {
-        margin-top: 46px;
+        margin-top: 50px;
         font-size: 80px;
         line-height: 80px;
     }
@@ -178,24 +160,101 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     content: '\0020';
     clear: both;
 }
+/** TEXT STYLES **/
+.text-large {
+    margin-bottom: @margin-md;
+    font: 24px/32px @font-heading;
+    letter-spacing: .02em;
+    + p {
+        margin-top: -22px;
+    }
+    @media @tablet-sm {
+        margin-bottom: 44px;
+        + p {
+            margin-top: -36px;
+        }
+    }
+    @media @desktop-sm {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+.text-medium {
+    margin-bottom: @margin-md;
+    font: 22px/30px @font-heading;
+    letter-spacing: .02em;
+    @media @tablet-sm {
+        font-size: 24px;
+        line-height: 38px;
+    }
+}
+.text-center {
+    text-align: center;
+}
+/** BORDERED LINK **/
+.bordered {
+    border-bottom: 1px solid @color-black;
+    transition: border-color @duration;
+    &:hover {
+        border-bottom-color: transparent;
+        text-decoration: none;
+    }
+}
+/** NO MARGIN **/
+.no-margin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+/** MOBILE HIDDEN **/
+.mobile-hidden {
+    display: none;
+    @media @tablet-sm {
+        display: block;
+    }
+}
 .mobile-hidden-inline {
     display: none;
     @media @tablet-sm {
         display: inline;
     }
 }
-/* ==========================================================================
-   CONTAINERS
-   ========================================================================== */
-.wrapper {
-    max-width: 890px;
-    margin: 0 auto;
-    padding: 0 20px;
-    &:after {
-        .clearfix;
-    }
+/*** FIGURE ***/
+.figure {
+    margin-bottom: 20px;
 
-    @media @tablet-sm {
-        padding: 0 35px;
+    figcaption {
+        margin-top: 15px;
+        display: block;
+        font: italic 20px/24px @font-heading;
+        .color-black(.6);
+        color: @color;
+    }
+}
+/*** LIST-CHECKED ***/
+.list-checked {
+    padding: 0;
+    list-style: none;
+
+    li {
+        margin-bottom: 15px;
+        padding-left: 40px;
+        position: relative;
+        &:before, &:after {
+            .pseudo;
+            width: 3px;
+            height: 14px;
+            background: @color-midnight;
+            border-radius: 3px;
+            transform: rotate(40deg);
+            position: absolute;
+            left: 15px;
+            top: 8px;
+        }
+        &:after {
+            height: 8px;
+            transform: rotate(-45deg);
+            top: 14px;
+            left: 9px;
+        }
     }
 }

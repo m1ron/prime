@@ -2,27 +2,27 @@
    PAGER
    ========================================================================== */
 .pager {
-  margin: 25px 0;
+    padding: 25px 20px;
     @media @tablet-sm {
-        margin: 50px 0 56px;
+        padding: 50px 30px;
     }
-    ul {
-        margin: 0 auto;
+
+    .list {
         padding: 0;
+        margin: 0 auto;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         list-style: none;
         font-size: 16px;
         line-height: 16px;
-        position: relative;
-        @media @tablet-sm {
-            padding: 0 35px;
-        }
+
         li {
             @media @tablet-sm {
                 margin: 0 4px;
             }
+
             a {
                 width: 36px;
                 height: 36px;
@@ -31,14 +31,16 @@
                 align-items: center;
                 color: @color-midnight;
                 text-decoration: none;
+                @media @mobile-xs {
+                    width: 40px;
+                    height: 40px;
+                }
+
                 &:hover {
                     color: @color-cerulean;
                 }
-                @media @mobile-xs {
-                  width: 40px;
-                  height: 40px;
-                }
             }
+
             &.active {
                 a {
                     background: @color-cerulean;
@@ -46,6 +48,7 @@
                     font-weight: bold;
                 }
             }
+
             &.prev, &.next {
                 @media @mobile-lg {
                     flex-grow: 1;
@@ -106,8 +109,14 @@
                     }
                 }
             }
+
             &.prev {
+                padding-left: 20px;
                 margin-left: 0;
+                @media @tablet-sm {
+                    padding-left: 30px;
+                }
+
                 a {
                     padding-left: 26px;
                     .arrow {
@@ -117,8 +126,12 @@
                 }
             }
             &.next {
+                padding-right: 20px;
                 margin-right: 0;
                 text-align: right;
+                @media @tablet-sm {
+                    padding-right: 30px;
+                }
                 a {
                     padding-right: 26px;
                     .arrow {

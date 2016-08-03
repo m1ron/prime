@@ -8,7 +8,9 @@ $(document).ready(function() {
 
     /* Wide */
     $('.wide').each(function() {
-        $(this).wrapInner('<div class="space"></div>');
+        if ($('.space', this).length < 1) {
+            $(this).wrapInner('<div class="space"></div>');
+        }
     });
 
     /** Nav */

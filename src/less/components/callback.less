@@ -7,23 +7,22 @@
     color: @color-midnight;
     cursor: default;
     background: @color-white-smoke;
-    .wrapper & {
-      margin-left: -20px;
-      margin-right: -20px;
-    }
     @media @tablet-sm {
-      margin-top: 60px;
-      margin-bottom: 60px;
         padding-top: 85px;
         padding-bottom: 70px;
         .wrapper & {
-          margin-left: auto;
-          margin-right: auto;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     @media @desktop-sm {
         padding-top: 105px;
         padding-bottom: 115px;
+    }
+
+    .wrapper & {
+        margin-left: -20px;
+        margin-right: -20px;
     }
 
     .call-us {
@@ -119,7 +118,7 @@
         position: relative;
         z-index: 3;
         &:hover {
-          background: @color-midnight;
+            background: @color-midnight;
         }
         @media @tablet-sm {
             width: 242px;
@@ -134,54 +133,53 @@
     }
 
     &.form-offer {
-
-      .heading {
-        @media @tablet-sm {
-          margin-bottom: 6px;
-        }
-      }
-
-      .info {
-        margin: 0 0 22px;
-        font: 28px/34px @font-heading;
-      }
-
-      .form-group {
-        margin-bottom: 18px;
-        @media @tablet-sm {
-          max-width: 340px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
-      input {
-        padding-top: 18px;
-        padding-bottom: 16px;
-        border: 2px solid @color-platinum;
-        &:focus {
-            border-color: @color-midnight;
+        .heading {
+            @media @tablet-sm {
+                margin-bottom: 6px;
+            }
         }
 
-        &.tel {
-          height: 62px;
-          font: 20px/20px @font-default;
-          @media @tablet-sm {
-            width: 100%;
-          }
+        .info {
+            margin: 0 0 22px;
+            font: 28px/34px @font-heading;
         }
-      }
 
-      .submit {
-        background: @color-midnight;
-        color: @color-white;
-        &:hover {
-          background: transparent;
-          color: @color-midnight;
+        .form-group {
+            margin-bottom: 18px;
+            @media @tablet-sm {
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
-        @media @tablet-sm {
-          width: 340px;
+
+        input {
+            padding-top: 18px;
+            padding-bottom: 16px;
+            border: 2px solid @color-platinum;
+            &:focus {
+                border-color: @color-midnight;
+            }
+
+            &.tel {
+                height: 62px;
+                font: 20px/20px @font-default;
+                @media @tablet-sm {
+                    width: 100%;
+                }
+            }
         }
-      }
+
+        .submit {
+            background: @color-midnight;
+            color: @color-white;
+            &:hover {
+                background: transparent;
+                color: @color-midnight;
+            }
+            @media @tablet-sm {
+                width: 340px;
+            }
+        }
     }
 }

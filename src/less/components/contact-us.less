@@ -2,8 +2,11 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
-    @media @mobile-lg {
-        display: flex;
+
+    .space {
+        @media @mobile-lg {
+            display: flex;
+        }
     }
 
     .col {
@@ -38,7 +41,8 @@
         height: 100%;
         margin: 0 auto;
         position: relative;
-        ul {
+
+        .list {
             margin: 20px 0;
             padding: 0;
             list-style: none;
@@ -122,7 +126,8 @@
                 }
             }
         }
-        .link {
+
+        .pdf {
             display: inline;
             .color-onyx(.2);
             border-bottom: 1px solid @color;

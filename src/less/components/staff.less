@@ -3,8 +3,6 @@
    ========================================================================== */
 .staff {
     .head {
-        margin: 0 -20px;
-
         @media @mobile-lg {
             margin: 0 auto;
             display: flex;
@@ -167,8 +165,9 @@
         .link {
             padding: 26px 26px 36px;
             display: block;
-            transition: background @duration, color @duration;
             position: relative;
+            background: @color-white;
+            transition: background @duration, color @duration;
 
             &:before, &:after {
                 .pseudo;
@@ -192,9 +191,9 @@
             }
 
             &:hover {
-                background: @color-midnight;
                 color: @color-white;
                 text-decoration: none;
+                background: @color-midnight;
 
                 &:before, &:after {
                     opacity: 1;

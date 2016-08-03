@@ -1,0 +1,73 @@
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+.page {
+    max-width: @max-width;
+    padding-top: 84px;
+
+    @media @tablet-sm {
+        padding-left: 64px;
+
+        &:before {
+            .pseudo;
+            width: 64px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 30;
+            background: @color-midnight;
+            .color-midnight(.25);
+            box-shadow: 0 0 15px @color;
+        }
+    }
+}
+.content, .wrapper {
+    max-width: 890px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 0 auto;
+    @media @tablet-sm {
+        max-width: 910px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+.content {
+    padding-top: 40px;
+
+    > .h1:first-child, .h2:first-child {
+        margin-top: 0;
+    }
+}
+.wrapper {
+    margin: 0 auto;
+}
+.block {
+    margin-left: -20px;
+    margin-right: -20px;
+    @media @tablet-sm {
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+}
+.wide {
+    @media @tablet-sm {
+        margin-left: -50vw;
+        margin-right: -50vw;
+
+        .space {
+            width: 100vw;
+            max-width: @max-width;
+            padding-left: 64px;
+            margin: 0 auto;
+            position: relative;
+            left: -32px;
+        }
+    }
+}
+.page, .wrapper, .space {
+    &:after {
+        .clearfix;
+    }
+}

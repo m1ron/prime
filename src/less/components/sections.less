@@ -48,6 +48,10 @@
                 z-index: 1;
                 background-image: inherit;
                 background-size: cover;
+                transition: transform @duration-l;
+            }
+            &:hover:before {
+                transform: scale(1.05);
             }
             &:after {
                 .pseudo;

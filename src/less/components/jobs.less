@@ -3,92 +3,90 @@
    ========================================================================== */
 .jobs {
     .list {
-      margin-bottom: 26px;
+        margin: 0;
         font-size: 16px;
         line-height: 26px;
         text-align: center;
         &:after {
-          .clearfix;
+            .clearfix;
         }
-
         @media @mobile-lg {
-          margin-left: -10px;
-          margin-right: -10px;
-          display: flex;
-          flex-flow: row wrap;
+            display: flex;
+            flex-flow: row wrap;
         }
         @media @desktop-sm {
-          margin-bottom: 46px;
-          margin-left: -70px;
-          margin-right: -70px;
+            margin-bottom: 45px;
+            margin-left: -70px;
+            margin-right: -70px;
         }
 
         .item {
-          max-width: 400px;
-          margin: 26px auto;
+            max-width: 400px;
+            margin: 26px auto;
             @media @mobile-lg {
-              max-width: none;
-              margin: 0;
-              padding: 10px;
-              flex-basis: 50%;
+                max-width: none;
+                margin: 0;
+                padding: 10px;
+                flex-basis: 50%;
             }
             @media @desktop-sm {
-              padding: 20px;
+                padding: 20px;
             }
         }
 
         .link {
-          padding: 50px 30px 120px;
-          display: block;
-          .color-black(.15);
-          box-shadow: 0 0 7px 0 @color;
-          position: relative;
-          text-decoration: none;
-          transition: background @duration, color @duration;
+            padding: 50px 30px 120px;
+            display: block;
+            .color-black(.15);
+            box-shadow: 0 0 7px 0 @color;
+            position: relative;
+            text-decoration: none;
+            background: @color-white;
+            transition: background @duration, color @duration;
 
-          &:before, &:after {
-            .pseudo;
-            opacity: 0;
-            position: absolute;
-            top: 18px;
-            left: 18px;
-            right: 18px;
-            bottom: 48px;
-            transition: opacity @duration-l, transform @duration-l;
-          }
-          &:before {
-            border-top: 2px solid @color-cerulean;
-            border-bottom: 2px solid @color-cerulean;
-            transform: scale(0,1);
-          }
-          &:after {
-            border-left: 2px solid @color-cerulean;
-            border-right: 2px solid @color-cerulean;
-            transform: scale(1,0);
-          }
-
-          &:hover {
-            background: @color-midnight;
-            color: @color-white;
             &:before, &:after {
-              opacity: 1;
-              transform: scale(1);
+                .pseudo;
+                opacity: 0;
+                position: absolute;
+                top: 18px;
+                left: 18px;
+                right: 18px;
+                bottom: 48px;
+                transition: opacity @duration-l, transform @duration-l;
             }
-            .head {
-              &:after {
-                background: @color-cerulean;
-              }
+            &:before {
+                border-top: 2px solid @color-cerulean;
+                border-bottom: 2px solid @color-cerulean;
+                transform: scale(0,1);
             }
-            .title {
-              color: @color-white;
+            &:after {
+                border-left: 2px solid @color-cerulean;
+                border-right: 2px solid @color-cerulean;
+                transform: scale(1,0);
             }
-            .button {
-              background: @color-cerulean;
-              border-color: @color-cerulean;
-              color: @color-white;
-              bottom: 20px;
+
+            &:hover {
+                color: @color-white;
+                background: @color-midnight;
+                &:before, &:after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                .head {
+                    &:after {
+                        background: @color-cerulean;
+                    }
+                }
+                .title {
+                    color: @color-white;
+                }
+                .button {
+                    background: @color-cerulean;
+                    border-color: @color-cerulean;
+                    color: @color-white;
+                    bottom: 20px;
+                }
             }
-          }
         }
         .head {
             &:after {
@@ -119,7 +117,7 @@
             right: 0;
             transition: background @duration, border-color @duration, color @duration, bottom @duration-l;
             @media @desktop-sm {
-              max-width: 265px;
+                max-width: 265px;
             }
         }
     }

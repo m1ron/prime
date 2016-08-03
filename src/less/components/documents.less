@@ -1,12 +1,11 @@
 /* ==========================================================================
-   CERTIFICATES
+   DOCUMENTS
    ========================================================================== */
-.certificates {
-    margin: 0 0 20px 0;
+.documents {
+    margin-bottom: 20px;
     text-align: center;
-
     @media @tablet-md {
-        margin-bottom: 48px;
+        margin-bottom: 50px;
         text-align: left;
     }
 
@@ -14,9 +13,26 @@
         margin-top: 0;
     }
 
+    .space {
+        background: @color-white;
+
+        .documents-bg& {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background: @color-white-smoke;
+            @media @tablet-sm {
+                padding-top: 45px;
+                padding-bottom: 35px;
+            }
+            @media @tablet-md {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     .list {
-        margin: 0 -20px;
         padding: 0 20px;
+        margin: 0 -20px;
         text-align: center;
         &:after {
             .clearfix;
@@ -116,21 +132,6 @@
             font-size: 16px;
             line-height: 18px;
             font-weight: bold;
-        }
-    }
-
-    &, .list {
-        &-color {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background: @color-white-smoke;
-            @media @tablet-sm {
-                padding-top: 45px;
-                padding-bottom: 35px;
-            }
-            @media @tablet-md {
-                margin-bottom: 0;
-            }
         }
     }
 }
