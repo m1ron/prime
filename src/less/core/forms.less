@@ -8,9 +8,10 @@ form, fieldset, legend {
     display: block;
 }
 /*** FIELDS ***/
-[type='text'], [type='tel'], [type='email'], textarea {
+
+input[type=text], input[type=url], input[type=tel], input[type=number], input[type=color], input[type=email], textarea {
     width: 100%;
-    padding: 20px 10px 16px;
+    padding: 20px 12px 16px;
     .color-onyx(.2);
     border: 1px solid @color;
     border-radius: 0;
@@ -33,10 +34,11 @@ form, fieldset, legend {
 }
 textarea {
     max-width: 550px;
-    height: 118px;
+    height: 120px;
+    padding-top: 16px;
     resize: none;
     @media @tablet-sm {
-        height: 180px;
+        height: 165px;
     }
 }
 /* noinspection CssInvalidPseudoSelector */
@@ -45,7 +47,7 @@ textarea {
     opacity: 1;
 }
 /*** BUTTONS ***/
-[type='submit'], [type='reset'], [type='button'], button, .button {
+[type=submit], [type=reset], [type=button], button, .button {
     padding: 18px;
     border: 2px solid @color-midnight;
     display: inline-block;
@@ -78,9 +80,6 @@ textarea {
         &:last-child {
             margin-bottom: 0;
         }
-        @media @tablet-sm {
-            margin-bottom: 30px;
-        }
     }
     &-label {
         display: block;
@@ -99,6 +98,11 @@ textarea {
         display: inline-block;
         cursor: pointer;
         font-size: 20px;
+        @media @tablet-sm {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
         &:before {
             .pseudo;
             width: 26px;
@@ -108,32 +112,13 @@ textarea {
             position: absolute;
             left: 0;
             top: 3px;
-        }
-        input[type='file'] {
-            display: none;
-        }
-
-        @media @tablet-sm {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            &:before {
-              top: 18px;
+            @media @tablet-sm {
+                top: 18px;
             }
         }
-    }
-}
-/*** FORM-FEEDBACK ***/
-.form-feedback {
-    .form-group {
-        margin-bottom: 18px;
-    }
-    .button {
-        width: 100%;
-        background: @color-midnight;
-        color: @color-white;
-        &:hover {
-            background: transparent;
-            color: @color-midnight;
+
+        input[type=file] {
+            display: none;
         }
     }
 }

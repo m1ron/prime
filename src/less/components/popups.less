@@ -1,75 +1,149 @@
 /* ==========================================================================
    POPUPS
    ========================================================================== */
-.mfp-arrow {
-    cursor: pointer;
-    &:active {
-        margin-top: -55px !important;
-    }
-    &:before, &:after {
-        .pseudo;
-        width: 26px;
-        height: 4px;
-        border-radius: 3px;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: @color-white;
-        border: none;
-        transition: background @duration;
-        opacity: 1;
-    }
-    &:before {
-        left: -5px;
-        transform: rotate(45deg);
-        top: 0;
-    }
-    &:after {
-        right: 3px;
-        transform: rotate(-45deg);
-        top: 34px;
+@duration-popup: @duration-l;
+/* ZOOM-IN EFFECT */
+.mfp {
+    &-slide-in {
+        .mfp-content {
+            transition: transform @duration-popup;
+            transform: translate3d(0, -150% , 0);
+        }
+        &.mfp-bg {
+            opacity: 0;
+            transition: opacity @duration-popup;
+        }
+        &.mfp-ready {
+            .mfp-content {
+                transform: translate3d(0, 0, 0);
+                transition-delay: .2s;
+            }
+            &.mfp-bg {
+                opacity: .7;
+            }
+        }
+        &.mfp-removing {
+            .mfp-content {
+                transform: translate3d(0, -150%, 0);
+                transition-delay: 0;
+            }
+            &.mfp-bg {
+                opacity: 0;
+                transition-delay: .4s;
+            }
+        }
     }
 
-    &.mfp-arrow-left {
+    &-wrap {
+        min-width: 320px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &-bg {
+        .color-midnight(.7);
+        background: @color;
+    }
+
+    &-bottom-bar, &-title, &-counter {
+        color: @color-white;
+        cursor: default;
+    }
+
+    &-content {
+        max-width: 450px;
+        position: relative;
+        @media @tablet-sm {
+            max-width: 650px;
+        }
+        @media @desktop-sm {
+            max-width: 1140px;
+        }
+    }
+
+    &-close {
+        width: 40px !important;
+        height: 40px;
+        padding: 0 !important;
+        right: -40px !important;
+        text-align: left !important;
+        opacity: .75;
+        transition: opacity @duration;
+        cursor: pointer;
+
+        &:before, &:after {
+            .pseudo;
+            width: 26px;
+            height: 3px;
+            border: none;
+            margin: auto !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: @color-white;
+            opacity: 1;
+            backface-visibility: hidden;
+        }
         &:before {
-            top: 34px;
+            transform: rotate(45deg);
         }
         &:after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            opacity: 1;
             top: 0;
         }
     }
-}
-.mfp-close {
-    width: 44px !important;
-    right: -40px !important;
-    &:active {
-        top: 0;
-    }
-    &:before, &:after {
-        .pseudo;
-        width: 30px;
-        height: 4px;
-        border-radius: 3px;
+
+    &-arrow {
+        width: 40px;
+        height: 40px;
         margin: auto;
-        position: absolute;
         top: 0;
-        right: 0;
         bottom: 0;
-        left: 0;
-        background: @color-white;
-        border: none;
-        transition: background @duration;
-        opacity: 1;
-    }
-    &:before {
-        left: -3px;
-        transform: rotate(45deg);
-    }
-    &:after {
-        right: 3px;
-        transform: rotate(-45deg);
+        opacity: .75;
+        transition: opacity @duration;
+        cursor: pointer;
+
+        &:before {
+            .pseudo;
+            width: 13px;
+            height: 13px;
+            border: none;
+            border-top: 3px solid @color-white;
+            border-right: 3px solid @color-white;
+            margin: auto !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 1;
+            backface-visibility: hidden;
+        }
+        &:after {
+            display: none;
+        }
+
+        &:hover {
+            margin-top: auto !important;
+            opacity: 1;
+        }
+
+        &.mfp-arrow-left {
+            left: 20px;
+            &:before {
+                transform: rotate(-135deg);
+            }
+        }
+        &.mfp-arrow-right {
+            right: 20px;
+            &:before {
+                transform: rotate(45deg);
+            }
+        }
     }
 }

@@ -65,15 +65,24 @@
             max-width: 100%;
             margin: 0 auto;
             display: block;
-            text-decoration: none;
-        }
-
-        .image {
-            margin: 0 auto 24px;
-            display: block;
-            .color-black(.4);
-            box-shadow: 0 0 10px 0 @color;
             position: relative;
+            text-decoration: none;
+            transition: color @duration;
+
+            .img {
+                margin: 0 auto 24px;
+                display: block;
+                .color-black(.6);
+                box-shadow: 0 0 10px 0 @color;
+                transition: box-shadow .3s @easing;
+                opacity: .5;
+
+                img {
+                    width: 212px;
+                    height: 300px;
+                    display: block;
+                }
+            }
 
             &:before {
                 .pseudo;
@@ -83,17 +92,22 @@
                 background: url('@{svg}/zoom.svg') no-repeat;
                 background-size: cover;
                 position: absolute;
-                top: 0;
-                bottom: 15px;
+                top: 115px;
                 left: 0;
                 right: 0;
                 z-index: 10;
+                transition: transform .3s @easing;
             }
 
-            img {
-                width: 100%;
-                height: auto;
-                display: block;
+            &:hover {
+                color: @color-cerulean;
+                .img {
+                    .color-black(1);
+                    box-shadow: 0 0 15px 0 @color;
+                }
+                &:before {
+                    transform: scale(1.1);
+                }
             }
         }
 

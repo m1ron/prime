@@ -38,8 +38,6 @@
         .image {
             width: 232px;
             margin: 0 auto 30px;
-            .color-black(.4);
-            box-shadow: 0 0 10px 0 @color;
             @media @mobile-lg {
                 float: left;
             }
@@ -47,14 +45,27 @@
                 margin-bottom: 0;
             }
 
-            img {
-                width: 100%;
-                height: auto;
-            }
-
-            a {
+            .link {
                 display: block;
                 position: relative;
+                background: @color-white;
+
+                .img {
+                    padding: 10px;
+                    margin: 0;
+                    display: block;
+                    position: relative;
+                    .color-black(.6);
+                    box-shadow: 0 0 10px 0 @color;
+                    transition: box-shadow .3s @easing;
+                    opacity: .5;
+
+                    img {
+                        width: 212px;
+                        height: 300px;
+                        display: block;
+                    }
+                }
 
                 &:before {
                     .pseudo;
@@ -69,12 +80,16 @@
                     left: 0;
                     right: 0;
                     z-index: 10;
-                    transition: transform @duration;
+                    transition: transform .3s @easing;
                 }
 
                 &:hover {
+                    .img {
+                        .color-black(1);
+                        box-shadow: 0 0 15px 0 @color;
+                    }
                     &:before {
-                        transform: scale(1.15);
+                        transform: scale(1.1);
                     }
                 }
             }

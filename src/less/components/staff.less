@@ -2,7 +2,6 @@
    STAFF
    ========================================================================== */
 .staff {
-
     .head {
         margin: 0 -20px;
 
@@ -12,12 +11,17 @@
         }
 
         .photo {
+            min-height: 400px;
             position: relative;
-            img {
-                width: 100%;
-                height: auto;
-                display: block;
+            background-position: center center;
+            background-size: cover;
+            @media @tablet-sm {
+                min-height: 550px;
             }
+            @media @desktop-sm {
+                min-height: 620px;
+            }
+
             .button {
                 max-width: 230px;
                 margin: 0 auto;
@@ -76,34 +80,38 @@
             padding: 30px 20px;
             background: @color-glitter;
             text-align: center;
-            font: 24px/34px @font-heading;
+            font: 22px/28px @font-heading;
             letter-spacing: .02em;
+            @media @mobile-lg {
+                width: 50%;
+                flex-basis: 50%;
+            }
+            @media @tablet-sm {
+                padding: 30px;
+                font-size: 22px;
+                line-height: 28px;
+            }
+            @media @desktop-sm {
+                padding: 60px 45px 45px;
+                font-size: 28px;
+                line-height: 38px;
+            }
+
             &:before {
                 .pseudo;
                 width: 66px;
                 height: 3px;
                 margin: 0 auto 20px;
                 background: @color-cerulean;
-            }
-
-            @media @mobile-lg {
-                width: 50%;
-                flex-basis: 50%;
-            }
-            @media @tablet-md {
-                padding: 60px 44px 44px;
-                &:before {
+                @media @tablet-md {
                     margin-bottom: 50px;
                 }
-            }
-            @media @desktop-sm {
-                font-size: 28px;
-                line-height: 38px;
             }
 
             p {
                 margin: 12px 0;
             }
+
             .name {
                 margin: 30px 0 0 0;
                 font-weight: bold;

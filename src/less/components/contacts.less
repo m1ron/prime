@@ -148,8 +148,11 @@
         }
 
         &.open {
-            height: 437px;
+            height: 435px;
             transform: translate3d(0, 0, 1px);
+            @media @desktop-sm {
+                height: 555px;
+            }
             &:before {
                 opacity: 0;
                 transition-delay: 0s;
@@ -161,18 +164,18 @@
 
         .gmap {
             width: 100%;
-            height: 397px;
+            height: 475px;
             padding: 0;
             margin: 0;
             position: relative;
             z-index: 1;
             background: @color-isabelline;
             backface-visibility: hidden;
-
-            a[href^='https://maps.google.com/maps'] {
-                display: none !important;
+            @media @desktop-sm {
+                height: 515px;
             }
-            .gm-style-cc {
+
+            a[href^='https://maps.google.com/maps'], .gm-style-cc {
                 display: none !important;
             }
         }

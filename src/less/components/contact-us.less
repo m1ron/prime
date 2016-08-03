@@ -2,7 +2,6 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
-
     @media @mobile-lg {
         display: flex;
     }
@@ -10,10 +9,6 @@
     .col {
         padding: 40px 20px;
         background: @color-glitter;
-        &:nth-of-type(2) {
-            background: @color-azureish-white;
-        }
-
         @media @mobile-lg {
             flex-basis: 50%;
         }
@@ -21,31 +16,35 @@
             padding: 40px;
         }
         @media @tablet-md {
-            padding: 66px;
+            padding: 65px;
+        }
+
+        &:nth-of-type(2) {
+            background: @color-azureish-white;
         }
     }
 
     .title {
         .h3;
-        margin-top: 0 !important;
-        margin-bottom: 20px !important;
+        @media @tablet-sm {
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: .02em;
+        }
     }
 
-    .list, .form-feedback {
+    .information {
         max-width: 340px;
         height: 100%;
         margin: 0 auto;
         position: relative;
-    }
-
-    .list {
         ul {
             margin: 20px 0;
             padding: 0;
             list-style: none;
 
             @media @tablet-sm {
-                margin: 34px 0;
+                margin: 36px 0;
                 font-size: 20px;
                 line-height: 24px;
             }
@@ -54,20 +53,23 @@
                 margin-bottom: 20px;
                 @media @tablet-sm {
                     margin-bottom: 50px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
 
                 a {
-                  border-bottom: 1px solid transparent;
-                  text-decoration: none;
-                  transition: border-color @duration;
-                  &[href^="tel"] {
-                    cursor: default;
-                    border-bottom: none;
-                  }
-                  &:hover {
-                      .color-onyx(.5);
-                      border-bottom-color: @color;
-                  }
+                    border-bottom: 1px solid transparent;
+                    text-decoration: none;
+                    transition: border-color @duration;
+                    &[href^='tel'] {
+                        cursor: default;
+                        border-bottom: none;
+                    }
+                    &:hover {
+                        .color-onyx(.5);
+                        border-bottom-color: @color;
+                    }
                 }
             }
 
@@ -83,12 +85,10 @@
                         left: -44px;
                     }
                 }
-                &-feedback {
-                    a {
-                        &:before {
-                            .svg-feedback-dims;
-                            .svg-feedback;
-                        }
+                &-address {
+                    &:before {
+                        .svg-address-dims;
+                        .svg-address;
                     }
                 }
                 &-phone {
@@ -99,23 +99,25 @@
                         }
                     }
                 }
-                &-address {
-                    &:before {
-                        .svg-address-dims;
-                        .svg-address;
+                &-feedback {
+                    a {
+                        &:before {
+                            .svg-feedback-dims;
+                            .svg-feedback;
+                            left: -47px;
+                        }
                     }
                 }
 
                 @media @tablet-sm {
-                    &-address {
-                        &:before {
-                            top: -12px;
-                        }
+                    &-address:before {
+                        top: -12px;
                     }
-                    &-feedback {
-                        &:before {
-                            top: -9px;
-                        }
+                    &-phone:before {
+                        top: -10px;
+                    }
+                    &-feedback a:before {
+                        top: -9px;
                     }
                 }
             }
@@ -132,10 +134,35 @@
 
             @media @mobile-lg {
                 position: absolute;
-                bottom: 0;
+                bottom: -8px;
+                left: 5px;
             }
             @media @tablet-sm {
                 font-size: 20px;
+                letter-spacing: .01em;
+            }
+        }
+    }
+
+    .form-contact {
+        max-width: 340px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        @media @tablet-sm {
+            max-width: 338px;
+            margin-bottom: 10px;
+            left: 3px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 20px;
+            color: @color-white;
+            background: @color-midnight;
+            &:hover {
+                color: @color-midnight;
+                background: transparent;
             }
         }
     }

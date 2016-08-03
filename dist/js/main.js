@@ -1,63 +1,15 @@
 /*global window, document, $, google, mapCenter, FastClick */
 
-/** Load SVG sprite */
-(function(window, document) {
-    var file = 'svg/sprite.svg';
-
-    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
-        return true;
-    }
-
-    var data,
-        insertIT = function() {
-            var newDiv = document.createElement('div');
-            newDiv.className = "sprite-holder";
-            newDiv.insertAdjacentHTML('beforeend', data);
-            document.body.appendChild(newDiv);
-        },
-        insert = function() {
-            if (document.body) insertIT();
-            else document.addEventListener('DOMContentLoaded', insertIT);
-        };
-
-    try {
-        var request = new XMLHttpRequest();
-        request.open('GET', file, true);
-        request.onload = function() {
-            if (request.status >= 200 && request.status < 400) {
-                data = request.responseText;
-                insert();
-            }
-        };
-        request.send();
-    } catch (e) {}
-}(window, document));
-
-
 /** Remove tap delay on touch devices */
 FastClick.attach(document.body);
 
-/** Magnific Popup Settings */
-$.extend(true, $.magnificPopup.defaults, {
-    closeMarkup: '<span title="%title%" class="mfp-close">x</span>',
-    gallery: {
-        arrowMarkup: '<div title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>'
-    },
-    settings: {
-        cache: false
-    },
-    mainClass: 'mfp-slide-in',
-    removalDelay: 600,
-    midClick: true,
-    autoFocusLast: false,
-    preload: false,
-    fixedContentPos: true,
-    fixedBgPos: true
-});
-
-
 /** On document ready */
 $(document).ready(function() {
+
+    /* Wide */
+    $('.wide').each(function() {
+        $(this).wrapInner('<div class="space"></div>');
+    });
 
     /** Nav */
     $('.nav').each(function() {
@@ -189,54 +141,46 @@ $(document).ready(function() {
     $('.popup-gallery').magnificPopup({
         delegate: 'a',
         type: 'image',
-        closeOnContentClick: true,
-        mainClass: 'mfp-img-mobile',
-        image: {
-            verticalFit: true
-        },
         gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0, 1]
+            enabled: true
         }
     });
 
-    /* Staff  photos type */
-    $('.staff').each(function() {
-        $('.head', this).each(function() {
-            $('.photo', this).each(function() {
-                if ($(this).width() * 0.8 >= $(this).height()) {
-                    $(this).addClass('landscape');
-                } else {
-                    $(this).addClass('portrait');
-                }
-            });
-        });
-    });
-
-    /* Wide */
-    $('.wide').each(function(){
-        $(this).wrapInner('<div class="space"></div>');
+    /* Image popup */
+    $('.popup-image').magnificPopup({
+        type: 'image'
     });
 
 });
 
-/*
- * Magnific Popup default settings
- */
+/** Magnific Popup defaults */
 $.extend(true, $.magnificPopup.defaults, {
+    tLoading: 'Загрузка&hellip;',
     closeMarkup: '<span title="%title%" class="mfp-close"></span>',
+    tClose: 'Закрыть (Esc)',
     gallery: {
-        arrowMarkup: '<div title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>',
+        tPrev: 'Назад',
+        tNext: 'Вперед',
+        tCounter: '%curr% из %total%',
+        arrowMarkup: '<span title="%title%" class="mfp-arrow mfp-arrow-%dir%"></div>',
+        navigateByImgClick: true,
+        preload: [0, 1],
         cursor: null
     },
     image: {
+        tError: '<a href="%url%">Изображение</a> не может быть загружено.',
+        verticalFit: true,
         cursor: null
     },
-    midClick: true,
     settings: {
         cache: false
     },
-    mainClass: 'mfp-fade',
-    removalDelay: 300
+    mainClass: 'mfp-slide-in',
+    removalDelay: 800,
+    midClick: true,
+    autoFocusLast: false,
+    preload: false,
+    closeOnContentClick: true,
+    fixedContentPos: true,
+    fixedBgPos: true
 });
