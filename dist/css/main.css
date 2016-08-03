@@ -501,12 +501,15 @@ button:focus,
 .content {
   padding-top: 40px;
 }
-.content > .h1:first-child,
+.content .h1:first-child,
 .content .h2:first-child {
   margin-top: 0;
 }
 .wrapper {
   margin: 0 auto;
+}
+.wrapper.full {
+  max-width: none;
 }
 .block {
   margin-left: -20px;
