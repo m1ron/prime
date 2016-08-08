@@ -10,7 +10,7 @@
     line-height: 20px;
     cursor: default;
     @media @tablet-sm {
-        padding: 35px 30px 25px;
+        padding: 31px 25px 23px;
     }
 
     &:before {
@@ -34,11 +34,15 @@
         &:before {
             content: '/';
             position: absolute;
-            right: -8px;
+            right: -9px;
             font-weight: normal;
         }
-        &:last-child:before {
-            display: none;
+        &:last-child {
+          margin-left: 2px;
+          margin-right: 0;
+          &:before {
+              display: none;
+          }
         }
 
         a {

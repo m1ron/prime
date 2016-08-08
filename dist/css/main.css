@@ -134,6 +134,7 @@ h2,
   margin-bottom: 4px;
   font: 800 34px/34px 'Arno Pro', serif;
   color: #162a49;
+  letter-spacing: .02em;
 }
 h3,
 .h3 {
@@ -197,7 +198,6 @@ h6 + p,
 .text-large {
   margin-bottom: 30px;
   font: 24px/32px 'Arno Pro', serif;
-  letter-spacing: .02em;
 }
 .text-large + p {
   margin-top: -22px;
@@ -499,7 +499,10 @@ button:focus,
   margin: 0 auto;
 }
 .content {
-  padding-top: 40px;
+  padding-top: 50px;
+}
+.content > .sections:first-child {
+  margin-top: -50px;
 }
 .content .h1:first-child,
 .content .h2:first-child {
@@ -878,8 +881,8 @@ button:focus,
 /* ==========================================================================
    SECTIONS
    ========================================================================== */
-.sections {
-  margin-top: -40px;
+@tablet-sm {
+  margin-bottom: -7px;
 }
 .sections .list {
   -webkit-user-select: none;
@@ -1811,8 +1814,12 @@ button:focus,
 .breadcrumbs li:before {
   content: '/';
   position: absolute;
-  right: -8px;
+  right: -9px;
   font-weight: normal;
+}
+.breadcrumbs li:last-child {
+  margin-left: 2px;
+  margin-right: 0;
 }
 .breadcrumbs li:last-child:before {
   display: none;
@@ -3623,6 +3630,12 @@ button:focus,
     bottom: -8px;
     left: 5px;
   }
+  .portfolio .list .item {
+    width: 50%;
+    max-width: none;
+    height: 400px;
+    float: left;
+  }
   .project .area {
     display: -webkit-box;
     display: -webkit-flex;
@@ -3673,8 +3686,8 @@ button:focus,
   ul,
   ol,
   dl {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
   h1,
   .h1 {
@@ -3684,8 +3697,9 @@ button:focus,
   h2,
   .h2 {
     margin-top: 46px;
-    font-size: 46px;
-    line-height: 46px;
+    margin-bottom: 16px;
+    font-size: 55px;
+    line-height: 55px;
   }
   h3,
   .h3 {
@@ -3696,7 +3710,7 @@ button:focus,
   }
   h4,
   .h4 {
-    margin-top: 46px;
+    margin-top: 56px;
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 28px;
@@ -3716,12 +3730,15 @@ button:focus,
     line-height: 21px;
   }
   .text-large {
-    margin-bottom: 44px;
+    margin-bottom: 49px;
+    font-size: 28px;
+    line-height: 38px;
   }
   .text-large + p {
     margin-top: -36px;
   }
   .text-medium {
+    margin-bottom: 24px;
     font-size: 24px;
     line-height: 38px;
   }
@@ -3730,6 +3747,20 @@ button:focus,
   }
   .mobile-hidden-inline {
     display: inline;
+  }
+  .figure {
+    margin-top: 33px;
+    margin-bottom: 8px;
+  }
+  .figure + p {
+    margin-top: 0;
+  }
+  .figure figcaption {
+    margin-top: 13px;
+  }
+  .list-checked {
+    margin-top: 26px;
+    margin-bottom: 44px;
   }
   textarea {
     height: 165px;
@@ -3763,9 +3794,11 @@ button:focus,
   }
   .content,
   .wrapper {
-    max-width: 910px;
+    max-width: 780px;
     padding-right: 30px;
     padding-left: 30px;
+    position: relative;
+    left: 12px;
   }
   .block {
     margin-left: -30px;
@@ -3781,7 +3814,7 @@ button:focus,
     padding-left: 64px;
     margin: 0 auto;
     position: relative;
-    left: -32px;
+    left: -44px;
   }
   .header .phone {
     display: block;
@@ -3792,6 +3825,9 @@ button:focus,
   }
   .nav .area:before {
     background-color: none;
+  }
+  .sections {
+    margin-top: 70px;
   }
   .sections .list .item {
     width: 50%;
@@ -3909,7 +3945,7 @@ button:focus,
     width: 340px;
   }
   .breadcrumbs {
-    padding: 35px 30px 25px;
+    padding: 31px 25px 23px;
   }
   .page-header {
     height: 365px;
@@ -4064,37 +4100,37 @@ button:focus,
     left: 3px;
   }
   .portfolio .list .item {
-    width: 33.33%;
-    height: 350px;
-    max-width: none;
-    float: left;
+    height: 495px;
   }
   .portfolio .list .link {
-    padding: 15px;
+    padding: 30px;
   }
   .portfolio .list .link .area {
-    padding: 15px;
+    padding: 27px 20px 3px;
   }
   .portfolio .list .link .area .top,
   .portfolio .list .link .area .small {
-    font-size: 10px;
-    line-height: 14px;
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 20px;
   }
   .portfolio .list .link .area .top {
-    margin-bottom: 20px;
+    margin-bottom: 37px;
   }
   .portfolio .list .link .area .title {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 34px;
+    line-height: 36px;
   }
   .portfolio .list .link .area .description {
     margin-top: 0;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
   }
   .portfolio .list .link .area .description:before {
-    margin-top: 8px;
-    margin-bottom: 40px;
+    width: 125px;
+    margin-top: 5px;
+    margin-bottom: 68px;
   }
   .project .area {
     padding: 50px 10px;
@@ -4232,28 +4268,7 @@ button:focus,
     padding: 65px;
   }
   .portfolio .list .item {
-    height: 400px;
-  }
-  .portfolio .list .link {
-    padding: 20px;
-  }
-  .portfolio .list .link .area {
-    padding: 20px;
-  }
-  .portfolio .list .link .area .top,
-  .portfolio .list .link .area .small {
-    margin-right: 0;
-    margin-left: 0;
-    font-size: 12px;
-    line-height: 16px;
-  }
-  .portfolio .list .link .area .title {
-    font-size: 26px;
-    line-height: 30px;
-  }
-  .portfolio .list .link .area .description {
-    font-size: 13px;
-    line-height: 18px;
+    width: 33.33%;
   }
   .project .col {
     padding: 0 38px;
@@ -4265,14 +4280,13 @@ button:focus,
     font-size: 80px;
     line-height: 80px;
   }
-  h2,
-  .h2 {
-    font-size: 55px;
-    line-height: 55px;
+  .content,
+  .wrapper {
+    max-width: 910px;
+    left: auto;
   }
-  .text-large {
-    font-size: 28px;
-    line-height: 38px;
+  .wide .space {
+    left: -32px;
   }
   .header .phone {
     right: 31px;
@@ -4581,37 +4595,6 @@ button:focus,
   }
   .jobs .list .button {
     max-width: 265px;
-  }
-  .portfolio .list .item {
-    height: 495px;
-  }
-  .portfolio .list .link {
-    padding: 30px;
-  }
-  .portfolio .list .link .area {
-    padding: 27px 20px 3px;
-  }
-  .portfolio .list .link .area .top,
-  .portfolio .list .link .area .small {
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .portfolio .list .link .area .top {
-    margin-bottom: 37px;
-  }
-  .portfolio .list .link .area .title {
-    max-width: 400px;
-    font-size: 34px;
-    line-height: 36px;
-  }
-  .portfolio .list .link .area .description {
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .portfolio .list .link .area .description:before {
-    width: 125px;
-    margin-top: 5px;
-    margin-bottom: 68px;
   }
   .helpful .list {
     margin-top: 64px;

@@ -28,13 +28,23 @@
     padding-left: 20px;
     margin: 0 auto;
     @media @tablet-sm {
-        max-width: 910px;
+        max-width: 780px;
         padding-right: 30px;
         padding-left: 30px;
+        position: relative;
+        left: 12px;
+    }
+    @media @desktop-sm {
+      max-width: 910px;
+      left: auto;
     }
 }
 .content {
-    padding-top: 40px;
+    padding-top: 50px;
+
+    > .sections:first-child {
+      margin-top: -50px;
+    }
 
     .h1:first-child, .h2:first-child {
         margin-top: 0;
@@ -65,8 +75,14 @@
             padding-left: 64px;
             margin: 0 auto;
             position: relative;
-            left: -32px;
+            left: -44px;
         }
+    }
+    @media @desktop-sm {
+
+      .space {
+        left: -32px;
+      }
     }
 }
 .page, .wrapper, .space {

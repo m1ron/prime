@@ -18,17 +18,17 @@
             background-position: -1000px -1000px;
             background-size: 10px 10px;
             background-repeat: no-repeat;
+            @media @mobile-lg {
+              width: 50%;
+              max-width: none;
+              height: 400px;
+              float: left;
+            }
             @media @tablet-sm {
-                width: 33.33%;
-                height: 350px;
-                max-width: none;
-                float: left;
+              height: 495px;
             }
             @media @tablet-md {
-                height: 400px;
-            }
-            @media @desktop-sm {
-                height: 495px;
+                width: 33.33%;
             }
 
             &:before {
@@ -73,12 +73,6 @@
                 padding: 20px;
             }
             @media @tablet-sm {
-                padding: 15px;
-            }
-            @media @tablet-md {
-                padding: 20px;
-            }
-            @media @desktop-sm {
                 padding: 30px;
             }
 
@@ -106,12 +100,6 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 @media @tablet-sm {
-                    padding: 15px;
-                }
-                @media @tablet-md {
-                    padding: 20px;
-                }
-                @media @desktop-sm {
                     padding: 27px 20px 3px;
                 }
 
@@ -149,27 +137,16 @@
                         font-size: 13px;
                     }
                     @media @tablet-sm {
-                        font-size: 10px;
-                        line-height: 14px;
-                    }
-                    @media @tablet-md {
-                        margin-right: 0;
-                        margin-left: 0;
-                        font-size: 12px;
-                        line-height: 16px;
-                    }
-                    @media @desktop-sm {
-                        font-size: 14px;
-                        line-height: 20px;
+                      margin-right: 0;
+                      margin-left: 0;
+                      font-size: 14px;
+                      line-height: 20px;
                     }
                 }
                 .top {
                     margin: 0 0 15px;
                     opacity: 0;
                     @media @tablet-sm {
-                        margin-bottom: 20px;
-                    }
-                    @media @desktop-sm {
                         margin-bottom: 37px;
                     }
                 }
@@ -189,17 +166,8 @@
                         font-size: 28px;
                     }
                     @media @tablet-sm {
-                        font-size: 20px;
-                        line-height: 24px;
-                    }
-                    @media @tablet-md {
-                        font-size: 26px;
-                        line-height: 30px;
-                    }
-                    @media @desktop-sm {
-                        max-width: 400px;
-                        font-size: 34px;
-                        line-height: 36px;
+                      font-size: 34px;
+                      line-height: 36px;
                     }
                 }
 
@@ -218,14 +186,6 @@
                     flex-grow: 1;
                     @media @tablet-sm {
                         margin-top: 0;
-                        font-size: 12px;
-                        line-height: 16px;
-                    }
-                    @media @tablet-md {
-                        font-size: 13px;
-                        line-height: 18px;
-                    }
-                    @media @desktop-sm {
                         font-size: 14px;
                         line-height: 20px;
                     }
@@ -240,13 +200,9 @@
                         opacity: 0;
                         transition: opacity @duration-l, transform @duration-l;
                         @media @tablet-sm {
-                            margin-top: 8px;
-                            margin-bottom: 40px;
-                        }
-                        @media @desktop-sm {
-                            width: 125px;
-                            margin-top: 5px;
-                            margin-bottom: 68px;
+                          width: 125px;
+                          margin-top: 5px;
+                          margin-bottom: 68px;
                         }
                     }
                 }

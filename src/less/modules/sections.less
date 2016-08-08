@@ -2,7 +2,16 @@
    SECTIONS
    ========================================================================== */
 .sections {
-    margin-top: -40px;
+    @media @tablet-sm {
+      margin-top: 70px;
+    }
+
+    .heading {
+      @tablet-sm {
+        margin-bottom: -7px;
+      }
+    }
+
     .list {
         user-select: none;
         &:after {

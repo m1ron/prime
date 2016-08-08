@@ -36,8 +36,8 @@ p, ul, ol, dl {
     margin-top: @margin-sm;
     margin-bottom: @margin-sm;
     @media @tablet-sm {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 }
 :focus {
@@ -84,12 +84,10 @@ h2, .h2 {
     margin-bottom: 4px;
     font: 800 34px/34px @font-heading;
     color: @color-midnight;
+    letter-spacing: .02em;
     @media @tablet-sm {
         margin-top: 46px;
-        font-size: 46px;
-        line-height: 46px;
-    }
-    @media @desktop-sm {
+        margin-bottom: 16px;
         font-size: 55px;
         line-height: 55px;
     }
@@ -112,7 +110,7 @@ h4, .h4 {
     font: bold 20px/26px @font-default;
     color: @color-midnight;
     @media @tablet-sm {
-        margin-top: 46px;
+        margin-top: 56px;
         margin-bottom: 16px;
         font-size: 24px;
         line-height: 28px;
@@ -167,19 +165,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .text-large {
     margin-bottom: @margin-md;
     font: 24px/32px @font-heading;
-    letter-spacing: .02em;
     + p {
         margin-top: -22px;
     }
     @media @tablet-sm {
-        margin-bottom: 44px;
+        margin-bottom: 49px;
+        font-size: 28px;
+        line-height: 38px;
         + p {
             margin-top: -36px;
         }
-    }
-    @media @desktop-sm {
-        font-size: 28px;
-        line-height: 38px;
     }
 }
 .text-medium {
@@ -187,6 +182,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font: 22px/30px @font-heading;
     letter-spacing: .02em;
     @media @tablet-sm {
+        margin-bottom: 24px;
         font-size: 24px;
         line-height: 38px;
     }
@@ -232,11 +228,27 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         .color-black(.6);
         color: @color;
     }
+
+    @media @tablet-sm {
+      margin-top: 33px;
+      margin-bottom: 8px;
+      + p {
+        margin-top: 0;
+      }
+
+      figcaption {
+            margin-top: 13px;
+      }
+    }
 }
 /*** LIST-CHECKED ***/
 .list-checked {
     padding: 0;
     list-style: none;
+    @media @tablet-sm {
+      margin-top: 26px;
+      margin-bottom: 44px;
+    }
 
     li {
         margin-bottom: 15px;
