@@ -134,7 +134,6 @@ h2,
   margin-bottom: 4px;
   font: 800 34px/34px 'Arno Pro', serif;
   color: #162a49;
-  letter-spacing: .02em;
 }
 h3,
 .h3 {
@@ -198,6 +197,7 @@ h6 + p,
 .text-large {
   margin-bottom: 30px;
   font: 24px/32px 'Arno Pro', serif;
+  letter-spacing: .02em;
 }
 .text-large + p {
   margin-top: -22px;
@@ -3686,8 +3686,8 @@ button:focus,
   ul,
   ol,
   dl {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   h1,
   .h1 {
@@ -3697,9 +3697,8 @@ button:focus,
   h2,
   .h2 {
     margin-top: 46px;
-    margin-bottom: 16px;
-    font-size: 55px;
-    line-height: 55px;
+    font-size: 46px;
+    line-height: 46px;
   }
   h3,
   .h3 {
@@ -3710,7 +3709,7 @@ button:focus,
   }
   h4,
   .h4 {
-    margin-top: 56px;
+    margin-top: 46px;
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 28px;
@@ -3730,15 +3729,12 @@ button:focus,
     line-height: 21px;
   }
   .text-large {
-    margin-bottom: 49px;
-    font-size: 28px;
-    line-height: 38px;
+    margin-bottom: 44px;
   }
   .text-large + p {
     margin-top: -36px;
   }
   .text-medium {
-    margin-bottom: 24px;
     font-size: 24px;
     line-height: 38px;
   }
@@ -3747,20 +3743,6 @@ button:focus,
   }
   .mobile-hidden-inline {
     display: inline;
-  }
-  .figure {
-    margin-top: 33px;
-    margin-bottom: 8px;
-  }
-  .figure + p {
-    margin-top: 0;
-  }
-  .figure figcaption {
-    margin-top: 13px;
-  }
-  .list-checked {
-    margin-top: 26px;
-    margin-bottom: 44px;
   }
   textarea {
     height: 165px;
@@ -4279,6 +4261,15 @@ button:focus,
   .h1 {
     font-size: 80px;
     line-height: 80px;
+  }
+  h2,
+  .h2 {
+    font-size: 55px;
+    line-height: 55px;
+  }
+  .text-large {
+    font-size: 28px;
+    line-height: 38px;
   }
   .content,
   .wrapper {
