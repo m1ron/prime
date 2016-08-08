@@ -1849,57 +1849,9 @@ button:focus,
    PAGE-HEADER
    ========================================================================== */
 .page-header {
-  height: 215px;
-  padding: 20px 0;
-  margin: -40px 0 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  position: relative;
-  color: #fff;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  cursor: default;
-}
-.page-header:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  height: 230px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  background: -webkit-linear-gradient(top, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
-  background: linear-gradient(to bottom, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
-  opacity: .56;
-}
-.page-header .title {
-  padding: 0;
-  margin: 0;
-  display: block;
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  text-align: center;
-}
-/* ==========================================================================
-   PAGE-HEADING
-   ========================================================================== */
-.page-heading {
-  height: 216px;
-  margin: 0;
+  height: 316px;
+  margin-top: -50px;
+  margin-bottom: 20px;
   padding: 10px 0 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1915,17 +1867,36 @@ button:focus,
   -webkit-align-content: center;
       -ms-flex-line-pack: center;
           align-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-size: 0 0;
+  background-position: -5000px 5000px;
   background-repeat: no-repeat;
   color: #fff;
   position: relative;
+  cursor: default;
 }
-.page-heading.page-designers {
-  background-image: url('../img/page-header/designers.jpg');
+.page-header:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 100vw;
+  margin: 0 auto;
+  background-image: inherit;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
-.page-heading:before {
+.page-header:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -1936,32 +1907,56 @@ button:focus,
   left: 0;
   right: 0;
   top: 0;
-  z-index: 0;
+  z-index: 1;
 }
-.page-heading > * {
+.page-header .area {
+  max-width: 290px;
+  margin: 0 auto;
   -webkit-flex-basis: 800px;
       -ms-flex-preferred-size: 800px;
           flex-basis: 800px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
-.page-heading .h {
-  margin-top: 0;
-  margin-bottom: 54px;
+.page-header .title {
+  margin: 0;
   color: #fff;
+  letter-spacing: .02em;
 }
-.page-heading .h:after {
+.page-header .text {
+  margin: 10px 0 0 0;
+  font: 26px/32px 'Arno Pro', serif;
+  letter-spacing: .02em;
+  position: relative;
+}
+.page-header .text:before {
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 260px;
-  height: 3px;
-  margin: 40px auto 0;
+  width: 160px;
+  height: 2px;
+  margin: 0 auto 10px;
   background: #fff;
 }
-.page-heading .text {
-  margin: 0;
-  font: 34px/42px 'Arno Pro', serif;
+.page-header.page-designers {
+  background-image: url('../img/page-header/designers.jpg');
+}
+.page-header.page-contacts {
+  height: 216px;
+  margin-bottom: 0;
+  padding: 20px 0;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
+}
+.page-header.page-contacts:after {
+  height: 230px;
+  top: auto;
+  background: -webkit-linear-gradient(top, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
+  background: linear-gradient(to bottom, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
+  opacity: .56;
 }
 /* ==========================================================================
    PAGER
@@ -2756,6 +2751,7 @@ button:focus,
   margin-bottom: 16px;
   font: bold 30px/34px 'Arno Pro', serif;
   color: #162a49;
+  margin-top: 0;
 }
 .contact-us .title + p {
   margin-top: 0;
@@ -3930,17 +3926,27 @@ button:focus,
     padding: 31px 25px 23px;
   }
   .page-header {
-    height: 365px;
-    padding: 40px 0;
-  }
-  .page-heading {
-    height: 700px;
+    height: 704px;
     margin-bottom: 60px;
     padding: 15px 0 60px;
   }
-  .page-heading .text {
+  .page-header .area {
+    max-width: 690px;
+    left: -18px;
+  }
+  .page-header .text {
+    margin-top: 34px;
     font-size: 46px;
     line-height: 54px;
+  }
+  .page-header .text:before {
+    width: 260px;
+    height: 3px;
+    margin-bottom: 53px;
+  }
+  .page-header.page-contacts {
+    height: 365px;
+    padding: 40px 0;
   }
   .pager {
     padding: 50px 30px;
@@ -4274,10 +4280,10 @@ button:focus,
   .content,
   .wrapper {
     max-width: 910px;
-    left: auto;
+    left: 28px;
   }
   .wide .space {
-    left: -32px;
+    left: -60px;
   }
   .header .phone {
     right: 31px;
@@ -4435,6 +4441,8 @@ button:focus,
     background-color: rgba(177, 219, 237, 0.5);
   }
   .callback {
+    margin-top: 60px;
+    margin-bottom: 60px;
     padding-top: 105px;
     padding-bottom: 105px;
   }
@@ -4458,6 +4466,9 @@ button:focus,
     width: 265px;
     height: 62px;
     padding: 20px;
+  }
+  .form-callback.form-offer {
+    max-width: 730px;
   }
   .contacts {
     padding: 0 0 55px;
@@ -4537,7 +4548,10 @@ button:focus,
     top: -12px;
     left: -45px;
   }
-  .page-header {
+  .page-header .title {
+    line-height: 90px;
+  }
+  .page-header.page-contacts {
     height: 515px;
     padding: 60px 0;
   }
