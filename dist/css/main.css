@@ -1921,6 +1921,9 @@ button.button-white:focus,
   background-repeat: no-repeat;
   cursor: default;
 }
+.page-header + .content {
+  padding-top: 0;
+}
 .page-header:before {
   display: block;
   content: '\0020';
