@@ -5,7 +5,7 @@
     .heading, .text-medium {
         text-align: center;
     }
-    
+
     .list {
         margin-top: 15px;
         user-select: none;
@@ -31,7 +31,7 @@
             @media @tablet-sm {
                 height: 495px;
             }
-            @media @tablet-md {
+            @media @desktop-sm {
                 width: 33.33%;
             }
 
@@ -254,5 +254,21 @@
             line-height: 20px;
             font-weight: 800;
         }
+    }
+
+    &-simple {
+
+      .list {
+        .item {
+          &:nth-child(n+3) {
+            display: none;
+          }
+          @media @desktop-sm {
+            &:nth-child(n+3) {
+              display: block;
+            }
+          }
+        }
+      }
     }
 }

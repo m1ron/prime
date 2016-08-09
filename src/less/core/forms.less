@@ -67,6 +67,25 @@ textarea {
         color: @color-white;
         background: @color-midnight;
     }
+
+    &.button-blue {
+      border-color: @color-blue;
+      color: @color-blue;
+      &:hover {
+        color: @color-white;
+        background: @color-blue;
+      }
+    }
+
+    &.button-white {
+      background: transparent;
+      border-color: @color-white;
+      color: @color-white;
+      &:hover {
+        color: @color-blue;
+        background: @color-white;
+      }
+    }
 }
 /* ==========================================================================
    DEFAULT FORM
