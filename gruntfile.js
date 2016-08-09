@@ -94,7 +94,8 @@ module.exports = function(grunt) {
                         d.bower + 'fastclick/lib/fastclick.js',
                         d.bower + 'slick-carousel/slick/slick.min.js',
                         d.bower + 'magnific-popup/dist/jquery.magnific-popup.min.js',
-                        d.bower + 'jquery-mask-plugin/dist/jquery.mask.min.js'
+                        d.bower + 'jquery-mask-plugin/dist/jquery.mask.min.js',
+                        d.bower + 'parallax.js/parallax.min.js'
                     ],
                     dest: temp.js + 'vendor'
                 }]

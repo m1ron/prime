@@ -22,7 +22,6 @@
     "grunt-real-favicon": "^0.1.6",
     "grunt-svg-sprite": "^1.3.3",
     "grunt-svgo": "^0.1.0",
-    "grunt-svgstore": "^1.0.0",
     "imagemin-pngquant": "^5.0.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-focus": "^1.0.0"

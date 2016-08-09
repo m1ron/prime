@@ -1893,9 +1893,8 @@ button.button-white:focus,
    ========================================================================== */
 .page-header {
   height: 316px;
-  margin-top: -50px;
   margin-bottom: 20px;
-  padding: 10px 0 20px;
+  padding: 10px 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1914,17 +1913,13 @@ button.button-white:focus,
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  color: #fff;
   text-align: center;
   background-size: 0 0;
   background-position: -5000px 5000px;
   background-repeat: no-repeat;
-  color: #fff;
-  position: relative;
   cursor: default;
-}
-.page-header.no-margin {
-  margin-top: -50px !important;
-  margin-bottom: 0 !important;
 }
 .page-header:before {
   display: block;
@@ -1942,19 +1937,6 @@ button.button-white:focus,
   bottom: 0;
   left: 0;
   z-index: 0;
-}
-.page-header:after {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  background: #162a49;
-  opacity: .4;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
 }
 .page-header .area {
   max-width: 290px;
@@ -1985,16 +1967,14 @@ button.button-white:focus,
   margin: 0 auto 10px;
   background: #fff;
 }
-.page-header .button {
-  margin-top: 22px;
-}
 .page-header.page-designers {
   background-image: url('../img/page-header/designers.jpg');
 }
 .page-header.page-contacts {
   height: 216px;
-  margin-bottom: 0;
   padding: 20px 0;
+  margin-top: -50px;
+  margin-bottom: 0;
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
@@ -2007,6 +1987,24 @@ button.button-white:focus,
   background: -webkit-linear-gradient(top, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
   background: linear-gradient(to bottom, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
   opacity: .56;
+}
+.parallax-mirror {
+  z-index: 0 !important;
+}
+.parallax-mirror:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #162a49;
+  opacity: .4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 /* ==========================================================================
    PAGER
@@ -3648,9 +3646,6 @@ button.button-white:focus,
   }
 }
 @media (min-width: 667px) {
-  .page-header .button {
-    min-width: 312px;
-  }
   .pager .list li.prev,
   .pager .list li.next {
     -webkit-box-flex: 1;
@@ -4075,8 +4070,8 @@ button.button-white:focus,
   }
   .page-header {
     height: 704px;
-    margin-bottom: 60px;
     padding: 15px 0 60px;
+    margin-bottom: 60px;
   }
   .page-header .area {
     max-width: 690px;

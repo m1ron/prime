@@ -3,31 +3,24 @@
    ========================================================================== */
 .page-header {
     height: 316px;
-    margin-top: -50px;
     margin-bottom: 20px;
-    padding: 10px 0 20px;
+    padding: 10px 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     align-items: center;
+    position: relative;
+    color: @color-white;
     text-align: center;
     background-size: 0 0;
     background-position: -5000px 5000px;
     background-repeat: no-repeat;
-    color: @color-white;
-    position: relative;
     cursor: default;
-
-    &.no-margin {
-        margin-top: -50px !important;
-        margin-bottom: 0 !important;
-    }
-
     @media @tablet-sm {
         height: 704px;
-        margin-bottom: 60px;
         padding: 15px 0 60px;
+        margin-bottom: 60px;
     }
 
     &:before {
@@ -44,18 +37,6 @@
         bottom: 0;
         left: 0;
         z-index: 0;
-    }
-
-    &:after {
-        .pseudo;
-        background: @color-midnight;
-        opacity: .4;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 1;
     }
 
     .area {
@@ -103,21 +84,15 @@
         }
     }
 
-    .button {
-      margin-top: 22px;
-      @media @mobile-lg {
-        min-width: 312px;
-      }
-    }
-
     &.page-designers {
         background-image: url('@{images}/page-header/designers.jpg');
     }
 
     &.page-contacts {
         height: 216px;
-        margin-bottom: 0;
         padding: 20px 0;
+        margin-top: -50px;
+        margin-bottom: 0;
         align-items: flex-end;
 
         &:after {
@@ -135,5 +110,21 @@
             height: 515px;
             padding: 60px 0;
         }
+    }
+}
+.parallax-mirror {
+    z-index: 0 !important;
+
+    &:after {
+        .pseudo;
+        background: @color-midnight;
+        opacity: .4;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        backface-visibility: hidden;
     }
 }
