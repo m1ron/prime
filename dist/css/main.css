@@ -2538,6 +2538,7 @@ button:focus,
    TESTIMONIALS
    ========================================================================== */
 .testimonials {
+  margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -2848,6 +2849,10 @@ button:focus,
 /* ==========================================================================
    PORTFOLIO
    ========================================================================== */
+.portfolio .heading,
+.portfolio .text-medium {
+  text-align: center;
+}
 .portfolio .list {
   margin-top: 15px;
   -webkit-user-select: none;
@@ -3908,6 +3913,9 @@ button:focus,
     display: inline-block;
     vertical-align: top;
   }
+  .form-callback.form-offer {
+    max-width: 730px;
+  }
   .form-callback.form-offer .heading {
     margin-bottom: 6px;
   }
@@ -4022,6 +4030,7 @@ button:focus,
     margin-bottom: 15px;
   }
   .testimonials {
+    margin-top: 50px;
     margin-bottom: 60px;
   }
   .testimonials .list {
@@ -4466,9 +4475,6 @@ button:focus,
     width: 265px;
     height: 62px;
     padding: 20px;
-  }
-  .form-callback.form-offer {
-    max-width: 730px;
   }
   .contacts {
     padding: 0 0 55px;
