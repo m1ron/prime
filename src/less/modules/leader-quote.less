@@ -1,0 +1,53 @@
+/* ==========================================================================
+   LEADER-QUOTE
+   ========================================================================== */
+.leader-quote {
+    max-width: 670px;
+    padding: 22px 0 36px;
+    margin: 0 auto;
+    font: 24px/36px @font-heading;
+    letter-spacing: .02em;
+    text-align: center;
+
+    @media @desktop-sm {
+        font-size: 27px;
+        line-height: 44px;
+    }
+
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .icon {
+        width: 77px;
+        height: 77px;
+        margin: 0 auto 40px;
+        display: block;
+    }
+
+    .sign {
+        width: 311px;
+        height: 85px;
+        margin: 10px auto 0;
+        display: block;
+    }
+
+    .author {
+      margin-top: 39px;
+      font: bold 18px/32px @font-default;
+
+      &:before {
+        .pseudo;
+        width: 246px;
+        height: 3px;
+        margin: 0 auto 40px;
+        background: @color-midnight;
+      }
+
+      cite {
+        font-style: normal;
+      }
+    }
+}

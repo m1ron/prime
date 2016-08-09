@@ -3350,6 +3350,48 @@ button.button-white:focus,
   margin-top: 22px;
 }
 /* ==========================================================================
+   LEADER-QUOTE
+   ========================================================================== */
+.leader-quote {
+  max-width: 670px;
+  padding: 22px 0 36px;
+  margin: 0 auto;
+  font: 24px/36px 'Arno Pro', serif;
+  letter-spacing: .02em;
+  text-align: center;
+}
+.leader-quote p:last-of-type {
+  margin-bottom: 0;
+}
+.leader-quote .icon {
+  width: 77px;
+  height: 77px;
+  margin: 0 auto 40px;
+  display: block;
+}
+.leader-quote .sign {
+  width: 311px;
+  height: 85px;
+  margin: 10px auto 0;
+  display: block;
+}
+.leader-quote .author {
+  margin-top: 39px;
+  font: bold 18px/32px 'Proxima Nova', Arial, sans-serif;
+}
+.leader-quote .author:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 246px;
+  height: 3px;
+  margin: 0 auto 40px;
+  background: #162a49;
+}
+.leader-quote .author cite {
+  font-style: normal;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
@@ -4760,6 +4802,10 @@ button.button-white:focus,
   }
   .articles .text .subtitle:after {
     margin-top: 46px;
+  }
+  .leader-quote {
+    font-size: 27px;
+    line-height: 44px;
   }
   .mfp-content {
     max-width: 1140px;
