@@ -3,13 +3,13 @@
    ========================================================================== */
 .sections {
     @media @tablet-sm {
-      margin-top: 70px;
+        margin-top: 70px;
     }
 
     .heading {
-      @tablet-sm {
-        margin-bottom: -7px;
-      }
+        @tablet-sm {
+            margin-bottom: -7px;
+        }
     }
 
     .list {
@@ -294,6 +294,83 @@
             font-size: 14px;
             line-height: 20px;
             font-weight: 800;
+        }
+    }
+
+    &.sections-four {
+        .list {
+            .item {
+                @media @tablet-sm {
+                    height: 355px;
+                }
+                @media @desktop-sm {
+                    width: 25%;
+                    height: 455px;
+                }
+
+                &:after {
+                    height: 148px;
+                }
+
+                .link {
+                    padding: 20px 19px 44px;
+
+                    .area {
+                        @media @desktop-sm {
+                            padding-top: 19px;
+                            font-size: 14px;
+                            line-height: 20px;
+                            transform: translate3d(0, 80px, 0);
+                        }
+
+                        .title {
+                            @media @desktop-sm {
+                                font-size: 34px;
+                                line-height: 36px;
+                            }
+                        }
+
+                        .price {
+                            @media @desktop-sm {
+                                margin-bottom: 44px;
+                            }
+                        }
+
+                        .description {
+                            @media @desktop-sm {
+                                max-width: 210px;
+                            }
+
+                            &:before {
+                                width: 60px;
+                                margin: 14px auto 19px;
+                            }
+                        }
+
+                        .button {
+                            width: 230px;
+                            height: 46px;
+                            padding: 12px;
+                            background: @color-blue;
+                            border-color: @color-blue;
+                            font-size: 12px;
+                            opacity: 0;
+                            bottom: -21px;
+                            transition: opacity @duration .2s;
+                        }
+                    }
+
+                    &:hover {
+                        .area {
+                          transform: translate3d(0,0,0);
+
+                            .button {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

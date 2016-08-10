@@ -1176,6 +1176,35 @@ button.button-white:focus,
   line-height: 20px;
   font-weight: 800;
 }
+.sections.sections-four .list .item:after {
+  height: 148px;
+}
+.sections.sections-four .list .item .link {
+  padding: 20px 19px 44px;
+}
+.sections.sections-four .list .item .link .area .description:before {
+  width: 60px;
+  margin: 14px auto 19px;
+}
+.sections.sections-four .list .item .link .area .button {
+  width: 230px;
+  height: 46px;
+  padding: 12px;
+  background: #34bffc;
+  border-color: #34bffc;
+  font-size: 12px;
+  opacity: 0;
+  bottom: -21px;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+.sections.sections-four .list .item .link:hover .area, .sections.sections-four .list .item .link:focus .area {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.sections.sections-four .list .item .link:hover .area .button, .sections.sections-four .list .item .link:focus .area .button {
+  opacity: 1;
+}
 /* ==========================================================================
    SCHEME
    ========================================================================== */
@@ -3488,6 +3517,29 @@ button.button-white:focus,
   font-style: normal;
 }
 /* ==========================================================================
+   PROPOSITION
+   ========================================================================== */
+.proposition {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+}
+.proposition:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.proposition p {
+  letter-spacing: .018em;
+}
+.proposition .heading {
+  margin-top: 0;
+}
+.proposition .space {
+  text-align: left;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
@@ -4054,6 +4106,9 @@ button.button-white:focus,
     height: 550px;
     float: left;
   }
+  .sections.sections-four .list .item {
+    height: 355px;
+  }
   .scheme .list {
     font-size: 24px;
     line-height: 24px;
@@ -4501,6 +4556,12 @@ button.button-white:focus,
   .articles .text {
     max-width: none;
   }
+  .proposition .text-medium {
+    max-width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 26px;
+  }
   .mfp-content {
     max-width: 650px;
   }
@@ -4598,6 +4659,9 @@ button.button-white:focus,
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+  }
+  .proposition {
+    margin: 76px 0 40px;
   }
 }
 @media (min-width: 1170px) {
@@ -4728,6 +4792,27 @@ button.button-white:focus,
   }
   .sections .list .item .link:hover .area .description, .sections .list .item .link:focus .area .description {
     max-height: 290px;
+  }
+  .sections.sections-four .list .item {
+    width: 25%;
+    height: 455px;
+  }
+  .sections.sections-four .list .item .link .area {
+    padding-top: 19px;
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-transform: translate3d(0, 80px, 0);
+    transform: translate3d(0, 80px, 0);
+  }
+  .sections.sections-four .list .item .link .area .title {
+    font-size: 34px;
+    line-height: 36px;
+  }
+  .sections.sections-four .list .item .link .area .price {
+    margin-bottom: 44px;
+  }
+  .sections.sections-four .list .item .link .area .description {
+    max-width: 210px;
   }
   .scheme .list {
     font-size: 32px;
@@ -5050,6 +5135,18 @@ button.button-white:focus,
   .leader-quote {
     font-size: 27px;
     line-height: 44px;
+  }
+  .proposition .space {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+  .proposition .space .col {
+    width: 50%;
+    padding: 0 40px;
+    float: left;
+  }
+  .proposition .space .col p:last-of-type {
+    margin-bottom: 0;
   }
   .mfp-content {
     max-width: 1140px;
