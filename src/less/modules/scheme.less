@@ -284,8 +284,8 @@
                         background-color: @color;
                     }
                     @media @desktop-sm {
-                      .color-blue-light(.3);
-                      background-color: @color;
+                        .color-blue-light(.3);
+                        background-color: @color;
                     }
                 }
                 &:nth-child(5) {
@@ -338,6 +338,81 @@
                     }
                     @media @desktop-sm {
                         width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &-building {
+        .list {
+            li {
+                @media @desktop-sm {
+                    padding-top: 30px;
+                }
+
+                &:nth-child(1) {
+                    @media @tablet-sm {
+                        .color-blue-light(.3);
+                        background-color: @color;
+                    }
+                }
+                &:nth-child(2) {
+                    @media @tablet-sm {
+                        .color-blue-light(.7);
+                        background-color: @color;
+                    }
+                }
+                &:nth-child(3) {
+                    @media @tablet-sm {
+                        height: 218px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0;
+                        .color-blue-light(.3);
+                        background-color: @color;
+                    }
+                    @media @desktop-sm {
+                        width: 25%;
+                        height: 574px;
+                        padding-bottom: 24px;
+                        margin-bottom: -287px;
+                        align-content: flex-end;
+                    }
+                }
+                &:nth-child(4) {
+                    @media @tablet-sm {
+                      .color-blue-light(.7);
+                      background-color: @color;
+                    }
+                    @media @desktop-sm {
+                        clear: none;
+                        .color-blue-light(.5);
+                        background-color: @color;
+                    }
+                }
+                &:nth-child(5) {
+                    @media @tablet-sm {
+                        .color-blue-light(.5);
+                        background-color: @color;
+                    }
+                    @media @desktop-sm {
+                        width: 50%;
+                        clear: left;
+
+                        .title {
+                            width: 380px;
+                        }
+                    }
+                }
+                &:nth-child(6) {
+                    @media @tablet-sm {
+                        clear: none;
+
+                    }
+                    @media @desktop-sm {
+                        float: right;
+                        .color-blue-light(.7);
+                        background-color: @color;
                     }
                 }
             }
