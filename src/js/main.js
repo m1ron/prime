@@ -159,6 +159,23 @@ $(document).ready(function() {
         type: 'image'
     });
 
+    /* Page header carousel */
+    $('.page-header').each(function() {
+      $('.carousel', this).slick({
+          infinite: true,
+          adaptiveHeight: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          prevArrow: '<span class="prev"></span>',
+          nextArrow: '<span class="next"></span>',
+          dots: true,
+          customPaging: function(slider, i) {
+              return '<span class="dot"></span>';
+          }
+      });
+    });
+    
 });
 
 /** Magnific Popup defaults */
