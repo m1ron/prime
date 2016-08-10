@@ -223,4 +223,124 @@
             display: none;
         }
     }
+
+    &-sales {
+        .list {
+            li {
+                @media @desktop-sm {
+                    padding-top: 42px;
+                }
+
+                .title {
+                    @media @desktop-sm {
+                        padding-top: 0;
+                    }
+                }
+
+                &:nth-child(1) {
+                    @media @desktop-sm {
+                        height: 574px;
+                        padding-bottom: 25px;
+                        align-content: flex-end;
+                    }
+                }
+                &:nth-child(2) {
+                    @media @tablet-sm {
+                        width: 66.6%;
+
+                        .title {
+                            width: 370px;
+                        }
+                    }
+                    @media @desktop-sm {
+                        width: 50%;
+                        .color-blue-light(.7);
+                        background-color: @color;
+
+                        .title {
+                            width: auto;
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    @media @tablet-sm {
+                        height: 218px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0;
+                        align-content: center;
+                        .color-blue-light(.3);
+                        background-color: @color;
+                    }
+                    @media @desktop-sm {
+                        width: 25%;
+                        .color-blue-light(.5);
+                        background-color: @color;
+                    }
+                }
+                &:nth-child(4) {
+                    @media @tablet-sm {
+                        clear: none;
+                        .color-blue-light(.7);
+                        background-color: @color;
+                    }
+                    @media @desktop-sm {
+                      .color-blue-light(.3);
+                      background-color: @color;
+                    }
+                }
+                &:nth-child(5) {
+                    @media @tablet-sm {
+                        .color-blue-light(.5);
+                        background-color: @color;
+                    }
+                }
+                &:nth-child(6) {
+                    @media @tablet-sm {
+                        .color-blue-light(.5);
+                        background-color: @color;
+                    }
+                    @media @desktop-sm {
+                        height: 574px;
+                        padding-bottom: 25px;
+                        float: right;
+                        align-content: flex-end;
+                    }
+                }
+                &:nth-child(7) {
+                    @media @tablet-sm {
+                        width: 33.3%;
+                    }
+                    @media @desktop-sm {
+                        width: 25%;
+                        height: 287px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0;
+                        .color-blue-light(.3);
+                        background-color: @color;
+                        align-content: center;
+                    }
+                }
+                &:nth-child(8) {
+                    @media @desktop-sm {
+                        width: 50%;
+                        clear: none;
+                        .color-blue-light(.7);
+                        background-color: @color;
+
+                        .title {
+                            width: 300px;
+                        }
+                    }
+                }
+                &:nth-child(9) {
+                    @media @tablet-sm {
+                        width: 100%;
+                    }
+                    @media @desktop-sm {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
