@@ -86,6 +86,7 @@ $(document).ready(function() {
         });
     });
 
+    /** Portfolio */
     $('.portfolio').each(function() {
         $('.item', this).each(function() {
             $('.top', this).clone().removeClass('top').addClass('small').insertAfter($('.title', this));
@@ -175,7 +176,7 @@ $(document).ready(function() {
           }
       });
     });
-    
+
 });
 
 /** Magnific Popup defaults */

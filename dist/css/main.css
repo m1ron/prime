@@ -1304,6 +1304,8 @@ button.button-white:focus,
    GALLERY
    ========================================================================== */
 .gallery {
+  margin-top: 30px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .gallery .heading {
@@ -1892,9 +1894,9 @@ button.button-white:focus,
    PAGE-HEADER
    ========================================================================== */
 .page-header {
-  height: 316px;
+  min-height: 316px;
   margin-bottom: 20px;
-  padding: 10px 0;
+  padding: 30px 0 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1916,30 +1918,10 @@ button.button-white:focus,
   position: relative;
   color: #fff;
   text-align: center;
-  background-size: 0 0;
-  background-position: -5000px 5000px;
-  background-repeat: no-repeat;
   cursor: default;
 }
 .page-header + .content {
   padding-top: 0;
-}
-.page-header:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  width: 100vw;
-  margin: 0 auto;
-  background-image: inherit;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 .page-header .area {
   max-width: 290px;
@@ -1974,49 +1956,10 @@ button.button-white:focus,
   margin-top: 24px;
   padding: 20px;
 }
-.page-header.page-designers {
-  background-image: url('../img/page-header/designers.jpg');
-}
-.page-header.page-contacts {
-  height: 216px;
-  padding: 20px 0;
-  margin-top: -50px;
-  margin-bottom: 0;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-              -ms-grid-row-align: flex-end;
-          align-items: flex-end;
-}
-.page-header.page-contacts:after {
-  height: 230px;
-  top: auto;
-  background: -webkit-linear-gradient(top, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
-  background: linear-gradient(to bottom, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
-  opacity: .56;
-}
-.parallax-mirror {
-  z-index: 0 !important;
-}
-.parallax-mirror:after {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  background: #162a49;
-  opacity: .4;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.carousel {
+.page-header .carousel {
   width: 100vw;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
   position: absolute;
   top: 0;
@@ -2025,11 +1968,11 @@ button.button-white:focus,
   left: 0;
   z-index: 0;
 }
-.carousel .slick-list,
-.carousel .slick-track {
+.page-header .carousel .slick-list,
+.page-header .carousel .slick-track {
   height: 100% !important;
 }
-.carousel .slick-dots {
+.page-header .carousel .slick-dots {
   height: 20px;
   padding: 0;
   margin: 0;
@@ -2041,19 +1984,19 @@ button.button-white:focus,
   z-index: 3;
   text-align: center;
 }
-.carousel .slick-dots li {
+.page-header .carousel .slick-dots li {
   height: 20px;
   margin: 0 3px;
   display: inline-block;
 }
-.carousel .slick-dots li .dot {
+.page-header .carousel .slick-dots li .dot {
   width: 20px;
   height: 20px;
   display: block;
   position: relative;
   cursor: pointer;
 }
-.carousel .slick-dots li .dot:before {
+.page-header .carousel .slick-dots li .dot:before {
   content: '\0020';
   overflow: hidden;
   width: 10px;
@@ -2074,20 +2017,84 @@ button.button-white:focus,
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.carousel .slick-dots li .dot:hover:before, .carousel .slick-dots li .dot:focus:before {
+.page-header .carousel .slick-dots li .dot:hover:before, .page-header .carousel .slick-dots li .dot:focus:before {
   -webkit-transform: scale(1.15);
       -ms-transform: scale(1.15);
           transform: scale(1.15);
 }
-.carousel .slick-dots li.slick-active .dot:before {
+.page-header .carousel .slick-dots li.slick-active .dot:before {
   background: #34bffc;
 }
-.carousel .item {
+.page-header .carousel .item {
   width: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.page-header .carousel .item:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #162a49;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .4;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.page-header.page-designers {
+  background-image: url('../img/page-header/designers.jpg');
+}
+.page-header.page-contacts {
+  height: 216px;
+  padding: 20px 0;
+  margin-top: -50px;
+  margin-bottom: 0;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
+}
+.page-header.page-contacts:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 50px;
+  background: -webkit-linear-gradient(top, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
+  background: linear-gradient(to bottom, rgba(25, 35, 49, 0) 0%, #192331 76%, #192331 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .56;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 2;
+}
+.parallax-mirror {
+  z-index: 0 !important;
+}
+.parallax-mirror:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #162a49;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .4;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 1;
 }
 /* ==========================================================================
    PAGER
@@ -4152,6 +4159,7 @@ button.button-white:focus,
     clear: none;
   }
   .gallery {
+    margin-top: 60px;
     margin-bottom: 60px;
   }
   .gallery .slick-arrow.prev {
@@ -4232,6 +4240,12 @@ button.button-white:focus,
     width: 260px;
     height: 3px;
     margin-bottom: 53px;
+  }
+  .page-header .carousel .slick-dots {
+    bottom: 24px;
+  }
+  .page-header.page-contacts:before {
+    height: 230px;
   }
   .page-header.page-contacts {
     height: 365px;
