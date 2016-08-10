@@ -1198,10 +1198,6 @@ button.button-white:focus,
   -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
   transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
-.sections.sections-four .list .item .link:hover .area, .sections.sections-four .list .item .link:focus .area {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-}
 .sections.sections-four .list .item .link:hover .area .button, .sections.sections-four .list .item .link:focus .area .button {
   opacity: 1;
 }
@@ -4801,8 +4797,6 @@ button.button-white:focus,
     padding-top: 19px;
     font-size: 14px;
     line-height: 20px;
-    -webkit-transform: translate3d(0, 80px, 0);
-    transform: translate3d(0, 80px, 0);
   }
   .sections.sections-four .list .item .link .area .title {
     font-size: 34px;
@@ -4813,6 +4807,12 @@ button.button-white:focus,
   }
   .sections.sections-four .list .item .link .area .description {
     max-width: 210px;
+    -webkit-transform: translate3d(0, 80px, 0);
+    transform: translate3d(0, 80px, 0);
+  }
+  .sections.sections-four .list .item .link:hover .area .description, .sections.sections-four .list .item .link:focus .area .description {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   .scheme .list {
     font-size: 32px;
