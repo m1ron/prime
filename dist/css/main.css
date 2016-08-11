@@ -3540,6 +3540,20 @@ button.button-white:focus,
   text-align: left;
 }
 /* ==========================================================================
+   COLORED
+   ========================================================================== */
+.colored {
+  padding: 30px 0;
+  background: #e8f0f7;
+  font: 24px/32px 'Arno Pro', serif;
+}
+.colored p:first-of-type {
+  margin-top: 0;
+}
+.colored p:last-of-type {
+  margin-bottom: 0;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
@@ -5157,6 +5171,11 @@ button.button-white:focus,
   }
   .proposition .space .col p:last-of-type {
     margin-bottom: 0;
+  }
+  .colored {
+    padding: 60px 0;
+    font-size: 32px;
+    line-height: 42px;
   }
   .mfp-content {
     max-width: 1140px;
