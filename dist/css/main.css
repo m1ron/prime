@@ -3687,6 +3687,62 @@ button.button-white:focus,
   color: #34bffc;
 }
 /* ==========================================================================
+   EQUIPMENT
+   ========================================================================== */
+.equipment {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.equipment .title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.equipment .list {
+  max-width: 300px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  border-top: 1px solid #e8f0f7;
+  border-left: 1px solid #e8f0f7;
+}
+.equipment .list li {
+  padding: 5px;
+  border-right: 1px solid #e8f0f7;
+  border-bottom: 1px solid #e8f0f7;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+}
+.equipment .list .photo {
+  width: 214px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.equipment .list .name {
+  padding: 10px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
@@ -3885,6 +3941,14 @@ button.button-white:focus,
   }
   .portfolio .list .link {
     padding: 20px;
+  }
+  .equipment .list {
+    max-width: none;
+  }
+  .equipment .list li {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
   }
 }
 @media (min-width: 568px) {
@@ -4125,6 +4189,11 @@ button.button-white:focus,
   }
   .project .col:last-of-type:after {
     display: block;
+  }
+  .equipment .list li {
+    -webkit-flex-basis: 33.3%;
+    -ms-flex-preferred-size: 33.3%;
+    flex-basis: 33.3%;
   }
 }
 @media (min-width: 750px) {
@@ -4726,6 +4795,9 @@ button.button-white:focus,
     font-size: 26px;
     line-height: 26px;
   }
+  .equipment .list .name {
+    padding: 20px 22px 6px 22px;
+  }
   .mfp-content {
     max-width: 650px;
   }
@@ -4826,6 +4898,11 @@ button.button-white:focus,
   }
   .proposition {
     margin: 76px 0 40px;
+  }
+  .equipment .list li {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
   }
 }
 @media (min-width: 1170px) {
@@ -5331,6 +5408,7 @@ button.button-white:focus,
   .colored .wrapper {
     padding-left: 40px;
     padding-right: 40px;
+    left: 18px;
   }
   .solutions {
     margin-top: 46px;
@@ -5340,7 +5418,7 @@ button.button-white:focus,
     margin-bottom: 32px;
   }
   .solutions .tab-list {
-    padding-right: 72px;
+    padding-right: 92px;
     margin: 0 auto 62px;
     font-size: 22px;
     line-height: 22px;
@@ -5355,7 +5433,7 @@ button.button-white:focus,
     line-height: 46px;
   }
   .estimate .table-estimate thead th {
-    padding: 24px 41px;
+    padding: 24px 42px;
     white-space: nowrap;
   }
   .estimate .table-estimate thead th:first-of-type {
@@ -5363,17 +5441,31 @@ button.button-white:focus,
     padding-left: 60px;
   }
   .estimate .table-estimate thead th:last-of-type {
-    padding-right: 100px;
+    min-width: 240px;
   }
   .estimate .table-estimate td {
-    padding: 24px 41px;
+    padding: 24px 42px;
   }
   .estimate .table-estimate td:first-of-type {
     padding-left: 60px;
     white-space: nowrap;
   }
   .estimate .table-estimate td:last-of-type {
-    padding-right: 100px;
+    min-width: 240px;
+  }
+  .equipment {
+    margin-top: 80px;
+    margin-bottom: 26px;
+  }
+  .equipment .title {
+    margin-bottom: 30px;
+    font-size: 42px;
+    line-height: 46px;
+  }
+  .equipment .list li {
+    -webkit-flex-basis: 20%;
+    -ms-flex-preferred-size: 20%;
+    flex-basis: 20%;
   }
   .mfp-content {
     max-width: 1140px;

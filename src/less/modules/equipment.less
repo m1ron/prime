@@ -1,0 +1,75 @@
+/* ==========================================================================
+   EQUIPMENT
+   ========================================================================== */
+.equipment {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @media @desktop-sm {
+        margin-top: 80px;
+        margin-bottom: 26px;
+    }
+
+    .title {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        @media @desktop-sm {
+          margin-bottom: 30px;
+            font-size: 42px;
+            line-height: 46px;
+        }
+    }
+
+    .list {
+      max-width: 300px;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        border-top: 1px solid @color-glitter;
+        border-left: 1px solid @color-glitter;
+        @media @mobile-sm {
+          max-width: none;
+        }
+
+        li {
+            padding: 5px;
+            border-right: 1px solid @color-glitter;
+            border-bottom: 1px solid @color-glitter;
+            flex-basis: 100%;
+            @media @mobile-sm {
+              flex-basis: 50%;
+            }
+            @media @mobile-lg {
+                flex-basis: 33.3%;
+            }
+            @media @tablet-md {
+                flex-basis: 25%;
+            }
+            @media @desktop-sm {
+                flex-basis: 20%;
+            }
+        }
+
+        .photo {
+            width: 214px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            user-select: none;
+        }
+
+        .name {
+            padding: 10px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 17px;
+            @media @tablet-sm {
+              padding: 20px 22px 6px 22px;
+            }
+        }
+    }
+}
