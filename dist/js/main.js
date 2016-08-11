@@ -177,6 +177,20 @@ $(document).ready(function() {
       });
     });
 
+    /* Solutions tabs */
+  	$('.solutions').each(function () {
+  		var _address = $(this), _call = $('.action-call', _address);
+  		$('.tab-list', this).each(function () {
+  			$(this).on('click', 'a', function (event) {
+  				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+  				$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+  				$('#' + where).removeClass('tab-hidden').siblings('.tab-content').addClass('tab-hidden');
+  				_call.attr('href', $('.tel', '#' + where).attr('data-href'));
+  				event.preventDefault();
+  			});
+  		});
+  	});
+
 });
 
 /** Magnific Popup defaults */

@@ -3647,6 +3647,9 @@ button.button-white:focus,
   font-weight: bold;
   letter-spacing: 0;
 }
+.solutions .tab-hidden {
+  display: none;
+}
 /* ==========================================================================
    ESTIMATE
    ========================================================================== */
@@ -5418,10 +5421,12 @@ button.button-white:focus,
     margin-bottom: 32px;
   }
   .solutions .tab-list {
-    padding-right: 92px;
+    max-width: 1084px;
     margin: 0 auto 62px;
     font-size: 22px;
     line-height: 22px;
+    position: relative;
+    left: -46px;
   }
   .solutions .tab-list .text .size {
     font-size: 30px;
