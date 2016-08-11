@@ -3694,7 +3694,6 @@ button.button-white:focus,
    ========================================================================== */
 .equipment {
   margin-top: 40px;
-  margin-bottom: 40px;
 }
 .equipment .title {
   margin-top: 0;
@@ -3744,6 +3743,28 @@ button.button-white:focus,
   margin: 0;
   font-size: 14px;
   line-height: 17px;
+}
+/* ==========================================================================
+   TEXT-BLOCK
+   ========================================================================== */
+.text-block {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.text-block .heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 34px;
+}
+.text-block .area:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.text-block .area .col:last-of-type p:last-of-type {
+  margin-bottom: 0;
 }
 /* ==========================================================================
    POPUPS
@@ -4801,6 +4822,20 @@ button.button-white:focus,
   .equipment .list .name {
     padding: 20px 22px 6px 22px;
   }
+  .text-block {
+    margin-top: 47px;
+    margin-bottom: 64px;
+  }
+  .text-block .heading {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .text-block .area .text-big {
+    font-size: 26px;
+    line-height: 38px;
+  }
   .mfp-content {
     max-width: 650px;
   }
@@ -5460,7 +5495,6 @@ button.button-white:focus,
   }
   .equipment {
     margin-top: 80px;
-    margin-bottom: 26px;
   }
   .equipment .title {
     margin-bottom: 30px;
@@ -5471,6 +5505,17 @@ button.button-white:focus,
     -webkit-flex-basis: 20%;
     -ms-flex-preferred-size: 20%;
     flex-basis: 20%;
+  }
+  .text-block .area .col {
+    width: 50%;
+    padding: 0 75px 0 0;
+    float: left;
+  }
+  .text-block .area .col p:first-of-type {
+    margin-top: 0;
+  }
+  .text-block .area .col p:last-of-type {
+    margin-bottom: 0;
   }
   .mfp-content {
     max-width: 1140px;
