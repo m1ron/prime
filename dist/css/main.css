@@ -5239,6 +5239,10 @@ button.button-white:focus,
     padding-top: 105px;
     padding-bottom: 105px;
   }
+  .callback-short {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
   .callback .call-us {
     margin-top: 44px;
     font-size: 24px;
