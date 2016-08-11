@@ -7,15 +7,23 @@
     font: 24px/32px @font-heading;
 
     @media @desktop-sm {
-      padding: 60px 0;
+      padding: 57px 0 60px;
       font-size: 32px;
       line-height: 42px;
+
+      .wrapper {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
     }
 
     p {
+      letter-spacing: .02em;
+
       &:first-of-type {
         margin-top: 0;
       }
+
       &:last-of-type {
         margin-bottom: 0;
       }
