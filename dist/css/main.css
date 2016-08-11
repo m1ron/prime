@@ -276,6 +276,11 @@ h6 + p,
   top: 14px;
   left: 9px;
 }
+/*** TABLE-RESPONSIVE ***/
+.table-responsive {
+  width: 100%;
+  overflow-x: scroll;
+}
 /* ==========================================================================
    FORMS RESET
    ========================================================================== */
@@ -1490,7 +1495,7 @@ button.button-white:focus,
   text-align: center;
   color: #162a49;
   cursor: default;
-  background: #f9f8f7;
+  background: #f8f8f8;
 }
 .wrapper .callback {
   margin-left: -20px;
@@ -2388,7 +2393,7 @@ button.button-white:focus,
 .documents-bg.documents .space {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #f9f8f7;
+  background: #f8f8f8;
 }
 .documents .list {
   padding: 0 20px;
@@ -3432,7 +3437,7 @@ button.button-white:focus,
   font: 20px/26px 'Arno Pro', serif;
 }
 /* ==========================================================================
-   ARTCLES
+   ARTICLES
    ========================================================================== */
 .articles .photo {
   height: 230px;
@@ -3570,7 +3575,7 @@ button.button-white:focus,
 }
 .solutions .tab-list {
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
   list-style: none;
   font: 16px/16px 'Arno Pro', serif;
   text-align: center;
@@ -3641,6 +3646,45 @@ button.button-white:focus,
   line-height: 20px;
   font-weight: bold;
   letter-spacing: 0;
+}
+/* ==========================================================================
+   ESTIMATE
+   ========================================================================== */
+.estimate .title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.estimate .table-estimate {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+.estimate .table-estimate thead tr {
+  background: #f8f8f8;
+}
+.estimate .table-estimate thead th {
+  padding: 10px 20px;
+  font-weight: 800;
+  text-align: left;
+  white-space: normal;
+  vertical-align: top;
+}
+.estimate .table-estimate td {
+  padding: 10px 20px;
+}
+.estimate .table-estimate td:first-of-type {
+  white-space: normal;
+}
+.estimate .table-estimate tbody tr:nth-of-type(even) {
+  background: #f8f8f8;
+}
+.estimate .table-estimate tfoot tr {
+  background: #e8f0f7;
+}
+.estimate .table-estimate tfoot td {
+  font-weight: 800;
+  color: #34bffc;
 }
 /* ==========================================================================
    POPUPS
@@ -5297,13 +5341,39 @@ button.button-white:focus,
   }
   .solutions .tab-list {
     padding-right: 72px;
-    margin: 0 auto 20px;
+    margin: 0 auto 62px;
     font-size: 22px;
     line-height: 22px;
   }
   .solutions .tab-list .text .size {
     font-size: 30px;
     line-height: 30px;
+  }
+  .estimate .title {
+    margin-bottom: 30px;
+    font-size: 42px;
+    line-height: 46px;
+  }
+  .estimate .table-estimate thead th {
+    padding: 24px 41px;
+    white-space: nowrap;
+  }
+  .estimate .table-estimate thead th:first-of-type {
+    width: 100%;
+    padding-left: 60px;
+  }
+  .estimate .table-estimate thead th:last-of-type {
+    padding-right: 100px;
+  }
+  .estimate .table-estimate td {
+    padding: 24px 41px;
+  }
+  .estimate .table-estimate td:first-of-type {
+    padding-left: 60px;
+    white-space: nowrap;
+  }
+  .estimate .table-estimate td:last-of-type {
+    padding-right: 100px;
   }
   .mfp-content {
     max-width: 1140px;

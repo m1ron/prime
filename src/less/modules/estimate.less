@@ -1,0 +1,84 @@
+/* ==========================================================================
+   ESTIMATE
+   ========================================================================== */
+.estimate {
+    .title {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        @media @desktop-sm {
+          margin-bottom: 30px;
+            font-size: 42px;
+            line-height: 46px;
+        }
+    }
+
+    .table-estimate {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: nowrap;
+
+        thead {
+            tr {
+                background: @color-white-smoke;
+            }
+            th {
+                padding: 10px 20px;
+                font-weight: 800;
+                text-align: left;
+                white-space: normal;
+                vertical-align: top;
+            }
+            @media @desktop-sm {
+              th {
+                padding: 24px 41px;
+                white-space: nowrap;
+                &:first-of-type {
+                  width: 100%;
+                    padding-left: 60px;
+                }
+                &:last-of-type {
+                    padding-right: 100px;
+                }
+              }
+            }
+        }
+
+        td {
+            padding: 10px 20px;
+
+            &:first-of-type {
+            white-space: normal;
+            }
+
+            @media @desktop-sm {
+              padding: 24px 41px;
+              &:first-of-type {
+                  padding-left: 60px;
+                  white-space: nowrap;
+              }
+              &:last-of-type {
+                  padding-right: 100px;
+              }
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-of-type(even) {
+                    background: @color-white-smoke;
+                }
+            }
+        }
+
+        tfoot {
+            tr {
+                background: @color-glitter;
+            }
+            td {
+                font-weight: 800;
+                color: @color-blue;
+            }
+        }
+    }
+}
