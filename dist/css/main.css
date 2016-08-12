@@ -3719,7 +3719,7 @@ button.button-white:focus,
   width: 215px;
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 9px;
   display: block;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -4955,7 +4955,7 @@ button.button-white:focus,
   }
   .solutions .tab-list {
     margin-bottom: 44px;
-    padding: 0 45px;
+    padding: 0 44px;
   }
   .estimate .title {
     font-size: 34px;
@@ -5651,15 +5651,22 @@ button.button-white:focus,
     margin-top: 42px;
   }
   .solutions .heading {
-    margin-bottom: 32px;
+    margin-bottom: 19px;
   }
   .solutions .tab-list {
-    margin-bottom: 82px;
+    margin-bottom: 74px;
     font-size: 22px;
     line-height: 22px;
   }
   .solutions .tab-list .item {
     width: 238px;
+  }
+  .solutions .tab-list .link {
+    width: 238px;
+    padding-bottom: 22px;
+  }
+  .solutions .tab-list .image {
+    margin-bottom: 2px;
   }
   .solutions .tab-list .text .size {
     font-size: 30px;

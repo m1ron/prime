@@ -12,7 +12,7 @@
         margin-bottom: 25px;
         text-align: center;
         @media @desktop-sm {
-            margin-bottom: 32px;
+            margin-bottom: 19px;
         }
     }
 
@@ -35,10 +35,10 @@
             }
             @media @tablet-sm {
                 margin-bottom: 44px;
-                padding: 0 45px;
+                padding: 0 44px;
             }
             @media @desktop-sm {
-                margin-bottom: 82px;
+                margin-bottom: 74px;
                 font-size: 22px;
                 line-height: 22px;
             }
@@ -47,9 +47,16 @@
                 max-height: none;
                 overflow: visible;
                 position: relative;
+
                 .slick-slide {
                     margin-bottom: 0;
                 }
+
+                .slick-list {
+                  @media @tablet-sm {
+                  }
+                }
+
                 .slick-arrow {
                     width: 40px;
                     height: 40px;
@@ -133,15 +140,22 @@
                 &:hover {
                     text-decoration: none;
                 }
+                @media @desktop-sm {
+                  width: 238px;
+                  padding-bottom: 22px;
+                }
             }
 
             .image {
                 width: 215px;
                 max-width: 100%;
                 height: auto;
-                margin: 0 auto;
+                margin: 0 auto 9px;
                 display: block;
                 user-select: none;
+                @media @desktop-sm {
+                  margin-bottom: 2px;
+                }
             }
 
             .text {
