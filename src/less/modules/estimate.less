@@ -25,12 +25,25 @@
           display: none;
         }
 
-        .bg {
-          background: @color-white-smoke;
+        tr {
+          &.bg {
+            background: @color-white-smoke;
+          }
+          &.padding-top {
+              td {
+                padding-top: 24px;
+                padding-bottom: 8px;
+              }
+          }
+          &.padding-bottom {
+              td {
+                padding-bottom: 30px;
+              }
+          }
         }
 
         td {
-            padding: 15px 20px;
+            padding: 16px 20px;
 
             &:first-of-type {
                 white-space: normal;

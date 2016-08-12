@@ -3573,19 +3573,71 @@ button.button-white:focus,
   text-align: center;
 }
 .solutions .tab-list {
+  max-height: 250px;
   padding: 0;
   margin: 0 0 28px 0;
   list-style: none;
   font: 20px/20px 'Arno Pro', serif;
   text-align: center;
+  overflow: hidden;
 }
 .solutions .tab-list:after {
   display: table;
   content: '\0020';
   clear: both;
 }
+.solutions .tab-list.slick-initialized {
+  max-height: none;
+  overflow: visible;
+  position: relative;
+}
 .solutions .tab-list.slick-initialized .slick-slide {
   margin-bottom: 0;
+}
+.solutions .tab-list.slick-initialized .slick-arrow {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.solutions .tab-list.slick-initialized .slick-arrow.slick-disabled {
+  opacity: .5;
+}
+.solutions .tab-list.slick-initialized .slick-arrow:before {
+  content: '\0020';
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  display: block;
+  border-top: 2px solid #162a49;
+  border-right: 2px solid #162a49;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.solutions .tab-list.slick-initialized .slick-arrow.prev {
+  left: 10px;
+}
+.solutions .tab-list.slick-initialized .slick-arrow.prev:before {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+.solutions .tab-list.slick-initialized .slick-arrow.next {
+  right: 10px;
+}
+.solutions .tab-list.slick-initialized .slick-arrow.next:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 .solutions .tab-list .item {
   width: 215px;
@@ -3676,11 +3728,18 @@ button.button-white:focus,
   font-size: 16px;
   line-height: 19px;
 }
-.estimate .table-estimate-mobile .bg {
+.estimate .table-estimate-mobile tr.bg {
   background: #f8f8f8;
 }
+.estimate .table-estimate-mobile tr.padding-top td {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+.estimate .table-estimate-mobile tr.padding-bottom td {
+  padding-bottom: 30px;
+}
 .estimate .table-estimate-mobile td {
-  padding: 15px 20px;
+  padding: 16px 20px;
 }
 .estimate .table-estimate-mobile td:first-of-type {
   white-space: normal;
@@ -3732,15 +3791,15 @@ button.button-white:focus,
    EQUIPMENT
    ========================================================================== */
 .equipment {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .equipment .title {
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0 auto 16px;
   text-align: center;
+  font-size: 24px;
+  line-height: 28px;
 }
 .equipment .list {
-  max-width: 300px;
   padding: 0;
   margin: 0 auto;
   list-style: none;
@@ -3762,12 +3821,12 @@ button.button-white:focus,
   padding: 5px;
   border-right: 1px solid #e8f0f7;
   border-bottom: 1px solid #e8f0f7;
-  -webkit-flex-basis: 100%;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
 }
 .equipment .list .photo {
-  width: 214px;
+  width: 150px;
   max-width: 100%;
   height: auto;
   margin: 0 auto;
@@ -3778,10 +3837,10 @@ button.button-white:focus,
           user-select: none;
 }
 .equipment .list .name {
-  padding: 10px;
+  padding: 7px 10px;
   margin: 0;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 11px;
+  line-height: 13px;
 }
 /* ==========================================================================
    TEXT-BLOCK
@@ -4004,14 +4063,6 @@ button.button-white:focus,
   }
   .portfolio .list .link {
     padding: 20px;
-  }
-  .equipment .list {
-    max-width: none;
-  }
-  .equipment .list li {
-    -webkit-flex-basis: 50%;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
   }
 }
 @media (min-width: 568px) {
@@ -4858,8 +4909,13 @@ button.button-white:focus,
   .estimate .table-estimate {
     display: table;
   }
+  .equipment .list .photo {
+    width: 214px;
+  }
   .equipment .list .name {
     padding: 20px 22px 6px 22px;
+    font-size: 14px;
+    line-height: 17px;
   }
   .text-block {
     margin-top: 47px;
