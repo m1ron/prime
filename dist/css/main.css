@@ -3702,7 +3702,7 @@ button.button-white:focus,
   border-color: #009ee3;
 }
 .solutions .tab-list .link {
-  width: 218px;
+  width: 215px;
   max-width: 100%;
   padding: 10px 10px 16px 10px;
   margin: 0 auto;
@@ -3716,9 +3716,9 @@ button.button-white:focus,
   text-decoration: none;
 }
 .solutions .tab-list .image {
-  width: 226px;
+  width: 215px;
   max-width: 100%;
-  height: auto 26px;
+  height: auto;
   margin: 0 auto;
   display: block;
   -webkit-user-select: none;
