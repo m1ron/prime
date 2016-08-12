@@ -5,6 +5,7 @@
     height: 546px;
     margin-bottom: 20px;
     padding: 40px 0 85px;
+    background-color: @color-blue-light;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -106,7 +107,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 0;
+        z-index: 1;
 
         .slick {
             &-list, &-track {
@@ -222,7 +223,7 @@
             backface-visibility: hidden;
             z-index: 2;
             @media @tablet-sm {
-                height: 230px;
+                height: 130px;
             }
         }
 
@@ -238,7 +239,7 @@
 }
 
 .parallax-mirror {
-    z-index: 0 !important;
+    z-index: 1 !important;
 
     &:before {
         .pseudo;
@@ -251,5 +252,66 @@
         opacity: .4;
         backface-visibility: hidden;
         z-index: 1;
+    }
+}
+
+.preloader {
+    width: 100px;
+    height: 20px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0 !important;
+
+    span {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 999px;
+        animation: bounce 1s infinite linear;
+
+        &:nth-child(1) {
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+            left: 20px;
+            animation-delay: .25s;
+        }
+
+        &:nth-child(3) {
+            left: 40px;
+            animation-delay: .5s;
+        }
+
+        &:nth-child(4) {
+            left: 60px;
+            animation-delay: .75s;
+        }
+
+        &:nth-child(5) {
+            left: 80px;
+            animation-delay: 1s;
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+        opacity: .5;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: .5;
     }
 }

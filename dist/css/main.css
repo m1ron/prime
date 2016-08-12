@@ -1975,6 +1975,7 @@ button.button-white:focus,
   height: 546px;
   margin-bottom: 20px;
   padding: 40px 0 85px;
+  background-color: #b1dbed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2046,7 +2047,7 @@ button.button-white:focus,
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 }
 .page-header .carousel .slick-list,
 .page-header .carousel .slick-track {
@@ -2159,7 +2160,7 @@ button.button-white:focus,
   z-index: 2;
 }
 .parallax-mirror {
-  z-index: 0 !important;
+  z-index: 1 !important;
 }
 .parallax-mirror:before {
   display: block;
@@ -2175,6 +2176,85 @@ button.button-white:focus,
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
+}
+.preloader {
+  width: 100px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0 !important;
+}
+.preloader span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 999px;
+  -webkit-animation: bounce 1s infinite linear;
+          animation: bounce 1s infinite linear;
+}
+.preloader span:nth-child(1) {
+  left: 0;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.preloader span:nth-child(2) {
+  left: 20px;
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+.preloader span:nth-child(3) {
+  left: 40px;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+.preloader span:nth-child(4) {
+  left: 60px;
+  -webkit-animation-delay: .75s;
+          animation-delay: .75s;
+}
+.preloader span:nth-child(5) {
+  left: 80px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: .5;
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: .5;
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: .5;
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: .5;
+  }
 }
 /* ==========================================================================
    PAGER
@@ -4686,7 +4766,7 @@ button.button-white:focus,
     bottom: 33px;
   }
   .page-header.page-contacts:before {
-    height: 230px;
+    height: 130px;
   }
   .page-header.page-contacts {
     height: 365px;
