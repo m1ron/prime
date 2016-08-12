@@ -4,7 +4,7 @@
 .solutions {
     margin-top: 35px;
     @media @desktop-sm {
-        margin-top: 46px;
+        margin-top: 42px;
     }
 
     .heading {
@@ -33,8 +33,12 @@
                 margin-left: -10px;
                 margin-right: -10px;
             }
+            @media @tablet-sm {
+                margin-bottom: 44px;
+                padding: 0 45px;
+            }
             @media @desktop-sm {
-                margin-bottom: 62px;
+                margin-bottom: 82px;
                 font-size: 22px;
                 line-height: 22px;
             }
@@ -62,8 +66,8 @@
 
                     &:before {
                         .pseudo;
-                        width: 16px;
-                        height: 16px;
+                        width: 13px;
+                        height: 13px;
                         margin: auto;
                         display: block;
                         border-top: 2px solid @color-midnight;
@@ -76,14 +80,14 @@
                     }
 
                     &.prev {
-                        left: 10px;
+                        left: 12px;
                         &:before {
                             transform: rotate(-135deg);
                         }
                     }
 
                     &.next {
-                        right: 10px;
+                        right: 12px;
                         &:before {
                             transform: rotate(45deg);
                         }
@@ -113,20 +117,13 @@
                     opacity: 1;
                     .link {
                         border-color: @color-cerulean;
-                        @media @tablet-sm {
-                            .color-black(.4);
-                            box-shadow: 0 0 5px 0 @color;
-                        }
-
-                        &:before {
-                            opacity: 1;
-                        }
                     }
                 }
             }
 
             .link {
                 width: 218px;
+                max-width: 100%;
                 padding: 10px 10px 16px 10px;
                 margin: 0 auto;
                 border: 2px solid transparent;
@@ -135,22 +132,6 @@
                 transition: border-color @duration-s;
                 &:hover {
                     text-decoration: none;
-                }
-
-                &:before {
-                    .pseudo;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    opacity: 0;
-                    z-index: 1;
-                    transition: opacity @duration-s;
-                    @media @tablet-sm {
-                        .color-black(.4);
-                        box-shadow: inset 0 0 5px 0 @color;
-                    }
                 }
             }
 

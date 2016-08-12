@@ -3550,7 +3550,7 @@ button.button-white:focus,
    COLORED
    ========================================================================== */
 .colored {
-  padding: 35px 0px 48px;
+  padding: 35px 0 48px;
   background: #e8f0f7;
   font: 24px/30px 'Arno Pro', serif;
 }
@@ -3613,8 +3613,8 @@ button.button-white:focus,
 .solutions .tab-list.slick-initialized .slick-arrow:before {
   content: '\0020';
   overflow: hidden;
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   margin: auto;
   display: block;
   border-top: 2px solid #162a49;
@@ -3626,7 +3626,7 @@ button.button-white:focus,
   left: 0;
 }
 .solutions .tab-list.slick-initialized .slick-arrow.prev {
-  left: 10px;
+  left: 12px;
 }
 .solutions .tab-list.slick-initialized .slick-arrow.prev:before {
   -webkit-transform: rotate(-135deg);
@@ -3634,7 +3634,7 @@ button.button-white:focus,
           transform: rotate(-135deg);
 }
 .solutions .tab-list.slick-initialized .slick-arrow.next {
-  right: 10px;
+  right: 12px;
 }
 .solutions .tab-list.slick-initialized .slick-arrow.next:before {
   -webkit-transform: rotate(45deg);
@@ -3657,11 +3657,9 @@ button.button-white:focus,
 .solutions .tab-list .item.active .link {
   border-color: #009ee3;
 }
-.solutions .tab-list .item.active .link:before {
-  opacity: 1;
-}
 .solutions .tab-list .link {
   width: 218px;
+  max-width: 100%;
   padding: 10px 10px 16px 10px;
   margin: 0 auto;
   border: 2px solid transparent;
@@ -3672,20 +3670,6 @@ button.button-white:focus,
 }
 .solutions .tab-list .link:hover, .solutions .tab-list .link:focus {
   text-decoration: none;
-}
-.solutions .tab-list .link:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  z-index: 1;
-  -webkit-transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .solutions .tab-list .image {
   width: 226px;
@@ -3717,7 +3701,6 @@ button.button-white:focus,
    ESTIMATE
    ========================================================================== */
 .estimate .title {
-  max-width: 250px;
   margin: 0 auto 20px;
   font-size: 24px;
   line-height: 29px;
@@ -3729,6 +3712,7 @@ button.button-white:focus,
   white-space: nowrap;
   font-size: 16px;
   line-height: 19px;
+  vertical-align: top;
 }
 .estimate .table-estimate-mobile tr.bg {
   background: #f8f8f8;
@@ -3762,6 +3746,8 @@ button.button-white:focus,
   border-collapse: collapse;
   white-space: nowrap;
   display: none;
+  font-size: 16px;
+  line-height: 18px;
 }
 .estimate .table-estimate thead tr {
   background: #f8f8f8;
@@ -3771,10 +3757,11 @@ button.button-white:focus,
   font-weight: 800;
   text-align: left;
   white-space: normal;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .estimate .table-estimate td {
   padding: 10px 20px;
+  vertical-align: top;
 }
 .estimate .table-estimate td:first-of-type {
   white-space: normal;
@@ -4911,17 +4898,38 @@ button.button-white:focus,
     font-size: 27px;
     line-height: 36px;
   }
-  .solutions .tab-list .item.active .link {
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  .solutions .tab-list {
+    margin-bottom: 44px;
+    padding: 0 45px;
   }
-  .solutions .tab-list .link:before {
-    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  .estimate .title {
+    font-size: 34px;
+    line-height: 38px;
   }
   .estimate .table-estimate-mobile {
     display: none;
   }
   .estimate .table-estimate {
     display: table;
+  }
+  .estimate .table-estimate thead th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .estimate .table-estimate thead th:last-of-type {
+    min-width: 142px;
+  }
+  .estimate .table-estimate td {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .equipment {
+    margin-top: 44px;
+  }
+  .equipment .title {
+    margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 44px;
   }
   .equipment .list .photo {
     width: 214px;
@@ -5578,13 +5586,13 @@ button.button-white:focus,
     left: 18px;
   }
   .solutions {
-    margin-top: 46px;
+    margin-top: 42px;
   }
   .solutions .heading {
     margin-bottom: 32px;
   }
   .solutions .tab-list {
-    margin-bottom: 62px;
+    margin-bottom: 82px;
     font-size: 22px;
     line-height: 22px;
   }
@@ -5599,6 +5607,10 @@ button.button-white:focus,
     margin-bottom: 30px;
     font-size: 42px;
     line-height: 46px;
+  }
+  .estimate .table-estimate {
+    font-size: 18px;
+    line-height: 32px;
   }
   .estimate .table-estimate thead th {
     padding: 24px 42px;

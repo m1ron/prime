@@ -3,11 +3,14 @@
    ========================================================================== */
 .estimate {
     .title {
-        max-width: 250px;
         margin: 0 auto 20px;
         font-size: 24px;
         line-height: 29px;
         text-align: center;
+        @media @tablet-sm {
+            font-size: 34px;
+            line-height: 38px;
+        }
         @media @desktop-sm {
             margin-bottom: 30px;
             font-size: 42px;
@@ -21,25 +24,26 @@
         white-space: nowrap;
         font-size: 16px;
         line-height: 19px;
+        vertical-align: top;
         @media @tablet-sm {
-          display: none;
+            display: none;
         }
 
         tr {
-          &.bg {
-            background: @color-white-smoke;
-          }
-          &.padding-top {
-              td {
-                padding-top: 24px;
-                padding-bottom: 8px;
-              }
-          }
-          &.padding-bottom {
-              td {
-                padding-bottom: 30px;
-              }
-          }
+            &.bg {
+                background: @color-white-smoke;
+            }
+            &.padding-top {
+                td {
+                    padding-top: 24px;
+                    padding-bottom: 8px;
+                }
+            }
+            &.padding-bottom {
+                td {
+                    padding-bottom: 30px;
+                }
+            }
         }
 
         td {
@@ -49,8 +53,8 @@
                 white-space: normal;
             }
             &.h {
-              font-weight: bold;
-              white-space: normal;
+                font-weight: bold;
+                white-space: normal;
             }
         }
 
@@ -70,8 +74,14 @@
         border-collapse: collapse;
         white-space: nowrap;
         display: none;
+        font-size: 16px;
+        line-height: 18px;
         @media @tablet-sm {
-          display: table;
+            display: table;
+        }
+        @media @desktop-sm {
+            font-size: 18px;
+            line-height: 32px;
         }
 
         thead {
@@ -83,7 +93,16 @@
                 font-weight: 800;
                 text-align: left;
                 white-space: normal;
-                vertical-align: top;
+                vertical-align: middle;
+            }
+            @media @tablet-sm {
+                th {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    &:last-of-type {
+                        min-width: 142px;
+                    }
+                }
             }
             @media @desktop-sm {
                 th {
@@ -102,9 +121,14 @@
 
         td {
             padding: 10px 20px;
-
+            vertical-align: top;
             &:first-of-type {
                 white-space: normal;
+            }
+
+            @media @tablet-sm {
+                padding-top: 32px;
+                padding-bottom: 32px;
             }
 
             @media @desktop-sm {
