@@ -650,28 +650,34 @@
 			<!-- /Gallery -->
 
 			<!-- Callback -->
-			<div class="block wide callback callback-short no-margin">
-				<form class="form-callback form-offer" action="#" method="post">
+			<div class="block wide callback no-margin">
+				<form class="form-callback" action="#" method="post">
 					<fieldset>
-						<legend class="heading">У вас уже есть предложение от другой компании?</legend>
-						<p class="info">Получить более выгодное предложение</p>
-						<div class="form-group">
-							<label id="name" for=""></label>
-							<input id="name" type="text" placeholder="Ваше имя" value="">
-						</div>
-						<div class="form-group">
-							<label for="tel"></label>
-							<input id="tel" class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
-						</div>
-						<div class="form-group">
-							<label for="file" class="form-file">
-								<input id="file" type="file"> Загрузить предложение</label>
-						</div>
-						<button class="submit" type="submit">Получить</button>
+						<legend class="heading">Подберём лучший вариант!</legend>
+						<input class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
+						<button class="submit" type="submit">Закажите звонок</button>
 					</fieldset>
 				</form>
+				<p class="call-us">Или позвоните
+					<br>нам&nbsp;сами <a href="tel:+7-812-490-00-01">+7 (812) 490-00-01</a></p>
 			</div>
 			<!-- /Callback -->
+
+			<div class="text-small">
+				<br>
+				<p>Типичными заблуждениями, в которые вводят неопытных клиентов непрофессиональные консультанты, являются:</p>
+
+					<!-- List-errors -->
+				<ul class="list-errors">
+					<li>Вентиляция в коттедже может быть естественной и для ее организации достаточно просто установить клапаны инфильтрации воздуха. Это неправда: эффективной естественная вентиляция будет только при перепаде высот между  вентиляционной решеткой и точкой выброса от 20 метров. Такой высотой коттеджи обладают довольно редко, а высокая шахта смотрится не эстетично.</li>
+					<li>Коттедж находится за городом, поэтому вентиляция там не нужна. Это миф, так как система вентиляции подает очищенный, подогретый или охлажденный до комфортной температуры воздух в объеме, необходимом для комфортного пребывания в доме людей и на скорости, не провоцирующей сквозняки. Альтернатива в виде открытых окон не обеспечивает требования по очистке и скорости движения воздуха, а вне летнего периода также по температуре.</li>
+					<li>Кондиционирование делать не обязательно, охлаждать воздух можно с помощью вентиляции. Это также неправда. То есть, в целом, это сделать можно, но для этого необходим расход воздуха, который превышает необходимый воздухообмен в загородном доме раз в десять. Дело в том, что охлаждение, встроенное в систему вентиляции, предназначено только для того, чтобы понизить температуру подаваемого воздуха до комфортной. Но расхода системы вентиляции не хватит, чтобы охладить помещение. Вывод – охлаждение приточного воздуха и охлаждение помещения это совершенно разные задачи.</li>
+				</ul>
+				<!-- /List-errors -->
+
+				<p>Очень важно, чтобы системы вентиляции и кондиционирования в загородном доме сочетались таким образом, чтобы максимально удовлетворить потребность клиента, даже в условиях ограниченного бюджета.</p>
+				<br>
+			</div>
 
 			<!-- Portfolio -->
 			<section class="block wide portfolio portfolio-simple">
@@ -781,20 +787,6 @@
 			</section>
 			<!-- /Helpful -->
 
-			<!-- Callback -->
-			<div class="block wide callback no-margin">
-				<form class="form-callback" action="#" method="post">
-					<fieldset>
-						<legend class="heading">Подберём лучший вариант!</legend>
-						<input class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
-						<button class="submit" type="submit">Закажите звонок</button>
-					</fieldset>
-				</form>
-				<p class="call-us">Или позвоните
-					<br>нам&nbsp;сами <a href="tel:+7-812-490-00-01">+7 (812) 490-00-01</a></p>
-			</div>
-			<!-- /Callback -->
-
 			<article class="block wide text-block">
 				<div class="wrapper full">
 					<h2 class="heading">Профессиональный монтаж кондиционеров — непростая работа, состоящая из нескольких этапов</h2>
@@ -810,6 +802,30 @@
 					</div>
 				</div>
 			</article>
+
+			<!-- Callback -->
+			<div class="block wide callback callback-short callback-white no-margin">
+				<form class="form-callback form-offer" action="#" method="post">
+					<fieldset>
+						<legend class="heading">У вас уже есть предложение от другой компании?</legend>
+						<p class="info">Получить более выгодное предложение</p>
+						<div class="form-group">
+							<label id="name" for=""></label>
+							<input id="name" type="text" placeholder="Ваше имя" value="">
+						</div>
+						<div class="form-group">
+							<label for="tel"></label>
+							<input id="tel" class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
+						</div>
+						<div class="form-group">
+							<label for="file" class="form-file">
+								<input id="file" type="file"> Загрузить предложение</label>
+						</div>
+						<button class="submit" type="submit">Получить</button>
+					</fieldset>
+				</form>
+			</div>
+			<!-- /Callback -->
 
 			<!-- Documents -->
 			<section class="block wide documents documents-bg no-margin">
@@ -845,24 +861,6 @@
 				</div>
 			</section>
 			<!-- /Documents -->
-
-			<!-- Brands -->
-			<section class="block wide brands">
-				<div class="wrapper">
-					<h2 class="h2">Бренды</h2>
-					<p class="text-large">Посмотрите все наши проекты в <a href="portfolio.html" class="bordered">портфолио</a>, это очень интересно</p>
-				</div>
-				<ul class="list">
-					<li><img class="image" src="img/brands/viesmann.png" width="160" height="45" alt="Viesmann"></li>
-					<li><img class="image" src="img/brands/vaillant.png" width="160" height="45" alt="Vaillant"></li>
-					<li><img class="image" src="img/brands/oventrop.png" width="160" height="45" alt="Oventrop"></li>
-					<li><img class="image" src="img/brands/buderus.png" width="160" height="45" alt="Buderus"></li>
-					<li><img class="image" src="img/brands/tece.png" width="160" height="45" alt="Tece"></li>
-					<li><img class="image" src="img/brands/varmann.png" width="160" height="45" alt="Varmann"></li>
-					<li><img class="image" src="img/brands/meibes.png" width="160" height="45" alt="Meibes"></li>
-				</ul>
-			</section>
-			<!-- /Brands -->
 
 		</div>
 		<!-- /Content -->

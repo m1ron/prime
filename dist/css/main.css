@@ -207,6 +207,10 @@ h6 + p,
   font: 22px/30px 'Arno Pro', serif;
   letter-spacing: .02em;
 }
+.text-small {
+  font-size: 16px;
+  line-height: 22px;
+}
 .text-center {
   text-align: center;
 }
@@ -275,6 +279,43 @@ h6 + p,
           transform: rotate(-45deg);
   top: 14px;
   left: 9px;
+}
+/*** LIST-ERRORS ***/
+.list-errors {
+  padding: 0;
+  margin: 18px 0;
+  list-style: none;
+}
+.list-errors li {
+  padding-left: 36px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.list-errors li:last-child {
+  margin-bottom: 0;
+}
+.list-errors li:before,
+.list-errors li:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 3px;
+  height: 20px;
+  background: #f26d7d;
+  border-radius: 5px;
+  position: absolute;
+  top: 1px;
+  left: 14px;
+}
+.list-errors li:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.list-errors li:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 /*** TABLE-RESPONSIVE ***/
 .table-responsive {
@@ -1496,6 +1537,9 @@ button.button-white:focus,
   color: #162a49;
   cursor: default;
   background: #f8f8f8;
+}
+.callback-white {
+  background: #fff;
 }
 .wrapper .callback {
   margin-left: -20px;
@@ -3826,7 +3870,7 @@ button.button-white:focus,
           user-select: none;
 }
 .equipment .list .name {
-  padding: 7px 10px;
+  padding: 7px;
   margin: 0;
   font-size: 11px;
   line-height: 13px;
@@ -4352,11 +4396,22 @@ button.button-white:focus,
     font-size: 24px;
     line-height: 38px;
   }
+  .text-small {
+    font-size: 18px;
+    line-height: 32px;
+  }
   .mobile-hidden {
     display: block;
   }
   .mobile-hidden-inline {
     display: inline;
+  }
+  .list-errors li {
+    padding-left: 48px;
+  }
+  .list-errors li:before,
+  .list-errors li:after {
+    top: 7px;
   }
   textarea {
     height: 165px;
@@ -5077,6 +5132,13 @@ button.button-white:focus,
   .text-large {
     font-size: 28px;
     line-height: 38px;
+  }
+  .list-errors {
+    margin-bottom: 30px;
+  }
+  .list-errors li:before,
+  .list-errors li:after {
+    left: 10px;
   }
   .content,
   .wrapper {
