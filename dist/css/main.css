@@ -2014,7 +2014,7 @@ button.button-white:focus,
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 24px;
   z-index: 3;
   text-align: center;
 }
@@ -3548,9 +3548,9 @@ button.button-white:focus,
    COLORED
    ========================================================================== */
 .colored {
-  padding: 30px 0;
+  padding: 35px 0px 48px;
   background: #e8f0f7;
-  font: 24px/32px 'Arno Pro', serif;
+  font: 24px/30px 'Arno Pro', serif;
 }
 .colored p {
   letter-spacing: .02em;
@@ -3565,19 +3565,18 @@ button.button-white:focus,
    SOLUTIONS
    ========================================================================== */
 .solutions {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 35px;
 }
 .solutions .heading {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
 }
 .solutions .tab-list {
   padding: 0;
-  margin: 0 0 30px 0;
+  margin: 0 0 28px 0;
   list-style: none;
-  font: 16px/16px 'Arno Pro', serif;
+  font: 20px/20px 'Arno Pro', serif;
   text-align: center;
 }
 .solutions .tab-list:after {
@@ -3585,27 +3584,37 @@ button.button-white:focus,
   content: '\0020';
   clear: both;
 }
-.solutions .tab-list li {
-  margin: 0 0 20px 0;
-}
-.solutions .tab-list li:last-child {
+.solutions .tab-list.slick-initialized .slick-slide {
   margin-bottom: 0;
 }
-.solutions .tab-list li.active .link {
-  border-color: #009ee3;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+.solutions .tab-list .item {
+  width: 215px;
+  margin: 0 auto 20px;
+  opacity: .6;
+  -webkit-transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.solutions .tab-list li.active .link:before {
-  display: block;
+.solutions .tab-list .item:last-child {
+  margin-bottom: 0;
+}
+.solutions .tab-list .item.active {
+  opacity: 1;
+}
+.solutions .tab-list .item.active .link {
+  border-color: #009ee3;
+}
+.solutions .tab-list .item.active .link:before {
   opacity: 1;
 }
 .solutions .tab-list .link {
-  max-width: 256px;
-  padding: 10px 10px 29px 10px;
+  width: 218px;
+  padding: 10px 10px 16px 10px;
   margin: 0 auto;
   border: 2px solid transparent;
   display: block;
   position: relative;
+  -webkit-transition: border-color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .solutions .tab-list .link:hover, .solutions .tab-list .link:focus {
   text-decoration: none;
@@ -3614,8 +3623,6 @@ button.button-white:focus,
   display: block;
   content: '\0020';
   overflow: hidden;
-  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.4);
-  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3623,11 +3630,13 @@ button.button-white:focus,
   right: 0;
   opacity: 0;
   z-index: 1;
+  -webkit-transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .solutions .tab-list .image {
   width: 226px;
   max-width: 100%;
-  height: auto;
+  height: auto 26px;
   margin: 0 auto;
   display: block;
   -webkit-user-select: none;
@@ -3640,10 +3649,10 @@ button.button-white:focus,
   letter-spacing: .02em;
 }
 .solutions .tab-list .text .size {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   display: block;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 27px;
+  line-height: 27px;
   font-weight: bold;
   letter-spacing: 0;
 }
@@ -3654,14 +3663,44 @@ button.button-white:focus,
    ESTIMATE
    ========================================================================== */
 .estimate .title {
-  margin-top: 0;
-  margin-bottom: 20px;
+  max-width: 250px;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  line-height: 29px;
   text-align: center;
+}
+.estimate .table-estimate-mobile {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 19px;
+}
+.estimate .table-estimate-mobile .bg {
+  background: #f8f8f8;
+}
+.estimate .table-estimate-mobile td {
+  padding: 15px 20px;
+}
+.estimate .table-estimate-mobile td:first-of-type {
+  white-space: normal;
+}
+.estimate .table-estimate-mobile td.h {
+  font-weight: bold;
+  white-space: normal;
+}
+.estimate .table-estimate-mobile tfoot tr {
+  background: #e8f0f7;
+}
+.estimate .table-estimate-mobile tfoot td {
+  font-weight: bold;
+  color: #34bffc;
 }
 .estimate .table-estimate {
   width: 100%;
   border-collapse: collapse;
   white-space: nowrap;
+  display: none;
 }
 .estimate .table-estimate thead tr {
   background: #f8f8f8;
@@ -4033,12 +4072,6 @@ button.button-white:focus,
     margin-left: -10px;
     margin-right: -10px;
   }
-  .solutions .tab-list li {
-    width: 33.3%;
-    padding: 0 10px;
-    margin: 0;
-    float: left;
-  }
 }
 @media (min-width: 667px) {
   .page-header .button {
@@ -4213,6 +4246,11 @@ button.button-white:focus,
   }
   .project .col:last-of-type:after {
     display: block;
+  }
+  .solutions .tab-list .item {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: top;
   }
   .equipment .list li {
     -webkit-flex-basis: 33.3%;
@@ -4545,9 +4583,6 @@ button.button-white:focus,
     height: 3px;
     margin-bottom: 53px;
   }
-  .page-header .carousel .slick-dots {
-    bottom: 24px;
-  }
   .page-header.page-contacts:before {
     height: 230px;
   }
@@ -4811,13 +4846,17 @@ button.button-white:focus,
     margin-left: auto;
     line-height: 26px;
   }
-  .solutions .tab-list {
-    font-size: 18px;
-    line-height: 18px;
+  .solutions .tab-list .item.active .link {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   }
-  .solutions .tab-list .text .size {
-    font-size: 26px;
-    line-height: 26px;
+  .solutions .tab-list .link:before {
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  }
+  .estimate .table-estimate-mobile {
+    display: none;
+  }
+  .estimate .table-estimate {
+    display: table;
   }
   .equipment .list .name {
     padding: 20px 22px 6px 22px;
@@ -5454,18 +5493,17 @@ button.button-white:focus,
   }
   .solutions {
     margin-top: 46px;
-    margin-bottom: 46px;
   }
   .solutions .heading {
     margin-bottom: 32px;
   }
   .solutions .tab-list {
-    max-width: 1084px;
-    margin: 0 auto 62px;
+    margin-bottom: 62px;
     font-size: 22px;
     line-height: 22px;
-    position: relative;
-    left: -46px;
+  }
+  .solutions .tab-list .item {
+    width: 238px;
   }
   .solutions .tab-list .text .size {
     font-size: 30px;

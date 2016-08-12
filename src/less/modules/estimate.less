@@ -3,8 +3,10 @@
    ========================================================================== */
 .estimate {
     .title {
-        margin-top: 0;
-        margin-bottom: 20px;
+        max-width: 250px;
+        margin: 0 auto 20px;
+        font-size: 24px;
+        line-height: 29px;
         text-align: center;
         @media @desktop-sm {
             margin-bottom: 30px;
@@ -13,10 +15,51 @@
         }
     }
 
+    .table-estimate-mobile {
+        width: 100%;
+        border-collapse: collapse;
+        white-space: nowrap;
+        font-size: 16px;
+        line-height: 19px;
+        @media @tablet-sm {
+          display: none;
+        }
+
+        .bg {
+          background: @color-white-smoke;
+        }
+
+        td {
+            padding: 15px 20px;
+
+            &:first-of-type {
+                white-space: normal;
+            }
+            &.h {
+              font-weight: bold;
+              white-space: normal;
+            }
+        }
+
+        tfoot {
+            tr {
+                background: @color-glitter;
+            }
+            td {
+                font-weight: bold;
+                color: @color-blue;
+            }
+        }
+    }
+
     .table-estimate {
         width: 100%;
         border-collapse: collapse;
         white-space: nowrap;
+        display: none;
+        @media @tablet-sm {
+          display: table;
+        }
 
         thead {
             tr {

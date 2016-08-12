@@ -162,34 +162,66 @@ $(document).ready(function() {
 
     /* Page header carousel */
     $('.page-header').each(function() {
-      $('.carousel', this).slick({
-          infinite: true,
-          adaptiveHeight: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          prevArrow: '<span class="prev"></span>',
-          nextArrow: '<span class="next"></span>',
-          dots: true,
-          customPaging: function(slider, i) {
-              return '<span class="dot"></span>';
-          }
-      });
+        $('.carousel', this).slick({
+            infinite: true,
+            adaptiveHeight: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<span class="prev"></span>',
+            nextArrow: '<span class="next"></span>',
+            dots: true,
+            customPaging: function(slider, i) {
+                return '<span class="dot"></span>';
+            }
+        });
     });
 
     /* Solutions tabs */
-  	$('.solutions').each(function () {
-  		var _address = $(this), _call = $('.action-call', _address);
-  		$('.tab-list', this).each(function () {
-  			$(this).on('click', 'a', function (event) {
-  				var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
-  				$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
-  				$('#' + where).removeClass('tab-hidden').siblings('.tab-content').addClass('tab-hidden');
-  				_call.attr('href', $('.tel', '#' + where).attr('data-href'));
-  				event.preventDefault();
-  			});
-  		});
-  	});
+    $('.solutions').each(function() {
+        var _address = $(this),
+            _call = $('.action-call', _address);
+        $('.tab-list', this).each(function() {
+            $(this).on('click', 'a', function(event) {
+                var where = $(this).attr("href").replace(/^.*#(.*)/, "$1");
+                $(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+                $('#' + where).removeClass('tab-hidden').siblings('.tab-content').addClass('tab-hidden');
+                _call.attr('href', $('.tel', '#' + where).attr('data-href'));
+                event.preventDefault();
+            });
+
+        });
+
+        $('.carousel', this).slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            mobileFirst: true,
+            prevArrow: '<span class="prev"></span>',
+            nextArrow: '<span class="next"></span>',
+            responsive: [
+                {
+                    breakpoint: 567,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }, {
+                    breakpoint: 749,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 1170,
+                    settings: {
+                        slidesToShow: 1,
+                        variableWidth: true,
+                        centerMode: true,
+                        infinite: true
+                    }
+                }
+            ]
+        });
+    });
 
 });
 
