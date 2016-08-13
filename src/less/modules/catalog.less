@@ -1,0 +1,149 @@
+/* ==========================================================================
+   CATALOG
+   ========================================================================== */
+.catalog {
+    .list {
+        .item {
+            margin: 0 -7px;
+            .color-black(.15);
+            box-shadow: 0 0 7px 0 @color;
+        }
+
+        .col {
+            padding: 24px 0;
+            border-bottom: 2px solid @color-light;
+            &:first-of-type {
+                padding-top: 0;
+            }
+            &:last-of-type {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        .link {
+            padding: 36px 16px 16px 16px;
+            display: block;
+            position: relative;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .badges {
+          position: absolute;
+          top: 0;
+          right: 0;
+          &:after {
+            .clearfix;
+          }
+        }
+
+        .badge {
+            padding: 8px;
+            background: @color-blue;
+            color: @color-white;
+            font-size: 11px;
+            line-height: normal;
+            font-weight: bold;
+            text-transform: uppercase;
+            float: left;
+            position: relative;
+            &:before {
+              .pseudo;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 7px 0 0;
+                border-color: @color-blue transparent transparent transparent;
+                position: absolute;
+                top: 100%;
+                left: 12px;
+                transform: skew(-8deg, 0deg);
+            }
+        }
+
+        .name {
+            margin-top: 0;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .photo {
+            width: 168px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            user-select: none;
+            @media @tablet-sm {
+                width: 330px;
+            }
+        }
+
+        .list-info {
+            padding: 0;
+            margin: 2px 0 0 0;
+            list-style: none;
+            font: 22px/normal @font-heading;
+
+            li {
+                padding-left: 58px;
+                margin-bottom: 16px;
+                position: relative;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                    left: 3px;
+                }
+            }
+        }
+
+        .price {
+            margin: 0 0 8px 0;
+            font: 800 42px/normal @font-heading;
+            letter-spacing: .02em;
+
+            .old {
+                display: block;
+                font-size: 26px;
+                font-weight: normal;
+                .color-black(.6);
+                color: @color;
+            }
+
+            .new {
+                color: @color-red;
+            }
+        }
+
+        .button {
+            width: 100%;
+            padding-top: 22px;
+            background: @color-midnight;
+            color: @color-white;
+            font-size: 18px;
+
+            &:hover {
+                background: transparent;
+                color: @color-midnight;
+            }
+        }
+
+        .small {
+            margin: 22px 0 0 0;
+            font-size: 14px;
+            line-height: normal;
+            .color-black(.6);
+            color: @color;
+        }
+    }
+}

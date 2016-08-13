@@ -4146,6 +4146,9 @@ button.button-white:focus,
 /* ==========================================================================
    FILTER
    ========================================================================== */
+.filter {
+  margin-bottom: 7px;
+}
 .filter .heading {
   width: 100%;
   margin: 0;
@@ -4247,6 +4250,138 @@ button.button-white:focus,
 }
 .filter .types .checkbox .square {
   top: 9px;
+}
+/* ==========================================================================
+   CATALOG
+   ========================================================================== */
+.catalog .list .item {
+  margin: 0 -7px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+.catalog .list .col {
+  padding: 24px 0;
+  border-bottom: 2px solid #eee;
+}
+.catalog .list .col:first-of-type {
+  padding-top: 0;
+}
+.catalog .list .col:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.catalog .list .link {
+  padding: 36px 16px 16px 16px;
+  display: block;
+  position: relative;
+}
+.catalog .list .link:hover, .catalog .list .link:focus {
+  text-decoration: none;
+}
+.catalog .list .badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.catalog .list .badges:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.catalog .list .badge {
+  padding: 8px;
+  background: #34bffc;
+  color: #fff;
+  font-size: 11px;
+  line-height: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  float: left;
+  position: relative;
+}
+.catalog .list .badge:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 7px 0 0;
+  border-color: #34bffc transparent transparent transparent;
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  -webkit-transform: skew(-8deg, 0deg);
+      -ms-transform: skew(-8deg, 0deg);
+          transform: skew(-8deg, 0deg);
+}
+.catalog .list .name {
+  margin-top: 0;
+  font-size: 28px;
+  font-weight: normal;
+}
+.catalog .list .photo {
+  width: 168px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.catalog .list .list-info {
+  padding: 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  font: 22px / normal 'Arno Pro', serif;
+}
+.catalog .list .list-info li {
+  padding-left: 58px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.catalog .list .list-info li:last-child {
+  margin-bottom: 0;
+}
+.catalog .list .list-info li .icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+.catalog .list .price {
+  margin: 0 0 8px 0;
+  font: 800 42px / normal 'Arno Pro', serif;
+  letter-spacing: .02em;
+}
+.catalog .list .price .old {
+  display: block;
+  font-size: 26px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.6);
+}
+.catalog .list .price .new {
+  color: #f26d7d;
+}
+.catalog .list .button {
+  width: 100%;
+  padding-top: 22px;
+  background: #162a49;
+  color: #fff;
+  font-size: 18px;
+}
+.catalog .list .button:hover, .catalog .list .button:focus {
+  background: transparent;
+  color: #162a49;
+}
+.catalog .list .small {
+  margin: 22px 0 0 0;
+  font-size: 14px;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.6);
 }
 /* ==========================================================================
    POPUPS
@@ -5400,6 +5535,9 @@ button.button-white:focus,
   .filter .info .submit {
     max-width: 310px;
     margin-top: 34px;
+  }
+  .catalog .list .photo {
+    width: 330px;
   }
   .mfp-content {
     max-width: 650px;
