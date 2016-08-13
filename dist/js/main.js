@@ -11,6 +11,9 @@ $(document).ready(function() {
         disableOnMobile: false
     });
 
+    /* Checkbox & Radio */
+	   $('label.checkbox, label.radiobox').append('<span class="square"></span>');
+
     /* Wide */
     $('.wide').each(function() {
         if ($('.space', this).length < 1) {

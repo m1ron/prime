@@ -141,14 +141,12 @@ textarea {
         }
     }
 }
-
 /*** SELECTRIC ***/
 .selectric {
   background: @color-white;
   .color-onyx(.2);
   border: 1px solid @color;
   transition: border-color @duration;
-  //border: 2px solid @color-gray-light;
 
   .label {
     height: 60px;
@@ -235,4 +233,64 @@ textarea {
     }
   }
 
+}
+/*** CHECKBOX, RADIO ***/
+.checkbox, .radiobox {
+  padding-left: 27px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  input {
+    position: absolute;
+    top: -5000px;
+    left: -5000px;
+    &:checked + .square {
+      &:before { opacity: 1; }
+    }
+  }
+  .square {
+    width: 15px;
+    height: 15px;
+    border: 2px solid @color-gray-light;
+    .color-black(.18);
+    box-shadow: inset 2px 2px 7px 0px @color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:before {
+      .pseudo;
+      margin: auto auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+}
+.checkbox {
+  border-radius: 2px;
+  .square {
+    &:before {
+      width: 22px;
+      height: 22px;
+      background: url("@{images}/icons/check-orange.png") center center;
+      background-size: 100% 100%;
+      top: -6px;
+      right: -2px;
+      left: -2px;
+      bottom: -2px;
+    }
+  }
+}
+.radiobox {
+  .square {
+    border-radius: 50%;
+    &:before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
 }
