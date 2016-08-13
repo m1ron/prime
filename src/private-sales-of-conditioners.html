@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prime Engineering</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="favicon/manifest.json">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg">
+	<link rel="shortcut icon" href="favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#2a3356">
+	<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+	<meta name="theme-color" content="#2a3356">
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header class="header">
+		<div class="logo">
+			<a href="index.html"><img src="svg/logo.svg" width="211" height="31" alt="Prime Engineering"></a>
+		</div>
+		<p class="phone"><a href="tel:+7-812-470-60-00">+7 812 470-60-00</a><span class="icon"></span></p>
+		<ul class="menu">
+			<li class="active"><a href="private.html">Частным заказчикам</a></li>
+			<li><a href="construction.html">Строительным заказчикам</a></li>
+			<li><a href="business.html">Предложения для бизнеса</a></li>
+		</ul>
+	</header>
+	<!-- /Header -->
+
+
+	<!-- Main -->
+	<main class="page">
+
+		<!-- Page-header -->
+		<div class="block page-header no-margin">
+			<div class="area">
+				<h1 class="h1 title">Продажа и установка кондиционеров</h1>
+				<p class="text">Под ключ — выезд замерщика + товар + доставка + установка + гарантия</p>
+				<a href="#" class="button button-white"> от 24 990 руб.</a>
+			</div>
+			<ul class="carousel">
+				<li style="background-image: url('img/page-header/sales-conditioners.jpg')" class="item"></li>
+				<li style="background-image: url('img/page-header/designers.jpg')" class="item"></li>
+				<li style="background-image: url('img/page-header/clients.jpg')" class="item"></li>
+			</ul>
+			<div class="preloader">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- /Page-header -->
+
+		<!-- Content -->
+		<div class="content">
+
+			<!-- Filter -->
+			<div class="block wide filter">
+				<form action="#">
+					<fieldset>
+
+						<div class="info">
+							<div class="wrapper full">
+								<legend class="heading">Подбор кондиционера</legend>
+								<p class="text-help">Укажите ваши данные и мы подберём кондиционер</p>
+
+								<div class="form-group">
+									<label for="area">Площадь</label>
+									<select id="area" class="select">
+										<option value="600-1200">200-300 м2</option>
+										<option value="600-1200">300-400 м2</option>
+										<option value="600-1200">400-500 м2</option>
+										<option value="600-1200">600-1200 м2</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="budget">Бюджет</label>
+									<select id="budget" class="select">
+										<option value="25000">10 000 руб.</option>
+										<option value="25000">15 000 руб.</option>
+										<option value="25000">20 000 руб.</option>
+										<option value="25000">25 000 руб.</option>
+									</select>
+								</div>
+								<button class="submit">Подобрать</button>
+							</div>
+						</div>
+
+						<div class="types">
+							<div class="wrapper full">
+								<label class="checkbox">
+									<input type="checkbox" checked> Сплит</label>
+								<label class="checkbox">
+									<input type="checkbox"> Мультисплит</label>
+								<label class="checkbox">
+									<input type="checkbox"> Кассетные</label>
+								<label class="checkbox">
+									<input type="checkbox"> Канальные</label>
+							</div>
+						</div>
+
+					</fieldset>
+				</form>
+			</div>
+			<!-- /Filter -->
+
+			<!-- Callback -->
+			<div class="block wide callback no-margin">
+				<form class="form-callback" action="#" method="post">
+					<fieldset>
+						<legend class="heading">Подберём лучший вариант!</legend>
+						<input class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
+						<button class="submit" type="submit">Закажите звонок</button>
+					</fieldset>
+				</form>
+				<p class="call-us">Или позвоните
+					<br>нам&nbsp;сами <a href="tel:+7-812-490-00-01">+7 (812) 490-00-01</a></p>
+			</div>
+			<!-- /Callback -->
+
+			<!-- Portfolio -->
+			<section class="block wide portfolio portfolio-simple">
+				<div class="wrapper full">
+					<h2 class="heading">Реализованные проекты</h2>
+					<p class="text-medium">Посмотрите все наши проекты в <a href="portfolio.html" class="bordered">портфолио</a>, это очень интересно.</p>
+				</div>
+				<div class="list">
+					<article class="item" style="background-image:url('img/portfolio/1.jpg')">
+						<a href="project.html" class="link">
+							<div class="area">
+								<p class="top">Площадь &mdash; 300 кв. м.
+									<br> Клиент &mdash; Частное лицо</p>
+								<h3 class="title">Загородный дом в Приозерском районе</h3>
+								<p class="description">Кондиционирование и вентиляция, проектирование, монтаж и пуско-наладка</p>
+							</div>
+						</a>
+					</article>
+					<article class="item" style="background-image:url('img/portfolio/3.jpg')">
+						<a href="project.html" class="link">
+							<div class="area">
+								<p class="top">Площадь &mdash; 300 кв. м.
+									<br> Клиент &mdash; Дизайн-студия &laquo;Квадрат&raquo;</p>
+								<h3 class="title">Очень длинный заголовок в три строки или больше</h3>
+								<p class="description">Кондиционирование и вентиляция, проектирование, монтаж и пуско-наладка</p>
+							</div>
+						</a>
+					</article>
+					<article class="item" style="background-image:url('img/portfolio/1.jpg')">
+						<a href="project.html" class="link">
+							<div class="area">
+								<p class="top">Площадь &mdash; 300 кв. м.
+									<br> Клиент &mdash; Частное лицо</p>
+								<h3 class="title">Очень длинный заголовок в три строки или больше.</h3>
+								<p class="description">Кондиционирование и вентиляция, проектирование, монтаж и пуско-наладка</p>
+							</div>
+						</a>
+					</article>
+				</div>
+			</section>
+			<!-- Portfolio -->
+
+			<!-- Scheme -->
+			<section class="block wide scheme scheme-sales">
+				<h2 class="hidden">Схема работы</h2>
+				<ol class="list">
+					<li>
+						<span class="icon"><img src="svg/scheme/contact-specialist.svg" width="140" height="140" alt=""></span>
+						<span class="title">Обращение к специалисту</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/technical-project.svg" width="140" height="140" alt=""></span>
+						<span class="title">Согласование <span class="mobile-hidden-inline">оценочной </span>стоимости <span class="mobile-hidden-inline">оборудования и работ</span></span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/measurement-departure.svg" width="140" height="140" alt=""></span>
+						<span class="title">Выезд замерщика</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/contract-signing.svg" width="140" height="140" alt=""></span>
+						<span class="title">Подписание договора</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/payment-for-equipment.svg" width="140" height="140" alt=""></span>
+						<span class="title">Оплата за оборудование</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/equipment-installation.svg" width="140" height="140" alt=""></span>
+						<span class="title">Монтаж оборудования</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/installation-payment.svg" width="140" height="140" alt=""></span>
+						<span class="title">Оплата за&nbsp;монтаж</span>
+					</li>
+					<li>
+						<span class="icon"><img src="svg/scheme/enjoying-comfort.svg" width="190" height="140" alt=""></span>
+						<span class="title">Наслаждение комфортом</span>
+					</li>
+				</ol>
+			</section>
+			<!-- /Scheme -->
+
+			<!-- Helpful -->
+			<section class="helpful">
+				<h2 class="heading">Полезная информация</h2>
+				<p class="text"><a class="bordered" href="#">Другая полезная информация</a></p>
+				<div class="wide">
+					<ul class="list">
+						<li>
+							<p class="title">Как работает инвертор?</p>
+							<p>Разумеется, покупая климатическую технику, вы желаете обрести комфорт, сохранить эстетику интерьера и при этом обойтись наименьшими денежными средствами.</p>
+						</li>
+						<li>
+							<p class="title">Выбор типа кондиционера с учетом потребностей клиента и стоимости</p>
+							<p>В силу особенностей климата Северной столицы установка кондиционеров СПб – очень популярная и востребованная услуга. Однако для того чтобы смонтировать новую систему</p>
+						</li>
+						<li>
+							<p class="title">Как выбрать правильный кондиционер?</p>
+							<p>Но зачастую дешевая установка кондиционеров оборачивается неожиданными расходами: 85% поломок действительно качественного оборудования случаются именно по причине кустарного монтажа.</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- /Helpful -->
+
+			<article class="block wide text-block">
+				<div class="wrapper full">
+					<h2 class="heading">Профессиональный монтаж кондиционеров — непростая работа, состоящая из нескольких этапов</h2>
+					<div class="area">
+						<div class="col">
+							<p class="text-big">Выбирая кондиционер определенной марки, вы постараетесь предусмотреть все: репутацию фирмы-изготовителя, мощность и энергоэффективность, уровень шума, специальные режимы, дизайн модели, адекватность цены и так далее. И все же объективно оценить
+								приобретение удастся только после.</p>
+						</div>
+						<div class="col">
+							<p>Разумеется, покупая климатическую технику, вы желаете обрести комфорт, сохранить эстетику интерьера и при этом обойтись наименьшими денежными средствами. Но зачастую дешевая установка кондиционеров оборачивается неожиданными расходами: 85% поломок
+								действительно качественного оборудования случаются именно по причине кустарного монтажа. В силу особенностей климата Северной столицы установка кондиционеров СПб – очень популярная и востребованная услуга.</p>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Callback -->
+			<div class="block wide callback callback-short callback-white no-margin">
+				<form class="form-callback form-offer" action="#" method="post">
+					<fieldset>
+						<legend class="heading">У вас уже есть предложение от другой компании?</legend>
+						<p class="info">Получить более выгодное предложение</p>
+						<div class="form-group">
+							<label id="name" for=""></label>
+							<input id="name" type="text" placeholder="Ваше имя" value="">
+						</div>
+						<div class="form-group">
+							<label for="tel"></label>
+							<input id="tel" class="tel" type="tel" data-mask="+7 (000) 000-00-00" placeholder="+7 (" value="">
+						</div>
+						<div class="form-group">
+							<label for="file" class="form-file">
+								<input id="file" type="file"> Загрузить предложение</label>
+						</div>
+						<button class="submit" type="submit">Получить</button>
+					</fieldset>
+				</form>
+			</div>
+			<!-- /Callback -->
+
+			<!-- Documents -->
+			<section class="block wide documents documents-bg no-margin">
+				<div class="wrapper">
+					<h2 class="h2 heading text-center">Лицензии и сертификаты</h2>
+					<p class="text-medium text-center">Посмотрите все сертификаты в <a href="documents.html" class="bordered">разделе&nbsp;лицензии</a></p>
+				</div>
+				<div class="list popup-gallery">
+					<div class="item">
+						<a class="link" href="img/testimonials/1-b.jpg">
+							<figure class="img"><img src="img/testimonials/1.jpg" width="212" height="300" alt=""></figure>
+							<p class="title">Лицензия на проектирование</p>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="img/testimonials/1-b.jpg">
+							<figure class="img"><img src="img/testimonials/1.jpg" width="212" height="300" alt=""></figure>
+							<p class="title">Сертификат соответствия</p>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="img/testimonials/1-b.jpg">
+							<figure class="img"><img src="img/testimonials/1.jpg" width="212" height="300" alt=""></figure>
+							<p class="title">Лицензия на монтаж вентиляционных систем</p>
+						</a>
+					</div>
+					<div class="item">
+						<a class="link" href="img/testimonials/1-b.jpg">
+							<figure class="img"><img src="img/testimonials/1.jpg" width="212" height="300" alt=""></figure>
+							<p class="title">Сертификат соответсвия на продукции компании Fujitsu</p>
+						</a>
+					</div>
+				</div>
+			</section>
+			<!-- /Documents -->
+
+			<!-- Brands -->
+			<section class="block wide brands">
+				<div class="wrapper">
+					<h2 class="h2">Бренды</h2>
+					<p class="text-large">Посмотрите все наши проекты в <a href="portfolio.html" class="bordered">портфолио</a>, это очень интересно</p>
+				</div>
+				<ul class="list">
+					<li><img class="image" src="img/brands/viesmann.png" width="160" height="45" alt="Viesmann"></li>
+					<li><img class="image" src="img/brands/vaillant.png" width="160" height="45" alt="Vaillant"></li>
+					<li><img class="image" src="img/brands/oventrop.png" width="160" height="45" alt="Oventrop"></li>
+					<li><img class="image" src="img/brands/buderus.png" width="160" height="45" alt="Buderus"></li>
+					<li><img class="image" src="img/brands/tece.png" width="160" height="45" alt="Tece"></li>
+					<li><img class="image" src="img/brands/varmann.png" width="160" height="45" alt="Varmann"></li>
+					<li><img class="image" src="img/brands/meibes.png" width="160" height="45" alt="Meibes"></li>
+				</ul>
+			</section>
+			<!-- /Brands -->
+
+		</div>
+		<!-- /Content -->
+
+		<!-- Contacts -->
+		<aside class="contacts">
+			<h3 class="hidden">Контакты</h3>
+			<div class="map">
+				<div class="title"><a href="#map">На карте</a></div>
+				<figure class="gmap"></figure>
+			</div>
+			<div class="cols">
+				<div class="col">
+					<ul class="list list-links">
+						<li><a href="private.html">Частным заказчикам</a></li>
+						<li><a href="construction.html">Строительным заказчикам</a></li>
+						<li><a href="business.html">Предложения для бизнеса</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul class="list">
+						<li class="icon-phone"><a href="tel:+7-812-470-60-00">(812) 470-60-00</a></li>
+						<li class="icon-mail"><a href="mailto:info@primen.ru">info@primen.ru</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<ul class="list">
+						<li class="icon-feedback"><a href="#">Обратная связь</a></li>
+					</ul>
+				</div>
+				<div class="col">
+					<p class="icon-address">Санкт-Петербург
+						<br>Пироговская набережная
+						<br>д. 17, офис 310, 194044</p>
+				</div>
+			</div>
+		</aside>
+		<!-- /Contacts -->
+	</main>
+	<!-- /Main -->
+
+
+	<!-- Nav -->
+	<nav id="nav" class="nav">
+		<h3 class="hidden">Меню</h3>
+		<a href="#nav" class="toggle"><span></span></a>
+		<div class="area">
+			<ul class="menu menu-main">
+				<li><a href="text.html">Монтаж</a></li>
+				<li><a href="text.html">Проектирование</a></li>
+				<li><a href="text.html">Сервисное обслуживание</a></li>
+			</ul>
+			<ul class="menu">
+				<li><a href="portfolio.html">Реализованные проекты</a></li>
+				<li><a href="company.html">Компания</a></li>
+				<li><a href="news.html">Новости</a></li>
+				<li><a href="jobs.html">Вакансии</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
+				<li><a href="#">Полезная информация</a></li>
+				<li><a href="#">Интернет-магазин</a></li>
+			</ul>
+			<p class="calculate"><a href="#">Расчет<br> стоимости</a></p>
+		</div>
+	</nav>
+	<!-- /Nav -->
+
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p class="copyright">&copy; ООО &laquo;Прайм Инжиниринг&raquo; 2009-2016</p>
+		<p class="author">Создание сайта &ndash; &laquo;<a href="http://delovsaite.ru" target="_blank">Дело в сайте</a>&raquo;</p>
+	</footer>
+	<!-- /Footer -->
+
+
+	<script src="js/vendor/jquery.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

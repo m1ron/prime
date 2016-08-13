@@ -3978,6 +3978,22 @@ button.button-white:focus,
   margin-bottom: 0;
 }
 /* ==========================================================================
+   FILTER
+   ========================================================================== */
+.filter .heading {
+  margin: 0;
+  font: 800 34px 'Arno Pro', serif;
+  text-align: center;
+}
+.filter .text-help {
+  font: 20px 'Arno Pro', serif;
+  text-align: center;
+}
+.filter .info {
+  padding: 20px 0;
+  background: #f3f2ef;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
