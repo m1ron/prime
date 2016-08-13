@@ -153,7 +153,7 @@ textarea {
   .label {
     height: 60px;
     margin: 0 60px 0 12px;
-    font: 20px/60px @font-default;
+    font: 20px/64px @font-default;
     color: @color-midnight;
   }
 
@@ -168,8 +168,8 @@ textarea {
 
     &:before, &:after {
       .pseudo;
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
       margin: auto;
       display: block;
       background: transparent;
@@ -188,10 +188,10 @@ textarea {
       transition: border-color @duration;
     }
     &:before {
-      bottom: 14px;
+      bottom: 16px;
     }
     &:after {
-      top: 6px;
+      top: 4px;
     }
   }
 
@@ -207,8 +207,14 @@ textarea {
   }
 
   &-items {
+    margin-top: -1px;
     background: @color-white;
     border: 1px solid @color-midnight;
+
+    .selectric-above  & {
+      margin-top: 0;
+      margin-bottom: -1px;
+    }
 
     ul, li {
       font: 20px/20px @font-default;
