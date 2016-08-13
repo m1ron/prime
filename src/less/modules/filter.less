@@ -2,37 +2,74 @@
    FILTER
    ========================================================================== */
 .filter {
-
     .heading {
         width: 100%;
         margin: 0;
         font: 800 34px @font-heading;
-        text-align: center;
+        @media @tablet-sm {
+            margin-bottom: 5px;
+            font-size: 46px;
+        }
+        @media @desktop-sm {
+            margin-bottom: 0;
+            font-size: 55px;
+        }
     }
 
     .text-help {
         margin: 0 0 32px 0;
         font: 20px @font-heading;
-        text-align: center;
+        @media @tablet-sm {
+            font-size: 24px;
+        }
+        @media @desktop-sm {
+            margin-top: -5px;
+            margin-bottom: 54px;
+            font-size: 28px;
+        }
     }
 
     .info {
         padding: 20px 0 26px;
         background: @color-isabelline;
+        text-align: center;
+        @media @tablet-sm {
+            padding: 33px 0 42px;
+        }
+        @media @desktop-sm {
+            padding-bottom: 70px;
+        }
 
         .form-group {
-            margin-bottom: 24px;
-            @media @mobile-md {
-              width: 50%;
-              float: left;
-
-              &:first-of-type {
-                padding-right: 15px;
-              }
-
-              &:nth-of-type(2) {
-                padding-left: 15px;
-              }
+            max-width: 350px;
+            margin: 0 auto 24px;
+            text-align: left;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            @media @tablet-sm {
+                width: 49%;
+                max-width: 310px;
+                margin-bottom: 0;
+                display: inline-block;
+                vertical-align: bottom;
+                &:first-of-type {
+                    padding-right: 15px;
+                }
+                &:nth-of-type(2) {
+                    padding-left: 15px;
+                }
+            }
+            @media @desktop-sm {
+                width: 350px;
+                max-width: none;
+                &:first-of-type {
+                    padding-right: 54px;
+                }
+                &:nth-of-type(2) {
+                    padding-left: 0;
+                    padding-right: 54px;
+                }
             }
         }
 
@@ -70,22 +107,29 @@
             }
         }
 
-        .form-submit {
-          margin-top: 2px;
-          text-align: center;
-          clear: both;
 
-          .submit {
-            min-width: 280px;
-              background: @color-midnight;
-              color: @color-white;
+        .submit {
+            width: 100%;
+            max-width: 350px;
+            padding-top: 22px;
+            margin: 26px auto 0;
+            display: block;
+            background: @color-midnight;
+            color: @color-white;
 
-              &:hover {
-                  background: transparent;
-                  color: @color-midnight;
-              }
-          }
+            &:hover {
+                background: transparent;
+                color: @color-midnight;
+            }
+            @media @tablet-sm {
+                max-width: 310px;
+                margin-top: 34px;
+            }
+            @media @desktop-sm {
+                max-width: 290px;
+                margin-top: 0;
+                display: inline-block;
+            }
         }
-
     }
 }

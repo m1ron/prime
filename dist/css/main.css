@@ -4077,19 +4077,23 @@ button.button-white:focus,
   width: 100%;
   margin: 0;
   font: 800 34px 'Arno Pro', serif;
-  text-align: center;
 }
 .filter .text-help {
   margin: 0 0 32px 0;
   font: 20px 'Arno Pro', serif;
-  text-align: center;
 }
 .filter .info {
   padding: 20px 0 26px;
   background: #f3f2ef;
+  text-align: center;
 }
 .filter .info .form-group {
-  margin-bottom: 24px;
+  max-width: 350px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+.filter .info .form-group:last-of-type {
+  margin-bottom: 0;
 }
 .filter .info .for {
   margin-bottom: 12px;
@@ -4120,17 +4124,16 @@ button.button-white:focus,
   margin-top: 0;
   margin-bottom: -2px;
 }
-.filter .info .form-submit {
-  margin-top: 2px;
-  text-align: center;
-  clear: both;
-}
-.filter .info .form-submit .submit {
-  min-width: 280px;
+.filter .info .submit {
+  width: 100%;
+  max-width: 350px;
+  padding-top: 22px;
+  margin: 26px auto 0;
+  display: block;
   background: #162a49;
   color: #fff;
 }
-.filter .info .form-submit .submit:hover, .filter .info .form-submit .submit:focus {
+.filter .info .submit:hover, .filter .info .submit:focus {
   background: transparent;
   color: #162a49;
 }
@@ -4392,16 +4395,6 @@ button.button-white:focus,
   .solutions .tab-list {
     margin-left: -10px;
     margin-right: -10px;
-  }
-  .filter .info .form-group {
-    width: 50%;
-    float: left;
-  }
-  .filter .info .form-group:first-of-type {
-    padding-right: 15px;
-  }
-  .filter .info .form-group:nth-of-type(2) {
-    padding-left: 15px;
   }
 }
 @media (min-width: 667px) {
@@ -5255,6 +5248,33 @@ button.button-white:focus,
     font-size: 26px;
     line-height: 38px;
   }
+  .filter .heading {
+    margin-bottom: 5px;
+    font-size: 46px;
+  }
+  .filter .text-help {
+    font-size: 24px;
+  }
+  .filter .info {
+    padding: 33px 0 42px;
+  }
+  .filter .info .form-group {
+    width: 49%;
+    max-width: 310px;
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .filter .info .form-group:first-of-type {
+    padding-right: 15px;
+  }
+  .filter .info .form-group:nth-of-type(2) {
+    padding-left: 15px;
+  }
+  .filter .info .submit {
+    max-width: 310px;
+    margin-top: 34px;
+  }
   .mfp-content {
     max-width: 650px;
   }
@@ -5972,6 +5992,34 @@ button.button-white:focus,
   }
   .text-block .area .col p:last-of-type {
     margin-bottom: 0;
+  }
+  .filter .heading {
+    margin-bottom: 0;
+    font-size: 55px;
+  }
+  .filter .text-help {
+    margin-top: -5px;
+    margin-bottom: 54px;
+    font-size: 28px;
+  }
+  .filter .info {
+    padding-bottom: 70px;
+  }
+  .filter .info .form-group {
+    width: 350px;
+    max-width: none;
+  }
+  .filter .info .form-group:first-of-type {
+    padding-right: 54px;
+  }
+  .filter .info .form-group:nth-of-type(2) {
+    padding-left: 0;
+    padding-right: 54px;
+  }
+  .filter .info .submit {
+    max-width: 290px;
+    margin-top: 0;
+    display: inline-block;
   }
   .mfp-content {
     max-width: 1140px;
