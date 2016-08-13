@@ -2,23 +2,60 @@
    CATALOG
    ========================================================================== */
 .catalog {
+  margin-bottom: 24px;
+
     .list {
         .item {
-            margin: 0 -7px;
+            margin: 0 -7px 19px;
             .color-black(.15);
             box-shadow: 0 0 7px 0 @color;
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+            @media @mobile-xs {
+              max-width: 350px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            @media @tablet-sm {
+              max-width: none;
+            }
         }
 
-        .col {
-            padding: 24px 0;
-            border-bottom: 2px solid @color-light;
-            &:first-of-type {
-                padding-top: 0;
-            }
-            &:last-of-type {
-                padding-bottom: 0;
-                border-bottom: none;
-            }
+        .area {
+          &:after {
+            .clearfix;
+          }
+
+          .col {
+              padding: 24px 0;
+              border-bottom: 2px solid @color-light;
+              &:first-of-type {
+                  padding-top: 0;
+              }
+              &:last-of-type {
+                  padding-bottom: 0;
+                  border-bottom: none;
+              }
+
+              @media @tablet-sm {
+                width: 50%;
+                padding: 0;
+                float: left;
+                border: none;
+
+                &:first-of-type {
+                  width: 100%;
+                }
+                &:nth-of-type(2) {
+                  padding-right: 28px;
+                  border-right: 2px solid @color-light;
+                }
+                &:nth-of-type(3) {
+                  padding-left: 28px;
+                }
+              }
+          }
         }
 
         .link {
@@ -61,6 +98,13 @@
                 top: 100%;
                 left: 12px;
                 transform: skew(-8deg, 0deg);
+            }
+
+            &-red {
+              background: @color-red;
+              &:before {
+                border-color: @color-red transparent transparent transparent;
+              }
             }
         }
 
@@ -111,6 +155,7 @@
             margin: 0 0 8px 0;
             font: 800 42px/normal @font-heading;
             letter-spacing: .02em;
+            color: @color-midnight;
 
             .old {
                 display: block;
@@ -145,5 +190,14 @@
             .color-black(.6);
             color: @color;
         }
+    }
+
+    .submit {
+      width: 100%;
+      max-width: 350px;
+      padding-top: 22px;
+      margin: 30px auto 0;
+      display: block;
+      font-size: 13px;
     }
 }

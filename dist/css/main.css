@@ -4222,7 +4222,9 @@ button.button-white:focus,
   color: #162a49;
 }
 .filter .types {
+  max-width: 350px;
   padding: 30px 0;
+  margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4254,18 +4256,29 @@ button.button-white:focus,
 /* ==========================================================================
    CATALOG
    ========================================================================== */
+.catalog {
+  margin-bottom: 24px;
+}
 .catalog .list .item {
-  margin: 0 -7px;
+  margin: 0 -7px 19px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
 }
-.catalog .list .col {
+.catalog .list .item:last-of-type {
+  margin-bottom: 0;
+}
+.catalog .list .area:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.catalog .list .area .col {
   padding: 24px 0;
   border-bottom: 2px solid #eee;
 }
-.catalog .list .col:first-of-type {
+.catalog .list .area .col:first-of-type {
   padding-top: 0;
 }
-.catalog .list .col:last-of-type {
+.catalog .list .area .col:last-of-type {
   padding-bottom: 0;
   border-bottom: none;
 }
@@ -4314,6 +4327,12 @@ button.button-white:focus,
       -ms-transform: skew(-8deg, 0deg);
           transform: skew(-8deg, 0deg);
 }
+.catalog .list .badge-red {
+  background: #f26d7d;
+}
+.catalog .list .badge-red:before {
+  border-color: #f26d7d transparent transparent transparent;
+}
 .catalog .list .name {
   margin-top: 0;
   font-size: 28px;
@@ -4356,6 +4375,7 @@ button.button-white:focus,
   margin: 0 0 8px 0;
   font: 800 42px / normal 'Arno Pro', serif;
   letter-spacing: .02em;
+  color: #162a49;
 }
 .catalog .list .price .old {
   display: block;
@@ -4382,6 +4402,14 @@ button.button-white:focus,
   font-size: 14px;
   line-height: normal;
   color: rgba(0, 0, 0, 0.6);
+}
+.catalog .submit {
+  width: 100%;
+  max-width: 350px;
+  padding-top: 22px;
+  margin: 30px auto 0;
+  display: block;
+  font-size: 13px;
 }
 /* ==========================================================================
    POPUPS
@@ -4574,6 +4602,11 @@ button.button-white:focus,
   }
   .portfolio .list .link:hover .area .description, .portfolio .list .link:focus .area .description {
     max-height: 300px;
+  }
+  .catalog .list .item {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (min-width: 414px) {
@@ -4823,12 +4856,6 @@ button.button-white:focus,
     -webkit-flex-basis: 33.3%;
     -ms-flex-preferred-size: 33.3%;
     flex-basis: 33.3%;
-  }
-  .filter .types {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
   .filter .types .checkbox {
     margin-bottom: 0;
@@ -5535,6 +5562,32 @@ button.button-white:focus,
   .filter .info .submit {
     max-width: 310px;
     margin-top: 34px;
+  }
+  .filter .types {
+    max-width: none;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .catalog .list .item {
+    max-width: none;
+  }
+  .catalog .list .area .col {
+    width: 50%;
+    padding: 0;
+    float: left;
+    border: none;
+  }
+  .catalog .list .area .col:first-of-type {
+    width: 100%;
+  }
+  .catalog .list .area .col:nth-of-type(2) {
+    padding-right: 28px;
+    border-right: 2px solid #eee;
+  }
+  .catalog .list .area .col:nth-of-type(3) {
+    padding-left: 28px;
   }
   .catalog .list .photo {
     width: 330px;
