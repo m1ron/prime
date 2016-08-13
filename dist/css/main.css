@@ -525,6 +525,94 @@ button.button-white:focus,
 .form-file input[type=file] {
   display: none;
 }
+/*** SELECTRIC ***/
+.selectric {
+  background: #fff;
+  border: 1px solid rgba(57, 57, 57, 0.2);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.selectric .label {
+  height: 60px;
+  margin: 0 60px 0 12px;
+  font: 20px/60px 'Proxima Nova', Arial, sans-serif;
+  color: #162a49;
+}
+.selectric .button {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(57, 57, 57, 0.2);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.selectric .button:before,
+.selectric .button:after {
+  content: '\0020';
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  display: block;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(57, 57, 57, 0.2);
+  border-left: 2px solid rgba(57, 57, 57, 0.2);
+  border-radius: 0 0 0 3px;
+  box-shadow: none !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.selectric .button:before {
+  bottom: 14px;
+}
+.selectric .button:after {
+  top: 6px;
+}
+.selectric-hover .selectric,
+.selectric-open .selectric {
+  border-color: #162a49;
+}
+.selectric-hover .selectric .button,
+.selectric-open .selectric .button {
+  border-color: #162a49;
+}
+.selectric-hover .selectric .button:before,
+.selectric-open .selectric .button:before,
+.selectric-hover .selectric .button:after,
+.selectric-open .selectric .button:after {
+  border-color: #162a49;
+}
+.selectric-items {
+  background: #fff;
+  border: 1px solid #162a49;
+}
+.selectric-items ul,
+.selectric-items li {
+  font: 20px/20px 'Proxima Nova', Arial, sans-serif;
+  color: #162a49;
+}
+.selectric-items li {
+  padding: 20px 12px;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.selectric-items li.selected {
+  background: #eee;
+}
+.selectric-items li:hover:not(.selected), .selectric-items li:focus:not(.selected) {
+  color: #34bffc;
+  background: transparent;
+}
 .svg-address {
   background: url("../svg/sprite.svg") no-repeat;
   background-position: 48.05194805194805% 0;

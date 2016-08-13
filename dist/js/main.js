@@ -6,6 +6,11 @@ FastClick.attach(document.body);
 /** On document ready */
 $(document).ready(function() {
 
+    /* Select */
+    $('select.select').selectric({
+        disableOnMobile: false
+    });
+
     /* Wide */
     $('.wide').each(function() {
         if ($('.space', this).length < 1) {
