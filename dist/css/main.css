@@ -2193,7 +2193,8 @@ button.button-white:focus,
   letter-spacing: .02em;
   position: relative;
 }
-.page-header .text:before {
+.page-header .text:before,
+.page-header .text:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -2202,10 +2203,32 @@ button.button-white:focus,
   margin: 24px auto 19px;
   background: #fff;
 }
+.page-header .text:after {
+  display: none;
+  width: 110px;
+  margin: 15px auto 30px;
+}
+.page-header .text-bottom {
+  margin-top: 9px;
+}
+.page-header .text-bottom:before {
+  display: none;
+}
+.page-header .text-bottom:after {
+  display: block;
+}
 .page-header .button {
   min-width: 200px;
   margin-top: 14px;
   padding: 20px;
+}
+.page-header .price {
+  margin: 0 0 22px;
+  display: block;
+  font-size: 15px;
+  line-height: normal;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .page-header .carousel {
   width: 100vw;
@@ -5249,13 +5272,24 @@ button.button-white:focus,
     font-size: 36px;
     line-height: 44px;
   }
-  .page-header .text:before {
+  .page-header .text:before,
+  .page-header .text:after {
     width: 260px;
     height: 3px;
     margin: 9px auto 22px;
   }
+  .page-header .text:after {
+    margin: 31px auto 48px;
+  }
+  .page-header .text-bottom {
+    margin-top: 16px;
+  }
   .page-header .button {
     margin-top: 31px;
+  }
+  .page-header .price {
+    margin-bottom: 20px;
+    letter-spacing: .03em;
   }
   .page-header .carousel .slick-dots {
     bottom: 33px;
@@ -6287,6 +6321,16 @@ button.button-white:focus,
   }
   .page-header .text:before {
     margin-top: 13px;
+  }
+  .page-header .text:after {
+    margin: 34px auto 40px;
+  }
+  .page-header .text-bottom {
+    margin-top: 8px;
+  }
+  .page-header .price {
+    margin-bottom: 26px;
+    font-size: 22px;
   }
   .page-header .carousel .slick-dots {
     bottom: 21px;

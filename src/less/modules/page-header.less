@@ -65,25 +65,55 @@
         font: 30px/36px @font-heading;
         letter-spacing: .02em;
         position: relative;
-        &:before {
+        &:before, &:after {
             .pseudo;
             width: 160px;
             height: 2px;
             margin: 24px auto 19px;
             background: @color-white;
         }
+        &:after {
+            display: none;
+            width: 110px;
+            margin: 15px auto 30px;
+        }
+
+        &-bottom {
+            margin-top: 9px;
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: block;
+            }
+        }
+
         @media @tablet-sm {
             font-size: 36px;
             line-height: 44px;
-            &:before {
+            &:before, &:after {
                 width: 260px;
                 height: 3px;
                 margin: 9px auto 22px;
+            }
+            &:after {
+                  margin: 31px auto 48px;
+            }
+
+            &-bottom {
+              margin-top: 16px;
             }
         }
         @media @desktop-sm {
             &:before {
                 margin-top: 13px;
+            }
+            &:after {
+                  margin: 34px auto 40px;
+            }
+
+            &-bottom {
+              margin-top: 8px;
             }
         }
     }
@@ -94,6 +124,23 @@
         padding: 20px;
         @media @tablet-sm {
             margin-top: 31px;
+        }
+    }
+
+    .price {
+        margin: 0 0 22px;
+        display: block;
+        font-size: 15px;
+        line-height: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+        @media @tablet-sm {
+          margin-bottom: 20px;
+          letter-spacing: .03em;
+        }
+        @media @desktop-sm {
+          margin-bottom: 26px;
+            font-size: 22px;
         }
     }
 
