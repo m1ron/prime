@@ -4574,14 +4574,54 @@ button.button-white:focus,
 /* ==========================================================================
    POPUPS
    ========================================================================== */
-/* ZOOM-IN EFFECT */
+.popup {
+  max-width: 650px;
+  padding: 20px;
+  margin: auto;
+  display: none;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.59);
+  cursor: default;
+}
+.popup .heading {
+  margin: 0 0 7px;
+  font: 800 34px/34px 'Arno Pro', serif;
+  color: #162a49;
+}
+.popup .text {
+  margin: 0 0 56px;
+  font: 28px / normal 'Arno Pro', serif;
+  color: #162a49;
+}
+.popup-feedback {
+  text-align: center;
+}
+.popup-feedback .form-feedback {
+  max-width: 340px;
+  margin: 0 auto;
+}
+.popup-feedback .form-feedback .form-group {
+  margin-bottom: 18px;
+}
+.popup-feedback .form-feedback .form-group-submit {
+  margin-top: 22px;
+}
+.popup-feedback .form-feedback input:not([type="button"]):not([type="submit"]) {
+  padding-top: 18px;
+  border-width: 2px;
+}
+/* ==========================================================================
+   MAGNIFIC POPUP DEFAULTS
+   ========================================================================== */
+/** Slide-in Effect */
 .mfp-slide-in .mfp-content {
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -webkit-transform: translate3d(0, -150%, 0);
-          transform: translate3d(0, -150%, 0);
+  -webkit-transform: translate3d(0, -100vh, 0);
+          transform: translate3d(0, -100vh, 0);
 }
 .mfp-slide-in.mfp-bg {
   opacity: 0;
@@ -4598,8 +4638,8 @@ button.button-white:focus,
   opacity: .7;
 }
 .mfp-slide-in.mfp-removing .mfp-content {
-  -webkit-transform: translate3d(0, -150%, 0);
-          transform: translate3d(0, -150%, 0);
+  -webkit-transform: translate3d(0, -100vh, 0);
+          transform: translate3d(0, -100vh, 0);
   -webkit-transition-delay: 0;
           transition-delay: 0;
 }
@@ -4611,6 +4651,9 @@ button.button-white:focus,
 .mfp-wrap {
   min-width: 320px;
   -webkit-overflow-scrolling: touch;
+}
+.mfp-wrap .popup {
+  display: block;
 }
 .mfp-container {
   padding-left: 40px;
@@ -5823,6 +5866,13 @@ button.button-white:focus,
     display: table;
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
   }
+  .popup {
+    padding: 48px 40px;
+  }
+  .popup .heading {
+    font-size: 46px;
+    line-height: 46px;
+  }
   .mfp-content {
     max-width: 650px;
   }
@@ -6657,6 +6707,10 @@ button.button-white:focus,
   }
   .table-price {
     margin: 40px 0 28px;
+  }
+  .popup .heading {
+    font-size: 56px;
+    line-height: 56px;
   }
   .mfp-content {
     max-width: 1140px;

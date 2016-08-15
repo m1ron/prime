@@ -168,6 +168,9 @@ $(document).ready(function() {
         type: 'image'
     });
 
+    /* Popup window */
+    $('.modal').magnificPopup();
+
     /* Page header carousel */
     $('.page-header').each(function() {
         $('.carousel', this).slick({
@@ -260,7 +263,6 @@ $.extend(true, $.magnificPopup.defaults, {
     midClick: true,
     autoFocusLast: false,
     preload: false,
-    closeOnContentClick: true,
     fixedContentPos: true,
     fixedBgPos: true
 });

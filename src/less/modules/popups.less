@@ -1,13 +1,71 @@
 /* ==========================================================================
    POPUPS
    ========================================================================== */
+.popup {
+    max-width: 650px;
+    padding: 20px;
+    margin: auto;
+    display: none;
+    position: relative;
+    background: @color-white;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.59);
+    cursor: default;
+    @media @tablet-sm {
+        padding: 48px 40px;
+    }
+
+    .heading {
+      margin: 0 0 7px;
+      font: 800 34px/34px @font-heading;
+      color: @color-midnight;
+      @media @tablet-sm {
+          font-size: 46px;
+          line-height: 46px;
+      }
+      @media @desktop-sm {
+          font-size: 56px;
+          line-height: 56px;
+      }
+    }
+
+    .text {
+      margin: 0 0 56px;
+      font: 28px/normal @font-heading;
+      color: @color-midnight;
+    }
+
+    &-feedback {
+      text-align: center;
+
+      .form-feedback {
+        max-width: 340px;
+        margin: 0 auto;
+
+        .form-group {
+          margin-bottom: 18px;
+          &-submit {
+            margin-top: 22px;
+          }
+        }
+
+        input:not([type="button"]):not([type="submit"]) {
+          padding-top: 18px;
+          border-width: 2px;
+        }
+      }
+    }
+}
+
+/* ==========================================================================
+   MAGNIFIC POPUP DEFAULTS
+   ========================================================================== */
 @duration-popup: @duration-l;
-/* ZOOM-IN EFFECT */
+/** Slide-in Effect */
 .mfp {
     &-slide-in {
         .mfp-content {
             transition: transform @duration-popup;
-            transform: translate3d(0, -150% , 0);
+            transform: translate3d(0, -100vh , 0);
         }
         &.mfp-bg {
             opacity: 0;
@@ -24,7 +82,7 @@
         }
         &.mfp-removing {
             .mfp-content {
-                transform: translate3d(0, -150%, 0);
+                transform: translate3d(0, -100vh, 0);
                 transition-delay: 0;
             }
             &.mfp-bg {
@@ -37,6 +95,10 @@
     &-wrap {
         min-width: 320px;
         -webkit-overflow-scrolling: touch;
+
+        .popup {
+            display: block;
+        }
     }
 
     &-container {
@@ -160,4 +222,5 @@
             }
         }
     }
+
 }
