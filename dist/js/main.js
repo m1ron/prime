@@ -169,7 +169,9 @@ $(document).ready(function() {
     });
 
     /* Popup window */
-    $('.modal').magnificPopup();
+    $('.modal').magnificPopup({
+      type: 'ajax'
+    });
 
     /* Page header carousel */
     $('.page-header').each(function() {
