@@ -6138,7 +6138,6 @@ button.button-dark:focus,
   }
   .header .menu li.active a {
     color: #009ee3;
-    cursor: default;
   }
   .footer .copyright {
     width: auto;
