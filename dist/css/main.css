@@ -477,6 +477,27 @@ button.button-white:focus,
   color: #34bffc;
   background: #fff;
 }
+[type=submit].button-dark,
+[type=reset].button-dark,
+[type=button].button-dark,
+button.button-dark,
+.button.button-dark {
+  background: #162a49;
+  color: #fff;
+}
+[type=submit].button-dark:hover,
+[type=reset].button-dark:hover,
+[type=button].button-dark:hover,
+button.button-dark:hover,
+.button.button-dark:hover,
+[type=submit].button-dark:focus,
+[type=reset].button-dark:focus,
+[type=button].button-dark:focus,
+button.button-dark:focus,
+.button.button-dark:focus {
+  color: #162a49;
+  background: transparent;
+}
 /* ==========================================================================
    DEFAULT FORM
    ========================================================================== */
@@ -4611,6 +4632,9 @@ button.button-white:focus,
   padding-top: 18px;
   border-width: 2px;
 }
+.popup-feedback .form-feedback .button {
+  width: 100%;
+}
 /* ==========================================================================
    MAGNIFIC POPUP DEFAULTS
    ========================================================================== */
@@ -4682,6 +4706,7 @@ button.button-white:focus,
   -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   cursor: pointer;
+  display: none;
 }
 .mfp-close:before,
 .mfp-close:after {
