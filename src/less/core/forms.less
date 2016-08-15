@@ -69,31 +69,31 @@ textarea {
     }
 
     &.button-blue {
-      border-color: @color-blue;
-      color: @color-blue;
-      &:hover {
-        color: @color-white;
-        background: @color-blue;
-      }
+        border-color: @color-blue;
+        color: @color-blue;
+        &:hover {
+            color: @color-white;
+            background: @color-blue;
+        }
     }
 
     &.button-white {
-      background: transparent;
-      border-color: @color-white;
-      color: @color-white;
-      &:hover {
-        color: @color-blue;
-        background: @color-white;
-      }
+        background: transparent;
+        border-color: @color-white;
+        color: @color-white;
+        &:hover {
+            color: @color-blue;
+            background: @color-white;
+        }
     }
 
     &.button-dark {
-      background: @color-midnight;
-      color: @color-white;
-      &:hover {
-        color: @color-midnight;
-        background: transparent;
-      }
+        background: @color-midnight;
+        color: @color-white;
+        &:hover {
+            color: @color-midnight;
+            background: transparent;
+        }
     }
 }
 /* ==========================================================================
@@ -152,155 +152,156 @@ textarea {
 }
 /*** SELECTRIC ***/
 .selectric {
-  background: @color-white;
-  .color-onyx(.2);
-  border: 1px solid @color;
-  transition: border-color @duration;
-
-  .label {
-    height: 60px;
-    margin: 0 60px 0 12px;
-    font: 20px/64px @font-default;
-    color: @color-midnight;
-  }
-
-  .button {
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: none;
+    background: @color-white;
     .color-onyx(.2);
-    border-left: 1px solid @color;
+    border: 1px solid @color;
     transition: border-color @duration;
 
-    &:before, &:after {
-      .pseudo;
-      width: 11px;
-      height: 11px;
-      margin: auto;
-      display: block;
-      background: transparent;
-      border: none;
-      .color-onyx(.2);
-      border-bottom: 2px solid @color;
-      border-left: 2px solid @color;
-      border-radius: 0 0 0 3px;
-      box-shadow: none !important;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transform: rotate(-45deg);
-      transition: border-color @duration;
+    .label {
+        height: 60px;
+        margin: 0 60px 0 12px;
+        font: 20px/64px @font-default;
+        color: @color-midnight;
     }
-    &:before {
-      bottom: 16px;
-    }
-    &:after {
-      top: 4px;
-    }
-  }
-
-  &-hover &, &-open & {
-    border-color: @color-midnight;
 
     .button {
-      border-color: @color-midnight;
-      &:before, &:after {
-        border-color: @color-midnight;
-      }
-    }
-  }
-
-  &-items {
-    margin-top: -1px;
-    background: @color-white;
-    border: 1px solid @color-midnight;
-
-    .selectric-above  & {
-      margin-top: 0;
-      margin-bottom: -1px;
-    }
-
-    ul, li {
-      font: 20px/20px @font-default;
-      color: @color-midnight;
-    }
-
-    li {
-      padding: 20px 12px;
-      transition: color @duration;
-
-      &.selected {
-        background: @color-light;
-      }
-      &:hover:not(.selected) {
-        color: @color-blue;
+        width: 60px;
+        height: 60px;
         background: transparent;
-      }
-    }
-  }
+        border: none;
+        .color-onyx(.2);
+        border-left: 1px solid @color;
+        transition: border-color @duration;
 
+        &:before, &:after {
+            .pseudo;
+            width: 11px;
+            height: 11px;
+            margin: auto;
+            display: block;
+            background: transparent;
+            border: none;
+            .color-onyx(.2);
+            border-bottom: 2px solid @color;
+            border-left: 2px solid @color;
+            border-radius: 0 0 0 3px;
+            box-shadow: none !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: rotate(-45deg);
+            transition: border-color @duration;
+        }
+        &:before {
+            bottom: 16px;
+        }
+        &:after {
+            top: 4px;
+        }
+    }
+
+    &-hover &, &-open & {
+        border-color: @color-midnight;
+
+        .button {
+            border-color: @color-midnight;
+            &:before, &:after {
+                border-color: @color-midnight;
+            }
+        }
+    }
+
+    &-items {
+        margin-top: -1px;
+        background: @color-white;
+        border: 1px solid @color-midnight;
+
+        .selectric-above  & {
+            margin-top: 0;
+            margin-bottom: -1px;
+        }
+
+        ul, li {
+            font: 20px/20px @font-default;
+            color: @color-midnight;
+        }
+
+        li {
+            padding: 20px 12px;
+            transition: color @duration;
+
+            &.selected {
+                background: @color-light;
+            }
+            &:hover:not(.selected) {
+                color: @color-blue;
+                background: transparent;
+            }
+        }
+    }
 }
 /*** CHECKBOX, RADIO ***/
 .checkbox, .radiobox {
-  padding-left: 28px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  overflow: hidden;
-  input {
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    &:checked + .square {
-      &:before, &:after { opacity: 1; }
+    padding-left: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    input {
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        &:checked + .square {
+            &:before, &:after {
+                opacity: 1;
+            }
+        }
+        &:focus + .square {
+            border-color: @color-midnight;
+        }
     }
-    &:focus + .square {
-      border-color: @color-midnight;
+    .square {
+        width: 15px;
+        height: 15px;
+        border: 2px solid @color-gray-light;
+        .color-black(.18);
+        box-shadow: inset 2px 2px 7px 0 @color;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        &:before, &:after {
+            .pseudo;
+            width: 3px;
+            height: 9px;
+            background: @color-blue;
+            border-radius: 4px;
+            margin: auto;
+            position: absolute;
+            top: 1px;
+            left: 3px;
+            opacity: 0;
+            backface-visibility: hidden;
+        }
+        &:before {
+            transform: rotate(-40deg);
+        }
+        &:after {
+            height: 16px;
+            top: -5px;
+            left: 10px;
+            transform: rotate(40deg);
+        }
     }
-  }
-  .square {
-    width: 15px;
-    height: 15px;
-    border: 2px solid @color-gray-light;
-    .color-black(.18);
-    box-shadow: inset 2px 2px 7px 0px @color;
-    position: absolute;
-    top: 8px;
-    left: 0;
-    &:before, &:after {
-      .pseudo;
-      width: 3px;
-      height: 9px;
-      background: @color-blue;
-      border-radius: 4px;
-      margin: auto;
-      position: absolute;
-      top: 1px;
-      left: 3px;
-      opacity: 0;
-      backface-visibility: hidden;
-    }
-    &:before {
-      transform: rotate(-40deg);
-    }
-    &:after {
-      height: 16px;
-      top: -5px;
-      left: 10px;
-      transform: rotate(40deg);
-    }
-  }
 }
 .radiobox {
-  .square {
-    border-radius: 50%;
-    &:before {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+    .square {
+        border-radius: 50%;
+        &:before {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
     }
-  }
 }

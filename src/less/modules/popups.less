@@ -15,48 +15,52 @@
     }
 
     .heading {
-      margin: 0 0 7px;
-      font: 800 34px/34px @font-heading;
-      color: @color-midnight;
-      @media @tablet-sm {
-          font-size: 46px;
-          line-height: 46px;
-      }
-      @media @desktop-sm {
-          font-size: 56px;
-          line-height: 56px;
-      }
+        margin: 0 0 7px;
+        font: 800 34px/34px @font-heading;
+        color: @color-midnight;
+        @media @tablet-sm {
+            font-size: 46px;
+            line-height: 46px;
+        }
+        @media @desktop-sm {
+            font-size: 56px;
+            line-height: 56px;
+        }
     }
 
     .text {
-      margin: 0 0 56px;
-      font: 28px/normal @font-heading;
-      color: @color-midnight;
+        margin: 0 0 56px;
+        font: 28px/normal @font-heading;
+        color: @color-midnight;
     }
 
     &-feedback {
-      text-align: center;
+        text-align: center;
 
-      .form-feedback {
-        max-width: 340px;
-        margin: 0 auto;
+        .form-feedback {
+            max-width: 340px;
+            margin: 0 auto;
 
-        .form-group {
-          margin-bottom: 18px;
-          &-submit {
-            margin-top: 22px;
-          }
+            .form-group {
+                margin-bottom: 18px;
+                &-submit {
+                    margin-top: 22px;
+                }
+            }
+
+            input {
+                &:not([type='button']) {
+                    &:not([type='submit']) {
+                        padding-top: 18px;
+                        border-width: 2px;
+                    }
+                }
+            }
+
+            .button {
+                width: 100%;
+            }
         }
-
-        input:not([type="button"]):not([type="submit"]) {
-          padding-top: 18px;
-          border-width: 2px;
-        }
-
-        .button {
-          width: 100%;
-        }
-      }
     }
 }
 
@@ -227,5 +231,4 @@
             }
         }
     }
-
 }

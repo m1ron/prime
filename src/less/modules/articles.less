@@ -2,16 +2,19 @@
    ARTICLES
    ========================================================================== */
 .articles {
+    position: relative;
+    z-index: 5;
+    background: @color-white;
 
     .item {
         @media @tablet-md {
-          display: flex;
-          align-items: stretch;
-          &:nth-of-type(even) {
-            .photo {
-              order: 20;
+            display: flex;
+            align-items: stretch;
+            &:nth-of-type(even) {
+                .photo {
+                    order: 20;
+                }
             }
-          }
         }
     }
 
@@ -21,11 +24,11 @@
         background-repeat: no-repeat;
         background-size: cover;
         @media @tablet-sm {
-          height: 350px;
+            height: 350px;
         }
         @media @tablet-md {
-          height: auto;
-          flex-basis: 50%;
+            height: auto;
+            flex-basis: 50%;
         }
     }
 
@@ -35,15 +38,15 @@
         margin: 0 auto;
         text-align: center;
         @media @tablet-sm {
-          max-width: none;
+            max-width: none;
         }
         @media @tablet-md {
-          padding: 50px;
-          flex-basis: 50%;
+            padding: 50px;
+            flex-basis: 50%;
         }
         @media @desktop-sm {
-          min-height: 703px;
-          padding: 80px 104px 40px;
+            min-height: 703px;
+            padding: 80px 104px 40px;
         }
 
         .title {
@@ -52,7 +55,7 @@
         }
 
         .subtitle {
-          margin-bottom: 20px;
+            margin-bottom: 20px;
             font: 24px/32px @font-heading;
             letter-spacing: .02em;
             &:after {
@@ -64,26 +67,25 @@
             }
 
             @media @desktop-sm {
-              margin-bottom: 37px;
+                margin-bottom: 37px;
                 font-size: 28px;
                 line-height: 38px;
                 &:after {
-                  margin-top: 45px;
+                    margin-top: 45px;
                 }
             }
         }
 
-         p {
-               letter-spacing: .02em;
-               &:last-of-type {
-                 margin-bottom: 0;
-               }
-         }
+        p {
+            letter-spacing: .02em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
 
-         .button {
-           min-width: 250px;
-           margin-top: 23px;
-         }
+        .button {
+            min-width: 250px;
+            margin-top: 23px;
+        }
     }
-
 }

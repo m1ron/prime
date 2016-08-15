@@ -664,7 +664,7 @@ button.button-dark:focus,
   width: 15px;
   height: 15px;
   border: 2px solid #d4d4d4;
-  box-shadow: inset 2px 2px 7px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: inset 2px 2px 7px 0 rgba(0, 0, 0, 0.18);
   position: absolute;
   top: 8px;
   left: 0;
@@ -3774,6 +3774,11 @@ button.button-dark:focus,
 /* ==========================================================================
    ARTICLES
    ========================================================================== */
+.articles {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+}
 .articles .photo {
   height: 230px;
   background-position: 50% 50%;
@@ -4226,7 +4231,7 @@ button.button-dark:focus,
 }
 .filter .info .selectric .label {
   height: 58px;
-  line-height: 68px;
+  line-height: 64px;
 }
 .filter .info .selectric .button {
   width: 58px;
@@ -4628,7 +4633,7 @@ button.button-dark:focus,
 .popup-feedback .form-feedback .form-group-submit {
   margin-top: 22px;
 }
-.popup-feedback .form-feedback input:not([type="button"]):not([type="submit"]) {
+.popup-feedback .form-feedback input:not([type='button']):not([type='submit']) {
   padding-top: 18px;
   border-width: 2px;
 }

@@ -6,20 +6,20 @@ FastClick.attach(document.body);
 /** On document ready */
 $(document).ready(function() {
 
-    /* Select */
-    $('select.select').selectric({
-        disableOnMobile: false
-    });
-
-    /* Checkbox & Radio */
-	   $('label.checkbox, label.radiobox').append('<span class="square"></span>');
-
     /* Wide */
     $('.wide').each(function() {
         if ($('.space', this).length < 1) {
             $(this).wrapInner('<div class="space"></div>');
         }
     });
+
+    /* Select */
+    $('select.select').selectric({
+        disableOnMobile: false
+    });
+
+    /* Checkbox & Radio */
+    $('label.checkbox, label.radiobox').append('<span class="square"></span>');
 
     /** Nav */
     $('.nav').each(function() {
@@ -170,7 +170,7 @@ $(document).ready(function() {
 
     /* Popup window */
     $('.modal').magnificPopup({
-      type: 'ajax'
+        type: 'ajax'
     });
 
     /* Page header carousel */
@@ -212,27 +212,25 @@ $(document).ready(function() {
             mobileFirst: true,
             prevArrow: '<span class="prev"></span>',
             nextArrow: '<span class="next"></span>',
-            responsive: [
-                {
-                    breakpoint: 567,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                }, {
-                    breakpoint: 749,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                }, {
-                    breakpoint: 1170,
-                    settings: {
-                        slidesToShow: 1,
-                        variableWidth: true,
-                        centerMode: true,
-                        infinite: true
-                    }
+            responsive: [{
+                breakpoint: 567,
+                settings: {
+                    slidesToShow: 2
                 }
-            ]
+            }, {
+                breakpoint: 749,
+                settings: {
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 1170,
+                settings: {
+                    slidesToShow: 1,
+                    variableWidth: true,
+                    centerMode: true,
+                    infinite: true
+                }
+            }]
         });
     });
 
