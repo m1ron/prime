@@ -317,11 +317,6 @@ h6 + p,
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-/*** TABLE-RESPONSIVE ***/
-.table-responsive {
-  width: 100%;
-  overflow-x: scroll;
-}
 /* ==========================================================================
    FORMS RESET
    ========================================================================== */
@@ -4496,6 +4491,87 @@ button.button-white:focus,
   font-size: 13px;
 }
 /* ==========================================================================
+   TABLES
+   ========================================================================== */
+.table {
+  /*** TABLE-RESPONSIVE ***/
+  /*** TABLE-PRICE-MOBILE ***/
+}
+.table-responsive {
+  width: 100%;
+  overflow-x: scroll;
+}
+.table-responsive-full {
+  width: auto;
+  margin: 0 -20px;
+}
+.table th,
+.table td {
+  padding: 15px;
+}
+.table-price-mobile {
+  width: 100%;
+  margin: 15px 0 23px 0;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 19px;
+  vertical-align: top;
+}
+.table-price-mobile tr.bg {
+  background: #f8f8f8;
+}
+.table-price-mobile tr.padding-top td {
+  padding-top: 30px;
+  padding-bottom: 19px;
+}
+.table-price-mobile tr.padding-bottom td {
+  padding-bottom: 34px;
+}
+.table-price-mobile td {
+  padding: 10px 20px;
+}
+.table-price-mobile td:first-of-type {
+  white-space: normal;
+}
+.table-price-mobile td.h {
+  font-weight: bold;
+  white-space: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+.table-price {
+  width: 100%;
+  margin: 25px 0 0 0;
+  border-collapse: collapse;
+  display: none;
+  white-space: nowrap;
+  line-height: normal;
+}
+.table-price td {
+  padding: 30px 25px;
+  vertical-align: top;
+}
+.table-price td:first-of-type {
+  white-space: normal;
+}
+.table-price thead tr {
+  background: #f8f8f8;
+}
+.table-price thead th {
+  padding: 28px 25px;
+  text-align: left;
+  font-weight: 800;
+  vertical-align: top;
+}
+.table-price thead th:first-of-type {
+  width: 100%;
+  white-space: normal;
+}
+.table-price tbody tr:nth-child(even) {
+  background: #f8f8f8;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 /* ZOOM-IN EFFECT */
@@ -5046,8 +5122,6 @@ button.button-white:focus,
     max-width: 780px;
     padding-right: 30px;
     padding-left: 30px;
-    position: relative;
-    left: 12px;
   }
   .block {
     margin-left: -30px;
@@ -5063,7 +5137,7 @@ button.button-white:focus,
     padding-left: 64px;
     margin: 0 auto;
     position: relative;
-    left: -44px;
+    left: -32px;
   }
   .header .phone {
     display: block;
@@ -5630,7 +5704,6 @@ button.button-white:focus,
   .filter .info .wrapper {
     padding-right: 30px;
     padding-left: 30px;
-    left: auto;
   }
   .filter .info .form-group {
     width: 49%;
@@ -5668,9 +5741,6 @@ button.button-white:focus,
   }
   .catalog {
     margin-bottom: 38px;
-  }
-  .catalog .wrapper {
-    left: auto;
   }
   .catalog .list {
     max-width: 670px;
@@ -5740,6 +5810,18 @@ button.button-white:focus,
     padding-top: 19px;
     padding-bottom: 21px;
     font-size: 15px;
+  }
+  .table-responsive-full {
+    margin-right: 0;
+    margin-left: 0;
+    overflow-x: visible;
+  }
+  .table-price-mobile {
+    display: none;
+  }
+  .table-price {
+    display: table;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
   }
   .mfp-content {
     max-width: 650px;
@@ -5925,10 +6007,6 @@ button.button-white:focus,
   .content,
   .wrapper {
     max-width: 910px;
-    left: 28px;
-  }
-  .wide .space {
-    left: -60px;
   }
   .header .phone {
     right: 31px;
@@ -6437,7 +6515,6 @@ button.button-white:focus,
   .colored .wrapper {
     padding-left: 40px;
     padding-right: 40px;
-    left: 18px;
   }
   .solutions {
     margin-top: 42px;
@@ -6530,9 +6607,6 @@ button.button-white:focus,
   .filter .info {
     padding: 30px 0 70px;
   }
-  .filter .info .wrapper {
-    left: 12px;
-  }
   .filter .info .form-group {
     width: 350px;
     max-width: none;
@@ -6580,6 +6654,9 @@ button.button-white:focus,
   }
   .catalog .submit {
     margin-top: 30px;
+  }
+  .table-price {
+    margin: 40px 0 28px;
   }
   .mfp-content {
     max-width: 1140px;

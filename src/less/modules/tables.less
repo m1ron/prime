@@ -1,0 +1,117 @@
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.table {
+    /*** TABLE-RESPONSIVE ***/
+    &-responsive {
+        width: 100%;
+        overflow-x: scroll;
+        &-full {
+            width: auto;
+            margin: 0 -20px;
+            @media @tablet-sm {
+                margin-right: 0;
+                margin-left: 0;
+                overflow-x: visible;
+            }
+        }
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    /*** TABLE-PRICE-MOBILE ***/
+    &-price-mobile {
+        width: 100%;
+        margin: 15px 0 23px 0;
+        border-collapse: collapse;
+        white-space: nowrap;
+        font-size: 16px;
+        line-height: 19px;
+        vertical-align: top;
+        @media @tablet-sm {
+            display: none;
+        }
+
+        tr {
+            &.bg {
+                background: @color-white-smoke;
+            }
+            &.padding-top {
+                td {
+                    padding-top: 30px;
+                    padding-bottom: 19px;
+                }
+            }
+            &.padding-bottom {
+                td {
+                    padding-bottom: 34px;
+                }
+            }
+        }
+
+        td {
+            padding: 10px 20px;
+
+            &:first-of-type {
+                white-space: normal;
+            }
+            &.h {
+                font-weight: bold;
+                white-space: normal;
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    &-price {
+        width: 100%;
+        margin: 25px 0 0 0;
+        border-collapse: collapse;
+        display: none;
+        white-space: nowrap;
+        line-height: normal;
+        @media @tablet-sm {
+            display: table;
+            .color-black(.15);
+            box-shadow: 0 0 7px 0 @color;
+        }
+        @media @desktop-sm {
+            margin: 40px 0 28px;
+        }
+
+        td {
+            padding: 30px 25px;
+            vertical-align: top;
+            &:first-of-type {
+                white-space: normal;
+            }
+        }
+        thead {
+            tr {
+                background: @color-white-smoke;
+            }
+
+            th {
+                padding: 28px 25px;
+                text-align: left;
+                font-weight: 800;
+                vertical-align: top;
+                &:first-of-type {
+                    width: 100%;
+                    white-space: normal;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background: @color-white-smoke;
+                }
+            }
+        }
+    }
+}
