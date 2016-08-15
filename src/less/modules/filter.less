@@ -12,7 +12,7 @@
             font-size: 46px;
         }
         @media @desktop-sm {
-            margin-bottom: 0;
+            margin-bottom: 3px;
             font-size: 55px;
         }
     }
@@ -31,14 +31,27 @@
     }
 
     .info {
-        padding: 20px 0 26px;
+        padding: 17px 0 26px;
         background: @color-isabelline;
         text-align: center;
         @media @tablet-sm {
             padding: 33px 0 42px;
         }
         @media @desktop-sm {
-            padding-bottom: 70px;
+            padding: 30px 0 70px;
+        }
+
+        .wrapper {
+          padding-right: 14px;
+          padding-left: 14px;
+          @media @tablet-sm {
+            padding-right: 30px;
+            padding-left: 30px;
+            left: auto;
+          }
+          @media @desktop-sm {
+            left: 12px;
+          }
         }
 
         .form-group {
@@ -175,7 +188,7 @@
               flex-basis: 51%;
             }
 
-            @media @mobile-lg {
+            @media @tablet-sm {
               margin-bottom: 0;
               &, &:nth-of-type(even) {
                 flex-basis: auto;
