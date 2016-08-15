@@ -639,6 +639,10 @@ button.button-white:focus,
 .radiobox input:checked + .square:after {
   opacity: 1;
 }
+.checkbox input:focus + .square,
+.radiobox input:focus + .square {
+  border-color: #162a49;
+}
 .checkbox .square,
 .radiobox .square {
   width: 15px;
@@ -4146,9 +4150,6 @@ button.button-white:focus,
 /* ==========================================================================
    FILTER
    ========================================================================== */
-.filter {
-  margin-bottom: 7px;
-}
 .filter .heading {
   width: 100%;
   margin: 0;
@@ -4223,7 +4224,7 @@ button.button-white:focus,
 }
 .filter .types {
   max-width: 350px;
-  padding: 30px 0;
+  padding: 30px 0 37px;
   margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4261,7 +4262,6 @@ button.button-white:focus,
 }
 .catalog .list .item {
   margin: 0 -7px 19px;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
 }
 .catalog .list .item:last-of-type {
   margin-bottom: 0;
@@ -4286,6 +4286,10 @@ button.button-white:focus,
   padding: 36px 16px 16px 16px;
   display: block;
   position: relative;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+}
+.catalog .list .link:focus {
+  box-shadow: 0 0 7px 0 #34bffc;
 }
 .catalog .list .link:hover, .catalog .list .link:focus {
   text-decoration: none;
@@ -4310,6 +4314,10 @@ button.button-white:focus,
   text-transform: uppercase;
   float: left;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .catalog .list .badge:before {
   display: block;
@@ -4370,6 +4378,10 @@ button.button-white:focus,
   position: absolute;
   top: 4px;
   left: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .catalog .list .price {
   margin: 0 0 8px 0;
@@ -4382,6 +4394,10 @@ button.button-white:focus,
   font-size: 26px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.6);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .catalog .list .price .new {
   color: #f26d7d;
@@ -4402,13 +4418,19 @@ button.button-white:focus,
   font-size: 14px;
   line-height: normal;
   color: rgba(0, 0, 0, 0.6);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .catalog .submit {
+  margin-top: 30px;
+  text-align: center;
+}
+.catalog .submit .button {
   width: 100%;
   max-width: 350px;
   padding-top: 22px;
-  margin: 30px auto 0;
-  display: block;
   font-size: 13px;
 }
 /* ==========================================================================
@@ -5565,13 +5587,23 @@ button.button-white:focus,
   }
   .filter .types {
     max-width: none;
+    padding-bottom: 34px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  .catalog {
+    margin-bottom: 38px;
+  }
+  .catalog .wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+    left: auto;
+  }
   .catalog .list .item {
     max-width: none;
+    margin-bottom: 27px;
   }
   .catalog .list .area .col {
     width: 50%;
@@ -5581,6 +5613,7 @@ button.button-white:focus,
   }
   .catalog .list .area .col:first-of-type {
     width: 100%;
+    margin-bottom: 20px;
   }
   .catalog .list .area .col:nth-of-type(2) {
     padding-right: 28px;
@@ -5589,8 +5622,46 @@ button.button-white:focus,
   .catalog .list .area .col:nth-of-type(3) {
     padding-left: 28px;
   }
+  .catalog .list .link {
+    padding: 22px 26px 46px;
+  }
+  .catalog .list .badge {
+    padding: 13px;
+  }
+  .catalog .list .badge:before {
+    border-width: 7px 9px 0 0;
+    left: 16px;
+  }
+  .catalog .list .name {
+    margin-bottom: 0;
+    padding-right: 134px;
+    padding-left: 10px;
+    font-size: 42px;
+    line-height: 50px;
+  }
   .catalog .list .photo {
-    width: 330px;
+    width: 380px;
+  }
+  .catalog .list .list-info {
+    padding-top: 3px;
+  }
+  .catalog .list .price {
+    margin: -5px 0 18px 0;
+  }
+  .catalog .list .button {
+    width: auto;
+    min-width: 216px;
+  }
+  .catalog .submit {
+    margin-top: 39px;
+  }
+  .catalog .submit .button {
+    width: auto;
+    min-width: 310px;
+    max-width: none;
+    padding-top: 19px;
+    padding-bottom: 21px;
+    font-size: 15px;
   }
   .mfp-content {
     max-width: 650px;
@@ -6343,6 +6414,9 @@ button.button-white:focus,
     padding: 33px 0;
     margin-left: auto;
     margin-right: auto;
+  }
+  .catalog .list .photo {
+    width: 330px;
   }
   .mfp-content {
     max-width: 1140px;

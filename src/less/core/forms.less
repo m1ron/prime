@@ -248,6 +248,9 @@ textarea {
     &:checked + .square {
       &:before, &:after { opacity: 1; }
     }
+    &:focus + .square {
+      border-color: @color-midnight;
+    }
   }
   .square {
     width: 15px;
