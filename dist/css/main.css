@@ -82,6 +82,9 @@ body {
 .nav-visible body {
   overflow: hidden;
 }
+body.index {
+  height: 100%;
+}
 /* ==========================================================================
    _TEXT STYLES
    ========================================================================== */
@@ -765,6 +768,9 @@ button.button-dark:focus,
 .page {
   max-width: 1920px;
   padding-top: 84px;
+}
+.index .page {
+  height: 100%;
 }
 .content,
 .wrapper {
@@ -4598,6 +4604,78 @@ button.button-dark:focus,
   background: #f8f8f8;
 }
 /* ==========================================================================
+   _FULLPAGE
+   ========================================================================== */
+.fullpage {
+  position: relative;
+  z-index: 5;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.fullpage .section {
+  height: 100%;
+  overflow: hidden;
+}
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  .fullpage .section {
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+  }
+}
+.fullpage .section-1 {
+  padding: 22px 0;
+  background: url('../img/fullpage/section-1.jpg') center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.fullpage .section-1 .heading {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: .02em;
+}
+.fullpage .section-1 .text {
+  margin: 0;
+  font: 20px / normal 'Arno Pro', serif;
+  color: #162a49;
+  letter-spacing: .02em;
+}
+.fullpage .section-1 .links {
+  max-width: 260px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  font: 800 36px / normal 'Arno Pro', serif;
+  position: absolute;
+  bottom: 63px;
+}
+.fullpage .section-1 .links:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.fullpage .section-1 .links li {
+  margin-bottom: 59px;
+  letter-spacing: .02em;
+}
+.fullpage .section-1 .links li:last-child {
+  margin-bottom: 0;
+}
+.fullpage .section-1 .links li a {
+  color: #162a49;
+}
+.fullpage .section-1 .links li a:hover,
+.fullpage .section-1 .links li a:focus,
+.fullpage .section-1 .links li a:focus {
+  color: #34bffc;
+  text-decoration: none;
+}
+/* ==========================================================================
    POPUPS
    ========================================================================== */
 .popup {
@@ -5896,6 +5974,24 @@ button.button-dark:focus,
     display: table;
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
   }
+  .fullpage .section-1 {
+    padding-top: 56px;
+    padding-bottom: 500px;
+  }
+  .fullpage .section-1 .wrapper {
+    padding-right: 46px;
+    padding-left: 46px;
+  }
+  .fullpage .section-1 .heading {
+    margin-bottom: 12px;
+    font-size: 50px;
+  }
+  .fullpage .section-1 .text {
+    font-size: 30px;
+  }
+  .fullpage .section-1 .links {
+    display: block;
+  }
   .popup {
     padding: 48px 40px;
   }
@@ -6736,6 +6832,32 @@ button.button-dark:focus,
   }
   .table-price {
     margin: 40px 0 28px;
+  }
+  .fullpage .section-1 {
+    padding-top: 98px;
+  }
+  .fullpage .section-1 .wrapper {
+    max-width: 1080px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .fullpage .section-1 .heading {
+    max-width: 660px;
+    margin-bottom: 20px;
+    font-size: 70px;
+  }
+  .fullpage .section-1 .text {
+    max-width: 570px;
+    font-size: 36px;
+  }
+  .fullpage .section-1 .links {
+    max-width: none;
+    bottom: 32px;
+  }
+  .fullpage .section-1 .links li {
+    width: 30%;
+    margin-bottom: 0;
+    float: left;
   }
   .popup .heading {
     font-size: 56px;

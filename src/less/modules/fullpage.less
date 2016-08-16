@@ -1,0 +1,128 @@
+/* ==========================================================================
+   _FULLPAGE
+   ========================================================================== */
+.fullpage {
+    position: relative;
+    z-index: 5;
+    cursor: default;
+    user-select: none;
+
+    .section {
+        height: 100%;
+        overflow: hidden;
+
+        @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+            & {
+                -webkit-transform-style: preserve-3d;
+                -webkit-backface-visibility: hidden;
+            }
+        }
+
+        &-1 {
+            padding: 22px 0;
+            background: url('@{images}/fullpage/section-1.jpg') center no-repeat;
+            background-size: cover;
+            position: relative;
+            @media @tablet-sm {
+              padding-top: 56px;
+              padding-bottom: 500px;
+            }
+            @media @desktop-sm {
+              padding-top: 98px;
+            }
+
+            .wrapper {
+              @media @tablet-sm {
+                padding-right: 46px;
+                padding-left: 46px;
+              }
+              @media @desktop-sm {
+                max-width: 1080px;
+                padding-right: 30px;
+                padding-left: 30px;
+              }
+            }
+
+            .heading {
+                margin-top: 0;
+                margin-bottom: 6px;
+                font-size: 30px;
+                line-height: normal;
+                letter-spacing: .02em;
+
+                @media @tablet-sm {
+                  margin-bottom: 12px;
+                  font-size: 50px;
+                }
+                @media @desktop-sm {
+                  max-width: 660px;
+                  margin-bottom: 20px;
+                  font-size: 70px;
+                }
+            }
+
+            .text {
+              margin: 0;
+                font: 20px/normal @font-heading;
+                color: @color-midnight;
+                letter-spacing: .02em;
+
+                @media @tablet-sm {
+                  font-size: 30px;
+                }
+                @media @desktop-sm {
+                  max-width: 570px;
+                  font-size: 36px;
+                }
+            }
+
+            .links {
+              max-width: 260px;
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              display: none;
+              font: 800 36px/normal @font-heading;
+              position: absolute;
+              bottom: 63px;
+              &:after {
+                .clearfix;
+              }
+
+              @media @tablet-sm {
+                display: block;
+              }
+              @media @desktop-sm {
+                max-width: none;
+                bottom: 32px;
+              }
+
+              li {
+                margin-bottom: 59px;
+                letter-spacing: .02em;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+
+                @media @desktop-sm {
+                  width: 30%;
+                  margin-bottom: 0;
+                  float: left;
+                }
+
+                a {
+                  color: @color-midnight;
+                  &:hover, &:focus {
+                    color: @color-blue;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+        }
+
+        &-2 {
+
+        }
+    }
+}
