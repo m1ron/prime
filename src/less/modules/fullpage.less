@@ -8,7 +8,7 @@
     user-select: none;
 
     .section {
-        height: 100%;
+        //height: 100%;
         overflow: hidden;
 
         @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
@@ -22,25 +22,28 @@
             padding: 22px 0;
             background: url('@{images}/fullpage/section-1.jpg') center no-repeat;
             background-size: cover;
-            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-between;
             @media @tablet-sm {
-              padding-top: 56px;
-              padding-bottom: 500px;
+                padding-top: 57px;
+                padding-bottom: 63px;
             }
             @media @desktop-sm {
-              padding-top: 98px;
+                padding-top: 100px;
+                padding-bottom: 32px;
             }
 
             .wrapper {
-              @media @tablet-sm {
-                padding-right: 46px;
-                padding-left: 46px;
-              }
-              @media @desktop-sm {
-                max-width: 1080px;
-                padding-right: 30px;
-                padding-left: 30px;
-              }
+                @media @tablet-sm {
+                    padding-right: 46px;
+                    padding-left: 46px;
+                }
+                @media @desktop-sm {
+                    max-width: 1100px;
+                    padding-right: 30px;
+                    padding-left: 30px;
+                }
             }
 
             .heading {
@@ -51,78 +54,89 @@
                 letter-spacing: .02em;
 
                 @media @tablet-sm {
-                  margin-bottom: 12px;
-                  font-size: 50px;
+                    margin-bottom: 12px;
+                    font-size: 50px;
                 }
                 @media @desktop-sm {
-                  max-width: 660px;
-                  margin-bottom: 20px;
-                  font-size: 70px;
+                    margin-bottom: 20px;
+                    font-size: 70px;
                 }
             }
 
             .text {
-              margin: 0;
                 font: 20px/normal @font-heading;
                 color: @color-midnight;
                 letter-spacing: .02em;
 
+                p {
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
                 @media @tablet-sm {
-                  font-size: 30px;
+                    font-size: 30px;
+                    p {
+                        margin-right: 90px;
+                    }
                 }
                 @media @desktop-sm {
-                  max-width: 570px;
-                  font-size: 36px;
+                    max-width: 6600px;
+                    font-size: 36px;
                 }
             }
 
-            .links {
-              max-width: 260px;
-              margin: 0;
-              padding: 0;
-              list-style: none;
-              display: none;
-              font: 800 36px/normal @font-heading;
-              position: absolute;
-              bottom: 63px;
-              &:after {
-                .clearfix;
-              }
-
-              @media @tablet-sm {
-                display: block;
-              }
-              @media @desktop-sm {
-                max-width: none;
-                bottom: 32px;
-              }
-
-              li {
-                margin-bottom: 59px;
-                letter-spacing: .02em;
-                &:last-child {
-                  margin-bottom: 0;
+            .menu {
+                max-width: 260px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: none;
+                font: 800 36px/normal @font-heading;
+                &:after {
+                    .clearfix;
                 }
 
+                @media @tablet-sm {
+                    display: block;
+                }
                 @media @desktop-sm {
-                  width: 30%;
-                  margin-bottom: 0;
-                  float: left;
+                    max-width: none;
+                    margin-top: 62px;
                 }
 
-                a {
-                  color: @color-midnight;
-                  &:hover, &:focus {
-                    color: @color-blue;
-                    text-decoration: none;
-                  }
+                li {
+                    margin-top: 62px;
+                    letter-spacing: .02em;
+
+                    @media @desktop-sm {
+                        width: 33.3%;
+                        margin-top: 0;
+                        padding-right: 30px;
+                        float: left;
+                        &:first-child {
+                            width: 35.7%;
+                        }
+                        &:nth-child(2) {
+                            width: 38.2%;
+                        }
+                        &:nth-child(3) {
+                            width: 26.1%;
+                        }
+                    }
+
+                    a {
+                        color: @color-midnight;
+                        &:hover, &:focus {
+                            color: @color-blue;
+                            text-decoration: none;
+                        }
+                    }
                 }
-              }
             }
         }
 
         &-2 {
-
         }
     }
 }

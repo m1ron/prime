@@ -4616,7 +4616,6 @@ button.button-dark:focus,
           user-select: none;
 }
 .fullpage .section {
-  height: 100%;
   overflow: hidden;
 }
 @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
@@ -4629,7 +4628,16 @@ button.button-dark:focus,
   padding: 22px 0;
   background: url('../img/fullpage/section-1.jpg') center no-repeat;
   background-size: cover;
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-align-content: space-between;
+      -ms-flex-line-pack: justify;
+          align-content: space-between;
 }
 .fullpage .section-1 .heading {
   margin-top: 0;
@@ -4639,39 +4647,36 @@ button.button-dark:focus,
   letter-spacing: .02em;
 }
 .fullpage .section-1 .text {
-  margin: 0;
   font: 20px / normal 'Arno Pro', serif;
   color: #162a49;
   letter-spacing: .02em;
 }
-.fullpage .section-1 .links {
+.fullpage .section-1 .text p:last-of-type {
+  margin-bottom: 0;
+}
+.fullpage .section-1 .menu {
   max-width: 260px;
   margin: 0;
   padding: 0;
   list-style: none;
   display: none;
   font: 800 36px / normal 'Arno Pro', serif;
-  position: absolute;
-  bottom: 63px;
 }
-.fullpage .section-1 .links:after {
+.fullpage .section-1 .menu:after {
   display: table;
   content: '\0020';
   clear: both;
 }
-.fullpage .section-1 .links li {
-  margin-bottom: 59px;
+.fullpage .section-1 .menu li {
+  margin-top: 62px;
   letter-spacing: .02em;
 }
-.fullpage .section-1 .links li:last-child {
-  margin-bottom: 0;
-}
-.fullpage .section-1 .links li a {
+.fullpage .section-1 .menu li a {
   color: #162a49;
 }
-.fullpage .section-1 .links li a:hover,
-.fullpage .section-1 .links li a:focus,
-.fullpage .section-1 .links li a:focus {
+.fullpage .section-1 .menu li a:hover,
+.fullpage .section-1 .menu li a:focus,
+.fullpage .section-1 .menu li a:focus {
   color: #34bffc;
   text-decoration: none;
 }
@@ -5975,8 +5980,8 @@ button.button-dark:focus,
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
   }
   .fullpage .section-1 {
-    padding-top: 56px;
-    padding-bottom: 500px;
+    padding-top: 57px;
+    padding-bottom: 63px;
   }
   .fullpage .section-1 .wrapper {
     padding-right: 46px;
@@ -5989,7 +5994,10 @@ button.button-dark:focus,
   .fullpage .section-1 .text {
     font-size: 30px;
   }
-  .fullpage .section-1 .links {
+  .fullpage .section-1 .text p {
+    margin-right: 90px;
+  }
+  .fullpage .section-1 .menu {
     display: block;
   }
   .popup {
@@ -6834,30 +6842,40 @@ button.button-dark:focus,
     margin: 40px 0 28px;
   }
   .fullpage .section-1 {
-    padding-top: 98px;
+    padding-top: 100px;
+    padding-bottom: 32px;
   }
   .fullpage .section-1 .wrapper {
-    max-width: 1080px;
+    max-width: 1100px;
     padding-right: 30px;
     padding-left: 30px;
   }
   .fullpage .section-1 .heading {
-    max-width: 660px;
     margin-bottom: 20px;
     font-size: 70px;
   }
   .fullpage .section-1 .text {
-    max-width: 570px;
+    max-width: 6600px;
     font-size: 36px;
   }
-  .fullpage .section-1 .links {
+  .fullpage .section-1 .menu {
     max-width: none;
-    bottom: 32px;
+    margin-top: 62px;
   }
-  .fullpage .section-1 .links li {
-    width: 30%;
-    margin-bottom: 0;
+  .fullpage .section-1 .menu li {
+    width: 33.3%;
+    margin-top: 0;
+    padding-right: 30px;
     float: left;
+  }
+  .fullpage .section-1 .menu li:first-child {
+    width: 35.7%;
+  }
+  .fullpage .section-1 .menu li:nth-child(2) {
+    width: 38.2%;
+  }
+  .fullpage .section-1 .menu li:nth-child(3) {
+    width: 26.1%;
   }
   .popup .heading {
     font-size: 56px;
