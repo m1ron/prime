@@ -68,12 +68,21 @@ textarea {
         background: @color-midnight;
     }
 
-    &.button-blue {
+    &.button-blue-bordered {
         border-color: @color-blue;
         color: @color-blue;
         &:hover {
             color: @color-white;
             background: @color-blue;
+        }
+    }
+
+    &.button-blue {
+        border-color: @color-blue;
+        background: @color-blue;
+        color: @color-white;
+        &:hover {
+            background: transparent;
         }
     }
 
