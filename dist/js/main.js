@@ -77,20 +77,34 @@ $(document).ready(function() {
         toggle.add(overlay).on('click', toggleNav);
     });
 
+    /* Header */
+    $('.header').each(function() {
+        var _sub = $('.menu > li', this);
+        $('.menu', this).each(function() {
+            $('li', this).each(function() {
+                if ($(this).children('ul').length > 0) {
+                    $(this).addClass('sub');
+                } else {
+                    $(this).removeClass('sub');
+                }
+            });
+        });
+    });
+
     /* Fullpage */
-	$('.fullpage').each(function () {
-		$(this).fullpage({
-			menu: '#dots',
-			css3: true,
-			touchSensitivity: 10,
-			keyboardScrolling: false,
-			animateAnchor: false,
-			recordHistory: false,
-			verticalCentered: true,
-			resize: false,
-			scrollingSpeed: 1000
-		});
-	});
+    $('.fullpage').each(function() {
+        $(this).fullpage({
+            menu: '#dots',
+            css3: true,
+            touchSensitivity: 10,
+            keyboardScrolling: false,
+            animateAnchor: false,
+            recordHistory: false,
+            verticalCentered: true,
+            resize: false,
+            scrollingSpeed: 1000
+        });
+    });
 
     /** Gallery */
     $('.gallery').each(function() {

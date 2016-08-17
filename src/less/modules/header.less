@@ -99,7 +99,7 @@
             margin: 0;
             list-style: none;
             display: block;
-            overflow: hidden;
+            //overflow: hidden;
             position: absolute;
             top: 0;
             left: 325px;
@@ -143,9 +143,89 @@
                     &:before {
                         display: block;
                     }
-                    a {
+                    > a {
                         color: @color-cerulean;
                     }
+                }
+
+                > ul {
+                    width: 340px;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    background: @color-white;
+                    display: none;
+                    .color-black(.31);
+                    box-shadow: 0 4px 9px 0 @color;
+                    font-weight: 800;
+                    font-size: 16px;
+                    line-height: 19px;
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    text-transform: none;
+                    transform: translate3d(-50%, 0, 0);
+
+                    li {
+                        border-bottom: 1px solid @color-platinum;
+                        letter-spacing: .02em;
+                        float: none;
+
+                        a {
+                            padding: 27px;
+                            display: block;
+                            color: @color-midnight;
+                            cursor: pointer;
+                            &:before {
+                              .pseudo;
+
+                            }
+                            &:hover {
+
+                            }
+                        }
+
+                        &:first-child {
+                            a {
+                                padding-top: 31px;
+                            }
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                            a {
+                                padding-bottom: 33px;
+                            }
+                        }
+                    }
+                }
+
+                &.sub {
+
+                    &:after {
+                        .pseudo;
+                        margin: 0 auto;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 6px 6px 6px;
+                        border-color: transparent transparent @color-cerulean transparent;
+                        display: none;
+                        position: absolute;
+                        right: 0;
+                        bottom: 3px;
+                        left: 0;
+                    }
+
+                    &:hover {
+                      &:before, &:after, > ul {
+                          display: block;
+                      }
+                        &:before {
+                              width: 200vw;
+                              left: -100vw;
+                        }
+                    }
+
                 }
             }
         }
