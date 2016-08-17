@@ -96,7 +96,8 @@ module.exports = function(grunt) {
                         d.bower + 'magnific-popup/dist/jquery.magnific-popup.min.js',
                         d.bower + 'jquery-mask-plugin/dist/jquery.mask.min.js',
                         d.bower + 'parallax.js/parallax.min.js',
-                        d.bower + 'jquery-selectric/public/jquery.selectric.min.js'
+                        d.bower + 'jquery-selectric/public/jquery.selectric.min.js',
+                        d.bower + 'fullpage.js/dist/jquery.fullpage.min.js'
                     ],
                     dest: temp.js + 'vendor'
                 }]
@@ -122,7 +123,8 @@ module.exports = function(grunt) {
                         d.bower + 'normalize-css/normalize.css',
                         d.bower + 'slick-carousel/slick/slick.css',
                         d.bower + 'magnific-popup/dist/magnific-popup.css',
-                        d.bower + 'jquery-selectric/public/selectric.css'
+                        d.bower + 'jquery-selectric/public/selectric.css',
+                        d.bower + 'fullpage.js/dist/fullpage.min.css'
                     ],
                     dest: temp.css + 'vendor'
                 }]

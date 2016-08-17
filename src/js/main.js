@@ -77,6 +77,21 @@ $(document).ready(function() {
         toggle.add(overlay).on('click', toggleNav);
     });
 
+    /* Fullpage */
+	$('.fullpage').each(function () {
+		$(this).fullpage({
+			menu: '#dots',
+			css3: true,
+			touchSensitivity: 10,
+			keyboardScrolling: false,
+			animateAnchor: false,
+			recordHistory: false,
+			verticalCentered: true,
+			resize: false,
+			scrollingSpeed: 1000
+		});
+	});
+
     /** Gallery */
     $('.gallery').each(function() {
         $('.carousel', this).slick({

@@ -792,6 +792,7 @@ button.button-dark:focus,
 }
 body.index .page {
   height: 100%;
+  padding-top: 0;
 }
 .content,
 .wrapper {
@@ -4628,7 +4629,6 @@ body.index .page {
    _FULLPAGE
    ========================================================================== */
 .fullpage {
-  height: 100%;
   position: relative;
   z-index: 5;
   cursor: default;
@@ -4638,8 +4638,10 @@ body.index .page {
           user-select: none;
 }
 .fullpage .section {
-  height: 100%;
   overflow: hidden;
+}
+.fullpage .section .fp-tableCell {
+  padding-top: 84px;
 }
 @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
   .fullpage .section {
@@ -4648,12 +4650,13 @@ body.index .page {
   }
 }
 .fullpage .section-1 {
-  padding: 23px 0;
   background: url('../img/fullpage/section-1.jpg') center no-repeat;
   background-size: cover;
 }
 .fullpage .section-1 .wrapper {
   height: 100%;
+  padding-top: 23px;
+  padding-bottom: 23px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4714,7 +4717,6 @@ body.index .page {
   text-decoration: none;
 }
 .fullpage .section-2 {
-  padding: 41px 0 18px;
   background: url('../img/fullpage/section-2.jpg') center no-repeat;
   background-size: cover;
   color: #fff;
@@ -4746,6 +4748,8 @@ body.index .page {
 }
 .fullpage .section-2 .wrapper {
   height: 100%;
+  padding-top: 41px;
+  padding-bottom: 18px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4959,7 +4963,6 @@ body.index .page {
   left: 6px;
 }
 .fullpage .section-3 {
-  padding: 34px 0 23px;
   background: url('../img/fullpage/section-3.jpg') center no-repeat;
   background-size: cover;
   color: #fff;
@@ -4981,6 +4984,8 @@ body.index .page {
 }
 .fullpage .section-3 .wrapper {
   height: 100%;
+  padding-top: 34px;
+  padding-bottom: 23px;
   position: relative;
   z-index: 1;
 }
@@ -5033,14 +5038,12 @@ body.index .page {
   padding-bottom: 19px;
 }
 .fullpage .section-4 {
-  padding: 23px 0;
   background: url('../img/fullpage/section-4.jpg') center 0 no-repeat;
   background-size: cover;
 }
 .fullpage .section-4 .wrapper {
   height: 100%;
-  padding-right: 28px;
-  padding-left: 28px;
+  padding: 23px 28px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5066,13 +5069,13 @@ body.index .page {
   letter-spacing: .018em;
 }
 .fullpage .section-5 {
-  max-height: 596px;
-  padding: 22px 0 83px;
   position: relative;
   color: #fff;
 }
 .fullpage .section-5 .wrapper {
   height: 100%;
+  padding-top: 22px;
+  padding-bottom: 83px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5092,6 +5095,9 @@ body.index .page {
           align-items: center;
   text-align: center;
   position: relative;
+}
+.fullpage .section-5 .wrapper > * {
+  position: relative;
   z-index: 2;
 }
 .fullpage .section-5 .heading {
@@ -5107,14 +5113,13 @@ body.index .page {
   letter-spacing: .018em;
 }
 .fullpage .section-5 .projects {
+  width: 100vw;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -84px;
   bottom: 0;
-  left: 0;
   z-index: 0;
 }
 .fullpage .section-5 .projects:after {
@@ -5144,6 +5149,83 @@ body.index .page {
   right: 0;
   bottom: 0;
   left: 0;
+}
+/* ==========================================================================
+   _FULLPAGE DOTS
+   ========================================================================== */
+.dots {
+  padding: 0;
+  margin: auto;
+  list-style: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  z-index: 10;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.dots li {
+  width: 19px;
+  height: 19px;
+  margin: 22px 0;
+  position: relative;
+}
+.dots li:before {
+  width: 1px;
+  height: 15px;
+  border-radius: 0;
+  margin: 0 0 0 -1px;
+  left: 50%;
+  top: 22px;
+  opacity: .5;
+  background: #fff;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fp-viewing-section-4 .dots li:before {
+  background: #fff;
+}
+.dots li a {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: block;
+  opacity: .5;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.dots li a:before {
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  background: #fff;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fp-viewing-section-4 .dots li a:before {
+  background: #fff;
+}
+.dots li a:hover, .dots li a:focus {
+  opacity: 1;
+}
+.dots li a:hover:before, .dots li a:focus:before {
+  box-shadow: 0 0 5px 0 #34bffc;
+}
+.dots li.active a {
+  border-color: #34bffc;
+  opacity: 1;
 }
 /* ==========================================================================
    POPUPS
@@ -6444,13 +6526,8 @@ body.index .page {
     display: table;
     box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
   }
-  .fullpage .section-1 {
-    padding-top: 57px;
-    padding-bottom: 63px;
-  }
   .fullpage .section-1 .wrapper {
-    padding-right: 46px;
-    padding-left: 46px;
+    padding: 57px 46px 63px;
   }
   .fullpage .section-1 .heading {
     margin-bottom: 12px;
@@ -6466,9 +6543,11 @@ body.index .page {
     display: block;
   }
   .fullpage .section-2 {
+    background-position: 67% center;
+  }
+  .fullpage .section-2 .wrapper {
     padding-top: 76px;
     padding-bottom: 80px;
-    background-position: 67% center;
   }
   .fullpage .section-2 .heading {
     font-size: 50px;
@@ -6516,7 +6595,7 @@ body.index .page {
     padding-top: 21px;
     padding-bottom: 19px;
   }
-  .fullpage .section-3 {
+  .fullpage .section-3 .wrapper {
     padding-bottom: 82px;
   }
   .fullpage .section-3 .area {
@@ -6549,8 +6628,11 @@ body.index .page {
     padding-bottom: 22px;
   }
   .fullpage .section-4 {
-    padding: 50px 0;
     background-position: 44% 0;
+  }
+  .fullpage .section-4 .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .fullpage .section-4 .name {
     margin-bottom: 4px;
@@ -6560,8 +6642,9 @@ body.index .page {
     font-size: 32px;
     line-height: 32px;
   }
-  .fullpage .section-5 {
-    padding: 50px 0 22px;
+  .fullpage .section-5 .wrapper {
+    padding-top: 50px;
+    padding-bottom: 22px;
   }
   .fullpage .section-5 .heading {
     margin-bottom: 8px;
@@ -6696,6 +6779,9 @@ body.index .page {
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
+  }
+  .dots {
+    right: 20px;
   }
 }
 @media (min-width: 1024px) {
@@ -7422,14 +7508,9 @@ body.index .page {
   .table-price {
     margin: 40px 0 28px;
   }
-  .fullpage .section-1 {
-    padding-top: 100px;
-    padding-bottom: 32px;
-  }
   .fullpage .section-1 .wrapper {
     max-width: 1100px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding: 100px 30px 32px;
   }
   .fullpage .section-1 .heading {
     margin-bottom: 20px;
@@ -7458,12 +7539,10 @@ body.index .page {
   .fullpage .section-1 .menu li:nth-child(3) {
     width: 26.1%;
   }
-  .fullpage .section-2 {
-    padding-top: 60px;
-    padding-bottom: 75px;
-  }
   .fullpage .section-2 .wrapper {
     max-width: 920px;
+    padding-top: 60px;
+    padding-bottom: 75px;
   }
   .fullpage .section-2 .heading {
     font-size: 70px;
@@ -7516,16 +7595,15 @@ body.index .page {
   .fullpage .section-3 .area {
     float: right;
   }
-  .fullpage .section-4 {
-    padding: 80px 0;
-  }
   .fullpage .section-4 .wrapper {
     max-width: 1174px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
   .fullpage .section-4 .name {
     margin-bottom: 0;
   }
-  .fullpage .section-5 {
+  .fullpage .section-5 .wrapper {
     max-height: 418px;
     padding-top: 27px;
   }
