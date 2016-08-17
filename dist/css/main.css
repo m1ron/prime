@@ -4956,9 +4956,26 @@ body.index .page {
   background: url('../img/fullpage/section-3.jpg') center no-repeat;
   background-size: cover;
   color: #fff;
+  position: relative;
+}
+.fullpage .section-3:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: -webkit-linear-gradient(left, #162a49 0%, rgba(22, 42, 73, 0) 100%);
+  background: linear-gradient(to right, #162a49 0%, rgba(22, 42, 73, 0) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .6;
+  z-index: 0;
 }
 .fullpage .section-3 .wrapper {
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 .fullpage .section-3 .area {
   height: 100%;
@@ -5008,6 +5025,39 @@ body.index .page {
   margin-top: 28px;
   padding-top: 22px;
   padding-bottom: 22px;
+}
+.fullpage .section-4 {
+  padding: 22px 0;
+  background: url('../img/fullpage/section-4.jpg') center 0 no-repeat;
+  background-size: cover;
+}
+.fullpage .section-4 .wrapper {
+  height: 100%;
+  padding-right: 28px;
+  padding-left: 28px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.fullpage .section-4 .name {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: .02em;
+}
+.fullpage .section-4 .position {
+  margin: 0;
+  font: 20px / normal 'Arno Pro', serif;
+  letter-spacing: .018em;
 }
 /* ==========================================================================
    POPUPS
@@ -6407,6 +6457,16 @@ body.index .page {
   .fullpage .section-3 .button {
     min-width: 286px;
   }
+  .fullpage .section-4 {
+    padding: 50px 0;
+  }
+  .fullpage .section-4 .name {
+    font-size: 70px;
+  }
+  .fullpage .section-4 .position {
+    font-size: 32px;
+    line-height: 32px;
+  }
   .popup {
     padding: 48px 40px;
   }
@@ -7341,6 +7401,12 @@ body.index .page {
   }
   .fullpage .section-3 .area {
     float: right;
+  }
+  .fullpage .section-4 {
+    padding: 80px 0;
+  }
+  .fullpage .section-4 .wrapper {
+    max-width: 1186px;
   }
   .popup .heading {
     font-size: 56px;

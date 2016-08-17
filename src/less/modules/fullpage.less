@@ -461,12 +461,28 @@
           background: url('@{images}/fullpage/section-3.jpg') center no-repeat;
           background-size: cover;
           color: @color-white;
+          position: relative;
           @media @tablet-sm {
             padding-bottom: 80px;
           }
 
+          &:before {
+            .pseudo;
+            .color-midnight(0);
+            background: linear-gradient(to right, @color-midnight 0%,@color 100%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: .6;
+            z-index: 0;
+          }
+
           .wrapper {
             height: 100%;
+            position: relative;
+            z-index: 1;
             @media @desktop-sm {
                   max-width: 1080px;
             }
@@ -536,6 +552,49 @@
                 }
           }
 
+        }
+
+        &-4 {
+          padding: 22px 0;
+          background: url('@{images}/fullpage/section-4.jpg') center 0 no-repeat;
+          background-size: cover;
+          @media @tablet-sm {
+            padding: 50px 0;
+          }
+          @media @desktop-sm {
+            padding: 80px 0;
+          }
+
+          .wrapper {
+            height: 100%;
+            padding-right: 28px;
+            padding-left: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            @media @desktop-sm {
+                  max-width: 1186px;
+            }
+          }
+
+          .name {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: .02em;
+            @media @tablet-sm {
+              font-size: 70px;
+            }
+          }
+
+          .position {
+            margin: 0;
+            font: 20px/normal @font-heading;
+            letter-spacing: .018em;
+            @media @tablet-sm {
+              font-size: 32px;
+              line-height: 32px;
+            }
+          }
         }
     }
 }
