@@ -5155,77 +5155,62 @@ body.index .page {
    ========================================================================== */
 .dots {
   padding: 0;
-  margin: auto;
+  margin: 0;
   list-style: none;
   overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 20px;
   bottom: 0;
   z-index: 10;
+  cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .dots li {
-  width: 19px;
-  height: 19px;
-  margin: 22px 0;
+  width: 10px;
+  height: 10px;
+  margin: 9px 0;
   position: relative;
 }
-.dots li:before {
-  width: 1px;
-  height: 15px;
-  border-radius: 0;
-  margin: 0 0 0 -1px;
-  left: 50%;
-  top: 22px;
-  opacity: .5;
-  background: #fff;
-  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+.dots li:first-child {
+  margin-top: 0;
 }
-.fp-viewing-section-4 .dots li:before {
-  background: #fff;
+.dots li:last-child {
+  margin-bottom: 0;
 }
 .dots li a {
   width: 100%;
   height: 100%;
-  padding: 4px;
-  border: 1px solid transparent;
   border-radius: 50%;
   display: block;
-  opacity: .5;
-  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.dots li a:before {
-  border-radius: 50%;
-  overflow: hidden;
-  display: block;
-  content: '';
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  bottom: 4px;
-  left: 4px;
   background: #fff;
-  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-.fp-viewing-section-4 .dots li a:before {
-  background: #fff;
+  -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .dots li a:hover, .dots li a:focus {
-  opacity: 1;
+  background: #34bffc;
 }
-.dots li a:hover:before, .dots li a:focus:before {
-  box-shadow: 0 0 5px 0 #34bffc;
+.dots li a:focus {
+  background: #fff;
 }
 .dots li.active a {
-  border-color: #34bffc;
-  opacity: 1;
+  background: #34bffc;
 }
 /* ==========================================================================
    POPUPS
@@ -6781,7 +6766,7 @@ body.index .page {
     flex-basis: 25%;
   }
   .dots {
-    right: 20px;
+    right: 45px;
   }
 }
 @media (min-width: 1024px) {
