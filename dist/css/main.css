@@ -4648,7 +4648,7 @@ body.index .page {
   }
 }
 .fullpage .section-1 {
-  padding: 22px 0;
+  padding: 23px 0;
   background: url('../img/fullpage/section-1.jpg') center no-repeat;
   background-size: cover;
 }
@@ -4679,6 +4679,10 @@ body.index .page {
   font: 20px / normal 'Arno Pro', serif;
   color: #162a49;
   letter-spacing: .02em;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .fullpage .section-1 .text p:last-of-type {
   margin-bottom: 0;
@@ -4710,7 +4714,6 @@ body.index .page {
   text-decoration: none;
 }
 .fullpage .section-2 {
-  height: 600px;
   padding: 41px 0 18px;
   background: url('../img/fullpage/section-2.jpg') center no-repeat;
   background-size: cover;
@@ -4827,11 +4830,12 @@ body.index .page {
           transform: skew(-12deg, 0deg);
 }
 .fullpage .section-2 .objects li:first-child {
-  padding: 9px 13px 6px;
+  padding: 9px 11px 6px;
   font-size: 9px;
   line-height: normal;
-  top: 40.3%;
-  right: 15%;
+  top: 40.4%;
+  right: 15.6%;
+  letter-spacing: .06em;
 }
 .fullpage .section-2 .objects li:first-child:before {
   border-width: 9px 12px 0 0;
@@ -4841,8 +4845,9 @@ body.index .page {
   padding: 9px 13px 6px;
   font-size: 9px;
   line-height: normal;
-  top: 51%;
-  left: 10%;
+  top: 51.1%;
+  left: 8.9%;
+  letter-spacing: .04em;
 }
 .fullpage .section-2 .objects li:nth-child(2):before {
   border-width: 9px 12px 0 0;
@@ -4850,7 +4855,10 @@ body.index .page {
 }
 .fullpage .section-2 .objects li:nth-child(3) {
   bottom: 27%;
-  left: 8%;
+  left: 7%;
+}
+.fullpage .section-2 .objects li:nth-child(3):before {
+  border-width: 18px 22px 0 0;
 }
 .fullpage .section-2 .objects li:nth-child(5) {
   padding: 9px 14px 6px;
@@ -4864,10 +4872,12 @@ body.index .page {
   left: 10px;
 }
 .fullpage .section-2 .objects li:nth-child(6) {
-  padding: 8px 13px 7px;
+  padding: 9px 12px 6px;
   font-size: 9px;
-  top: 32%;
+  line-height: normal;
+  top: 31.8%;
   right: 3.3%;
+  letter-spacing: .044em;
 }
 .fullpage .section-2 .objects li:nth-child(6):before {
   border-width: 6px 12px 0 0;
@@ -4880,15 +4890,15 @@ body.index .page {
   padding: 11px 10px 10px;
   font-size: 12px;
   line-height: normal;
-  top: 46%;
+  top: 45.9%;
   right: 13.6%;
 }
 .fullpage .section-2 .objects li:nth-child(7):before {
   border-width: 12px 15px 0 0;
   left: 15px;
-  -webkit-transform: skew(-8deg, 0deg);
-      -ms-transform: skew(-8deg, 0deg);
-          transform: skew(-8deg, 0deg);
+  -webkit-transform: skew(-16deg, 0deg);
+      -ms-transform: skew(-16deg, 0deg);
+          transform: skew(-16deg, 0deg);
 }
 .fullpage .section-2 .objects li:nth-child(8) {
   width: 66px;
@@ -4948,11 +4958,8 @@ body.index .page {
           transform: skew(-10deg, 0deg);
   left: 6px;
 }
-.fullpage .section-2 .button {
-  padding-top: 21px;
-}
 .fullpage .section-3 {
-  padding: 32px 0 24px;
+  padding: 34px 0 23px;
   background: url('../img/fullpage/section-3.jpg') center no-repeat;
   background-size: cover;
   color: #fff;
@@ -5000,8 +5007,7 @@ body.index .page {
           align-items: center;
 }
 .fullpage .section-3 .heading {
-  margin-top: 0;
-  margin-bottom: 6px;
+  margin: 0;
   font-size: 30px;
   line-height: normal;
   letter-spacing: .02em;
@@ -5022,12 +5028,12 @@ body.index .page {
   background: #009ee3;
 }
 .fullpage .section-3 .button {
-  margin-top: 28px;
-  padding-top: 22px;
-  padding-bottom: 22px;
+  margin-top: 27px;
+  padding-top: 23px;
+  padding-bottom: 19px;
 }
 .fullpage .section-4 {
-  padding: 22px 0;
+  padding: 23px 0;
   background: url('../img/fullpage/section-4.jpg') center 0 no-repeat;
   background-size: cover;
 }
@@ -5058,6 +5064,86 @@ body.index .page {
   margin: 0;
   font: 20px / normal 'Arno Pro', serif;
   letter-spacing: .018em;
+}
+.fullpage .section-5 {
+  max-height: 596px;
+  padding: 22px 0 83px;
+  position: relative;
+  color: #fff;
+}
+.fullpage .section-5 .wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.fullpage .section-5 .heading {
+  margin: 0 0 3px;
+  font-size: 30px;
+  letter-spacing: .02em;
+  color: #fff;
+}
+.fullpage .section-5 .text {
+  max-width: 220px;
+  margin: 0 auto;
+  font: 20px / normal 'Arno Pro', serif;
+  letter-spacing: .018em;
+}
+.fullpage .section-5 .projects {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+.fullpage .section-5 .projects:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.fullpage .section-5 .projects li {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.fullpage .section-5 .projects li:nth-child(n+2) {
+  display: none;
+}
+.fullpage .section-5 .projects li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #4f5c71;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 /* ==========================================================================
    POPUPS
@@ -6374,7 +6460,7 @@ body.index .page {
     font-size: 30px;
   }
   .fullpage .section-1 .text p {
-    margin-right: 90px;
+    margin-right: 70px;
   }
   .fullpage .section-1 .menu {
     display: block;
@@ -6404,7 +6490,7 @@ body.index .page {
   }
   .fullpage .section-2 .objects li:first-child {
     top: 37.6%;
-    left: 26.3%;
+    left: 26.2%;
     right: auto;
   }
   .fullpage .section-2 .objects li:nth-child(2) {
@@ -6416,9 +6502,10 @@ body.index .page {
     left: 25.1%;
   }
   .fullpage .section-2 .objects li:nth-child(4) {
-    padding: 11px 11px 9px;
+    padding: 11px 12px 8px;
     top: 34.1%;
     right: 7.5%;
+    letter-spacing: .005em;
   }
   .fullpage .section-2 .objects li:nth-child(4):before {
     border-width: 14px 18px 0 0;
@@ -6426,9 +6513,11 @@ body.index .page {
   }
   .fullpage .section-2 .button {
     min-width: 310px;
+    padding-top: 21px;
+    padding-bottom: 19px;
   }
   .fullpage .section-3 {
-    padding-bottom: 80px;
+    padding-bottom: 82px;
   }
   .fullpage .section-3 .area {
     max-width: 460px;
@@ -6452,20 +6541,45 @@ body.index .page {
     font-size: 28px;
   }
   .fullpage .section-3 .sub-heading:before {
-    margin: 25px 0 34px;
+    margin: 24px 0 34px;
   }
   .fullpage .section-3 .button {
     min-width: 286px;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
   .fullpage .section-4 {
     padding: 50px 0;
+    background-position: 44% 0;
   }
   .fullpage .section-4 .name {
+    margin-bottom: 4px;
     font-size: 70px;
   }
   .fullpage .section-4 .position {
     font-size: 32px;
     line-height: 32px;
+  }
+  .fullpage .section-5 {
+    padding: 50px 0 22px;
+  }
+  .fullpage .section-5 .heading {
+    margin-bottom: 8px;
+    font-size: 50px;
+  }
+  .fullpage .section-5 .text {
+    max-width: none;
+    font-size: 28px;
+  }
+  .fullpage .section-5 .projects li {
+    width: 50%;
+    float: left;
+  }
+  .fullpage .section-5 .projects li:nth-child(n+2) {
+    display: block;
+  }
+  .fullpage .section-5 .projects li:nth-child(n+3) {
+    display: none;
   }
   .popup {
     padding: 48px 40px;
@@ -7370,11 +7484,11 @@ body.index .page {
   }
   .fullpage .section-2 .objects li:first-child {
     top: 46.1%;
-    left: 14.9%;
+    left: 15%;
   }
   .fullpage .section-2 .objects li:nth-child(2) {
     top: 32.5%;
-    left: 7.1%;
+    left: 7%;
   }
   .fullpage .section-2 .objects li:nth-child(3) {
     bottom: 20.2%;
@@ -7406,7 +7520,24 @@ body.index .page {
     padding: 80px 0;
   }
   .fullpage .section-4 .wrapper {
-    max-width: 1186px;
+    max-width: 1174px;
+  }
+  .fullpage .section-4 .name {
+    margin-bottom: 0;
+  }
+  .fullpage .section-5 {
+    max-height: 418px;
+    padding-top: 27px;
+  }
+  .fullpage .section-5 .heading {
+    font-size: 70px;
+  }
+  .fullpage .section-5 .projects li {
+    width: 33.3%;
+    float: left;
+  }
+  .fullpage .section-5 .projects li:nth-child(n+3) {
+    display: block;
   }
   .popup .heading {
     font-size: 56px;
