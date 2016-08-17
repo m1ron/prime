@@ -790,7 +790,7 @@ button.button-dark:focus,
   max-width: 1920px;
   padding-top: 84px;
 }
-.index .page {
+body.index .page {
   height: 100%;
 }
 .content,
@@ -4628,6 +4628,7 @@ button.button-dark:focus,
    _FULLPAGE
    ========================================================================== */
 .fullpage {
+  height: 100%;
   position: relative;
   z-index: 5;
   cursor: default;
@@ -4637,6 +4638,7 @@ button.button-dark:focus,
           user-select: none;
 }
 .fullpage .section {
+  height: 100%;
   overflow: hidden;
 }
 @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
@@ -4762,9 +4764,10 @@ button.button-dark:focus,
   z-index: 2;
 }
 .fullpage .section-2 .text {
-  -webkit-flex-basis: 100%;
-      -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .fullpage .section-2 .heading {
   margin: 0;
@@ -4947,6 +4950,64 @@ button.button-dark:focus,
 }
 .fullpage .section-2 .button {
   padding-top: 21px;
+}
+.fullpage .section-3 {
+  padding: 32px 0 24px;
+  background: url('../img/fullpage/section-3.jpg') center no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.fullpage .section-3 .wrapper {
+  height: 100%;
+}
+.fullpage .section-3 .area {
+  height: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.fullpage .section-3 .heading {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: .02em;
+  color: #fff;
+}
+.fullpage .section-3 .sub-heading {
+  margin: 0;
+  font: 20px / normal 'Arno Pro', serif;
+  letter-spacing: .02em;
+}
+.fullpage .section-3 .sub-heading:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 164px;
+  height: 2px;
+  margin: 12px 0 19px;
+  background: #009ee3;
+}
+.fullpage .section-3 .button {
+  margin-top: 28px;
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 /* ==========================================================================
    POPUPS
@@ -6316,6 +6377,36 @@ button.button-dark:focus,
   .fullpage .section-2 .button {
     min-width: 310px;
   }
+  .fullpage .section-3 {
+    padding-bottom: 80px;
+  }
+  .fullpage .section-3 .area {
+    max-width: 460px;
+    padding-right: 32px;
+    padding-left: 32px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start;
+  }
+  .fullpage .section-3 .heading {
+    font-size: 70px;
+  }
+  .fullpage .section-3 .sub-heading {
+    margin-right: 30px;
+    font-size: 28px;
+  }
+  .fullpage .section-3 .sub-heading:before {
+    margin: 25px 0 34px;
+  }
+  .fullpage .section-3 .button {
+    min-width: 286px;
+  }
   .popup {
     padding: 48px 40px;
   }
@@ -7171,7 +7262,7 @@ button.button-dark:focus,
     font-size: 70px;
   }
   .fullpage .section-1 .text {
-    max-width: 6600px;
+    max-width: 660px;
     font-size: 36px;
   }
   .fullpage .section-1 .menu {
@@ -7244,6 +7335,12 @@ button.button-dark:focus,
     padding: 0;
     top: 29.4%;
     left: 37.3%;
+  }
+  .fullpage .section-3 .wrapper {
+    max-width: 1080px;
+  }
+  .fullpage .section-3 .area {
+    float: right;
   }
   .popup .heading {
     font-size: 56px;
