@@ -158,10 +158,10 @@
         margin: 0 auto;
         display: flex;
         flex-flow: wrap row;
+        justify-content: flex-start;
         @media @tablet-sm {
             max-width: none;
             padding-bottom: 34px;
-            justify-content: space-between;
         }
         @media @desktop-sm {
             max-width: 1010px;
@@ -176,7 +176,7 @@
             font-size: 20px;
             line-height: normal;
             flex-basis: 48%;
-            &:nth-of-type(n+3) {
+            &:nth-last-of-type(-n+2) {
                 margin-bottom: 0;
             }
             &:nth-of-type(even) {
@@ -184,9 +184,13 @@
             }
 
             @media @tablet-sm {
+                margin-right: 100px;
                 margin-bottom: 0;
                 &, &:nth-of-type(even) {
                     flex-basis: auto;
+                }
+                &:last-of-type {
+                  margin-right: 0;
                 }
             }
 

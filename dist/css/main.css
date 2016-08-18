@@ -1841,6 +1841,7 @@ body.index .page {
 .form-callback.form-offer input.tel {
   height: 62px;
   font: 20px/20px 'Proxima Nova', Arial, sans-serif;
+  display: block;
 }
 .form-callback.form-offer .submit {
   background: #162a49;
@@ -4303,6 +4304,10 @@ body.index .page {
   -webkit-flex-flow: wrap row;
       -ms-flex-flow: wrap row;
           flex-flow: wrap row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .filter .types .checkbox {
   padding: 5px 5px 5px 26px;
@@ -4313,7 +4318,7 @@ body.index .page {
       -ms-flex-preferred-size: 48%;
           flex-basis: 48%;
 }
-.filter .types .checkbox:nth-of-type(n+3) {
+.filter .types .checkbox:nth-last-of-type(-n+2) {
   margin-bottom: 0;
 }
 .filter .types .checkbox:nth-of-type(even) {
@@ -4343,6 +4348,11 @@ body.index .page {
 }
 .catalog .list .item:last-of-type {
   margin-bottom: 0;
+}
+.catalog .list .item-sales .link:hover,
+.catalog .list .item-sales .link:focus,
+.catalog .list .item-sales .link:focus {
+  border-color: #f26d7d;
 }
 .catalog .list .area {
   display: -webkit-box;
@@ -4380,29 +4390,24 @@ body.index .page {
   border-bottom: none;
 }
 .catalog .list .link {
-  padding: 36px 16px 16px 16px;
+  padding: 35px 15px 15px 15px;
   display: block;
   position: relative;
+  border: 1px solid transparent;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .catalog .list .link:hover,
 .catalog .list .link:focus,
 .catalog .list .link:focus {
   text-decoration: none;
-  box-shadow: 0 0 7px 0 #f26d7d;
-}
-.catalog .list .link:hover .button,
-.catalog .list .link:focus .button,
-.catalog .list .link:focus .button {
-  background: #f26d7d;
-  border-color: #f26d7d;
+  border-color: #34bffc;
 }
 .catalog .list .badges {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -1px;
+  right: -1px;
 }
 .catalog .list .badges:after {
   display: table;
@@ -6407,12 +6412,9 @@ body.index .page {
   .filter .types {
     max-width: none;
     padding-bottom: 34px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
   }
   .filter .types .checkbox {
+    margin-right: 100px;
     margin-bottom: 0;
   }
   .filter .types .checkbox,
@@ -6420,6 +6422,9 @@ body.index .page {
     -webkit-flex-basis: auto;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
+  }
+  .filter .types .checkbox:last-of-type {
+    margin-right: 0;
   }
   .catalog {
     margin-bottom: 38px;
@@ -6453,7 +6458,7 @@ body.index .page {
     padding-left: 28px;
   }
   .catalog .list .link {
-    padding: 22px 26px 46px;
+    padding: 21px 25px 45px;
   }
   .catalog .list .badge {
     padding: 13px;
@@ -6799,8 +6804,8 @@ body.index .page {
     flex-basis: 31%;
   }
   .catalog .list .link {
-    padding-top: 31px;
-    padding-bottom: 18px;
+    padding-top: 30px;
+    padding-bottom: 17px;
   }
   .catalog .list .name {
     margin-bottom: 54px;

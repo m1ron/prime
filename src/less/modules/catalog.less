@@ -37,6 +37,14 @@
             @media @tablet-lg {
                 margin-bottom: 40px;
             }
+
+            &-sales {
+              .link {
+                &:hover, &:focus {
+                    border-color: @color-red;
+                }
+              }
+            }
         }
 
         .area {
@@ -114,34 +122,30 @@
         }
 
         .link {
-            padding: 36px 16px 16px 16px;
+            padding: 35px 15px 15px 15px;
             display: block;
             position: relative;
+            border: 1px solid transparent;
             .color-black(.15);
             box-shadow: 0 0 7px 0 @color;
-            transition: box-shadow @duration;
+            transition: border-color @duration;
             &:hover, &:focus {
                 text-decoration: none;
-                box-shadow: 0 0 7px 0 @color-red;
-
-                .button {
-                    background: @color-red;
-                    border-color: @color-red;
-                }
+                border-color: @color-blue;
             }
             @media @tablet-sm {
-                padding: 22px 26px 46px;
+                padding: 21px 25px 45px;
             }
             @media @tablet-lg {
-                padding-top: 31px;
-                padding-bottom: 18px;
+                padding-top: 30px;
+                padding-bottom: 17px;
             }
         }
 
         .badges {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: -1px;
+            right: -1px;
             &:after {
                 .clearfix;
             }
