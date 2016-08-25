@@ -205,7 +205,7 @@ $(document).ready(function() {
     /* Page header carousel */
     $('.page-header').each(function() {
         $('.carousel', this).slick({
-            autoplay: true,
+            //autoplay: true,
             autoplaySpeed: 5000,
             infinite: true,
             adaptiveHeight: true,

@@ -68,6 +68,11 @@ textarea {
         background: @color-midnight;
     }
 
+    &:disabled, &.disabled {
+      pointer-events: none !important;
+      opacity: .8 !important;
+    }
+
     &.button-blue-bordered {
         border-color: @color-blue;
         color: @color-blue;

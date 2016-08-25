@@ -149,6 +149,7 @@
         padding: 0;
         margin: 0 auto;
         list-style: none;
+        overflow: hidden;
         position: absolute;
         top: 0;
         right: 0;
@@ -157,6 +158,10 @@
         z-index: 1;
 
         .slick {
+            &-initialized {
+                overflow: visible;
+            }
+
             &-list, &-track {
                 height: 100% !important;
             }
@@ -227,11 +232,26 @@
         .item {
             width: 100%;
             height: 100%;
+            padding: 40px 0 85px;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: flex-end;
             position: relative;
             z-index: 1;
+            transition: background-position @duration-slow;
+            transition-timing-function: ease-out;
+
+            @media @tablet-sm {
+                padding: 40px 0 93px;
+            }
+            @media @desktop-sm {
+                padding: 50px 0 100px;
+            }
 
             &:before {
                 .pseudo;
@@ -243,6 +263,34 @@
                 left: 0;
                 opacity: .4;
                 backface-visibility: hidden;
+            }
+
+            .title, .text, .button, .price {
+                @media @desktop-sm {
+                    transform: translate3d(100px, 0, 0);
+                    opacity: 0;
+                    transition: transform @duration-slow, opacity @duration-slow;
+                    transition-timing-function: ease-out;
+                    transition-delay: 0s;
+                }
+            }
+
+            &.slick-active {
+                @media @desktop-sm {
+                    .title, .text, .button, .price {
+                        transform: translate3d(0, 0, 0);
+                        opacity: 1;
+                    }
+                    .title {
+                        transition-delay: .3s;
+                    }
+                    .text {
+                        transition-delay: .6s;
+                    }
+                    .button, .price {
+                        transition-delay: .9s;
+                    }
+                }
             }
         }
     }
