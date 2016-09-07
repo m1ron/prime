@@ -190,6 +190,158 @@
             font-weight: 800;
             line-height: 21px;
         }
+
+        &-top {
+            padding-top: 22px;
+            padding-bottom: 16px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 800;
+
+            > li {
+                > a {
+                    text-transform: uppercase;
+                }
+
+                .submenu {
+                    padding-top: 84px;
+                    .color-charcoal(.98);
+                    background: @color;
+                    box-shadow: 0 0 15px rgba(0,0,0,.3);
+                    color: @color-white;
+                    font-size: 16px;
+                    line-height: 19px;
+                    position: fixed;
+                    top: 0;
+                    left: 64px;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 40;
+
+                    .heading {
+                        height: 85px;
+                        margin: 0;
+                        border-bottom: 1px solid @color-purple-navy;
+                        overflow: hidden;
+                        font-weight: 800;
+                        white-space: nowrap;
+                        color: @color-blue;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+
+                        a {
+                            padding: 33px 40px 33px 33px;
+                            color: @color-blue;
+                            display: block;
+                            position: relative;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+
+                            &:before, &:after {
+                                .pseudo;
+                                width: 6px;
+                                height: 6px;
+                                margin: auto auto;
+                                border-top: 2px solid @color-blue;
+                                border-left: 2px solid @color-blue;
+                                border-radius: 2px;
+                                position: absolute;
+                                top: 0;
+                                right: 24px;
+                                bottom: 0;
+                                transform: rotate(-135deg);
+                            }
+
+                            &:before {
+                                bottom: 6px;
+                            }
+                            &:after {
+                                top: 6px;
+                            }
+                        }
+                    }
+
+                    > ul {
+                        height: 100%;
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        font-weight: normal;
+                        display: block;
+                        overflow: hidden;
+                        overflow-y: scroll;
+
+
+                        > li {
+                            border-bottom: 1px solid @color-purple-navy;
+
+                            > a {
+                                padding: 18px 33px;
+                                display: block;
+                                color: @color-white;
+                            }
+                        }
+                    }
+
+                    &-inner {
+                        background: @color-purple-navy;
+                        box-shadow: 0 0 15px rgba(0,0,0,.3);
+                        left: 128px;
+                        z-index: 50;
+
+                        .sub-toggle {
+                          width: 64px;
+                          height: 84px;
+                          display: block;
+                          position: absolute;
+                          right: 100%;
+                          top: 0;
+
+                          &:before, &:after {
+                              .pseudo;
+                              width: 13px;
+                              height: 13px;
+                              margin: auto auto;
+                              border-top: 3px solid @color-white;
+                              border-left: 3px solid @color-white;
+                              border-radius: 3px;
+                              position: absolute;
+                              top: 0;
+                              right: 0;
+                              bottom: 0;
+                              left: 0;
+                              transform: rotate(-45deg);
+                          }
+
+                          &:before {
+                              left: 2px;
+                          }
+                          &:after {
+                              left: 18px;
+                          }
+                        }
+
+                        .heading {
+                          border-color: @color-gray-slate;
+                            a {
+                                padding-right: 33px;
+                                &:before, &:after {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        ul {
+                          > li {
+                            border-color: @color-gray-slate;
+                          }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .calculate {
