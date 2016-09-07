@@ -169,10 +169,15 @@
 
         > li {
             > a {
-                padding: 15px 33px;
+                padding: 15px 26px;
                 display: block;
                 color: @color-white;
                 transition: color @duration;
+                @media @tablet-sm {
+                  padding-right: 33px;
+                  padding-left: 33px;
+                }
+
                 &:hover {
                     color: @color-blue;
                     text-decoration: none;
@@ -195,8 +200,11 @@
             padding-top: 22px;
             padding-bottom: 16px;
             font-size: 14px;
-            line-height: 20px;
+            line-height: 19px;
             font-weight: 800;
+            @media @desktop-sm {
+              display: none;
+            }
 
             > li {
                 > a {
@@ -204,19 +212,54 @@
                 }
 
                 .submenu {
-                    padding-top: 84px;
-                    .color-charcoal(.98);
-                    background: @color;
-                    box-shadow: 0 0 15px rgba(0,0,0,.3);
-                    color: @color-white;
-                    font-size: 16px;
-                    line-height: 19px;
                     position: fixed;
                     top: 0;
-                    left: 64px;
                     right: 0;
                     bottom: 0;
+                    left: 0;
                     z-index: 40;
+                    transition: transform @duration-l;
+                    transform: translate3d(-320px,0 ,0);
+                    backface-visibility: hidden;
+                    @media @tablet-sm {
+                      width: 384px;
+                      right: auto;
+                      transform: translate3d(-384px,0 ,0);
+                    }
+
+                    &.submenu-open {
+                        transform: translate3d(0,0 ,0);
+                    }
+
+                    .sub-overlay {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                    }
+
+                    .sub-area {
+                        width: 256px;
+                        height: 100%;
+                        padding-top: 84px;
+                        .color-charcoal(.98);
+                        background: @color;
+                        box-shadow: 0 0 15px rgba(0,0,0,.3);
+                        color: @color-white;
+                        font-size: 14px;
+                        line-height: 19px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 2;
+                        @media @tablet-sm {
+                          width: 320px;
+                          font-size: 16px;
+                        }
+                    }
 
                     .heading {
                         height: 85px;
@@ -238,6 +281,10 @@
                             position: relative;
                             text-overflow: ellipsis;
                             overflow: hidden;
+
+                            &:hover, &:focus, &:active {
+                                text-decoration: none;
+                            }
 
                             &:before, &:after {
                                 .pseudo;
@@ -263,13 +310,12 @@
                         }
                     }
 
-                    > ul {
+                     ul {
                         height: 100%;
                         padding: 0;
                         margin: 0;
                         list-style: none;
                         font-weight: normal;
-                        display: block;
                         overflow: hidden;
                         overflow-y: scroll;
 
@@ -278,53 +324,35 @@
                             border-bottom: 1px solid @color-purple-navy;
 
                             > a {
-                                padding: 18px 33px;
+                                padding: 18px 26px;
                                 display: block;
                                 color: @color-white;
+                                @media @tablet-sm {
+                                  padding-right: 33px;
+                                  padding-left: 33px;
+                                }
+
+                                &:hover, &:focus, &:active {
+                                    text-decoration: none;
+                                }
                             }
                         }
                     }
 
                     &-inner {
-                        background: @color-purple-navy;
-                        box-shadow: 0 0 15px rgba(0,0,0,.3);
-                        left: 128px;
-                        z-index: 50;
+                        z-index: 110;
 
-                        .sub-toggle {
-                          width: 64px;
-                          height: 84px;
-                          display: block;
-                          position: absolute;
-                          right: 100%;
-                          top: 0;
-
-                          &:before, &:after {
-                              .pseudo;
-                              width: 13px;
-                              height: 13px;
-                              margin: auto auto;
-                              border-top: 3px solid @color-white;
-                              border-left: 3px solid @color-white;
-                              border-radius: 3px;
-                              position: absolute;
-                              top: 0;
-                              right: 0;
-                              bottom: 0;
-                              left: 0;
-                              transform: rotate(-45deg);
-                          }
-
-                          &:before {
-                              left: 2px;
-                          }
-                          &:after {
-                              left: 18px;
+                        .sub-area {
+                          width: 192px;
+                          background: @color-purple-navy;
+                          box-shadow: 0 0 15px rgba(0,0,0,.3);
+                          @media @tablet-sm {
+                            width: 256px;
                           }
                         }
 
                         .heading {
-                          border-color: @color-gray-slate;
+                            border-color: @color-gray-slate;
                             a {
                                 padding-right: 33px;
                                 &:before, &:after {
@@ -334,9 +362,9 @@
                         }
 
                         ul {
-                          > li {
-                            border-color: @color-gray-slate;
-                          }
+                            > li {
+                                border-color: @color-gray-slate;
+                            }
                         }
                     }
                 }

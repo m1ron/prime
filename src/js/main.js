@@ -75,6 +75,38 @@ $(document).ready(function() {
         overlay.appendTo(this);
         $('.area', this).wrapInner('<div class="scroll"/>');
         toggle.add(overlay).on('click', toggleNav);
+
+        $('.menu', this).each(function() {
+            $('li', this).each(function() {
+                if ($(this).children('.submenu').length > 0) {
+                    $(this).addClass('sub');
+                } else {
+                    $(this).removeClass('sub');
+                }
+            });
+            $('.sub', this).each(function() {
+                $('a', this).on('click', function() {
+                    $(this).siblings('.submenu').addClass('submenu-open');
+                    return false;
+                });
+            });
+            $('.submenu', this).each(function() {
+                $('ul', this).each(function() {
+                    $('li', this).each(function() {
+                        if ($(this).children('.submenu', this).length > 0) {
+                            $(this).addClass('sub');
+                        } else {
+                            $(this).removeClass('sub');
+                        }
+                    });
+                });
+                $('<div class="sub-overlay"/>').appendTo(this);
+                $('.sub-overlay', this).on('click', function() {
+                    $(this).closest('.submenu').removeClass('submenu-open');
+                    return false;
+                });
+            });
+        });
     });
 
     /* Header */
