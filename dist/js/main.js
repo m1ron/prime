@@ -53,6 +53,8 @@ $(document).ready(function() {
             function close() {
                 html.off('keydown', keyhandler).removeClass('nav-open');
                 body.off('click touchstart', clickhandler);
+                $('.submenu', nav).removeClass('submenu-open');
+                nav.removeClass('nav-submenu-open');
                 setTimeout(function() {
                     html.removeClass('nav-visible');
                 }, 420);
@@ -69,7 +71,8 @@ $(document).ready(function() {
 
         var body = $('body'),
             html = $('html'),
-            toggle = $('.toggle', this),
+            nav = $(this),
+            toggle = $('.toggle', nav),
             flag = false;
         var overlay = $('<div class="overlay"/>');
         overlay.appendTo(this);
@@ -78,33 +81,32 @@ $(document).ready(function() {
 
         $('.menu', this).each(function() {
             $('li', this).each(function() {
-                if ($(this).children('.submenu').length > 0) {
-                    $(this).addClass('sub');
-                } else {
-                    $(this).removeClass('sub');
-                }
-            });
-            $('.sub', this).each(function() {
-                $('a', this).on('click', function() {
-                    $(this).siblings('.submenu').addClass('submenu-open');
-                    return false;
-                });
-            });
-            $('.submenu', this).each(function() {
-                $('ul', this).each(function() {
-                    $('li', this).each(function() {
-                        if ($(this).children('.submenu', this).length > 0) {
-                            $(this).addClass('sub');
-                        } else {
-                            $(this).removeClass('sub');
-                        }
+                var li = $(this),
+                    sub = li.children('.submenu'),
+                    hasSub = (sub.length > 0);
+                li.toggleClass('sub', hasSub);
+                if (hasSub) {
+                    $('a', li).on('click', function() {
+                        $(this).blur().siblings('.submenu').addClass('submenu-open');
+                        nav.addClass('nav-submenu-open');
+                        return false;
                     });
-                });
-                $('<div class="sub-overlay"/>').appendTo(this);
-                $('.sub-overlay', this).on('click', function() {
-                    $(this).closest('.submenu').removeClass('submenu-open');
-                    return false;
-                });
+                    sub.wrapInner('<div class="sub-area"/>');
+                    sub.each(function() {
+                        $('<a href="#" class="sub-toggle"/>').prependTo(this);
+                        $('<div class="sub-overlay"/>').appendTo(this);
+                        $('.sub-overlay', this).on('click', function() {
+                            $(this).closest('.submenu').removeClass('submenu-open');
+                            console.log($('.submenu-open', nav).length);
+                            if ($('.submenu-open', nav).length === 0) {
+                                setTimeout(function() {
+                                    nav.removeClass('nav-submenu-open');
+                                }, 300);
+                            }
+                            return false;
+                        });
+                    });
+                }
             });
         });
     });
