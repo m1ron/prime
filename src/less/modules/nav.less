@@ -270,10 +270,10 @@
                             transform: rotate(-45deg);
                         }
                         &:before {
-                          right: 0;
+                            right: 0;
                         }
                         &:after {
-                          left: 16px;
+                            left: 16px;
                         }
                     }
 
@@ -371,6 +371,7 @@
 
                                 &:hover, &:focus, &:active {
                                     text-decoration: none;
+                                    color: @color-blue;
                                 }
                             }
                         }
@@ -389,9 +390,9 @@
                         }
 
                         .sub-toggle {
-                          left: 64px;
-                          .color-charcoal(.98);
-                          background: @color;
+                            left: 64px;
+                            .color-charcoal(.98);
+                            background: @color;
                         }
 
                         .heading {
@@ -408,6 +409,43 @@
                             > li {
                                 border-color: @color-gray-slate;
                             }
+                        }
+                    }
+                }
+            }
+
+            .sub {
+                > a {
+                    position: relative;
+                    &:before {
+                        .pseudo;
+                        width: 6px;
+                        height: 6px;
+                        margin: auto;
+                        border-top: 2px solid @color-white;
+                        border-left: 2px solid @color-white;
+                        transform: rotate(135deg);
+                        position: absolute;
+                        top: 0;
+                        right: 25px;
+                        bottom: 0;
+                        transition: border @duration;
+                        @media (min-width: 1280px) {
+                            display: none;
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        &:before {
+                            border-color: @color-blue;
+                        }
+                    }
+                }
+
+                &.active {
+                    > a {
+                        &:before {
+                            border-color: @color-blue;
                         }
                     }
                 }

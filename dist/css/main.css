@@ -1285,6 +1285,7 @@ body.index .page {
 .nav .menu-top > li .submenu ul > li > a:active,
 .nav .menu-top > li .submenu ul > li > a:focus {
   text-decoration: none;
+  color: #34bffc;
 }
 .nav .menu-top > li .submenu-inner {
   z-index: 110;
@@ -1310,6 +1311,36 @@ body.index .page {
 }
 .nav .menu-top > li .submenu-inner ul > li {
   border-color: #667897;
+}
+.nav .menu-top .sub > a {
+  position: relative;
+}
+.nav .menu-top .sub > a:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  position: absolute;
+  top: 0;
+  right: 25px;
+  bottom: 0;
+  -webkit-transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav .menu-top .sub > a:hover:before,
+.nav .menu-top .sub > a:focus:before,
+.nav .menu-top .sub > a:focus:before {
+  border-color: #34bffc;
+}
+.nav .menu-top .sub.active > a:before {
+  border-color: #34bffc;
 }
 .nav .calculate {
   display: none;
@@ -8345,6 +8376,9 @@ body.index .page {
     left: -100vw;
   }
   .nav .menu-top {
+    display: none;
+  }
+  .nav .menu-top .sub > a:before {
     display: none;
   }
 }
