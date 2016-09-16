@@ -232,7 +232,7 @@ $(document).ready(function() {
 
         /** Map script */
         setTimeout(function() {
-            //$.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
+            $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
         }, 100);
     });
 

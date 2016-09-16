@@ -20,15 +20,40 @@
 
     .photo {
         height: 230px;
-        background-position: 50% 50%;
+        overflow: hidden;
+        position: relative;
+        background-position: -1000px -1000px;
+        background-size: 10px 10px;
         background-repeat: no-repeat;
-        background-size: cover;
+        .color-blue-light(.5);
+        background-color: @color;
         @media @tablet-sm {
             height: 350px;
         }
         @media @tablet-md {
             height: auto;
             flex-basis: 50%;
+        }
+
+        &:before {
+            .pseudo;
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            bottom: -2px;
+            left: -2px;
+            z-index: 1;
+            background-image: inherit;
+            background-size: cover;
+        }
+
+        .preloader {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
         }
     }
 

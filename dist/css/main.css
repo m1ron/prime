@@ -328,6 +328,7 @@ h6 + p,
   height: 20px;
   margin: auto;
   position: relative;
+  z-index: 10;
 }
 .preloader span {
   position: absolute;
@@ -2093,8 +2094,10 @@ body.index .page {
   /* noinspection CssInvalidPseudoSelector */
 }
 .form-callback .heading {
+  width: 100%;
   margin-bottom: 14px;
   font: bold 34px/42px 'Arno Pro', serif;
+  display: block;
   color: #162a49;
   letter-spacing: .01em;
 }
@@ -3674,6 +3677,7 @@ body.index .page {
   background-position: -1000px -1000px;
   background-size: 10px 10px;
   background-repeat: no-repeat;
+  background-color: rgba(177, 219, 237, 0.5);
 }
 .portfolio .list .item:before {
   display: block;
@@ -3710,6 +3714,14 @@ body.index .page {
   z-index: 3;
   background: -webkit-linear-gradient(top, rgba(51, 59, 69, 0) 0%, rgba(51, 59, 69, 0.8) 100%);
   background: linear-gradient(to bottom, rgba(51, 59, 69, 0) 0%, rgba(51, 59, 69, 0.8) 100%);
+}
+.portfolio .list .item .preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 .portfolio .list .link {
   width: 100%;
@@ -4078,9 +4090,33 @@ body.index .page {
 }
 .articles .photo {
   height: 230px;
-  background-position: 50% 50%;
+  overflow: hidden;
+  position: relative;
+  background-position: -1000px -1000px;
+  background-size: 10px 10px;
   background-repeat: no-repeat;
+  background-color: rgba(177, 219, 237, 0.5);
+}
+.articles .photo:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: 1;
+  background-image: inherit;
   background-size: cover;
+}
+.articles .photo .preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 .articles .text {
   max-width: 450px;
