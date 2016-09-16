@@ -1,5 +1,26 @@
 /*global window, document, $, google, mapCenter, FastClick */
 
+/** Detect IE & Edge */
+(function() {
+    var ua = window.navigator.userAgent,
+        pl = window.navigator.platform,
+        body = document.getElementsByTagName('body')[0],
+        result;
+    window.isIE = (ua.indexOf('MSIE') > -1) || (ua.indexOf('Trident') > -1);
+    window.isEdge = (ua.indexOf('Edge') > -1);
+    window.isWin = (pl.indexOf('Win') > -1);
+    if (isWin) {
+        body.classList.add('mswin');
+    }
+    if (isIE) {
+        body.classList.add('msie');
+    }
+    if (isEdge) {
+        body.classList.add('msedge');
+    }
+})();
+
+
 /** Remove tap delay on touch devices */
 FastClick.attach(document.body);
 
@@ -184,7 +205,11 @@ $(document).ready(function() {
                     center: pos,
                     zoom: 15,
                     scrollwheel: false,
-                    disableDefaultUI: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    rotateControl: false,
+                    fullscreenControl: false,
                     backgroundColor: "#f3f2ef"
                 });
                 new google.maps.Marker({
@@ -207,7 +232,7 @@ $(document).ready(function() {
 
         /** Map script */
         setTimeout(function() {
-            $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
+            //$.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
         }, 100);
     });
 
@@ -290,10 +315,10 @@ $(document).ready(function() {
             }, {
                 breakpoint: 1170,
                 settings: {
-                    slidesToShow: 1,
-                    variableWidth: true,
-                    centerMode: true,
-                    infinite: true
+                    slidesToShow: 3,
+                    variableWidth: false,
+                    centerMode: false,
+                    //infinite: true
                 }
             }]
         });

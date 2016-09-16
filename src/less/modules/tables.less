@@ -6,7 +6,9 @@
     /*** TABLE-RESPONSIVE ***/
     &-responsive {
         width: 100%;
-        overflow-x: scroll;
+        overflow: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         &-full {
             width: auto;
             margin: 0 -20px;
