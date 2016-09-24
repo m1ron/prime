@@ -118,7 +118,6 @@ $(document).ready(function() {
                         $('<div class="sub-overlay"/>').appendTo(this);
                         $('.sub-overlay', this).on('click', function() {
                             $(this).closest('.submenu').removeClass('submenu-open');
-                            console.log($('.submenu-open', nav).length);
                             if ($('.submenu-open', nav).length === 0) {
                                 setTimeout(function() {
                                     nav.removeClass('nav-submenu-open');
@@ -134,15 +133,58 @@ $(document).ready(function() {
 
     /* Header */
     $('.header').each(function() {
-        var _sub = $('.menu > li', this);
+        var $bar = $('<div/>').addClass('bar');
+        $bar.appendTo(this);
         $('.menu', this).each(function() {
-            $('li', this).each(function() {
-                if ($(this).children('ul').length > 0) {
-                    $(this).addClass('sub');
-                } else {
-                    $(this).removeClass('sub');
+            function init() {
+                function active() {
+                    var $li = $(this);
+                    pos = $li.offset().left;
+                    w = $li.outerWidth();
+                    $bar.css({
+                        width: w + 'px',
+                        transform: 'translate3d(' + pos + 'px, 0, 0)'
+                    });
                 }
-            });
+                function enter() {
+                    var $li = $(this);
+                    pos = $li.offset().left;
+                    w = $li.outerWidth();
+                    if ($li.hasClass('sub')) {
+                        pos = (+pos + Math.floor(w / 2) - 170);
+                        w = 340;
+                    }
+                    $bar.css({
+                        width: w + 'px',
+                        transform: 'translate3d(' + pos + 'px, 0, 0)'
+                    });
+                }
+                function leave() {
+                    var $li = $(this);
+                    pos = 0;
+                    w = 0;
+                    if (active) {
+                        pos = $lis.filter('.active').offset().left;
+                        w = $lis.filter('.active').outerWidth();
+                    }
+                    $bar.css({
+                        width: w + 'px',
+                        transform: 'translate3d(' + pos + 'px, 0, 0)'
+                    });
+                }
+
+                var $li = $(this),
+                    isActive = ($lis.filter('.active').length > 0),
+                    pos = 0,
+                    w = 0;
+                $li.toggleClass('sub', ($li.children('ul').length > 0));
+                $li.on('mouseenter', enter).on('mouseleave', leave);
+                if (isActive) {
+                    active.call($lis.filter('.active'));
+                }
+            }
+            var $lis = $(this).children('li');
+            $lis.each(init);
         });
     });
 
@@ -169,6 +211,7 @@ $(document).ready(function() {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
+            touchThreshold: 10,
             prevArrow: '<span class="prev"></span>',
             nextArrow: '<span class="next"></span>',
             dots: true,
@@ -232,7 +275,7 @@ $(document).ready(function() {
 
         /** Map script */
         setTimeout(function() {
-            $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
+            //$.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
         }, 100);
     });
 
@@ -300,6 +343,7 @@ $(document).ready(function() {
             slidesToShow: 1,
             slidesToScroll: 1,
             mobileFirst: true,
+            touchThreshold: 10,
             prevArrow: '<span class="prev"></span>',
             nextArrow: '<span class="next"></span>',
             responsive: [{
