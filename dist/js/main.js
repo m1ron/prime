@@ -9,6 +9,13 @@
     window.isIE = (ua.indexOf('MSIE') > -1) || (ua.indexOf('Trident') > -1);
     window.isEdge = (ua.indexOf('Edge') > -1);
     window.isWin = (pl.indexOf('Win') > -1);
+    window.isMobile = (function() {
+        if (ua.match(/Android/i) || ua.match(/webOS/i) || ua.match(/iPhone/i) || ua.match(/iPad/i) || ua.match(/iPod/i) || ua.match(/BlackBerry/i) || ua.match(/Windows Phone/i)) {
+            return true;
+        } else {
+            return false;
+        }
+    })();
     if (isWin) {
         body.classList.add('mswin');
     }
@@ -98,6 +105,9 @@ $(document).ready(function() {
         var overlay = $('<div class="overlay"/>');
         overlay.appendTo(this);
         $('.area', this).wrapInner('<div class="scroll"/>');
+        if (!isMobile) {
+            $('.scroll', this).perfectScrollbar();
+        }
         toggle.add(overlay).on('click', toggleNav);
 
         $('.menu', this).each(function() {
@@ -135,6 +145,7 @@ $(document).ready(function() {
     $('.header').each(function() {
         var $bar = $('<div/>').addClass('bar');
         $bar.appendTo(this);
+        /* Menu */
         $('.menu', this).each(function() {
             function init() {
                 function active() {
@@ -146,6 +157,7 @@ $(document).ready(function() {
                         transform: 'translate3d(' + pos + 'px, 0, 0)'
                     });
                 }
+
                 function enter() {
                     var $li = $(this);
                     pos = $li.offset().left;
@@ -159,6 +171,7 @@ $(document).ready(function() {
                         transform: 'translate3d(' + pos + 'px, 0, 0)'
                     });
                 }
+
                 function leave() {
                     var $li = $(this);
                     pos = 0;
