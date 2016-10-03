@@ -7,30 +7,30 @@
     position: relative;
     z-index: 5;
     cursor: default;
-    user-select: none;
+    //user-select: none;
 
     &-wrapper {
-        width: 100%!important;
-        transform: none!important;
+        //width: 100% !important;
+        //transform: none!important;
     }
 
     .section {
-        background-color: @color-blue-pastel;
         position: relative;
+        background-color: @color-blue-pastel;
 
         &.fp-section {
-            width: 100%!important;
-            position: absolute;
-            left: 0;
-            top: 0;
-            visibility: hidden;
-            opacity: 0;
+            //width: 100% !important;
+            position: relative;
+            //left: 0;
+            //top: 0;
+            //visibility: hidden;
+            //opacity: 0;
             z-index: 0;
-            transition: all .7s ease-in-out;
+            //transition: all .7s ease-in-out;
 
             &.active {
-                visibility: visible;
-                opacity: 1;
+                //visibility: visible;
+                //opacity: 1;
                 z-index: 1;
             }
         }
@@ -41,8 +41,8 @@
 
         @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
             & {
-                -webkit-transform-style: preserve-3d;
-                -webkit-backface-visibility: hidden;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
             }
         }
 
@@ -57,20 +57,20 @@
             bottom: 0;
             left: 0;
             @media @desktop-sm {
-                transform: scale(.8) translate3d(0, -100%, 0);
-                opacity: 0;
-                z-index: 0;
-                transition: transform @duration-l, opacity @duration-l;
-                transition-delay: 0s;
+                //transform: scale(.8) translate3d(0, -100%, 0);
+                //opacity: 0;
+                //z-index: 0;
+                //transition: transform @duration-l, opacity @duration-l;
+                //transition-delay: 0s;
             }
         }
 
         &.active {
             @media @desktop-sm {
                 &:before {
-                    transform: scale(1) translate3d(0,0,0);
-                    opacity: 1;
-                    transition-delay: .6s;
+                    //transform: scale(1) translate3d(0,0,0);
+                    //opacity: 1;
+                    //transition-delay: .6s;
                 }
             }
         }
@@ -114,14 +114,14 @@
                 }
                 @media @desktop-sm {
                     margin-bottom: 20px;
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
                     transition-delay: 0s;
                 }
                 @media @desktop-lg {
-                  font-size: 70px;
+                    font-size: 70px;
                 }
             }
 
@@ -146,7 +146,7 @@
                 @media @desktop-sm {
                     max-width: 660px;
                     p {
-                        transform: translate3d(0, 50px, 0);
+                        transform: translate3d(0, 30px, 0);
                         opacity: 0;
                         transition: transform @duration-slow, opacity @duration-slow;
                         transition-timing-function: ease-out;
@@ -154,7 +154,7 @@
                     }
                 }
                 @media @desktop-lg {
-                  font-size: 36px;
+                    font-size: 36px;
                 }
             }
 
@@ -178,7 +178,7 @@
                 }
                 @media @desktop-sm {
                     font-size: 36px;
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -195,7 +195,7 @@
                         margin-top: 0;
                         float: left;
                         &:last-child {
-                          padding-right: 0;
+                            padding-right: 0;
                         }
                         &:first-child {
                             width: 35.7%;
@@ -209,7 +209,7 @@
                     }
 
                     @media @desktop-sm {
-                      padding-right: 30px;
+                        padding-right: 30px;
                     }
 
                     a {
@@ -261,30 +261,10 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-
+                opacity: 0;
                 @media @desktop-sm {
-                    transform: scale(.8) translate3d(0, -100%, 0);
-                    opacity: 0;
+                    opacity: 1;
                     z-index: 1;
-                    transition: transform @duration-l, opacity @duration-l;
-                    transition-delay: 0s;
-                }
-            }
-
-            /*&:before {
-                height: 432px;
-                background: linear-gradient(to bottom, rgba(22,42,73,1) 0%,rgba(22,42,73,0) 100%);
-                opacity: .62;
-                bottom: auto;
-            }*/
-
-            &.active {
-                @media @desktop-sm {
-                    &:after {
-                        transform: scale(1) translate3d(0,0,0);
-                        opacity: 1;
-                        transition-delay: .6s;
-                    }
                 }
             }
 
@@ -322,13 +302,13 @@
                     font-size: 50px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
                 }
                 @media @desktop-lg {
-                  font-size: 70px;
+                    font-size: 70px;
                 }
             }
 
@@ -355,7 +335,7 @@
                     max-width: 600px;
                     margin: 0 auto;
                     font-size: 36px;
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -601,13 +581,12 @@
                     padding-bottom: 19px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
                 }
             }
-
 
             &.fp-completely {
                 @media @desktop-sm {
@@ -681,22 +660,6 @@
                 bottom: 0;
                 left: 0;
                 z-index: 1;
-                @media @desktop-sm {
-                    transform: scale(.8) translate3d(0, -100%, 0);
-                    opacity: 0;
-                    transition: transform @duration-l, opacity @duration-l;
-                    transition-delay: 0s;
-                }
-            }
-
-            &.active {
-                @media @desktop-sm {
-                    &:after {
-                        transform: scale(1) translate3d(0,0,0);
-                        opacity: .6;
-                        transition-delay: .6s;
-                    }
-                }
             }
 
             .wrapper {
@@ -742,7 +705,7 @@
                     font-size: 70px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -772,7 +735,7 @@
                 }
 
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -783,15 +746,13 @@
                 margin-top: 27px;
                 padding-top: 23px;
                 padding-bottom: 19px;
-
                 @media @tablet-sm {
                     min-width: 286px;
                     padding-top: 22px;
                     padding-bottom: 22px;
                 }
-
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -859,7 +820,7 @@
                 }
                 @media @desktop-sm {
                     margin-bottom: 0;
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -875,7 +836,7 @@
                     line-height: 32px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 30px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -899,8 +860,8 @@
         }
 
         &-5 {
-            background: transparent;
             color: @color-white;
+            background: transparent;
 
             .wrapper {
                 height: 100%;
@@ -911,6 +872,10 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                color: @color-white !important;
+                &:hover {
+                    text-decoration: none !important;
+                }
                 @media @tablet-sm {
                     padding-top: 50px;
                     padding-bottom: 22px;
@@ -936,13 +901,13 @@
                     font-size: 50px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 20px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
                 }
                 @media @desktop-lg {
-                  font-size: 70px;
+                    font-size: 70px;
                 }
             }
 
@@ -951,13 +916,15 @@
                 margin: 0 auto;
                 font: 20px/normal @font-heading;
                 letter-spacing: .018em;
+                color: @color-white;
+                text-decoration: none;
 
                 @media @tablet-sm {
                     max-width: none;
                     font-size: 28px;
                 }
                 @media @desktop-sm {
-                    transform: translate3d(0, 50px, 0);
+                    transform: translate3d(0, 20px, 0);
                     opacity: 0;
                     transition: transform @duration-slow, opacity @duration-slow;
                     transition-timing-function: ease-out;
@@ -974,13 +941,6 @@
                 top: -84px;
                 bottom: 0;
                 z-index: 0;
-
-                @media @desktop-sm {
-                    opacity: 0;
-                    transform: scale(.8) translate3d(0, -100%, 0);
-                    transition: transform @duration-l, opacity @duration-l;
-                    transition-delay: 0s;
-                }
 
                 &:after {
                     .clearfix;
@@ -1024,16 +984,6 @@
                         right: 0;
                         bottom: 0;
                         left: 0;
-                    }
-                }
-            }
-
-            &.active {
-                @media @desktop-sm {
-                    .projects {
-                        opacity: 1;
-                        transform: scale(1) translate3d(0,0,0);
-                        transition-delay: .6s;
                     }
                 }
             }

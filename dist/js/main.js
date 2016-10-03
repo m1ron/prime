@@ -176,7 +176,7 @@ $(document).ready(function() {
                     var $li = $(this);
                     pos = 0;
                     w = 0;
-                    if (active) {
+                    if (isActive) {
                         pos = $lis.filter('.active').offset().left;
                         w = $lis.filter('.active').outerWidth();
                     }
@@ -288,7 +288,7 @@ $(document).ready(function() {
 
         /** Map script */
         setTimeout(function() {
-            //$.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
+            $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru-RU&callback=mapInit');
         }, 100);
     });
 
