@@ -117,7 +117,7 @@ $(document).ready(function() {
                     hasSub = (sub.length > 0);
                 li.toggleClass('sub', hasSub);
                 if (hasSub) {
-                    $('a', li).on('click', function() {
+                    li.children('a').on('click', function() {
                         $(this).blur().siblings('.submenu').addClass('submenu-open');
                         nav.addClass('nav-submenu-open');
                         return false;
@@ -203,6 +203,7 @@ $(document).ready(function() {
 
     /* Fullpage */
     $('.fullpage').each(function() {
+        var video = document.getElementById('video');
         $(this).fullpage({
             menu: '#dots',
             css3: true,
@@ -212,7 +213,13 @@ $(document).ready(function() {
             recordHistory: false,
             verticalCentered: true,
             resize: false,
-            scrollingSpeed: 1000
+            scrollingSpeed: 1000,
+            afterLoad: function() {
+                video.play();
+                document.addEventListener('touchstart', function(event) {
+                    video.play();
+                }, false);
+            }
         });
     });
 
