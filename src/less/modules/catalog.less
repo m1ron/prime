@@ -42,6 +42,7 @@
               .link {
                 &:hover, &:focus {
                     border-color: @color-red;
+                    box-shadow: 0 0 7px 0 @color-red;
                 }
               }
             }
@@ -128,10 +129,11 @@
             border: 1px solid transparent;
             .color-black(.15);
             box-shadow: 0 0 7px 0 @color;
-            transition: border-color @duration;
+            transition: border-color @duration, box-shadow @duration;
             &:hover, &:focus {
                 text-decoration: none;
                 border-color: @color-blue;
+                box-shadow: 0 0 7px 0 @color-blue;
             }
             @media @tablet-sm {
                 padding: 21px 25px 45px;

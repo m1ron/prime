@@ -1179,12 +1179,7 @@ body.index .page {
   background: #2c3e5a;
 }
 .nav .area .scroll {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible !important;
 }
 .nav .menu {
   padding: 17px 0;
@@ -1393,9 +1388,6 @@ body.index .page {
   margin: 0;
   list-style: none;
   font-weight: normal;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
 .nav .submenu ul > li {
   border-bottom: 1px solid #465c82;
@@ -4692,6 +4684,7 @@ body.index .page {
 .catalog .list .item-sales .link:focus,
 .catalog .list .item-sales .link:focus {
   border-color: #f26d7d;
+  box-shadow: 0 0 7px 0 #f26d7d;
 }
 .catalog .list .area {
   display: -webkit-box;
@@ -4734,14 +4727,15 @@ body.index .page {
   position: relative;
   border: 1px solid transparent;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .catalog .list .link:hover,
 .catalog .list .link:focus,
 .catalog .list .link:focus {
   text-decoration: none;
   border-color: #34bffc;
+  box-shadow: 0 0 7px 0 #34bffc;
 }
 .catalog .list .badges {
   position: absolute;
@@ -5084,13 +5078,15 @@ body.index .page {
   bottom: 0;
   left: 0;
   z-index: 0;
+  background: url('../img/fullpage/section-1.jpg');
+  background-size: cover;
 }
 .fullpage .section-1 .video video {
   width: auto;
   min-width: 100%;
   height: auto;
   min-height: 100%;
-  display: block;
+  display: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -5432,6 +5428,7 @@ body.index .page {
   background: transparent;
 }
 .fullpage .section-5 .wrapper {
+  max-width: none;
   height: 100%;
   padding-top: 22px;
   padding-bottom: 83px;
@@ -5477,7 +5474,7 @@ body.index .page {
   text-decoration: none;
 }
 .fullpage .section-5 .projects {
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: 0 auto;
   list-style: none;
@@ -5485,6 +5482,7 @@ body.index .page {
   position: absolute;
   top: -84px;
   bottom: 0;
+  left: 0;
   z-index: 0;
 }
 .fullpage .section-5 .projects:after {
@@ -6923,6 +6921,12 @@ body.index .page {
     margin-top: 62px;
     display: block;
   }
+  .fullpage .section-1 .video {
+    background: none;
+  }
+  .fullpage .section-1 .video video {
+    display: block;
+  }
   .fullpage .section-2:before {
     background-position: 67% center;
     background-image: url('../img/fullpage/section-2.jpg');
@@ -7038,13 +7042,13 @@ body.index .page {
   }
   .fullpage .section-5 .projects li {
     width: 50%;
+    height: 50%;
     float: left;
   }
-  .fullpage .section-5 .projects li:nth-child(n+2) {
+  .fullpage .section-5 .projects li:nth-child(n+2),
+  .fullpage .section-5 .projects li:nth-child(n+3),
+  .fullpage .section-5 .projects li:nth-child(n+4) {
     display: block;
-  }
-  .fullpage .section-5 .projects li:nth-child(n+3) {
-    display: none;
   }
   .popup {
     padding: 48px 40px;
@@ -7183,6 +7187,13 @@ body.index .page {
   .fullpage .section-1 .menu li:nth-child(3) {
     width: 26.1%;
   }
+  .fullpage .section-5 .projects li {
+    height: 100%;
+  }
+  .fullpage .section-5 .projects li:nth-child(n+3),
+  .fullpage .section-5 .projects li:nth-child(n+4) {
+    display: none;
+  }
   .dots {
     right: 45px;
   }
@@ -7267,6 +7278,14 @@ body.index .page {
   }
   .nav-submenu-open.nav .toggle {
     display: block;
+  }
+  .nav .area .scroll {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .nav .submenu {
     width: 320px;
@@ -8272,6 +8291,9 @@ body.index .page {
   }
   .fullpage .section-5 .projects li:nth-child(n+3) {
     display: block;
+  }
+  .fullpage .section-5 .projects li:nth-child(n+4) {
+    display: none;
   }
   .fullpage .section-5.fp-completely .heading {
     -webkit-transform: translate3d(0, 0, 0);

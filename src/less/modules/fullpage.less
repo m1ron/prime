@@ -231,18 +231,26 @@
                 bottom: 0;
                 left: 0;
                 z-index: 0;
+                background: url('@{images}/fullpage/section-1.jpg');
+                background-size: cover;
+                @media @tablet-sm {
+                    background: none;
+                }
 
                 video {
                     width: auto;
                     min-width: 100%;
                     height: auto;
                     min-height: 100%;
-                    display: block;
+                    display: none;
                     position: absolute;
                     left: 50%;
                     top: 50%;
                     transform: translate3d(-50%, -50%, 0);
                     z-index: 0;
+                    @media @tablet-sm {
+                        display: block;
+                    }
                 }
             }
 
@@ -888,6 +896,7 @@
             background: transparent;
 
             .wrapper {
+                max-width: none;
                 height: 100%;
                 padding-top: 22px;
                 padding-bottom: 83px;
@@ -956,7 +965,7 @@
             }
 
             .projects {
-                width: 100vw;
+                width: 100%;
                 padding: 0;
                 margin: 0 auto;
                 list-style: none;
@@ -964,6 +973,7 @@
                 position: absolute;
                 top: -84px;
                 bottom: 0;
+                left: 0;
                 z-index: 0;
 
                 &:after {
@@ -983,11 +993,15 @@
 
                     @media @tablet-sm {
                         width: 50%;
+                        height: 50%;
                         float: left;
-                        &:nth-child(n+2) {
+                        &:nth-child(n+2), &:nth-child(n+3), &:nth-child(n+4) {
                             display: block;
                         }
-                        &:nth-child(n+3) {
+                    }
+                    @media @tablet-md {
+                        height: 100%;
+                        &:nth-child(n+3), &:nth-child(n+4) {
                             display: none;
                         }
                     }
@@ -996,6 +1010,9 @@
                         float: left;
                         &:nth-child(n+3) {
                             display: block;
+                        }
+                        &:nth-child(n+4) {
+                            display: none;
                         }
                     }
 
