@@ -690,7 +690,7 @@ button.button-dark:focus,
   border: none;
   border-bottom: 2px solid rgba(57, 57, 57, 0.2);
   border-left: 2px solid rgba(57, 57, 57, 0.2);
-  border-radius: 0 0 0 3px;
+  border-radius: 0 0 0 1px;
   box-shadow: none !important;
   position: absolute;
   top: 0;
@@ -2173,6 +2173,10 @@ body.index .page {
 }
 .form-callback.form-offer input:focus {
   border-color: #162a49;
+}
+.form-callback.form-offer input.done {
+  background: #fff url('../img/sprite/check.png') no-repeat 98% 50%;
+  background-size: 25px 25px;
 }
 .form-callback.form-offer input.tel {
   height: 62px;

@@ -343,6 +343,17 @@ $(document).ready(function() {
         });
     });
 
+    $('.form-callback').each(function() {
+        $('input', this).on('keyup',function() {
+            var field = $(this);
+            if (!field.hasClass('tel')) {
+                field.toggleClass('done', (field.val().length > 0));
+            } else {
+                field.toggleClass('done', (field.val().length == 18));
+            }
+        });
+    });
+
     /* Solutions tabs */
     $('.solutions').each(function() {
         var _address = $(this),
